@@ -147,7 +147,12 @@
 }
 
 .search__input {
+  box-sizing: border-box;
   width: 100%;
+  line-height: 2;
+  border-radius: 15px;
+  border: none;
+  padding: 0 1em;
 }
 
 .search__list {
