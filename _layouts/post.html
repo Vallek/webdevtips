@@ -35,7 +35,7 @@ layout: default
 
   <h2 class="post-tags__heading">Теги</h2>
   {% for tag in page.tags %}
-  {% capture tag_name %}{{ tag }}{% endcapture %}
+  {% capture tag_name %}{{ tag | replace: " ", "-" }}{% endcapture %}
   <a class="tag-link tag-link_home" href="{{site.baseurl}}/tag/{{ tag_name }}"><span class="nobrake">{{ tag_name }}</span></a>
   {% endfor %}
 
