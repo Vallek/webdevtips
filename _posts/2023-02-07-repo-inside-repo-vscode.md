@@ -3,7 +3,7 @@ layout: post
 title: 'Репозиторий внутри репозитория в vs code'
 date: 2023-02-07 00:00 +0000
 notebook: webdev
-tags: [vscode, git, jekyll]
+tags: [vs code, git, jekyll]
 ---
 Чтобы source control поддерживал репу внутри репы нужен опр. порядок папок в workspace (если у вас открыто много папок в файловом менеджере vs code). 
 
