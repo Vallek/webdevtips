@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {{ page.date | date: date_format }}
+      </time>
+      {%- if page.author -%}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      {%- endif -%}
+      <a class="edit-button" href="https://www.github.com/{{ site.github_username }}/{{ site.git_repo }}/blob/master/{{ page.path }}"><img class="github-logo" width="16" height="16" src="{{site.baseurl}}/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {%- if page.sources -%}
+  {%- if page.sources.size > 1 -%}
+  <span>Источники: </span>
+  {%- endif -%}
+  {%- if page.sources.size == 1 -%}
+  <span>Источник: </span>
+  {%- endif -%}
+  {% for source in page.sources %}
+  <a href="{{source}}">{{source}}</a>
+  {% endfor %}
+  {%- endif -%}
+
+  <h2 class="post-tags__heading">Теги</h2>
+  {% for tag in page.tags %}
+  {% capture tag_name %}{{ tag | replace: " ", "-" }}{% endcapture %}
+  <a class="tag-link tag-link_home" href="{{site.baseurl}}/tag/{{ tag_name }}"><span class="nobrake">{{ tag_name }}</span></a>
+  {% endfor %}
+
+  {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>

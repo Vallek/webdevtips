@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "ru" }}">
+
+  {%- include head.html -%}
+
+  <body class="page">
+
+    {%- include header.html -%}
+
+    <div class="page__content">
+      {%- include sidebar.html -%}
+      <main class="page__main main" aria-label="Content">
+        <div class="main__content wrapper">
+          {{ content }}
+        </div>
+      </main>
+      {%- include tags-cloud.html -%}
+     
+    </div>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

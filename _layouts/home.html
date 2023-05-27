@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+  <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+  
+  {{ content }}
+  
+  {%- if site.posts.size > 0 -%}
+  <h2 class="post-list-heading">Все заметки</h2>
+  <ul class="post-list">
+    {% for post in paginator.posts %}
+    <li class="post-item">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      <span class="post-meta">{{ post.date | date: date_format }}</span>
+      <h3 class="post__heading">
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h3>
+      {%- if site.show_excerpts -%}
+      {{ post.excerpt }}
+      {%- endif -%}
+      {%- assign all_tags = post.tags -%}
+      {%- for tag in all_tags -%}
+      {% capture tag_name %}{{ tag | replace: " ", "-" }}{% endcapture %}
+      <a class="tag-link" href="{{site.baseurl}}/tag/{{ tag_name }}"><span class="nobrake">{{ tag_name }}</span></a>
+      {%- endfor -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+  
+  {% if paginator.total_pages > 1 %}
+  <div class="pagination">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">
+      &laquo; Заметки новее
+    </a>
+    {% endif %}
+    
+    {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+    <em>{{ page }}</em>
+    {% elsif page == 1 %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">
+      {{ page }}
+    </a>
+    {% else %}
+    <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">
+      {{ page }}
+    </a>
+    {% endif %}
+    {% endfor %}
+    
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}">
+      Заметки старше &raquo;
+    </a>
+    {% endif %}
+  </div>
+  {% endif %}
+  
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  {%- endif -%}
+  
+</div>

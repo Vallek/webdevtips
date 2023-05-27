@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+  {% for tag in page.tags %}
+	{% capture tag_name %}{{ tag | replace: " ", "-" }}{% endcapture %}
+	<a class="tag-link" href="{{site.baseurl}}/tag/{{ tag_name }}"><span class="nobrake">{{ tag_name }}</span></a>
+	{% endfor %}
+
+</article>

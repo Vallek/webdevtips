@@ -1,0 +1,20 @@
+{% assign sidebar = site.data.sidebar %}
+<aside class="sidebar">
+	<h2 class="sidebar__heading">Рубрики и заметки</h2>
+	<ul class="sidebar__notebooks">
+		{% for notebook in sidebar %}
+		<li class="sidebar__notebook">
+			<h3 class="sidebar__title">{{notebook.title}}</h3>
+			<ul class="sidebar__notes">
+				{% for post in site.posts %}
+				{%- if post.notebook == notebook.title -%}
+				<li class="sidebar__note">
+					<a class="sidebar__link" href="/webdevtips{{post.url}}">{{ post.title }}</a>
+				</li>
+				{%- endif -%}
+				{% endfor %}
+			</ul>
+		</li>
+		{% endfor %}
+	</ul>
+</aside>
