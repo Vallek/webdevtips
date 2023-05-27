@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-05-27T14:23:40+03:00</updated><id>http://localhost:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>Tips and tricks for frontend and web developers</subtitle><entry><title type="html">Адаптивные шрифты</title><link href="http://localhost:4000/webdevtips/2023/05/27/responsive-font.html" rel="alternate" type="text/html" title="Адаптивные шрифты" /><published>2023-05-27T03:00:00+03:00</published><updated>2023-05-27T03:00:00+03:00</updated><id>http://localhost:4000/webdevtips/2023/05/27/responsive-font</id><content type="html" xml:base="http://localhost:4000/webdevtips/2023/05/27/responsive-font.html"><![CDATA[<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.heading {
+  font-size: clamp(2rem, 5vw + 1rem, 5rem);
+}
+</code></pre></div></div>
+
+<p>Размер регулируется максимально гибко, между минимальным, предпочтительным с учетом вьюпорта и максимальным.</p>]]></content><author><name></name></author><category term="css" /><category term="fonts" /><category term="responsive" /><summary type="html"><![CDATA[.heading { font-size: clamp(2rem, 5vw + 1rem, 5rem); }]]></summary></entry><entry><title type="html">Smooth animations</title><link href="http://localhost:4000/webdevtips/2023/05/25/smooth-animations.html" rel="alternate" type="text/html" title="Smooth animations" /><published>2023-05-25T03:00:00+03:00</published><updated>2023-05-25T03:00:00+03:00</updated><id>http://localhost:4000/webdevtips/2023/05/25/smooth-animations</id><content type="html" xml:base="http://localhost:4000/webdevtips/2023/05/25/smooth-animations.html"><![CDATA[<p>Плавные функции для анимаций из разных источников</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.smooth {
+  animation-timing-function: cubic-bezier(.62,.16,.13,1.01);
+}
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.inertia {
+  animation-timing-function: cubic-bezier(.5,-0.53,.14,1.23);
+}
+</code></pre></div></div>
+
+<p>Из webkit docs</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>transform .25s cubic-bezier(.1,.7,.1,1),box-shadow .25s
+</code></pre></div></div>]]></content><author><name></name></author><category term="css" /><category term="animation" /><summary type="html"><![CDATA[Плавные функции для анимаций из разных источников]]></summary></entry><entry><title type="html">Мониторинг браузерных событий</title><link href="http://localhost:4000/webdevtips/2023/05/25/eventsmonitoring.html" rel="alternate" type="text/html" title="Мониторинг браузерных событий" /><published>2023-05-25T00:00:00+03:00</published><updated>2023-05-25T00:00:00+03:00</updated><id>http://localhost:4000/webdevtips/2023/05/25/eventsmonitoring</id><content type="html" xml:base="http://localhost:4000/webdevtips/2023/05/25/eventsmonitoring.html"><![CDATA[<h2 id="chrome">Chrome</h2>
+
+<p>Для того, чтобы видеть все браузерные события в реальном времени введите в консоли браузера <code class="highlighter-rouge">monitorEvents(tempVar, 'events type')</code></p>
+
+<p><code class="highlighter-rouge">tempVar</code> временная переменная, которую можно создать в девтулзах (ПКМ на любом узле &gt; store as global variable).</p>
+
+<p>Можно просто найти узел. Например <code class="highlighter-rouge">monitorEvents(document.body, 'mouse')</code>.</p>
+
+<p><code class="highlighter-rouge">events type</code> - тип событий, например ‘mouse’. Можно и отдельные события.</p>
+
+<h2 id="firefox">Firefox</h2>
+
+<p>В лисе к сожалению такой встроенной функции нет. Но ее можно создать самому!</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function monitorEvents(element) {
+  let log = function(e) { console.log(e);};
+  let events = [];
+
+  for(let i in element) {
+    if(i.startsWith("on")) events.push(i.substr(2));
+  }
+  events.forEach(function(eventName) {
+    element.addEventListener(eventName, log);
+  });
+}
+</code></pre></div></div>
+<p>Затем выполните с нужным узлом в качестве аргумента. Например <code class="highlighter-rouge">monitorEvents(temp0)</code> или monitorEvents(document.body).</p>
+
+<p><em>Совет со stackoverflow</em>: If you’re trying to see all the events are happening inside an element (such as the body), you should log during the capture phase - element.addEventListener(eventName, log, true);</p>]]></content><author><name></name></author><category term="devtools" /><category term="events" /><category term="chrome" /><category term="firefox" /><summary type="html"><![CDATA[Chrome]]></summary></entry><entry><title type="html">OpenSSL local server with HTTPS</title><link href="http://localhost:4000/webdevtips/2023/05/13/openssl-local-server-with-https.html" rel="alternate" type="text/html" title="OpenSSL local server with HTTPS" /><published>2023-05-13T03:00:00+03:00</published><updated>2023-05-13T03:00:00+03:00</updated><id>http://localhost:4000/webdevtips/2023/05/13/openssl-local-server-with-https</id><content type="html" xml:base="http://localhost:4000/webdevtips/2023/05/13/openssl-local-server-with-https.html"><![CDATA[<p>Как запустить локальный live server в vs code на https. Нужно, например, для тестирования js модулей.</p>
+
+<p>Для начала устанавливаете openssl <a href="https://wiki.openssl.org/index.php/Binaries">отсюда</a>. На винде там неофиц. версии, но вроде пишут, что норм. По крайней мере для теста.</p>
+
+<p>Открываете терминал. Переходите в папку проекта и выполняете</p>
+
+<p><code class="highlighter-rouge">openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem</code></p>
+
+<p>Это создаст для файла сертификатов, необходимых для работы https</p>
+
+<p>Оно спросит ввести несколько параметров типа имени, страны. Вроде бы можно вводить любые кроме Common Name. Тут нужен 127.0.0.1 для локального сервера.</p>
+
+<p>Дальше ставим сервер. У меня вот с этим сразу получилось. Для live server нужно писать конфиг с путями к файлам.</p>
+
+<p><code class="highlighter-rouge">npm install --global http-server</code></p>
+
+<p>И запускаем</p>
+
+<p><code class="highlighter-rouge">http-server -S -C cert.pem</code></p>
+
+<p>-S - это https
+-C - это путь к файлам. У меня работало только когда в папке проекта.</p>]]></content><author><name></name></author><category term="local server" /><category term="https" /><category term="openssl" /><summary type="html"><![CDATA[Как запустить локальный live server в vs code на https. Нужно, например, для тестирования js модулей.]]></summary></entry><entry><title type="html">Значение по умолчанию аргумента функции</title><link href="http://localhost:4000/webdevtips/2023/05/10/js-func-arg-defaults.html" rel="alternate" type="text/html" title="Значение по умолчанию аргумента функции" /><published>2023-05-10T03:00:00+03:00</published><updated>2023-05-10T03:00:00+03:00</updated><id>http://localhost:4000/webdevtips/2023/05/10/js-func-arg-defaults</id><content type="html" xml:base="http://localhost:4000/webdevtips/2023/05/10/js-func-arg-defaults.html"><![CDATA[<p><code class="highlighter-rouge">function (arg-1 = "значение по умолчанию", arg-2 = "значение по умолчанию") {}</code></p>
+
+<p>Eсли мы передадим любое значение, отличное от undefined, будет взято оно. Даже falsy значение, например null.</p>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[function (arg-1 = "значение по умолчанию", arg-2 = "значение по умолчанию") {}]]></summary></entry><entry><title type="html">Если не работает remote pull/push</title><link href="http://localhost:4000/webdevtips/2023/04/18/push-pull-error.html" rel="alternate" type="text/html" title="Если не работает remote pull/push" /><published>2023-04-18T03:00:00+03:00</published><updated>2023-04-18T03:00:00+03:00</updated><id>http://localhost:4000/webdevtips/2023/04/18/push-pull-error</id><content type="html" xml:base="http://localhost:4000/webdevtips/2023/04/18/push-pull-error.html"><![CDATA[<p>Такое случается, если создать локальный репозиторий отдельно от удаленного и если у них отличаются истории. Иногда задать remote вручную недостаточно и происходит конфликт. Не работают ни push, ни pull.</p>
+
+<p>Эта команда позволит сделать pull при конфликте историй.</p>
+
+<p><code class="highlighter-rouge">git pull https://github.com/user/repo --allow-unrelated-histories</code></p>
+
+<p>Будьте осторожны! Убедитесь, что комитите те изменения, которые вам нужно.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Такое случается, если создать локальный репозиторий отдельно от удаленного и если у них отличаются истории. Иногда задать remote вручную недостаточно и происходит конфликт. Не работают ни push, ни pull.]]></summary></entry><entry><title type="html">Переключение версий node.js/npm</title><link href="http://localhost:4000/webdevtips/2023/04/17/switch-node-npm-version.html" rel="alternate" type="text/html" title="Переключение версий node.js/npm" /><published>2023-04-17T03:00:00+03:00</published><updated>2023-04-17T03:00:00+03:00</updated><id>http://localhost:4000/webdevtips/2023/04/17/switch-node-npm-version</id><content type="html" xml:base="http://localhost:4000/webdevtips/2023/04/17/switch-node-npm-version.html"><![CDATA[<p>Иногда старые проекты на node.js не запускаются на новых версиях ноды или npm. Если при сборке вы видите кучу ошибок об устаревших версиях и конфликтах, не спешите сдаваться. Возможно поможет использование старой ноды или npm.</p>
+
+<p>Для установки разных версий на одну ОС существует несколько разных программ. Я использую <strong>nvm</strong>. Версию для винды можно <a href="https://github.com/coreybutler/nvm-windows">скачать тут</a>.</p>
+
+<p>С помощью nvm можно установить не только разные версии ноды, но и разные npm. Их можно привязать к версиях ноды. То есть например ноду берете предыдущий патч, а npm устанавливаете, который вам нужно.</p>
+
+<p>Узнать, куда nvm устанавливает версии ноды <code class="highlighter-rouge">nvm root</code>. Осторожно! Эта же команда с путем меняет путь установки.</p>
+
+<p>Установить конкретную версия npm на активную версию ноды</p>
+
+<p><code class="highlighter-rouge">npm install npm@X.X.X</code></p>
+
+<p>Например <code class="highlighter-rouge">npm install npm@6.14.18</code></p>
+
+<p>Переключить версию ноды (версия npm привязана к версии ноды)</p>
+
+<p><code class="highlighter-rouge">nvm use XX</code></p>
+
+<p>Например <code class="highlighter-rouge">nvm use 16</code></p>
+
+<p>Про все остальные команды читайте по ссылке в readme репозитория выше.</p>]]></content><author><name></name></author><category term="nodejs" /><category term="npm" /><category term="nvm" /><summary type="html"><![CDATA[Иногда старые проекты на node.js не запускаются на новых версиях ноды или npm. Если при сборке вы видите кучу ошибок об устаревших версиях и конфликтах, не спешите сдаваться. Возможно поможет использование старой ноды или npm.]]></summary></entry><entry><title type="html">Заготовка для transform: perspective</title><link href="http://localhost:4000/webdevtips/2023/04/12/transform-perspective.html" rel="alternate" type="text/html" title="Заготовка для transform: perspective" /><published>2023-04-12T03:00:00+03:00</published><updated>2023-04-12T03:00:00+03:00</updated><id>http://localhost:4000/webdevtips/2023/04/12/transform-perspective</id><content type="html" xml:base="http://localhost:4000/webdevtips/2023/04/12/transform-perspective.html"><![CDATA[<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>will-change: transform;
+transform: perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+</code></pre></div></div>]]></content><author><name></name></author><category term="css" /><summary type="html"><![CDATA[will-change: transform; transform: perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);]]></summary></entry><entry><title type="html">PHP GD Library extension</title><link href="http://localhost:4000/webdevtips/2023/04/12/gd-extension-php.html" rel="alternate" type="text/html" title="PHP GD Library extension" /><published>2023-04-12T03:00:00+03:00</published><updated>2023-04-12T03:00:00+03:00</updated><id>http://localhost:4000/webdevtips/2023/04/12/gd-extension-php</id><content type="html" xml:base="http://localhost:4000/webdevtips/2023/04/12/gd-extension-php.html"><![CDATA[<p>Если вы используете локальный сервер на php и получаете ошибку
+<code class="highlighter-rouge">GD Library extension not available with this PHP installation</code> или что-то подобное.</p>
+
+<p>Найдите файл <em>php.ini</em> и раскомментируйте строчку <code class="highlighter-rouge">extension=gd</code></p>]]></content><author><name></name></author><category term="php" /><category term="local server" /><summary type="html"><![CDATA[Если вы используете локальный сервер на php и получаете ошибку GD Library extension not available with this PHP installation или что-то подобное.]]></summary></entry><entry><title type="html">Селектор для выбора ряда 1, 2, 4, 5</title><link href="http://localhost:4000/webdevtips/2023/04/03/1-2-4-5-nth-child.html" rel="alternate" type="text/html" title="Селектор для выбора ряда 1, 2, 4, 5" /><published>2023-04-03T03:00:00+03:00</published><updated>2023-04-03T03:00:00+03:00</updated><id>http://localhost:4000/webdevtips/2023/04/03/1-2-4-5-nth-child</id><content type="html" xml:base="http://localhost:4000/webdevtips/2023/04/03/1-2-4-5-nth-child.html"><![CDATA[<p><code class="highlighter-rouge">selector:not(:nth-child(n+6)):not(:nth-child(3))</code></p>]]></content><author><name></name></author><category term="css" /><category term="selectors" /><category term="nth-child" /><summary type="html"><![CDATA[selector:not(:nth-child(n+6)):not(:nth-child(3))]]></summary></entry></feed>
