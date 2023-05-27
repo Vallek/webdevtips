@@ -12,7 +12,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-{
+}
 
 main {
     /* This will make the main element take the remaining space dynamically */
