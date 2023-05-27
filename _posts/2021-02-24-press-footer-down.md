@@ -3,10 +3,10 @@ layout: post
 title: 'Как прижать футер'
 date: 2021-02-24 00:00 +0000
 notebook: frontend
-tags: [css]
+tags: [css, flexbox]
 sources: [https://ishadeed.com/article/viewport-units/#2-second-solution-flexbox-and-viewport-units-recommended]
 ---
-Современный способ:
+Современный способ на флексбоксе:
 ```
 body {
     min-height: 100vh;
