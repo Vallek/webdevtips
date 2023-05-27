@@ -247,7 +247,12 @@ table {
   .site-nav {
     text-align: center; } }
 .search__input {
-  width: 100%; }
+  box-sizing: border-box;
+  width: 100%;
+  line-height: 2;
+  border-radius: 15px;
+  border: none;
+  padding: 0 1em; }
 
 .search__list {
   position: absolute;
@@ -437,7 +442,7 @@ table {
   gap: 1em;
   flex-wrap: wrap; }
 
-.tags-cloud__tags > a[class^="set-"] {
+.tags-cloud__tags_all > a[class^="set-"] {
   --hue: 264;
   display: block;
   color: white;

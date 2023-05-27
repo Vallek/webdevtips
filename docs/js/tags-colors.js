@@ -1,5 +1,5 @@
 'use strict';
-const tagsContainer = document.querySelector('.tags-cloud__tags');
+const tagsContainer = document.querySelector('.tags-cloud__tags_all');
 const firstTag = tagsContainer.querySelector('a[class^="set-"]');
 const tags = tagsContainer.querySelectorAll('a[class^="set-"]');
 
