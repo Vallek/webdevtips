@@ -4,7 +4,7 @@ title: 'Адаптивные шрифты'
 date: 2023-05-27 00:00 +0000
 notebook: frontend
 tags: [css, fonts, responsive]
-sources: [https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/]
+sources: ['https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/']
 ---
 ```
 .heading {

@@ -276,7 +276,7 @@
       "tags"     : "css, flexbox",
       "url"      : "/webdevtips/2021/02/24/press-footer-down.html",
       "date"     : "2021-02-24 03:00:00 +0300",
-      "content"  : "Современный способ на флексбоксе:body {    min-height: 100vh;    display: flex;    flex-direction: column;{main {    /* This will make the main element take the remaining space dynamically */    flex-grow: 1;}"
+      "content"  : "Современный способ на флексбоксе:body {    min-height: 100vh;    display: flex;    flex-direction: column;}main {    /* This will make the main element take the remaining space dynamically */    flex-grow: 1;}"
     } 
   
 ]

@@ -4,7 +4,7 @@ title: 'Сокращенные команды для cmd/powershell'
 date: 2023-02-03 00:00 +0000
 notebook: webdev
 tags: [terminal, cmd, powershell]
-sources: [https://stackoverflow.com/questions/54866820/create-alias-for-a-specific-command-in-cmd/65823225#65823225, https://stackoverflow.com/]
+sources: ['https://stackoverflow.com/questions/54866820/create-alias-for-a-specific-command-in-cmd/65823225#65823225']
 ---
 Alias - это сокращенные команды, которые можно использовать вместо слишком длинных в терминале. Например я часто запускаю bejs вместо bundle exec jekyll serve.
 

@@ -4,7 +4,7 @@ title: 'Открыть localhost на мобильном'
 date: 2023-02-02 00:00 +0000
 notebook: webdev
 tags: [local server, mobile, qa]
-sources: [https://stackoverflow.com/questions/4779963/how-can-i-access-my-localhost-from-my-android-device/4779992#4779992]
+sources: ['https://stackoverflow.com/questions/4779963/how-can-i-access-my-localhost-from-my-android-device/4779992#4779992']
 ---
 Работает, при условии, что вы на своем вайфае. Краткое содержание:
 
