@@ -1,6 +1,6 @@
 # Добро пожаловать на Web Dev Tips!
 
-[![скриншот сайта](assets/webdevtips.jpg)](https://vallek.github.io/webdevtips/)
+[![скриншот сайта](assets/webdevtips.webp)](https://vallek.github.io/webdevtips/)
 
 [Web Dev Tips](https://vallek.github.io/webdevtips/) - это сборник советов и рецептов по веб-разработке (в основном по фронтенду), которые мне в какой-то момент помогли решить задачу и которые я собрал в базу знаний, чтобы не забыть. Возможно они пригодятся и вам!
 
