@@ -2,7 +2,7 @@
 layout: post
 title: 'Убрать файл из коммита'
 date: 2023-02-17 00:00 +0000
-notebook: frontend
+notebook: webdev
 tags: [git]
 ---
 ```

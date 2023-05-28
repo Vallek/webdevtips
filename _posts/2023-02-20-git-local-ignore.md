@@ -2,7 +2,7 @@
 layout: post
 title: 'Когда git ignore не работает'
 date: 2023-02-20 00:00 +0000
-notebook: frontend
+notebook: webdev
 tags: [git]
 ---
 Зайдите в скрытую папку **.git** в репозитории и найдите внутри папки **info** файл **exclude** без расширения. Полный путь `.git/info/exclude`
