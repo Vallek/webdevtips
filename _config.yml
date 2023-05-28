@@ -34,9 +34,11 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
 
+# jekyll-paginate
 paginate: 10
 paginate_path: /page:num/
 
+# Change prod folder from site to docs
 destination: docs
 
 # Change prod links from dates to simple title
@@ -64,9 +66,11 @@ permalink: /:title.html
 
 # show_excerpts: true
 
+# jekyll-tagging
 tag_page_layout: tag_page
 tag_page_dir: tag
 
+# jekyll_compose
 jekyll_compose:
   auto_open: true
   default_front_matter:
