@@ -72,4 +72,4 @@ jekyll_compose:
       title: ''
       notebook: 'frontend'
       tags: []
-      sources: ['']
+      sources: []
