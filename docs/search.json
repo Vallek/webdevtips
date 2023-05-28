@@ -4,7 +4,7 @@
       "title"    : "Адаптивные гриды одной строкой",
       "category" : "",
       "tags"     : "css, responsive, grid",
-      "url"      : "/webdevtips/2023/05/28/responsive-grid.html",
+      "url"      : "/webdevtips/responsive-grid.html",
       "date"     : "2023-05-28 11:12:00 +0300",
       "content"  : "Подходит для рядов элементов а-ля галлерея, когда не нужен точный дизайн на адаптиве. Пример: карточки на моем портфолиоВерсия с min()grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));Проверьте необходимую поддержку браузеров!Оригинальная версияgrid-template-columns: repeat(auto-fill, minmax(250px, 1fr));Обратите внимание, что используется auto-fill, а не auto-fit. Это важно, когда у вас мало грид элементов, чтобы они не вытягивались."
     } ,
@@ -13,7 +13,7 @@
       "title"    : "Disable thumbnails for alt+tab in win10",
       "category" : "",
       "tags"     : "regedit, windows",
-      "url"      : "/webdevtips/2023/05/28/disable-alt-tab-thumb-win10.html",
+      "url"      : "/webdevtips/disable-alt-tab-thumb-win10.html",
       "date"     : "2023-05-28 03:00:00 +0300",
       "content"  : "  win+r &amp;gt; regedit  HKEY_CURRENT_USERSoftwareMicrosoftWindowsCurrentVersionExplorer  Создать AltTabSettings, тип DWORD 32  Поставить значение 1"
     } ,
@@ -22,7 +22,7 @@
       "title"    : "Адаптивные шрифты",
       "category" : "",
       "tags"     : "css, fonts, responsive",
-      "url"      : "/webdevtips/2023/05/27/responsive-font.html",
+      "url"      : "/webdevtips/responsive-font.html",
       "date"     : "2023-05-27 03:00:00 +0300",
       "content"  : ".heading {  font-size: clamp(2rem, 5vw + 1rem, 5rem);}Размер регулируется максимально гибко, между минимальным, предпочтительным с учетом вьюпорта и максимальным."
     } ,
@@ -31,7 +31,7 @@
       "title"    : "Smooth animations",
       "category" : "",
       "tags"     : "css, animation",
-      "url"      : "/webdevtips/2023/05/25/smooth-animations.html",
+      "url"      : "/webdevtips/smooth-animations.html",
       "date"     : "2023-05-25 03:00:00 +0300",
       "content"  : "Плавные функции для анимаций из разных источников.smooth {  animation-timing-function: cubic-bezier(.62,.16,.13,1.01);}.inertia {  animation-timing-function: cubic-bezier(.5,-0.53,.14,1.23);}Из webkit docstransform .25s cubic-bezier(.1,.7,.1,1),box-shadow .25s"
     } ,
@@ -40,7 +40,7 @@
       "title"    : "Мониторинг браузерных событий",
       "category" : "",
       "tags"     : "devtools, events, chrome, firefox",
-      "url"      : "/webdevtips/2023/05/25/eventsmonitoring.html",
+      "url"      : "/webdevtips/eventsmonitoring.html",
       "date"     : "2023-05-25 00:00:00 +0300",
       "content"  : "ChromeДля того, чтобы видеть все браузерные события в реальном времени введите в консоли браузера monitorEvents(tempVar, &#39;events type&#39;)tempVar временная переменная, которую можно создать в девтулзах (ПКМ на любом узле &amp;gt; store as global variable).Можно просто найти узел. Например monitorEvents(document.body, &#39;mouse&#39;).events type - тип событий, например ‘mouse’. Можно и отдельные события.FirefoxВ лисе к сожалению такой встроенной функции нет. Но ее можно создать самому!function monitorEvents(element) {  let log = function(e) { console.log(e);};  let events = [];  for(let i in element) {    if(i.startsWith(&quot;on&quot;)) events.push(i.substr(2));  }  events.forEach(function(eventName) {    element.addEventListener(eventName, log);  });}Затем выполните с нужным узлом в качестве аргумента. Например monitorEvents(temp0) или monitorEvents(document.body).Совет со stackoverflow: If you’re trying to see all the events are happening inside an element (such as the body), you should log during the capture phase - element.addEventListener(eventName, log, true);"
     } ,
@@ -49,7 +49,7 @@
       "title"    : "OpenSSL local server with HTTPS",
       "category" : "",
       "tags"     : "local server, https, openssl",
-      "url"      : "/webdevtips/2023/05/13/openssl-local-server-with-https.html",
+      "url"      : "/webdevtips/openssl-local-server-with-https.html",
       "date"     : "2023-05-13 03:00:00 +0300",
       "content"  : "Как запустить локальный live server в vs code на https. Нужно, например, для тестирования js модулей.Для начала устанавливаете openssl отсюда. На винде там неофиц. версии, но вроде пишут, что норм. По крайней мере для теста.Открываете терминал. Переходите в папку проекта и выполняетеopenssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pemЭто создаст для файла сертификатов, необходимых для работы httpsОно спросит ввести несколько параметров типа имени, страны. Вроде бы можно вводить любые кроме Common Name. Тут нужен 127.0.0.1 для локального сервера.Дальше ставим сервер. У меня вот с этим сразу получилось. Для live server нужно писать конфиг с путями к файлам.npm install --global http-serverИ запускаемhttp-server -S -C cert.pem-S - это https-C - это путь к файлам. У меня работало только когда в папке проекта."
     } ,
@@ -58,7 +58,7 @@
       "title"    : "Значение по умолчанию аргумента функции",
       "category" : "",
       "tags"     : "javascript",
-      "url"      : "/webdevtips/2023/05/10/js-func-arg-defaults.html",
+      "url"      : "/webdevtips/js-func-arg-defaults.html",
       "date"     : "2023-05-10 03:00:00 +0300",
       "content"  : "function (arg-1 = &quot;значение по умолчанию&quot;, arg-2 = &quot;значение по умолчанию&quot;) {}Eсли мы передадим любое значение, отличное от undefined, будет взято оно. Даже falsy значение, например null."
     } ,
@@ -67,7 +67,7 @@
       "title"    : "Если не работает remote pull/push",
       "category" : "",
       "tags"     : "git",
-      "url"      : "/webdevtips/2023/04/18/push-pull-error.html",
+      "url"      : "/webdevtips/push-pull-error.html",
       "date"     : "2023-04-18 03:00:00 +0300",
       "content"  : "Такое случается, если создать локальный репозиторий отдельно от удаленного и если у них отличаются истории. Иногда задать remote вручную недостаточно и происходит конфликт. Не работают ни push, ни pull.Эта команда позволит сделать pull при конфликте историй.git pull https://github.com/user/repo --allow-unrelated-historiesБудьте осторожны! Убедитесь, что комитите те изменения, которые вам нужно."
     } ,
@@ -76,7 +76,7 @@
       "title"    : "Переключение версий node.js/npm",
       "category" : "",
       "tags"     : "nodejs, npm, nvm",
-      "url"      : "/webdevtips/2023/04/17/switch-node-npm-version.html",
+      "url"      : "/webdevtips/switch-node-npm-version.html",
       "date"     : "2023-04-17 03:00:00 +0300",
       "content"  : "Иногда старые проекты на node.js не запускаются на новых версиях ноды или npm. Если при сборке вы видите кучу ошибок об устаревших версиях и конфликтах, не спешите сдаваться. Возможно поможет использование старой ноды или npm.Для установки разных версий на одну ОС существует несколько разных программ. Я использую nvm. Версию для винды можно скачать тут.С помощью nvm можно установить не только разные версии ноды, но и разные npm. Их можно привязать к версиях ноды. То есть например ноду берете предыдущий патч, а npm устанавливаете, который вам нужно.Узнать, куда nvm устанавливает версии ноды nvm root. Осторожно! Эта же команда с путем меняет путь установки.Установить конкретную версия npm на активную версию нодыnpm install npm@X.X.XНапример npm install npm@6.14.18Переключить версию ноды (версия npm привязана к версии ноды)nvm use XXНапример nvm use 16Про все остальные команды читайте по ссылке в readme репозитория выше."
     } ,
@@ -85,7 +85,7 @@
       "title"    : "Заготовка для transform: perspective",
       "category" : "",
       "tags"     : "css",
-      "url"      : "/webdevtips/2023/04/12/transform-perspective.html",
+      "url"      : "/webdevtips/transform-perspective.html",
       "date"     : "2023-04-12 03:00:00 +0300",
       "content"  : "will-change: transform;transform: perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);"
     } ,
@@ -94,7 +94,7 @@
       "title"    : "PHP GD Library extension",
       "category" : "",
       "tags"     : "php, local server",
-      "url"      : "/webdevtips/2023/04/12/gd-extension-php.html",
+      "url"      : "/webdevtips/gd-extension-php.html",
       "date"     : "2023-04-12 03:00:00 +0300",
       "content"  : "Если вы используете локальный сервер на php и получаете ошибкуGD Library extension not available with this PHP installation или что-то подобное.Найдите файл php.ini и раскомментируйте строчку extension=gd"
     } ,
@@ -103,7 +103,7 @@
       "title"    : "Селектор для выбора ряда 1, 2, 4, 5",
       "category" : "",
       "tags"     : "css, selectors, nth-child",
-      "url"      : "/webdevtips/2023/04/03/1-2-4-5-nth-child.html",
+      "url"      : "/webdevtips/1-2-4-5-nth-child.html",
       "date"     : "2023-04-03 03:00:00 +0300",
       "content"  : "selector:not(:nth-child(n+6)):not(:nth-child(3))"
     } ,
@@ -112,7 +112,7 @@
       "title"    : "Запуск css плагинов postcss",
       "category" : "",
       "tags"     : "css, postcss",
-      "url"      : "/webdevtips/2023/03/15/post-css-plugins.html",
+      "url"      : "/webdevtips/post-css-plugins.html",
       "date"     : "2023-03-15 03:00:00 +0300",
       "content"  : "Запуск css плагинов postcssАвтопрефиксер csspostcss --use autoprefixer -o css/style-prefixed.css css/style.css --no-mapМинификация csspostcss --use postcss-minify -o css/style-prefixed-min.css cssstyle-prefixed.css --no-map "
     } ,
@@ -121,7 +121,7 @@
       "title"    : "Доступные способы визуально скрыть элемент",
       "category" : "",
       "tags"     : "css, accessibility",
-      "url"      : "/webdevtips/2023/03/13/visually-hidden.html",
+      "url"      : "/webdevtips/visually-hidden.html",
       "date"     : "2023-03-13 03:00:00 +0300",
       "content"  : "Рекомендация w3c:.visually-hidden {  border: 0;  clip: rect(0 0 0 0);  height: 1px;  margin: -1px;  overflow: hidden;  padding: 0;  position: absolute;  width: 1px;}Расширенный набор свойств и селектор.visually-hidden:not(:focus):not(:active) { border: 0; clip: rect(0 0 0 0); clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; white-space: nowrap; width: 1px;}visibility: hidden - убирает с дерева доступности"
     } ,
@@ -130,7 +130,7 @@
       "title"    : "win+r команды выполнить",
       "category" : "",
       "tags"     : "windows",
-      "url"      : "/webdevtips/2023/02/22/win-r-commands.html",
+      "url"      : "/webdevtips/win-r-commands.html",
       "date"     : "2023-02-22 03:00:00 +0300",
       "content"  : "Проверялось на Windows 10explorer.exe - процесс рабочего стола на случай, если нужно закрыть и запустить опятьms-settings:taskbar - настройки таскбараshell:startup - папка автозапуска, можно добавить ярлыкиshell:sendto - контекстное меню Отправитьcontrol - панель управленияdevmgmt.msc - диспетчер устройствdccw - калибровка экранаmmsys.cpl - настройки звукаmsinfo32.exe - подробные свойства пк и системыpowercfg.cpl - настройки питанияregedit - редактор реестраmsconfig - настройки системыcompmgmt.msc - управление компьютеромtaskschd.msc - планировщик заданийgpedit.msc - локальные групповые политикиservices.msc - сервисы ОСdiskmgmt.msc -управление дискамиdiskpart - cli утилита для управления дискамиcleanmgr - очистка дискаnetstat - активные сетевые подключения"
     } ,
@@ -139,7 +139,7 @@
       "title"    : "Когда git ignore не работает",
       "category" : "",
       "tags"     : "git",
-      "url"      : "/webdevtips/2023/02/20/git-local-ignore.html",
+      "url"      : "/webdevtips/git-local-ignore.html",
       "date"     : "2023-02-20 03:00:00 +0300",
       "content"  : "Зайдите в скрытую папку .git в репозитории и найдите внутри папки info файл exclude без расширения. Полный путь .git/info/excludeОн работает как локальный git ignore (только для вашей копии репы) и иногда может скрыть от гита файлы, которые не получается скрыть через git.ignoregitignore папку, которая уже в гитеRemove the files from the index (not the actual files in the working copy)$ git rm -r --cached .Add these removals to the Staging Area…$ git add .…and commit them!$ git commit -m &quot;Clean up ignored files&quot;rm -rf .jekyll-cachegit commit . -m &quot;Delete cache directory&quot;git push "
     } ,
@@ -148,7 +148,7 @@
       "title"    : "Убрать файл из коммита",
       "category" : "",
       "tags"     : "git",
-      "url"      : "/webdevtips/2023/02/17/remove-file-from-commit.html",
+      "url"      : "/webdevtips/remove-file-from-commit.html",
       "date"     : "2023-02-17 03:00:00 +0300",
       "content"  : "git reset --soft HEAD~1после этого изменения можно будет снова отправить в stage и закоммитить только нужный файл"
     } ,
@@ -157,7 +157,7 @@
       "title"    : "Как получить отрицательное значение css переменной",
       "category" : "",
       "tags"     : "css",
-      "url"      : "/webdevtips/2023/02/17/negative-css-variable.html",
+      "url"      : "/webdevtips/negative-css-variable.html",
       "date"     : "2023-02-17 03:00:00 +0300",
       "content"  : "calc(var(--name) * -1)"
     } ,
@@ -166,7 +166,7 @@
       "title"    : "Репозиторий внутри репозитория в vs code",
       "category" : "",
       "tags"     : "vs code, git, jekyll",
-      "url"      : "/webdevtips/2023/02/07/repo-inside-repo-vscode.html",
+      "url"      : "/webdevtips/repo-inside-repo-vscode.html",
       "date"     : "2023-02-07 03:00:00 +0300",
       "content"  : "Чтобы source control поддерживал репу внутри репы нужен опр. порядок папок в workspace (если у вас открыто много папок в файловом менеджере vs code).Корневой репо должен идти ПОСЛЕ то есть НИЖE внутреннего.Например, если это сборка джекила, то_sitejekyll-devВ некоторых случаях у меня требовалось поднять _site на самый верх."
     } ,
@@ -175,7 +175,7 @@
       "title"    : "Как найти текущую страницу на сайте в JS",
       "category" : "",
       "tags"     : "javascript, devtools",
-      "url"      : "/webdevtips/2023/02/07/detect-current-page.html",
+      "url"      : "/webdevtips/detect-current-page.html",
       "date"     : "2023-02-07 03:00:00 +0300",
       "content"  : "window.location"
     } ,
@@ -184,7 +184,7 @@
       "title"    : "Сокращенные команды для cmd/powershell",
       "category" : "",
       "tags"     : "terminal, cmd, powershell",
-      "url"      : "/webdevtips/2023/02/03/alias-for-command-in-cmd.html",
+      "url"      : "/webdevtips/alias-for-command-in-cmd.html",
       "date"     : "2023-02-03 03:00:00 +0300",
       "content"  : "Alias - это сокращенные команды, которые можно использовать вместо слишком длинных в терминале. Например я часто запускаю bejs вместо bundle exec jekyll serve.Я использую cmd.exe с расширением clink (рецепт работает и без него). Проверено в Windows 10/11.  Создайте файл init.cmd в папке пользователя OC    C:UsersYourNameinit.cmd        Он может быть и в другом месте (у меня он в папке с репами).    Пример содержимого файла:    @echo offdoskey c=clsdoskey d=cd %USERPROFILE%Desktopdoskey e=explorer $*doskey jp=cd C:JohnPicturesdoskey l=dir /a $*         Каждый doskey задает alias. Синтаксис doskey alias=command.    Теперь нужно это зарегистрировать, чтобы автоматически применять при запуске cmd.exeВ терминале выполните:reg add &quot;HKCUSoftwareMicrosoftCommand Processor&quot; /v AutoRun /t REG_EXPAND_SZ /d &quot;%&quot;USERPROFILE&quot;%init.cmd&quot; /f Убедитесь, что путь до init.cmd указан верноГотово!Перезапустите cmd и alias должны работать.Чтобы отменить регистрацию выполните:reg delete &quot;HKCUSoftwareMicrosoftCommand Processor&quot; /v AutoRunДля PowerShell:function bundleExecJekyllServe {    bundle exec jekyll serve}New-Alias bejs bundleExecJekyllServefunction runW3CValidatorServer {    D:/Webdev/vnu-runtime-image/bin/java nu.validator.servlet.Main 8888}New-Alias valid runW3CValidatorServer"
     } ,
@@ -193,7 +193,7 @@
       "title"    : "Открыть localhost на мобильном",
       "category" : "",
       "tags"     : "local server, mobile, qa",
-      "url"      : "/webdevtips/2023/02/02/localhost-on-mobile.html",
+      "url"      : "/webdevtips/localhost-on-mobile.html",
       "date"     : "2023-02-02 03:00:00 +0300",
       "content"  : "Работает, при условии, что вы на своем вайфае. Краткое содержание:      В терминале ipconfig        Берете IPv4-адрес        Добавляете к нему соотв порт. Например, у вас локальный сервер на :5500/  Это работает для live server на vs code. Но не работает на jekyll server. Чтобы заработало нужно в _config.yml добавить host: 0.0.0.0Сам адрес в браузере при этом менять не нужно."
     } ,
@@ -202,7 +202,7 @@
       "title"    : "Заблокировать элемент в adblock по содержимому",
       "category" : "",
       "tags"     : "adblock",
-      "url"      : "/webdevtips/2022/08/09/adblock-content.html",
+      "url"      : "/webdevtips/adblock-content.html",
       "date"     : "2022-08-09 03:00:00 +0300",
       "content"  : "Синтаксисurl#?#selector:-abp-has(selector:-abp-contains(content))Примеры:Скрыть результат из выдачи гуглgoogle.com#?#div.MjjYud:-abp-has(cite:-abp-contains(fandom.com))Скрыть рекомендуции на ютьюбеyoutube.com#?#ytd-compact-video-renderer:-abp-has(span:-abp-contains(New))"
     } ,
@@ -211,7 +211,7 @@
       "title"    : "Спецсимволы пробелов в html",
       "category" : "",
       "tags"     : "html",
-      "url"      : "/webdevtips/2022/06/23/html-spaces.html",
+      "url"      : "/webdevtips/html-spaces.html",
       "date"     : "2022-06-23 03:00:00 +0300",
       "content"  : "+---------------------+-----------+|      Character      | HTML Code |+---------------------+-----------+| Non-breaking space  | &amp;amp;nbsp;    || En space            | &amp;amp;ensp;    || Em space            | &amp;amp;emsp;    || Thin space          | &amp;amp;thinsp;  || Standard space      | &amp;amp;#20;     || New Line (Return)   | &amp;amp;#13;     || Tab Character       | &amp;amp;#09;     |+---------------------+-----------+"
     } ,
@@ -220,7 +220,7 @@
       "title"    : "Показ границ элементов для тестирования",
       "category" : "",
       "tags"     : "css, qa",
-      "url"      : "/webdevtips/2022/06/22/css-debug.html",
+      "url"      : "/webdevtips/css-debug.html",
       "date"     : "2022-06-22 03:00:00 +0300",
       "content"  : "Выбор всех элементов на странице, включая псевдоэлементы. Внимание! Никогда не используйте такие селекторе в реальных проектах, если вы не уверены, что это допустимое исключение (например, box-sizing).*,*::before,*::after {}outline: 1px solid limegreen !important;background-color: rgba(0, 100, 0, 0.1) !important;"
     } ,
@@ -229,7 +229,7 @@
       "title"    : "Дизайн принципы",
       "category" : "",
       "tags"     : "design",
-      "url"      : "/webdevtips/2022/06/01/design-principles.html",
+      "url"      : "/webdevtips/design-principles.html",
       "date"     : "2022-06-01 03:00:00 +0300",
       "content"  : "Similarity — people perceive similar objects as the same or at least part of the same concept.Proximity — things close to each other are perceived as part of the same group.Continuity — you want your visitor’s gaze to move naturally from one element to another.Closure — an object that’s not entirely closed is still perceived as a whole because people’s brains will always fill in the gaps.Figure and ground — people simplify images into the main objects they’re looking at (the figure) and the other elements (background).А также:Якорные объекты"
     } ,
@@ -238,7 +238,7 @@
       "title"    : "Чем отличаются HTTP/2 и HTTP/3",
       "category" : "",
       "tags"     : "http",
-      "url"      : "/webdevtips/2022/01/25/http-3.html",
+      "url"      : "/webdevtips/http-3.html",
       "date"     : "2022-01-25 03:00:00 +0300",
       "content"  : "Напомню минимум теории: чем отличаются HTTP/2 и HTTP/3 и что такое QUIC.Классический стек — это HTTP/2, TLS, TCP, IP. Минимум половина участников Saint HighLoad++ используют именно его в своих приложениях.Альтернативное решение — HTTP/3. QUIC — это протокол поверх UDP, который реализует всё то же самое, что было в TCP, инкапсулирует в себе TLS, но лучше. Если поверх QUIC запустить HTTP/2, получится HTTP/3.Данные по QUIC передаются быстрее, особенно в плохой сети, потому что в QUIC есть:Zero-RTT — возможность отправить запрос сразу, без долгих handshake и acknowledgement;Multiplexing — передача нескольких потоков в одном соединении;IP Migration — смена IP-адреса, например, при переключении с мобильного интернета на Wi-Fi, происходит прозрачно (на TCP это может занять секунд 30);User Space implementation — это означает, что протокол не встроен в операционную систему, каждое приложение может иметь свою реализацию на клиенте;Congestion control — чтобы понять, что это и как влияет на скорость передачи данных, погрузимся глубже в устройство сетевого слоя."
     } ,
@@ -247,7 +247,7 @@
       "title"    : "Emmet все html элементы на своей строке",
       "category" : "",
       "tags"     : "emmet, html, vs code",
-      "url"      : "/webdevtips/2021/08/16/emmet-all-html-new-line.html",
+      "url"      : "/webdevtips/emmet-all-html-new-line.html",
       "date"     : "2021-08-16 03:00:00 +0300",
       "content"  : "Для встроенного в VS Code emmet. Чтобы все элементы создавались на новой строке, а не одной. Включая например ссылки внутри пунктов меню.В settings.json добавьте&quot;emmet.syntaxProfiles&quot;: { &quot;html&quot;: {  &quot;inline_break&quot;: 1 }},"
     } ,
@@ -256,7 +256,7 @@
       "title"    : "Мониторинг элементов в фокусе",
       "category" : "",
       "tags"     : "devtools, focus, chrome, firefox",
-      "url"      : "/webdevtips/2021/08/05/focus-monitoring.html",
+      "url"      : "/webdevtips/focus-monitoring.html",
       "date"     : "2021-08-05 03:00:00 +0300",
       "content"  : "ChromeConsole &amp;gt; Create Live Expressiondocument.activeElementClick outside of the Live Expression UI to saveHover over the result to highlight the focused element in the viewport.Right-click the result and select Reveal in Elements panel to show the element in the DOM Tree on the Elements panel.Right-click the result and select Store as global variable to create a variable reference to the node that you can use in the Console.Firefox:var lastElement = document.activeElement;setInterval(function() {  if (lastElement != document.activeElement) {    lastElement = document.activeElement;    console.log(document.activeElement);  }}, 100);"
     } ,
@@ -265,7 +265,7 @@
       "title"    : "regex tricks",
       "category" : "",
       "tags"     : "regex, html",
-      "url"      : "/webdevtips/2021/08/04/regex-tricks.html",
+      "url"      : "/webdevtips/regex-tricks.html",
       "date"     : "2021-08-04 03:00:00 +0300",
       "content"  : "Замена html элементов&amp;lt;/a&amp;gt;n*.*&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;ntttt&amp;lt;/a&amp;gt;Удалить пустые строчки, проще всего расширением Remove Empty Lines в vs code"
     } ,
@@ -274,7 +274,7 @@
       "title"    : "Почему не стоит использовать .class &gt; tag?",
       "category" : "",
       "tags"     : "css, selectors",
-      "url"      : "/webdevtips/2021/08/03/dont-use-this-selector.html",
+      "url"      : "/webdevtips/dont-use-this-selector.html",
       "date"     : "2021-08-03 03:00:00 +0300",
       "content"  : "Почему не стоит использовать .class &amp;gt; tag? Часто хочется, потому что лень задавать классы всем пунктам списка и т.п.Потому что специфичность. Этот селектор перепишет другие с одним классом. Сейчас это может не быть проблемой, но обязательно будет потом.Например (тру стори) класс .item для пункта списка не сможет переписать свойства текста из .list &amp;gt; li."
     } ,
@@ -283,7 +283,7 @@
       "title"    : "Ссылки в iframe",
       "category" : "",
       "tags"     : "html",
-      "url"      : "/webdevtips/2021/06/17/iframe-links-new-tab.html",
+      "url"      : "/webdevtips/iframe-links-new-tab.html",
       "date"     : "2021-06-17 03:00:00 +0300",
       "content"  : "Чтобы ссылки с target _blank из iframe с sandbox могли открываться в новой вкладке/окне айфрейму нужно поставить sandbox=&quot;allow-popups&quot;"
     } ,
@@ -292,7 +292,7 @@
       "title"    : "Найти элемент выходящий за вьюпорт",
       "category" : "",
       "tags"     : "javascript, css, qa",
-      "url"      : "/webdevtips/2021/04/15/get-overflow.html",
+      "url"      : "/webdevtips/get-overflow.html",
       "date"     : "2021-04-15 03:00:00 +0300",
       "content"  : "Как найти элемент, выходящий за вьюпорт/родителяВыполните в консоле браузера:var docWidth = document.documentElement.offsetWidth;[].forEach.call(  document.querySelectorAll(&#39;*&#39;),  function(el) {    if (el.offsetWidth &amp;gt; docWidth) {      console.log(el);    }  });"
     } ,
@@ -301,7 +301,7 @@
       "title"    : "How to suppress &quot;Terminate batch job (Y/N)&quot; confirmation?",
       "category" : "",
       "tags"     : "terminal, cmd, clink",
-      "url"      : "/webdevtips/2021/03/30/suppress-cmd-y-n.html",
+      "url"      : "/webdevtips/suppress-cmd-y-n.html",
       "date"     : "2021-03-30 03:00:00 +0300",
       "content"  : "Install Clink оригинал или форк с поддержкой and change the “terminate_autoanswer” setting. The settings file should be here: C:Users&amp;lt;username&amp;gt;AppDataLocalclinksettings.# name: Auto-answer terminate prompt # type: enum # Automatically answers cmd.exe&#39;s &#39;Terminate batch job (Y/N)?&#39; prompts. 0 = # disabled, 1 = answer &#39;Y&#39;, 2 = answer &#39;N&#39;. terminate_autoanswer = 1 or run clink set terminate_autoanswer 1You can also see current value if you run this command without last argument. And you can even see the location of config file if you run just clink setУ меня оно работает, но не на 100%. Позволяет нажать ctrl+c два раза для выключения."
     } ,
@@ -310,7 +310,7 @@
       "title"    : "Как прижать футер",
       "category" : "",
       "tags"     : "css, flexbox",
-      "url"      : "/webdevtips/2021/02/24/press-footer-down.html",
+      "url"      : "/webdevtips/press-footer-down.html",
       "date"     : "2021-02-24 03:00:00 +0300",
       "content"  : "Современный способ на флексбоксе:body {    min-height: 100vh;    display: flex;    flex-direction: column;}main {    /* This will make the main element take the remaining space dynamically */    flex-grow: 1;}"
     } 
