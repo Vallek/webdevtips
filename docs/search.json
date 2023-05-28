@@ -118,6 +118,15 @@
     } ,
   
     {
+      "title"    : "win+r команды выполнить",
+      "category" : "",
+      "tags"     : "windows",
+      "url"      : "/webdevtips/2023/02/22/win-r-commands.html",
+      "date"     : "2023-02-22 03:00:00 +0300",
+      "content"  : "Проверялось на Windows 10explorer.exe - процесс рабочего стола на случай, если нужно закрыть и запустить опятьms-settings:taskbar - настройки таскбараshell:startup - папка автозапуска, можно добавить ярлыкиshell:sendto - контекстное меню Отправитьcontrol - панель управленияdevmgmt.msc - диспетчер устройствdccw - калибровка экранаmmsys.cpl - настройки звукаmsinfo32.exe - подробные свойства пк и системыpowercfg.cpl - настройки питанияregedit - редактор реестраmsconfig - настройки системыcompmgmt.msc - управление компьютеромtaskschd.msc - планировщик заданийgpedit.msc - локальные групповые политикиservices.msc - сервисы ОСdiskmgmt.msc -управление дискамиdiskpart - cli утилита для управления дискамиcleanmgr - очистка дискаnetstat - активные сетевые подключения"
+    } ,
+  
+    {
       "title"    : "Когда git ignore не работает",
       "category" : "",
       "tags"     : "git",
