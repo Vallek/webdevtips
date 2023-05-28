@@ -10,6 +10,15 @@
     } ,
   
     {
+      "title"    : "Disable thumbnails for alt+tab in win10",
+      "category" : "",
+      "tags"     : "regedit, windows",
+      "url"      : "/webdevtips/2023/05/28/disable-alt-tab-thumb-win10.html",
+      "date"     : "2023-05-28 03:00:00 +0300",
+      "content"  : "  win+r &amp;gt; regedit  HKEY_CURRENT_USERSoftwareMicrosoftWindowsCurrentVersionExplorer  Создать AltTabSettings, тип DWORD 32  Поставить значение 1"
+    } ,
+  
+    {
       "title"    : "Адаптивные шрифты",
       "category" : "",
       "tags"     : "css, fonts, responsive",
