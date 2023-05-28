@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Сокращенные команды для cmd/powershell | Web Dev Tips</title>
+<title>Alias - сокращенные команды для cmd/powershell | Web Dev Tips</title>
 <meta name="generator" content="Jekyll v3.8.7" />
-<meta property="og:title" content="Сокращенные команды для cmd/powershell" />
+<meta property="og:title" content="Alias - сокращенные команды для cmd/powershell" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Alias - это сокращенные команды, которые можно использовать вместо слишком длинных в терминале. Например я часто запускаю bejs вместо bundle exec jekyll serve." />
 <meta property="og:description" content="Alias - это сокращенные команды, которые можно использовать вместо слишком длинных в терминале. Например я часто запускаю bejs вместо bundle exec jekyll serve." />
@@ -15,9 +15,9 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-02-03T03:00:00+03:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Сокращенные команды для cmd/powershell" />
+<meta property="twitter:title" content="Alias - сокращенные команды для cmd/powershell" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-03T03:00:00+03:00","datePublished":"2023-02-03T03:00:00+03:00","description":"Alias - это сокращенные команды, которые можно использовать вместо слишком длинных в терминале. Например я часто запускаю bejs вместо bundle exec jekyll serve.","headline":"Сокращенные команды для cmd/powershell","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/webdevtips/alias-for-command-in-cmd.html"},"url":"http://localhost:4000/webdevtips/alias-for-command-in-cmd.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-03T03:00:00+03:00","datePublished":"2023-02-03T03:00:00+03:00","description":"Alias - это сокращенные команды, которые можно использовать вместо слишком длинных в терминале. Например я часто запускаю bejs вместо bundle exec jekyll serve.","headline":"Alias - сокращенные команды для cmd/powershell","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/webdevtips/alias-for-command-in-cmd.html"},"url":"http://localhost:4000/webdevtips/alias-for-command-in-cmd.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/webdevtips/assets/main.css"> 
   <script defer src="/webdevtips/js/simple-jekyll-search.js"></script>
@@ -115,6 +115,8 @@
 			<h3 class="sidebar__title">webdev</h3>
 			<ul class="sidebar__notes">
 				<li class="sidebar__note">
+					<a class="sidebar__link" href="/webdevtips/editor-env-var.html">Переменные среды редактора для терминала</a>
+				</li><li class="sidebar__note">
 					<a class="sidebar__link" href="/webdevtips/openssl-local-server-with-https.html">OpenSSL local server with HTTPS</a>
 				</li><li class="sidebar__note">
 					<a class="sidebar__link" href="/webdevtips/push-pull-error.html">Если не работает remote pull/push</a>
@@ -127,7 +129,7 @@
 				</li><li class="sidebar__note">
 					<a class="sidebar__link" href="/webdevtips/repo-inside-repo-vscode.html">Репозиторий внутри репозитория в vs code</a>
 				</li><li class="sidebar__note">
-					<a class="sidebar__link" href="/webdevtips/alias-for-command-in-cmd.html">Сокращенные команды для cmd/powershell</a>
+					<a class="sidebar__link" href="/webdevtips/alias-for-command-in-cmd.html">Alias - сокращенные команды для cmd/powershell</a>
 				</li><li class="sidebar__note">
 					<a class="sidebar__link" href="/webdevtips/localhost-on-mobile.html">Открыть localhost на мобильном</a>
 				</li><li class="sidebar__note">
@@ -166,7 +168,7 @@
           <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Сокращенные команды для cmd/powershell</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Alias - сокращенные команды для cmd/powershell</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2023-02-03T03:00:00+03:00" itemprop="datePublished">Feb 3, 2023
       </time><a class="edit-button" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/2023-02-03-alias-for-command-in-cmd.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
@@ -180,7 +182,7 @@
 
 <ol>
   <li>Создайте файл <strong>init.cmd</strong> в папке пользователя OC
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\\Users\YourName\init.cmd
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\YourName\init.cmd
 </code></pre></div>    </div>
     <p>Он может быть и в другом месте (у меня он в папке с репами).</p>
   </li>
@@ -224,6 +226,8 @@ function runW3CValidatorServer {
 }
 New-Alias valid runW3CValidatorServer
 </code></pre></div></div>
+
+<p>А еще так можно задать <a href="editor-env-var.html">переменные среды для терминала</a>.</p>
 
   </div><span>Источник: </span>
   <a class="source-link" href="https://stackoverflow.com/questions/54866820/create-alias-for-a-specific-command-in-cmd/65823225#65823225">https://stackoverflow.com/questions/54866820/create-alias-for-a-specific-command-in-cmd/65823225#65823225</a>

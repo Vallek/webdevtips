@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Сокращенные команды для cmd/powershell'
+title: 'Alias - сокращенные команды для cmd/powershell'
 date: 2023-02-03 00:00 +0000
 notebook: webdev
 tags: [terminal, cmd, powershell]
@@ -12,7 +12,7 @@ Alias - это сокращенные команды, которые можно 
 
 1.  Создайте файл **init.cmd** в папке пользователя OC 
 ```
-C:\\Users\YourName\init.cmd
+C:\Users\YourName\init.cmd
 ```
 Он может быть и в другом месте (у меня он в папке с репами).
 
@@ -59,3 +59,5 @@ function runW3CValidatorServer {
 }
 New-Alias valid runW3CValidatorServer
 ```
+
+А еще так можно задать [переменные среды для терминала](editor-env-var.html).

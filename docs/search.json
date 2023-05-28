@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "Переменные среды редактора для терминала",
+      "category" : "",
+      "tags"     : "terminal, cmd, powershell, windows, jekyll",
+      "url"      : "/webdevtips/editor-env-var.html",
+      "date"     : "2023-05-28 21:33:00 +0300",
+      "content"  : "Расширение jekyll compose для Jekyll может автоматически открывать созданные файлы. Но для этого помимо настройки нужно задать переменную среды редактора по умолчанию для вашего терминала. Я использую clink для cmd.  Создайте файл init.cmd в папке пользователя OC    C:UsersYourNameinit.cmd        Он может быть и в другом месте (у меня он в папке с репами).    Синтаксис:    set VAR_NAME=value        Задаем VS Code как редактор по умолчанию.    set JEKYLL_EDITOR=code        Обратите внимание, что нужно именно такое название.    Теперь нужно это зарегистрировать, чтобы автоматически применять при запуске cmd.exeВ терминале выполните:reg add &quot;HKCUSoftwareMicrosoftCommand Processor&quot; /v AutoRun /t REG_EXPAND_SZ /d &quot;%&quot;USERPROFILE&quot;%init.cmd&quot; /f Убедитесь, что путь до init.cmd указан верноГотово!Перезапустите cmd и переменная должна работать.Чтобы отменить регистрацию выполните:reg delete &quot;HKCUSoftwareMicrosoftCommand Processor&quot; /v AutoRunА еще так можно задать сокращенные команды для cmd/powershell."
+    } ,
+  
+    {
       "title"    : "Адаптивные гриды одной строкой",
       "category" : "",
       "tags"     : "css, responsive, grid",
@@ -181,12 +190,12 @@
     } ,
   
     {
-      "title"    : "Сокращенные команды для cmd/powershell",
+      "title"    : "Alias - сокращенные команды для cmd/powershell",
       "category" : "",
       "tags"     : "terminal, cmd, powershell",
       "url"      : "/webdevtips/alias-for-command-in-cmd.html",
       "date"     : "2023-02-03 03:00:00 +0300",
-      "content"  : "Alias - это сокращенные команды, которые можно использовать вместо слишком длинных в терминале. Например я часто запускаю bejs вместо bundle exec jekyll serve.Я использую cmd.exe с расширением clink (рецепт работает и без него). Проверено в Windows 10/11.  Создайте файл init.cmd в папке пользователя OC    C:UsersYourNameinit.cmd        Он может быть и в другом месте (у меня он в папке с репами).    Пример содержимого файла:    @echo offdoskey c=clsdoskey d=cd %USERPROFILE%Desktopdoskey e=explorer $*doskey jp=cd C:JohnPicturesdoskey l=dir /a $*         Каждый doskey задает alias. Синтаксис doskey alias=command.    Теперь нужно это зарегистрировать, чтобы автоматически применять при запуске cmd.exeВ терминале выполните:reg add &quot;HKCUSoftwareMicrosoftCommand Processor&quot; /v AutoRun /t REG_EXPAND_SZ /d &quot;%&quot;USERPROFILE&quot;%init.cmd&quot; /f Убедитесь, что путь до init.cmd указан верноГотово!Перезапустите cmd и alias должны работать.Чтобы отменить регистрацию выполните:reg delete &quot;HKCUSoftwareMicrosoftCommand Processor&quot; /v AutoRunДля PowerShell:function bundleExecJekyllServe {    bundle exec jekyll serve}New-Alias bejs bundleExecJekyllServefunction runW3CValidatorServer {    D:/Webdev/vnu-runtime-image/bin/java nu.validator.servlet.Main 8888}New-Alias valid runW3CValidatorServer"
+      "content"  : "Alias - это сокращенные команды, которые можно использовать вместо слишком длинных в терминале. Например я часто запускаю bejs вместо bundle exec jekyll serve.Я использую cmd.exe с расширением clink (рецепт работает и без него). Проверено в Windows 10/11.  Создайте файл init.cmd в папке пользователя OC    C:UsersYourNameinit.cmd        Он может быть и в другом месте (у меня он в папке с репами).    Пример содержимого файла:    @echo offdoskey c=clsdoskey d=cd %USERPROFILE%Desktopdoskey e=explorer $*doskey jp=cd C:JohnPicturesdoskey l=dir /a $*         Каждый doskey задает alias. Синтаксис doskey alias=command.    Теперь нужно это зарегистрировать, чтобы автоматически применять при запуске cmd.exeВ терминале выполните:reg add &quot;HKCUSoftwareMicrosoftCommand Processor&quot; /v AutoRun /t REG_EXPAND_SZ /d &quot;%&quot;USERPROFILE&quot;%init.cmd&quot; /f Убедитесь, что путь до init.cmd указан верноГотово!Перезапустите cmd и alias должны работать.Чтобы отменить регистрацию выполните:reg delete &quot;HKCUSoftwareMicrosoftCommand Processor&quot; /v AutoRunДля PowerShell:function bundleExecJekyllServe {    bundle exec jekyll serve}New-Alias bejs bundleExecJekyllServefunction runW3CValidatorServer {    D:/Webdev/vnu-runtime-image/bin/java nu.validator.servlet.Main 8888}New-Alias valid runW3CValidatorServerА еще так можно задать переменные среды для терминала."
     } ,
   
     {
