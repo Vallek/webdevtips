@@ -423,6 +423,9 @@ table {
   color: white;
   background-color: hwb(var(--hue) 0% 20%/0.8); }
 
+.source-link {
+  word-break: break-all; }
+
 .tags-cloud {
   position: sticky;
   top: 0;

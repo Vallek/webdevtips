@@ -374,6 +374,10 @@
   background-color: hwb(var(--hue) 0% 20%/0.8);
 }
 
+.source-link {
+  word-break: break-all;
+}
+
 // Tags cloud
 .tags-cloud {
   position: sticky;
