@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "Мои горячие клавиши для VS Code",
+      "category" : "",
+      "tags"     : "vs code, shortcuts, git, emmet",
+      "url"      : "/webdevtips/vs-code-shortcuts.html",
+      "date"     : "2023-05-29 11:42:00 +0300",
+      "content"  : "Набор мои сочетаний в vs code, которые позволяют экономить время и делать работу чуть проще. Вы можете добавить их в keybindings.json или просто в интерфейс горячих клавиш.Закомитить и все файлы одного репозитория или те, которые в stage. И сделать pull/push.{ &quot;key&quot;: &quot;ctrl+alt+c&quot;, &quot;command&quot;: &quot;git.commit&quot;},{ &quot;key&quot;: &quot;ctrl+alt+g&quot;, &quot;command&quot;: &quot;git.sync&quot;},Выделить диапазон с помомощью emmet. Например текст внутри html тегов.{ &quot;key&quot;: &quot;ctrl+shift+a&quot;, &quot;command&quot;: &quot;editor.emmet.action.balanceOut&quot;},Выделить все совпадения (если отключено автоматом при выделении){  &quot;key&quot;: &quot;ctrl+shift+l&quot;,  &quot;command&quot;: &quot;editor.action.selectHighlights&quot;,  &quot;when&quot;: &quot;editorFocus&quot;}"
+    } ,
+  
+    {
       "title"    : "Переменные среды редактора для терминала",
       "category" : "",
       "tags"     : "terminal, cmd, powershell, windows, jekyll",

@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-05-29T11:40:10+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>Tips and tricks for frontend and web developers</subtitle><entry><title type="html">Переменные среды редактора для терминала</title><link href="http://0.0.0.0:4000/webdevtips/editor-env-var.html" rel="alternate" type="text/html" title="Переменные среды редактора для терминала" /><published>2023-05-28T21:33:00+03:00</published><updated>2023-05-28T21:33:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/editor-env-var</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/editor-env-var.html"><![CDATA[<p>Расширение jekyll compose для Jekyll может автоматически открывать созданные файлы. Но для этого помимо <a href="https://github.com/jekyll/jekyll-compose#auto-open-new-drafts-or-posts-in-your-editor">настройки</a> нужно задать переменную среды редактора по умолчанию для вашего терминала. Я использую clink для cmd.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-05-29T12:00:51+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>Tips and tricks for frontend and web developers</subtitle><entry><title type="html">Мои горячие клавиши для VS Code</title><link href="http://0.0.0.0:4000/webdevtips/vs-code-shortcuts.html" rel="alternate" type="text/html" title="Мои горячие клавиши для VS Code" /><published>2023-05-29T11:42:00+03:00</published><updated>2023-05-29T11:42:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/vs-code-shortcuts</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/vs-code-shortcuts.html"><![CDATA[<p>Набор мои сочетаний в vs code, которые позволяют экономить время и делать работу чуть проще. Вы можете добавить их в keybindings.json или просто в интерфейс горячих клавиш.</p>
+
+<p>Закомитить и все файлы одного репозитория или те, которые в stage. И сделать pull/push.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"key": "ctrl+alt+c",
+	"command": "git.commit"
+},
+{
+	"key": "ctrl+alt+g",
+	"command": "git.sync"
+},
+</code></pre></div></div>
+<p>Выделить диапазон с помомощью emmet. Например текст внутри html тегов.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"key": "ctrl+shift+a",
+	"command": "editor.emmet.action.balanceOut"
+},
+</code></pre></div></div>
+<p>Выделить все совпадения (если отключено автоматом при выделении)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "key": "ctrl+shift+l",
+  "command": "editor.action.selectHighlights",
+  "when": "editorFocus"
+}
+</code></pre></div></div>]]></content><author><name></name></author><category term="vs code" /><category term="shortcuts" /><category term="git" /><category term="emmet" /><summary type="html"><![CDATA[Набор мои сочетаний в vs code, которые позволяют экономить время и делать работу чуть проще. Вы можете добавить их в keybindings.json или просто в интерфейс горячих клавиш.]]></summary></entry><entry><title type="html">Переменные среды редактора для терминала</title><link href="http://0.0.0.0:4000/webdevtips/editor-env-var.html" rel="alternate" type="text/html" title="Переменные среды редактора для терминала" /><published>2023-05-28T21:33:00+03:00</published><updated>2023-05-28T21:33:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/editor-env-var</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/editor-env-var.html"><![CDATA[<p>Расширение jekyll compose для Jekyll может автоматически открывать созданные файлы. Но для этого помимо <a href="https://github.com/jekyll/jekyll-compose#auto-open-new-drafts-or-posts-in-your-editor">настройки</a> нужно задать переменную среды редактора по умолчанию для вашего терминала. Я использую clink для cmd.</p>
 
 <ol>
   <li>Создайте файл <strong>init.cmd</strong> в папке пользователя OC
@@ -122,24 +147,4 @@
 
 <p><code class="highlighter-rouge">git pull https://github.com/user/repo --allow-unrelated-histories</code></p>
 
-<p>Будьте осторожны! Убедитесь, что комитите те изменения, которые вам нужно.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Такое случается, если создать локальный репозиторий отдельно от удаленного и если у них отличаются истории. Иногда задать remote вручную недостаточно и происходит конфликт. Не работают ни push, ни pull.]]></summary></entry><entry><title type="html">Переключение версий node.js/npm</title><link href="http://0.0.0.0:4000/webdevtips/switch-node-npm-version.html" rel="alternate" type="text/html" title="Переключение версий node.js/npm" /><published>2023-04-17T03:00:00+03:00</published><updated>2023-04-17T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/switch-node-npm-version</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/switch-node-npm-version.html"><![CDATA[<p>Иногда старые проекты на node.js не запускаются на новых версиях ноды или npm. Если при сборке вы видите кучу ошибок об устаревших версиях и конфликтах, не спешите сдаваться. Возможно поможет использование старой ноды или npm.</p>
-
-<p>Для установки разных версий на одну ОС существует несколько разных программ. Я использую <strong>nvm</strong>. Версию для винды можно <a href="https://github.com/coreybutler/nvm-windows">скачать тут</a>.</p>
-
-<p>С помощью nvm можно установить не только разные версии ноды, но и разные npm. Их можно привязать к версиях ноды. То есть например ноду берете предыдущий патч, а npm устанавливаете, который вам нужно.</p>
-
-<p>Узнать, куда nvm устанавливает версии ноды <code class="highlighter-rouge">nvm root</code>. Осторожно! Эта же команда с путем меняет путь установки.</p>
-
-<p>Установить конкретную версия npm на активную версию ноды</p>
-
-<p><code class="highlighter-rouge">npm install npm@X.X.X</code></p>
-
-<p>Например <code class="highlighter-rouge">npm install npm@6.14.18</code></p>
-
-<p>Переключить версию ноды (версия npm привязана к версии ноды)</p>
-
-<p><code class="highlighter-rouge">nvm use XX</code></p>
-
-<p>Например <code class="highlighter-rouge">nvm use 16</code></p>
-
-<p>Про все остальные команды читайте по ссылке в readme репозитория выше.</p>]]></content><author><name></name></author><category term="nodejs" /><category term="npm" /><category term="nvm" /><summary type="html"><![CDATA[Иногда старые проекты на node.js не запускаются на новых версиях ноды или npm. Если при сборке вы видите кучу ошибок об устаревших версиях и конфликтах, не спешите сдаваться. Возможно поможет использование старой ноды или npm.]]></summary></entry></feed>
+<p>Будьте осторожны! Убедитесь, что комитите те изменения, которые вам нужно.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Такое случается, если создать локальный репозиторий отдельно от удаленного и если у них отличаются истории. Иногда задать remote вручную недостаточно и происходит конфликт. Не работают ни push, ни pull.]]></summary></entry></feed>
