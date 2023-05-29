@@ -4,7 +4,7 @@ title: 'Посты в Jekyll без даты в имени файла'
 date: 2023-05-29 11:42 +0300
 notebook: webdev
 tags: [jekyll]
-sources: [https://stackoverflow.com/questions/27099427/jekyll-filename-without-date/68287682#68287682]
+sources: ['https://stackoverflow.com/questions/27099427/jekyll-filename-without-date/68287682#68287682']
 ---
 
 Создайте _plugins/no_date.rb:
