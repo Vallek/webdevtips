@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-05-29T14:15:40+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>Tips and tricks for frontend and web developers</subtitle><entry><title type="html">Firefox игнорирует цветовой профиль монитора</title><link href="http://0.0.0.0:4000/webdevtips/firefox-color-management.html" rel="alternate" type="text/html" title="Firefox игнорирует цветовой профиль монитора" /><published>2023-05-29T14:10:00+03:00</published><updated>2023-05-29T14:10:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/firefox-color-management</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/firefox-color-management.html"><![CDATA[<p>В Firefox не работает color management, то есть он игнорирует цветовой профиль монитора srgb и цвета искажены.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-05-29T14:19:45+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>Tips and tricks for frontend and web developers</subtitle><entry><title type="html">Highlight Matching Tag в VS Code</title><link href="http://0.0.0.0:4000/webdevtips/highlight-matching-tag.html" rel="alternate" type="text/html" title="Highlight Matching Tag в VS Code" /><published>2023-05-29T14:18:00+03:00</published><updated>2023-05-29T14:18:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/highlight-matching-tag</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/highlight-matching-tag.html"><![CDATA[<p>Кто тоже использует расширение Highlight Matching Tag в VS Code и хочет сделать подчеркивание и отметки справа разными цветами ловите настройки:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"highlight-matching-tag.styles": {
+        "opening": {
+            "name": {
+                "custom": {
+                    "dark": {
+                        "overviewRulerColor": "yellow"
+                    },
+                },
+                "underline": "#839496",
+            }
+        }
+    },
+</code></pre></div></div>]]></content><author><name></name></author><category term="vs code" /><summary type="html"><![CDATA[Кто тоже использует расширение Highlight Matching Tag в VS Code и хочет сделать подчеркивание и отметки справа разными цветами ловите настройки: "highlight-matching-tag.styles": { "opening": { "name": { "custom": { "dark": { "overviewRulerColor": "yellow" }, }, "underline": "#839496", } } },]]></summary></entry><entry><title type="html">Firefox игнорирует цветовой профиль монитора</title><link href="http://0.0.0.0:4000/webdevtips/firefox-color-management.html" rel="alternate" type="text/html" title="Firefox игнорирует цветовой профиль монитора" /><published>2023-05-29T14:10:00+03:00</published><updated>2023-05-29T14:10:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/firefox-color-management</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/firefox-color-management.html"><![CDATA[<p>В Firefox не работает color management, то есть он игнорирует цветовой профиль монитора srgb и цвета искажены.</p>
 
 <p>Убедитесь, что в about:config выставлено:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gfx.color_management.enablev4 - true	
@@ -169,31 +182,4 @@ href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewB
 
 <p>Из webkit docs</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>transform .25s cubic-bezier(.1,.7,.1,1),box-shadow .25s
-</code></pre></div></div>]]></content><author><name></name></author><category term="css" /><category term="animation" /><summary type="html"><![CDATA[Плавные функции для анимаций из разных источников]]></summary></entry><entry><title type="html">Мониторинг браузерных событий</title><link href="http://0.0.0.0:4000/webdevtips/eventsmonitoring.html" rel="alternate" type="text/html" title="Мониторинг браузерных событий" /><published>2023-05-25T00:00:00+03:00</published><updated>2023-05-25T00:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/eventsmonitoring</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/eventsmonitoring.html"><![CDATA[<h2 id="chrome">Chrome</h2>
-
-<p>Для того, чтобы видеть все браузерные события в реальном времени введите в консоли браузера <code class="highlighter-rouge">monitorEvents(tempVar, 'events type')</code></p>
-
-<p><code class="highlighter-rouge">tempVar</code> временная переменная, которую можно создать в девтулзах (ПКМ на любом узле &gt; store as global variable).</p>
-
-<p>Можно просто найти узел. Например <code class="highlighter-rouge">monitorEvents(document.body, 'mouse')</code>.</p>
-
-<p><code class="highlighter-rouge">events type</code> - тип событий, например ‘mouse’. Можно и отдельные события.</p>
-
-<h2 id="firefox">Firefox</h2>
-
-<p>В лисе к сожалению такой встроенной функции нет. Но ее можно создать самому!</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function monitorEvents(element) {
-  let log = function(e) { console.log(e);};
-  let events = [];
-
-  for(let i in element) {
-    if(i.startsWith("on")) events.push(i.substr(2));
-  }
-  events.forEach(function(eventName) {
-    element.addEventListener(eventName, log);
-  });
-}
-</code></pre></div></div>
-<p>Затем выполните с нужным узлом в качестве аргумента. Например <code class="highlighter-rouge">monitorEvents(temp0)</code> или monitorEvents(document.body).</p>
-
-<p><em>Совет со stackoverflow</em>: If you’re trying to see all the events are happening inside an element (such as the body), you should log during the capture phase - element.addEventListener(eventName, log, true);</p>]]></content><author><name></name></author><category term="devtools" /><category term="events" /><category term="chrome" /><category term="firefox" /><summary type="html"><![CDATA[Chrome]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name></name></author><category term="css" /><category term="animation" /><summary type="html"><![CDATA[Плавные функции для анимаций из разных источников]]></summary></entry></feed>
