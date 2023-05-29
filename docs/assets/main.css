@@ -219,7 +219,7 @@ table {
   padding-left: 30px; }
 
 .site-nav {
-  width: 100%;
+  padding: 0 1em;
   max-width: 250px;
   text-align: right; }
   .site-nav .nav-trigger {
