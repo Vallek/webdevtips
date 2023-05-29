@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-05-29T14:05:17+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>Tips and tricks for frontend and web developers</subtitle><entry><title type="html">Как детектить выбор темной/светлой темы посетителя</title><link href="http://0.0.0.0:4000/webdevtips/dark-theme-detect.html" rel="alternate" type="text/html" title="Как детектить выбор темной/светлой темы посетителя" /><published>2023-05-29T13:50:00+03:00</published><updated>2023-05-29T13:50:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/dark-theme-detect</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/dark-theme-detect.html"><![CDATA[<p>На входе</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-05-29T14:15:40+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>Tips and tricks for frontend and web developers</subtitle><entry><title type="html">Firefox игнорирует цветовой профиль монитора</title><link href="http://0.0.0.0:4000/webdevtips/firefox-color-management.html" rel="alternate" type="text/html" title="Firefox игнорирует цветовой профиль монитора" /><published>2023-05-29T14:10:00+03:00</published><updated>2023-05-29T14:10:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/firefox-color-management</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/firefox-color-management.html"><![CDATA[<p>В Firefox не работает color management, то есть он игнорирует цветовой профиль монитора srgb и цвета искажены.</p>
+
+<p>Убедитесь, что в about:config выставлено:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gfx.color_management.enablev4 - true	
+gfx.color_management.force_srgb - true	
+gfx.color_management.mode - 1	
+gfx.color_management.native_srgb - true
+</code></pre></div></div>
+
+<p><a href="http://www.lagom.nl/lcd-test/gradient.php#gradient-h.png">Картинка для проверки</a>. Градиент должен быть плавным (сравните с Хромом, может быть дело и в вашем мониторе, софте и т.д).</p>]]></content><author><name></name></author><category term="firefox" /><summary type="html"><![CDATA[В Firefox не работает color management, то есть он игнорирует цветовой профиль монитора srgb и цвета искажены.]]></summary></entry><entry><title type="html">Как детектить выбор темной/светлой темы посетителя</title><link href="http://0.0.0.0:4000/webdevtips/dark-theme-detect.html" rel="alternate" type="text/html" title="Как детектить выбор темной/светлой темы посетителя" /><published>2023-05-29T13:50:00+03:00</published><updated>2023-05-29T13:50:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/dark-theme-detect</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/dark-theme-detect.html"><![CDATA[<p>На входе</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {
     // dark mode
 }
@@ -187,25 +196,4 @@ href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewB
 </code></pre></div></div>
 <p>Затем выполните с нужным узлом в качестве аргумента. Например <code class="highlighter-rouge">monitorEvents(temp0)</code> или monitorEvents(document.body).</p>
 
-<p><em>Совет со stackoverflow</em>: If you’re trying to see all the events are happening inside an element (such as the body), you should log during the capture phase - element.addEventListener(eventName, log, true);</p>]]></content><author><name></name></author><category term="devtools" /><category term="events" /><category term="chrome" /><category term="firefox" /><summary type="html"><![CDATA[Chrome]]></summary></entry><entry><title type="html">OpenSSL local server with HTTPS</title><link href="http://0.0.0.0:4000/webdevtips/openssl-local-server-with-https.html" rel="alternate" type="text/html" title="OpenSSL local server with HTTPS" /><published>2023-05-13T03:00:00+03:00</published><updated>2023-05-13T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/openssl-local-server-with-https</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/openssl-local-server-with-https.html"><![CDATA[<p>Как запустить локальный сервер на https. Нужно, например, для тестирования js модулей.</p>
-
-<p>Для начала устанавливаете openssl <a href="https://wiki.openssl.org/index.php/Binaries">отсюда</a>. На винде там неофиц. версии, но вроде пишут, что норм. По крайней мере для теста.</p>
-
-<p>Открываете терминал. Переходите в папку проекта и выполняете</p>
-
-<p><code class="highlighter-rouge">openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem</code></p>
-
-<p>Это создаст для файла сертификатов, необходимых для работы https</p>
-
-<p>Оно спросит ввести несколько параметров типа имени, страны. Вроде бы можно вводить любые кроме Common Name. Тут нужен 127.0.0.1 для локального сервера.</p>
-
-<p>Дальше ставим сервер. У меня вот с этим сразу получилось. Для live server нужно писать конфиг с путями к файлам.</p>
-
-<p><code class="highlighter-rouge">npm install --global http-server</code></p>
-
-<p>И запускаем</p>
-
-<p><code class="highlighter-rouge">http-server -S -C cert.pem</code></p>
-
-<p>-S - это https
--C - это путь к файлам. У меня работало только когда в папке проекта.</p>]]></content><author><name></name></author><category term="local server" /><category term="https" /><category term="openssl" /><summary type="html"><![CDATA[Как запустить локальный сервер на https. Нужно, например, для тестирования js модулей.]]></summary></entry></feed>
+<p><em>Совет со stackoverflow</em>: If you’re trying to see all the events are happening inside an element (such as the body), you should log during the capture phase - element.addEventListener(eventName, log, true);</p>]]></content><author><name></name></author><category term="devtools" /><category term="events" /><category term="chrome" /><category term="firefox" /><summary type="html"><![CDATA[Chrome]]></summary></entry></feed>

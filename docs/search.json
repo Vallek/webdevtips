@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "Firefox игнорирует цветовой профиль монитора",
+      "category" : "",
+      "tags"     : "firefox",
+      "url"      : "/webdevtips/firefox-color-management.html",
+      "date"     : "2023-05-29 14:10:00 +0300",
+      "content"  : "В Firefox не работает color management, то есть он игнорирует цветовой профиль монитора srgb и цвета искажены.Убедитесь, что в about:config выставлено:gfx.color_management.enablev4 - true gfx.color_management.force_srgb - true gfx.color_management.mode - 1 gfx.color_management.native_srgb - trueКартинка для проверки. Градиент должен быть плавным (сравните с Хромом, может быть дело и в вашем мониторе, софте и т.д)."
+    } ,
+  
+    {
       "title"    : "Как детектить выбор темной/светлой темы посетителя",
       "category" : "",
       "tags"     : "css, dark theme, javascript, accessibility",

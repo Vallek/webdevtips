@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>PHP GD Library extension | Web Dev Tips</title>
+<title>Firefox игнорирует цветовой профиль монитора | Web Dev Tips</title>
 <meta name="generator" content="Jekyll v3.8.7" />
-<meta property="og:title" content="PHP GD Library extension" />
+<meta property="og:title" content="Firefox игнорирует цветовой профиль монитора" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Если вы используете локальный сервер на php и получаете ошибку GD Library extension not available with this PHP installation или что-то подобное." />
-<meta property="og:description" content="Если вы используете локальный сервер на php и получаете ошибку GD Library extension not available with this PHP installation или что-то подобное." />
-<link rel="canonical" href="http://0.0.0.0:4000/webdevtips/gd-extension-php.html" />
-<meta property="og:url" content="http://0.0.0.0:4000/webdevtips/gd-extension-php.html" />
+<meta name="description" content="В Firefox не работает color management, то есть он игнорирует цветовой профиль монитора srgb и цвета искажены." />
+<meta property="og:description" content="В Firefox не работает color management, то есть он игнорирует цветовой профиль монитора srgb и цвета искажены." />
+<link rel="canonical" href="http://0.0.0.0:4000/webdevtips/firefox-color-management.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/webdevtips/firefox-color-management.html" />
 <meta property="og:site_name" content="Web Dev Tips" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-04-12T03:00:00+03:00" />
+<meta property="article:published_time" content="2023-05-29T14:10:00+03:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="PHP GD Library extension" />
+<meta property="twitter:title" content="Firefox игнорирует цветовой профиль монитора" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-12T03:00:00+03:00","datePublished":"2023-04-12T03:00:00+03:00","description":"Если вы используете локальный сервер на php и получаете ошибку GD Library extension not available with this PHP installation или что-то подобное.","headline":"PHP GD Library extension","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/webdevtips/gd-extension-php.html"},"url":"http://0.0.0.0:4000/webdevtips/gd-extension-php.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-29T14:10:00+03:00","datePublished":"2023-05-29T14:10:00+03:00","description":"В Firefox не работает color management, то есть он игнорирует цветовой профиль монитора srgb и цвета искажены.","headline":"Firefox игнорирует цветовой профиль монитора","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/webdevtips/firefox-color-management.html"},"url":"http://0.0.0.0:4000/webdevtips/firefox-color-management.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%20%3E%3Ctext%20y=%22.9em%22%20font-size=%2290%22%20%3E👨‍💻%3C/text%20%3E%3C/svg%20%3E">
   <link rel="stylesheet" href="/webdevtips/assets/main.css"> 
@@ -177,27 +177,30 @@
           <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">PHP GD Library extension</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Firefox игнорирует цветовой профиль монитора</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2023-04-12T03:00:00+03:00" itemprop="datePublished">Apr 12, 2023
-      </time><a class="edit-button" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/2023-04-12-gd-extension-php.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
+      <time class="dt-published" datetime="2023-05-29T14:10:00+03:00" itemprop="datePublished">May 29, 2023
+      </time><a class="edit-button" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/2023-05-29-firefox-color-management.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
     </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Если вы используете локальный сервер на php и получаете ошибку
-<code class="highlighter-rouge">GD Library extension not available with this PHP installation</code> или что-то подобное.</p>
+    <p>В Firefox не работает color management, то есть он игнорирует цветовой профиль монитора srgb и цвета искажены.</p>
 
-<p>Найдите файл <em>php.ini</em> и раскомментируйте строчку <code class="highlighter-rouge">extension=gd</code></p>
+<p>Убедитесь, что в about:config выставлено:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gfx.color_management.enablev4 - true	
+gfx.color_management.force_srgb - true	
+gfx.color_management.mode - 1	
+gfx.color_management.native_srgb - true
+</code></pre></div></div>
+
+<p><a href="http://www.lagom.nl/lcd-test/gradient.php#gradient-h.png">Картинка для проверки</a>. Градиент должен быть плавным (сравните с Хромом, может быть дело и в вашем мониторе, софте и т.д).</p>
 
   </div><h2 class="post-tags__heading">Теги</h2>
   
   
-  <a class="tag-link tag-link_home" href="/webdevtips/tag/php"><span class="nobrake">php</span></a>
-  
-  
-  <a class="tag-link tag-link_home" href="/webdevtips/tag/local-server"><span class="nobrake">local-server</span></a>
-  <a class="u-url" href="/webdevtips/gd-extension-php.html" hidden></a>
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/firefox"><span class="nobrake">firefox</span></a>
+  <a class="u-url" href="/webdevtips/firefox-color-management.html" hidden></a>
 </article>
 
         </div>
