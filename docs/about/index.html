@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>About | Web Dev Tips</title>
+<title>О сайте | Web Dev Tips</title>
 <meta name="generator" content="Jekyll v3.8.7" />
-<meta property="og:title" content="About" />
+<meta property="og:title" content="О сайте" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="База знаний по фронтенду, веб-разработке и настройке пк" />
 <meta property="og:description" content="База знаний по фронтенду, веб-разработке и настройке пк" />
@@ -14,9 +14,9 @@
 <meta property="og:site_name" content="Web Dev Tips" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="About" />
+<meta property="twitter:title" content="О сайте" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"База знаний по фронтенду, веб-разработке и настройке пк","headline":"About","name":"Web Dev Tips","url":"http://0.0.0.0:4000/webdevtips/about/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","description":"База знаний по фронтенду, веб-разработке и настройке пк","headline":"О сайте","name":"Web Dev Tips","url":"http://0.0.0.0:4000/webdevtips/about/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%20%3E%3Ctext%20y=%22.9em%22%20font-size=%2290%22%20%3E👨‍💻%3C/text%20%3E%3C/svg%20%3E">
   <link rel="stylesheet" href="/webdevtips/assets/main.css"> 
@@ -52,7 +52,7 @@
         </label>
         <div class="trigger">
           <a class="page-link" href="https://github.com/Vallek/webdevtips">GitHub</a>
-          <a class="page-link" href="/webdevtips/about/index.html">About</a>
+          <a class="page-link" href="/webdevtips/about/index.html">О сайте</a>
         </div>
       </nav>
   </div>
@@ -180,11 +180,84 @@
           <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title">О сайте</h1>
   </header>
 
   <div class="post-content">
-    <p>Tips and tricks for frontend and web developers</p>
+    <h1 id="добро-пожаловать-на-web-dev-tips">Добро пожаловать на Web Dev Tips!</h1>
+
+<p>Web Dev Tips - это сборник советов и рецептов по веб-разработке (в основном по фронтенду) и настройке пк под себя, которые в какой-то момент мне помогли и которые я собрал в базу знаний, чтобы не забыть. Возможно они пригодятся и вам!</p>
+
+<p>Хочу подчеркнуть, что это <em>не</em> энциклопедия. Для получения обширных базовых знаний стоит обратиться к <a href="https://developer.mozilla.org/">MDN</a>, <a href="https://learn.javascript.ru/">javascript.info</a> или <a href="https://doka.guide/">Доке</a>. Часть заметок здесь взята из подобных сайтов, но в основном Web Dev Tips - это вещи, которые можно узнать только из практики. Частично из моей собственной, частично из stackoverflow, блогов и остального веба.</p>
+
+<p>Кстати, о разных источниках информации по фронтенду вы можете узнать из <a href="https://vallek.github.io/web-links/index.html">моей подборки</a>.</p>
+
+<p>Еще один дисклеймер: любым советам здесь вы следуете на свой страх и риск. Некоторые из них могут не работать у вас или работать не так.</p>
+
+<h2 id="как-пользоваться">Как пользоваться</h2>
+<p>Слева в боковой панели вы найдете все заметки, разделенные по нескольким общим рубрикам.</p>
+
+<p>В шапке есть поиск по всем заметкам (ищет по заголовкам, тегам и содержимому).</p>
+
+<p>Справа панель с тегами. У каждой заметки может быть множество тегов, то есть тем, которые она затрагивает.</p>
+
+<h2 id="как-поучаствовать">Как поучаствовать</h2>
+<p>Эти заметки из моей личной практики и лишь малая толика того, что может понадобиться в разработке. Вы можете помочь сделать эту подборку гораздо универсальнее и полезнее!</p>
+
+<p>Сайт Web Dev Tips сделан на <a href="https://jekyllrb.com/docs/">Jekyll</a>, но чтобы поучаствовать вам не обязательно что-то устанавливать и собирать. Достаточно отредактировать заметку прямо здесь на гитхабе или создать новую. Для редактирования нажмите на ссылку “Edit on GitHub!”, которая есть на каждой странице сайта. Все заметки - это файлы в формате <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">markdown</a>.</p>
+
+<p>Имя файла <strong>обязательно</strong> должно содержать дату в формате <code class="highlighter-rouge">YEAR-MONTH-DAY-name.md</code>, например <code class="highlighter-rouge">2023-04-22-how-to.md</code>. Сверху каждого нового файла должен быть заполнен front matter - скрытые свойства заметки. Синтаксис:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: post
+title: 'Заголовок, который будет виден пользователям'
+notebook: 'frontend'
+tags: [css, html, animation]
+---
+</code></pre></div></div>
+<p><strong>notebook</strong> - это одна из основных рубрик (см. ниже и в сайдбаре).</p>
+
+<p>Можно указать ссылку на источник в <strong>sources</strong>, если он есть. url должен быть кавычках.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sources: ['https://www.site.com/']
+</code></pre></div></div>
+<p>После этого нажмите на кнопку “Отправить пулл реквест”, мне придет уведомление и я посмотрю ваше предложение. Я могу его принять, не принять, изменить или предложить изменить вам.</p>
+
+<h2 id="рубрики">Рубрики</h2>
+<p>В данный момент на сайте есть рубрики frontend, webdev, backend и pc.</p>
+<ul>
+  <li>frontend - html, css, js, верстка и все вокруг этого.</li>
+  <li>webdev - сюда я вынес вещи, которые не обязательно относятся к фронтенду, но могут для него использоваться. Например npm пакеты, сборщики и т.п. Это сделано просто, чтобы не сваливать все в одну кучу.</li>
+  <li>backend - для любых языков веб бэка. Сам я бэкендом не занимаюсь, поэтому у меня тут не много заметок.</li>
+  <li>pc - советы, не имеющие отношения к разработке. Подобные вопросы можно найти на superuser, а не stackoverflow.</li>
+</ul>
+
+<p>Вы также можете предложить создать новый раздел, если вам есть, что в него добавить.</p>
+
+<h2 id="roadmap---то-что-уже-сделано-и-планы-на-будущее-может-меняться">Roadmap - то, что уже сделано и планы на будущее (может меняться)</h2>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Прототип верстки на базе дефолтной Jekyll темы minima вместо готовой, потому что я не ищу простых путей</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Автоматическое наполнение сайдбара</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Облако тегов, теги в постах</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Поиск по сайту</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Пагинация</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Перенос моих заметок из базы знаний в более презентабельном виде [частично]</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Кнопка редактировать на гитхабе</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Рассказ о создании сайта и о том, почему я не ищу простых путей в about</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Отображение источников из front matter на страницах постов</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Перенести ответы со stackoverflow из моих закладок, которых не было в заметках</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Главная страница с виджетами, перенос всех постов на отдельную</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Количество постов в облаке тегов</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Перенос на полностью свою верстку (БЭМ без нестинга, устаревших практик, убрать все от minima и т.п.)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Темная тема</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Гармошка в сайдбаре</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Сохранение фокуса в сайдбаре</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Подготовить верстку, как тему для jekyll (возможно еще отдельно форк поиска)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Подробности в результатах поиска (откуда результат, заголовок или текст)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Документация для участников</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Локализация интерфейса и содержимого на английский язык (и на русский, где на англ)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Ваши предложения)</li>
+</ul>
+
+<p>Если что-то не работает заведите, пожалуйста, issue. С любыми вопросами по проекту пишите в дискуссии. Другие предложения и вопросы можно писать на <a href="mailto:vwebdis@gmail.com">почту</a> или <a href="https://t.me/webval">телеграм</a>.</p>
 
 
   </div>
