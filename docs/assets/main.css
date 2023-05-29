@@ -195,6 +195,8 @@ table {
   background-color: #2980B9; }
 
 .header__title {
+  position: relative;
+  right: 30px;
   color: #fdfdfd;
   box-sizing: border-box;
   padding-left: 30px;
@@ -204,8 +206,7 @@ table {
   font-size: 26px;
   font-weight: 300;
   letter-spacing: -1px;
-  margin-bottom: 0;
-  margin-left: -30px; }
+  margin-bottom: 0; }
 
 .header__content {
   display: flex;
@@ -219,8 +220,11 @@ table {
   padding-left: 30px; }
 
 .site-nav {
+  flex: 1 2;
+  box-sizing: border-box;
   padding: 0 1em;
-  max-width: 250px;
+  width: 100%;
+  max-width: 290px;
   text-align: right; }
   .site-nav .nav-trigger {
     display: none; }
@@ -233,7 +237,7 @@ table {
       margin-right: 20px; }
 
 .header__search {
-  flex: 1 1 auto;
+  flex: 2 1 auto;
   position: relative;
   margin: 0 auto; }
 
