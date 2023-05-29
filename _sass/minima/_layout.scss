@@ -294,9 +294,12 @@
 .post-meta {
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-between;
   font-size: $small-font-size;
   color: $grey-color;
+}
+
+.post-header > .post-meta {
+  justify-content: space-between;
 }
 
 .post-link {
