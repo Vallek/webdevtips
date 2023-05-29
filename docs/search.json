@@ -37,6 +37,15 @@
     } ,
   
     {
+      "title"    : "Посты в Jekyll без даты в имени файла",
+      "category" : "",
+      "tags"     : "jekyll",
+      "url"      : "/webdevtips/jekyll-no-date.html",
+      "date"     : "2023-05-29 11:42:00 +0300",
+      "content"  : "Создайте _plugins/no_date.rb:class Jekyll::PostReader  def read_posts(dir)    read_publishable(dir, &quot;_posts&quot;, /.*.md$/)  endendПерезапустите сборку.Обратите внимание, что в моей версии другой regexp, потому что у markdown файлов расширение md.Проверено прямо вот на этом сайте) Но на всякий случай все файлы кроме этого будут названы с датами."
+    } ,
+  
+    {
       "title"    : "Мои горячие клавиши для VS Code",
       "category" : "",
       "tags"     : "vs code, shortcuts, git, emmet",
