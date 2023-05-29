@@ -1,4 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-05-29T13:47:36+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>Tips and tricks for frontend and web developers</subtitle><entry><title type="html">Inline svg favicon</title><link href="http://0.0.0.0:4000/webdevtips/inline-svg-favicon.html" rel="alternate" type="text/html" title="Inline svg favicon" /><published>2023-05-29T12:02:00+03:00</published><updated>2023-05-29T12:02:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/inline-svg-favicon</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/inline-svg-favicon.html"><![CDATA[<p>Код включает в себя escape символы, чтобы не ругался валидатор.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-05-29T14:05:17+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>Tips and tricks for frontend and web developers</subtitle><entry><title type="html">Как детектить выбор темной/светлой темы посетителя</title><link href="http://0.0.0.0:4000/webdevtips/dark-theme-detect.html" rel="alternate" type="text/html" title="Как детектить выбор темной/светлой темы посетителя" /><published>2023-05-29T13:50:00+03:00</published><updated>2023-05-29T13:50:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/dark-theme-detect</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/dark-theme-detect.html"><![CDATA[<p>На входе</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    // dark mode
+}
+</code></pre></div></div>
+
+<p>В реальном времени</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =&gt; {
+    const newColorScheme = event.matches ? "dark" : "light";
+});
+</code></pre></div></div>
+
+<p>Я использую этот метод в своей <a href="https://vallek.github.io/web-links/index.html">подборке ссылок</a>. На момент написания это выглядит так:
+В CSS я просто добавил класс dark, который динамически миксуется к классу page, переписывая цвета специфичностью (два класса). Не по БЭМу, но как часто советуют сначала делал, чтобы работало) Потом может перепишу под БЭМ.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.dark.page {background-color:#002B36;} 
+.dark header {color:#c3d5d9;} 
+и так далее
+</code></pre></div></div>
+<p>JS:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const page = document.querySelector('.page');
+// Theme switch buttons
+const lightThemeLink = document.querySelector('.themes__link_light');
+const darkThemeLink = document.querySelector('.themes__link_dark');
+
+// Check if user set dark theme before
+if (localStorage.getItem('themeIs') == 'Dark') {
+	page.classList.add('dark');
+}
+
+// Check if user prefers dark theme
+if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {
+	page.classList.add('dark');
+}
+
+// Check theme preference switch real time
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =&gt; {
+	const newColorScheme = event.matches ? 'dark' : 'light';
+	if (newColorScheme == 'dark') {
+		page.classList.add('dark');
+	}
+	if (newColorScheme == 'light') {
+		page.classList.remove('dark');
+	} 
+});
+
+// Turn dark theme on
+darkThemeLink.addEventListener('click', setDark);
+function setDark(el) {
+	el.preventDefault();
+	page.classList.add('dark');
+	localStorage.setItem('themeIs', 'Dark');
+}
+
+// Turn light theme on
+lightThemeLink.addEventListener('click', setLight);
+function setLight(el) {
+	el.preventDefault();
+	page.classList.remove('dark');
+		localStorage.setItem('themeIs', 'Light');
+}
+</code></pre></div></div>
+
+<p>Это, кажется, покрывает все кейсы.</p>
+
+<p>В CSS есть медиа-запрос prefers-color-scheme, но у него гораздо <em>у</em>же поддержка и на без JS все равно не обойтись (интерактивное переключение), так что не вижу смысла его использовать.</p>]]></content><author><name></name></author><category term="css" /><category term="dark theme" /><category term="javascript" /><category term="accessibility" /><summary type="html"><![CDATA[На входе if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) { // dark mode }]]></summary></entry><entry><title type="html">Inline svg favicon</title><link href="http://0.0.0.0:4000/webdevtips/inline-svg-favicon.html" rel="alternate" type="text/html" title="Inline svg favicon" /><published>2023-05-29T12:02:00+03:00</published><updated>2023-05-29T12:02:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/inline-svg-favicon</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/inline-svg-favicon.html"><![CDATA[<p>Код включает в себя escape символы, чтобы не ругался валидатор.</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;link rel="icon" 
 href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%20%3E%3Ctext%20y=%22.9em%22%20font-size=%2290%22%20%3E✊%3C/text%20%3E%3C/svg%20%3E"&gt;
 
@@ -144,6 +208,4 @@ href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewB
 <p><code class="highlighter-rouge">http-server -S -C cert.pem</code></p>
 
 <p>-S - это https
--C - это путь к файлам. У меня работало только когда в папке проекта.</p>]]></content><author><name></name></author><category term="local server" /><category term="https" /><category term="openssl" /><summary type="html"><![CDATA[Как запустить локальный сервер на https. Нужно, например, для тестирования js модулей.]]></summary></entry><entry><title type="html">Значение по умолчанию аргумента функции</title><link href="http://0.0.0.0:4000/webdevtips/js-func-arg-defaults.html" rel="alternate" type="text/html" title="Значение по умолчанию аргумента функции" /><published>2023-05-10T03:00:00+03:00</published><updated>2023-05-10T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/js-func-arg-defaults</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/js-func-arg-defaults.html"><![CDATA[<p><code class="highlighter-rouge">function (arg-1 = "значение по умолчанию", arg-2 = "значение по умолчанию") {}</code></p>
-
-<p>Eсли мы передадим любое значение, отличное от undefined, будет взято оно. Даже falsy значение, например null.</p>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[function (arg-1 = "значение по умолчанию", arg-2 = "значение по умолчанию") {}]]></summary></entry></feed>
+-C - это путь к файлам. У меня работало только когда в папке проекта.</p>]]></content><author><name></name></author><category term="local server" /><category term="https" /><category term="openssl" /><summary type="html"><![CDATA[Как запустить локальный сервер на https. Нужно, например, для тестирования js модулей.]]></summary></entry></feed>

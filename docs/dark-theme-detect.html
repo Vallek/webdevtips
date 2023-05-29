@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Адаптивные шрифты | Web Dev Tips</title>
+<title>Как детектить выбор темной/светлой темы посетителя | Web Dev Tips</title>
 <meta name="generator" content="Jekyll v3.8.7" />
-<meta property="og:title" content="Адаптивные шрифты" />
+<meta property="og:title" content="Как детектить выбор темной/светлой темы посетителя" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content=".heading { font-size: clamp(2rem, 5vw + 1rem, 5rem); }" />
-<meta property="og:description" content=".heading { font-size: clamp(2rem, 5vw + 1rem, 5rem); }" />
-<link rel="canonical" href="http://0.0.0.0:4000/webdevtips/responsive-font.html" />
-<meta property="og:url" content="http://0.0.0.0:4000/webdevtips/responsive-font.html" />
+<meta name="description" content="На входе if (window.matchMedia &amp;&amp; window.matchMedia(&#39;(prefers-color-scheme: dark)&#39;).matches) { // dark mode }" />
+<meta property="og:description" content="На входе if (window.matchMedia &amp;&amp; window.matchMedia(&#39;(prefers-color-scheme: dark)&#39;).matches) { // dark mode }" />
+<link rel="canonical" href="http://0.0.0.0:4000/webdevtips/dark-theme-detect.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/webdevtips/dark-theme-detect.html" />
 <meta property="og:site_name" content="Web Dev Tips" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-05-27T03:00:00+03:00" />
+<meta property="article:published_time" content="2023-05-29T13:50:00+03:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Адаптивные шрифты" />
+<meta property="twitter:title" content="Как детектить выбор темной/светлой темы посетителя" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-27T03:00:00+03:00","datePublished":"2023-05-27T03:00:00+03:00","description":".heading { font-size: clamp(2rem, 5vw + 1rem, 5rem); }","headline":"Адаптивные шрифты","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/webdevtips/responsive-font.html"},"url":"http://0.0.0.0:4000/webdevtips/responsive-font.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-29T13:50:00+03:00","datePublished":"2023-05-29T13:50:00+03:00","description":"На входе if (window.matchMedia &amp;&amp; window.matchMedia(&#39;(prefers-color-scheme: dark)&#39;).matches) { // dark mode }","headline":"Как детектить выбор темной/светлой темы посетителя","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/webdevtips/dark-theme-detect.html"},"url":"http://0.0.0.0:4000/webdevtips/dark-theme-detect.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%20%3E%3Ctext%20y=%22.9em%22%20font-size=%2290%22%20%3E👨‍💻%3C/text%20%3E%3C/svg%20%3E">
   <link rel="stylesheet" href="/webdevtips/assets/main.css"> 
@@ -175,34 +175,96 @@
           <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Адаптивные шрифты</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Как детектить выбор темной/светлой темы посетителя</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2023-05-27T03:00:00+03:00" itemprop="datePublished">May 27, 2023
-      </time><a class="edit-button" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/2023-05-27-responsive-font.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
+      <time class="dt-published" datetime="2023-05-29T13:50:00+03:00" itemprop="datePublished">May 29, 2023
+      </time><a class="edit-button" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/2023-05-29-dark-theme-detect.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
     </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.heading {
-  font-size: clamp(2rem, 5vw + 1rem, 5rem);
+    <p>На входе</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    // dark mode
 }
 </code></pre></div></div>
 
-<p>Размер регулируется максимально гибко, между минимальным, предпочтительным с учетом вьюпорта и максимальным.</p>
+<p>В реальном времени</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =&gt; {
+    const newColorScheme = event.matches ? "dark" : "light";
+});
+</code></pre></div></div>
+
+<p>Я использую этот метод в своей <a href="https://vallek.github.io/web-links/index.html">подборке ссылок</a>. На момент написания это выглядит так:
+В CSS я просто добавил класс dark, который динамически миксуется к классу page, переписывая цвета специфичностью (два класса). Не по БЭМу, но как часто советуют сначала делал, чтобы работало) Потом может перепишу под БЭМ.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.dark.page {background-color:#002B36;} 
+.dark header {color:#c3d5d9;} 
+и так далее
+</code></pre></div></div>
+<p>JS:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const page = document.querySelector('.page');
+// Theme switch buttons
+const lightThemeLink = document.querySelector('.themes__link_light');
+const darkThemeLink = document.querySelector('.themes__link_dark');
+
+// Check if user set dark theme before
+if (localStorage.getItem('themeIs') == 'Dark') {
+	page.classList.add('dark');
+}
+
+// Check if user prefers dark theme
+if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {
+	page.classList.add('dark');
+}
+
+// Check theme preference switch real time
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =&gt; {
+	const newColorScheme = event.matches ? 'dark' : 'light';
+	if (newColorScheme == 'dark') {
+		page.classList.add('dark');
+	}
+	if (newColorScheme == 'light') {
+		page.classList.remove('dark');
+	} 
+});
+
+// Turn dark theme on
+darkThemeLink.addEventListener('click', setDark);
+function setDark(el) {
+	el.preventDefault();
+	page.classList.add('dark');
+	localStorage.setItem('themeIs', 'Dark');
+}
+
+// Turn light theme on
+lightThemeLink.addEventListener('click', setLight);
+function setLight(el) {
+	el.preventDefault();
+	page.classList.remove('dark');
+		localStorage.setItem('themeIs', 'Light');
+}
+</code></pre></div></div>
+
+<p>Это, кажется, покрывает все кейсы.</p>
+
+<p>В CSS есть медиа-запрос prefers-color-scheme, но у него гораздо <em>у</em>же поддержка и на без JS все равно не обойтись (интерактивное переключение), так что не вижу смысла его использовать.</p>
 
   </div><span>Источник: </span>
-  <a class="source-link" href="https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/">https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/</a>
+  <a class="source-link" href="https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript/57795495#57795495">https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript/57795495#57795495</a>
   <h2 class="post-tags__heading">Теги</h2>
   
   
   <a class="tag-link tag-link_home" href="/webdevtips/tag/css"><span class="nobrake">css</span></a>
   
   
-  <a class="tag-link tag-link_home" href="/webdevtips/tag/fonts"><span class="nobrake">fonts</span></a>
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/dark-theme"><span class="nobrake">dark-theme</span></a>
   
   
-  <a class="tag-link tag-link_home" href="/webdevtips/tag/responsive"><span class="nobrake">responsive</span></a>
-  <a class="u-url" href="/webdevtips/responsive-font.html" hidden></a>
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/javascript"><span class="nobrake">javascript</span></a>
+  
+  
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/accessibility"><span class="nobrake">accessibility</span></a>
+  <a class="u-url" href="/webdevtips/dark-theme-detect.html" hidden></a>
 </article>
 
         </div>
