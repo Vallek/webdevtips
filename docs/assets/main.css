@@ -270,6 +270,13 @@ table {
   border: 3px solid #2a7ae2;
   background-color: white; }
 
+.search__link {
+  display: block; }
+
+.search__link:hover {
+  color: #fdfdfd;
+  background-color: #2a7ae2; }
+
 .sidebar {
   position: sticky;
   color: #d9d9d9;
