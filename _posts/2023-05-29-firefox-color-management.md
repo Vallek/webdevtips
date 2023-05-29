@@ -2,7 +2,7 @@
 layout: post
 title: 'Firefox игнорирует цветовой профиль монитора'
 date: 2023-05-29 14:10 +0300
-notebook: frontend
+notebook: pc
 tags: [firefox]
 sources: []
 ---
