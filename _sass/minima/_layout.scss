@@ -479,6 +479,10 @@
   width:         calc(45% - (#{$spacing-unit} / 2));
 }
 
+.footer__description {
+  text-align: center;
+}
+
 @include media-query($on-laptop) {
   .footer-col-1,
   .footer-col-2 {
