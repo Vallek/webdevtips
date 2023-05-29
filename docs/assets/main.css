@@ -353,11 +353,11 @@ table {
   list-style: none; }
 
 .home .post__heading {
-  margin-bottom: 0.5em; }
+  margin-bottom: 0.3em; }
 
 .post-item {
   border-bottom: 2px solid #bfbebe;
-  padding-bottom: 1em;
+  padding-bottom: 0.8em;
   box-sizing: border-box;
   margin-bottom: 30px; }
 
@@ -422,7 +422,9 @@ table {
 .tag-link {
   --hue: 219;
   display: inline-block;
+  vertical-align: baseline;
   color: white;
+  margin: 0.2em 0;
   padding: 0 0.4em;
   border-radius: 15px;
   background-color: hwb(var(--hue) 0% 20%/0.8); }
