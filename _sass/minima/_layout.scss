@@ -466,6 +466,8 @@
 }
 
 .footer-col-wrapper {
+  display: flex;
+  align-items: center;
   @include relative-font-size(0.9375);
   color: $grey-color;
   margin-left: -$spacing-unit / 2;
@@ -495,6 +497,11 @@
 
 .footer__description {
   text-align: center;
+}
+
+.footer__about,
+.footer__copy {
+  margin-bottom: 0.5em;
 }
 
 @include media-query($on-laptop) {
