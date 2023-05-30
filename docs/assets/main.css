@@ -299,7 +299,10 @@ table {
 
 .sidebar__title {
   font-size: 1.3em;
-  margin-bottom: 0.3em; }
+  margin-bottom: 0.3em;
+  display: flex;
+  width: 100%;
+  justify-content: space-between; }
 
 .sidebar__notebooks {
   margin: 0;
@@ -321,6 +324,18 @@ table {
 
 .sidebar__link:hover {
   text-decoration: underline; }
+
+.sidebar__notebook_close > .sidebar__notes {
+  height: 0px;
+  display: none; }
+
+.sidebar__notebook_close > .sidebar__title::after {
+  font-size: 0.8em;
+  content: " \25BC"; }
+
+.sidebar__notebook_open > .sidebar__title::after {
+  font-size: 0.8em;
+  content: " \25B2"; }
 
 /**
 * Page content

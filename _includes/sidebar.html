@@ -3,8 +3,8 @@
 	<h2 class="sidebar__heading">Рубрики и заметки</h2>
 	<ul class="sidebar__notebooks">
 		{% for notebook in sidebar %}
-		<li class="sidebar__notebook">
-			<h3 class="sidebar__title">{{notebook.title}}</h3>
+		<li class="sidebar__notebook sidebar__notebook_close">
+			<button class="sidebar__title">{{notebook.title}}</button>
 			<ul class="sidebar__notes">
 				{% for post in site.posts %}
 				{%- if post.notebook == notebook.title -%}
