@@ -286,7 +286,17 @@ table {
   overflow-y: auto;
   max-height: 100vh;
   padding: 1em;
-  background-color: #343131; }
+  background-color: #343131;
+  scrollbar-width: thin; }
+
+.sidebar::-webkit-scrollbar {
+  width: 8px; }
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #7d7c7d; }
+
+.sidebar::-webkit-scrollbar-track {
+  background: #2a2829; }
 
 @media screen and (min-width: 1200px) {
   .sidebar {
@@ -320,7 +330,7 @@ table {
   list-style: disc;
   margin: 0;
   padding: 0;
-  margin-left: 1em; }
+  padding-left: 1.5em; }
 
 .sidebar__link {
   text-decoration: none;
