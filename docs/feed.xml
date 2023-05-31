@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-05-31T11:02:23+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry><title type="html">Highlight Matching Tag в VS Code</title><link href="http://0.0.0.0:4000/webdevtips/highlight-matching-tag.html" rel="alternate" type="text/html" title="Highlight Matching Tag в VS Code" /><published>2023-05-29T14:18:00+03:00</published><updated>2023-05-29T14:18:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/highlight-matching-tag</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/highlight-matching-tag.html"><![CDATA[<p>Кто тоже использует расширение Highlight Matching Tag в VS Code и хочет сделать подчеркивание и отметки справа разными цветами ловите настройки:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-05-31T12:19:56+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry><title type="html">Local w3c html/css validator</title><link href="http://0.0.0.0:4000/webdevtips/local-validator.html" rel="alternate" type="text/html" title="Local w3c html/css validator" /><published>2023-05-31T12:11:00+03:00</published><updated>2023-05-31T12:11:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/local-validator</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/local-validator.html"><![CDATA[<p>You can run <a href="https://validator.w3.org/nu/">Nu Validator</a> locally.</p>
+
+<ol>
+  <li>
+    <p>Скачайте <a href="https://github.com/validator/validator/releases/tag/latest">latest</a> release. File <code class="highlighter-rouge">vnu.windows.zip</code> for windows</p>
+  </li>
+  <li>
+    <p>Запустите комманду в терминале <code class="highlighter-rouge">путь_к_папке/vnu-runtime-image/bin/java nu.validator.servlet.Main 8888</code></p>
+  </li>
+  <li>
+    <p>Сайт будет доступен по адресу http://localhost:8888/</p>
+  </li>
+</ol>
+
+<p>Другие варианты запуска можно <a href="https://validator.github.io/validator/">посмотреть в доках</a>, например как npm пакет</p>]]></content><author><name></name></author><category term="validation" /><category term="html" /><category term="css" /><summary type="html"><![CDATA[You can run Nu Validator locally.]]></summary></entry><entry><title type="html">Highlight Matching Tag в VS Code</title><link href="http://0.0.0.0:4000/webdevtips/highlight-matching-tag.html" rel="alternate" type="text/html" title="Highlight Matching Tag в VS Code" /><published>2023-05-29T14:18:00+03:00</published><updated>2023-05-29T14:18:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/highlight-matching-tag</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/highlight-matching-tag.html"><![CDATA[<p>Кто тоже использует расширение Highlight Matching Tag в VS Code и хочет сделать подчеркивание и отметки справа разными цветами ловите настройки:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"highlight-matching-tag.styles": {
         "opening": {
             "name": {
@@ -90,18 +104,7 @@ function setLight(el) {
 href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%20%3E%3Ctext%20y=%22.9em%22%20font-size=%2290%22%20%3E✊%3C/text%20%3E%3C/svg%20%3E"&gt;
 
 </code></pre></div></div>
-<p>Подробности истории у меня <a href="https://vallek.github.io/webval-blog/2022/06/02/fix-svg-favicon-error.html">в блоге</a>.</p>]]></content><author><name></name></author><category term="svg" /><category term="favicon" /><summary type="html"><![CDATA[Код включает в себя escape символы, чтобы не ругался валидатор. ```]]></summary></entry><entry><title type="html">Посты в Jekyll без даты в имени файла</title><link href="http://0.0.0.0:4000/webdevtips/jekyll-no-date.html" rel="alternate" type="text/html" title="Посты в Jekyll без даты в имени файла" /><published>2023-05-29T11:42:00+03:00</published><updated>2023-05-29T11:42:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/jekyll-no-date</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/jekyll-no-date.html"><![CDATA[<p>Создайте _plugins/no_date.rb:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Jekyll::PostReader
-  def read_posts(dir)
-    read_publishable(dir, "_posts", /.*\.md$/)
-  end
-end
-</code></pre></div></div>
-<p>Перезапустите сборку.</p>
-
-<p>Обратите внимание, что в моей версии другой regexp, потому что у markdown файлов расширение md.</p>
-
-<p>Проверено прямо вот на этом сайте) Но на всякий случай все файлы кроме этого будут названы с датами.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[Создайте _plugins/no_date.rb: class Jekyll::PostReader def read_posts(dir) read_publishable(dir, "_posts", /.*\.md$/) end end Перезапустите сборку.]]></summary></entry><entry><title type="html">Мои горячие клавиши для VS Code</title><link href="http://0.0.0.0:4000/webdevtips/vs-code-shortcuts.html" rel="alternate" type="text/html" title="Мои горячие клавиши для VS Code" /><published>2023-05-29T11:42:00+03:00</published><updated>2023-05-29T11:42:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/vs-code-shortcuts</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/vs-code-shortcuts.html"><![CDATA[<p>Набор мои сочетаний в vs code, которые позволяют экономить время и делать работу чуть проще. Вы можете добавить их в keybindings.json или просто в интерфейс горячих клавиш.</p>
+<p>Подробности истории у меня <a href="https://vallek.github.io/webval-blog/2022/06/02/fix-svg-favicon-error.html">в блоге</a>.</p>]]></content><author><name></name></author><category term="svg" /><category term="favicon" /><summary type="html"><![CDATA[Код включает в себя escape символы, чтобы не ругался валидатор. ```]]></summary></entry><entry><title type="html">Мои горячие клавиши для VS Code</title><link href="http://0.0.0.0:4000/webdevtips/vs-code-shortcuts.html" rel="alternate" type="text/html" title="Мои горячие клавиши для VS Code" /><published>2023-05-29T11:42:00+03:00</published><updated>2023-05-29T11:42:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/vs-code-shortcuts</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/vs-code-shortcuts.html"><![CDATA[<p>Набор мои сочетаний в vs code, которые позволяют экономить время и делать работу чуть проще. Вы можете добавить их в keybindings.json или просто в интерфейс горячих клавиш.</p>
 
 <p>Закомитить и все файлы одного репозитория или те, которые в stage. И сделать pull/push.</p>
 
@@ -126,7 +129,18 @@ end
   "command": "editor.action.selectHighlights",
   "when": "editorFocus"
 }
-</code></pre></div></div>]]></content><author><name></name></author><category term="vs code" /><category term="shortcuts" /><category term="git" /><category term="emmet" /><summary type="html"><![CDATA[Набор мои сочетаний в vs code, которые позволяют экономить время и делать работу чуть проще. Вы можете добавить их в keybindings.json или просто в интерфейс горячих клавиш.]]></summary></entry><entry><title type="html">Переменные среды редактора для терминала</title><link href="http://0.0.0.0:4000/webdevtips/editor-env-var.html" rel="alternate" type="text/html" title="Переменные среды редактора для терминала" /><published>2023-05-28T21:33:00+03:00</published><updated>2023-05-28T21:33:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/editor-env-var</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/editor-env-var.html"><![CDATA[<p>Расширение jekyll compose для Jekyll может автоматически открывать созданные файлы. Но для этого помимо <a href="https://github.com/jekyll/jekyll-compose#auto-open-new-drafts-or-posts-in-your-editor">настройки</a> нужно задать переменную среды редактора по умолчанию для вашего терминала. Я использую clink для cmd.</p>
+</code></pre></div></div>]]></content><author><name></name></author><category term="vs code" /><category term="shortcuts" /><category term="git" /><category term="emmet" /><summary type="html"><![CDATA[Набор мои сочетаний в vs code, которые позволяют экономить время и делать работу чуть проще. Вы можете добавить их в keybindings.json или просто в интерфейс горячих клавиш.]]></summary></entry><entry><title type="html">Посты в Jekyll без даты в имени файла</title><link href="http://0.0.0.0:4000/webdevtips/jekyll-no-date.html" rel="alternate" type="text/html" title="Посты в Jekyll без даты в имени файла" /><published>2023-05-29T11:42:00+03:00</published><updated>2023-05-29T11:42:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/jekyll-no-date</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/jekyll-no-date.html"><![CDATA[<p>Создайте _plugins/no_date.rb:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Jekyll::PostReader
+  def read_posts(dir)
+    read_publishable(dir, "_posts", /.*\.md$/)
+  end
+end
+</code></pre></div></div>
+<p>Перезапустите сборку.</p>
+
+<p>Обратите внимание, что в моей версии другой regexp, потому что у markdown файлов расширение md.</p>
+
+<p>Проверено прямо вот на этом сайте) Но на всякий случай все файлы кроме этого будут названы с датами.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[Создайте _plugins/no_date.rb: class Jekyll::PostReader def read_posts(dir) read_publishable(dir, "_posts", /.*\.md$/) end end Перезапустите сборку.]]></summary></entry><entry><title type="html">Переменные среды редактора для терминала</title><link href="http://0.0.0.0:4000/webdevtips/editor-env-var.html" rel="alternate" type="text/html" title="Переменные среды редактора для терминала" /><published>2023-05-28T21:33:00+03:00</published><updated>2023-05-28T21:33:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/editor-env-var</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/editor-env-var.html"><![CDATA[<p>Расширение jekyll compose для Jekyll может автоматически открывать созданные файлы. Но для этого помимо <a href="https://github.com/jekyll/jekyll-compose#auto-open-new-drafts-or-posts-in-your-editor">настройки</a> нужно задать переменную среды редактора по умолчанию для вашего терминала. Я использую clink для cmd.</p>
 
 <ol>
   <li>Создайте файл <strong>init.cmd</strong> в папке пользователя OC
@@ -175,9 +189,4 @@ end
   <li>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer</li>
   <li>Создать <code class="highlighter-rouge">AltTabSettings</code>, тип <code class="highlighter-rouge">DWORD 32</code></li>
   <li>Поставить значение <code class="highlighter-rouge">1</code></li>
-</ol>]]></content><author><name></name></author><category term="regedit" /><category term="windows" /><summary type="html"><![CDATA[win+r &gt; regedit HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer Создать AltTabSettings, тип DWORD 32 Поставить значение 1]]></summary></entry><entry><title type="html">Адаптивные шрифты</title><link href="http://0.0.0.0:4000/webdevtips/responsive-font.html" rel="alternate" type="text/html" title="Адаптивные шрифты" /><published>2023-05-27T03:00:00+03:00</published><updated>2023-05-27T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/responsive-font</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/responsive-font.html"><![CDATA[<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.heading {
-  font-size: clamp(2rem, 5vw + 1rem, 5rem);
-}
-</code></pre></div></div>
-
-<p>Размер регулируется максимально гибко, между минимальным, предпочтительным с учетом вьюпорта и максимальным.</p>]]></content><author><name></name></author><category term="css" /><category term="fonts" /><category term="responsive" /><summary type="html"><![CDATA[.heading { font-size: clamp(2rem, 5vw + 1rem, 5rem); }]]></summary></entry></feed>
+</ol>]]></content><author><name></name></author><category term="regedit" /><category term="windows" /><summary type="html"><![CDATA[win+r &gt; regedit HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer Создать AltTabSettings, тип DWORD 32 Поставить значение 1]]></summary></entry></feed>
