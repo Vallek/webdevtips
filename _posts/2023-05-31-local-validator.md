@@ -10,7 +10,7 @@ You can run [Nu Validator](https://validator.w3.org/nu/) locally.
 
 1. Скачайте [latest](https://github.com/validator/validator/releases/tag/latest) release. File `vnu.windows.zip` for windows
 
-2. Запустите комманду в терминале `путь_к_папке/vnu-runtime-image/bin/java nu.validator.servlet.Main 8888`
+2. Запустите команду в терминале `путь_к_папке/vnu-runtime-image/bin/java nu.validator.servlet.Main 8888`
 
 3. Сайт будет доступен по адресу http://localhost:8888/
 

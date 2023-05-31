@@ -6,7 +6,7 @@
       "tags"     : "validation, html, css",
       "url"      : "/webdevtips/local-validator.html",
       "date"     : "2023-05-31 12:11:00 +0300",
-      "content"  : "You can run Nu Validator locally.      Скачайте latest release. File vnu.windows.zip for windows        Запустите комманду в терминале путь_к_папке/vnu-runtime-image/bin/java nu.validator.servlet.Main 8888        Сайт будет доступен по адресу http://localhost:8888/  Другие варианты запуска можно посмотреть в доках, например как npm пакет"
+      "content"  : "You can run Nu Validator locally.      Скачайте latest release. File vnu.windows.zip for windows        Запустите команду в терминале путь_к_папке/vnu-runtime-image/bin/java nu.validator.servlet.Main 8888        Сайт будет доступен по адресу http://localhost:8888/  Другие варианты запуска можно посмотреть в доках, например как npm пакет"
     } ,
   
     {
