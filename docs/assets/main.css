@@ -302,7 +302,11 @@ table {
   margin-bottom: 0.3em;
   display: flex;
   width: 100%;
-  justify-content: space-between; }
+  justify-content: space-between;
+  background-color: transparent;
+  border-radius: 15px;
+  color: white;
+  padding: 0.2em 0.5em; }
 
 .sidebar__notebooks {
   margin: 0;
@@ -310,7 +314,7 @@ table {
   list-style: none; }
 
 .sidebar__notebook {
-  margin-bottom: 1em; }
+  margin-bottom: 0.6em; }
 
 .sidebar__notes {
   list-style: disc;
