@@ -200,8 +200,9 @@
 });
 </code></pre></div></div>
 
-<p>Я использую этот метод в своей <a href="https://vallek.github.io/web-links/index.html">подборке ссылок</a>. На момент написания это выглядит так:
-В CSS я просто добавил класс dark, который динамически миксуется к классу page, переписывая цвета специфичностью (два класса). Не по БЭМу, но как часто советуют сначала делал, чтобы работало) Потом может перепишу под БЭМ.</p>
+<p>Я использую этот метод в своей <a href="https://vallek.github.io/web-links/index.html">подборке ссылок</a>. На момент написания это выглядит так:</p>
+
+<p>В CSS я просто добавил класс dark, который динамически миксуется к классу page, переписывая цвета специфичностью (два класса). Не по БЭМу, но как часто советуют сначала делал, чтобы работало) Потом может перепишу под БЭМ.</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.dark.page {background-color:#002B36;} 
 .dark header {color:#c3d5d9;} 
 и так далее
@@ -252,7 +253,7 @@ function setLight(el) {
 
 <p>Это, кажется, покрывает все кейсы.</p>
 
-<p>В CSS есть медиа-запрос prefers-color-scheme, но у него гораздо <em>у</em>же поддержка и на без JS все равно не обойтись (интерактивное переключение), так что не вижу смысла его использовать.</p>
+<p>В CSS есть медиа-запрос prefers-color-scheme, но у него гораздо <em>у</em>же поддержка и без JS все равно не обойтись (интерактивное переключение), так что не вижу смысла его использовать.</p>
 
   </div><span>Источник: </span>
   <a class="source-link" href="https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript/57795495#57795495">https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript/57795495#57795495</a>
