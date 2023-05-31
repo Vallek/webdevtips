@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>regex tricks | Web Dev Tips</title>
+<title>Контраст текста в VS Code Powershell | Web Dev Tips</title>
 <meta name="generator" content="Jekyll v3.8.7" />
-<meta property="og:title" content="regex tricks" />
+<meta property="og:title" content="Контраст текста в VS Code Powershell" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Замена html элементов &lt;/a&gt;\n*.*&lt;/div&gt; &lt;/a&gt;\n\t\t\t\t&lt;/a&gt;" />
-<meta property="og:description" content="Замена html элементов &lt;/a&gt;\n*.*&lt;/div&gt; &lt;/a&gt;\n\t\t\t\t&lt;/a&gt;" />
-<link rel="canonical" href="http://0.0.0.0:4000/webdevtips/regex-tricks.html" />
-<meta property="og:url" content="http://0.0.0.0:4000/webdevtips/regex-tricks.html" />
+<meta name="description" content="Если в VS Code используете powershell и у вас слишком низкий контраст текста." />
+<meta property="og:description" content="Если в VS Code используете powershell и у вас слишком низкий контраст текста." />
+<link rel="canonical" href="http://0.0.0.0:4000/webdevtips/powershell-vs-code-contrast.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/webdevtips/powershell-vs-code-contrast.html" />
 <meta property="og:site_name" content="Web Dev Tips" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-08-04T03:00:00+03:00" />
+<meta property="article:published_time" content="2023-05-31T12:23:00+03:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="regex tricks" />
+<meta property="twitter:title" content="Контраст текста в VS Code Powershell" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-04T03:00:00+03:00","datePublished":"2021-08-04T03:00:00+03:00","description":"Замена html элементов &lt;/a&gt;\\n*.*&lt;/div&gt; &lt;/a&gt;\\n\\t\\t\\t\\t&lt;/a&gt;","headline":"regex tricks","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/webdevtips/regex-tricks.html"},"url":"http://0.0.0.0:4000/webdevtips/regex-tricks.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-31T12:23:00+03:00","datePublished":"2023-05-31T12:23:00+03:00","description":"Если в VS Code используете powershell и у вас слишком низкий контраст текста.","headline":"Контраст текста в VS Code Powershell","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/webdevtips/powershell-vs-code-contrast.html"},"url":"http://0.0.0.0:4000/webdevtips/powershell-vs-code-contrast.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
@@ -65,7 +65,7 @@
 <aside class="sidebar">
 	<h2 class="sidebar__heading">Рубрики и заметки</h2>
 	<ul class="sidebar__notebooks">
-		<li class="sidebar__notebook sidebar__notebook_open"><button class="sidebar__title">frontend</button>
+		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">frontend</button>
 			<ul class="sidebar__notes">
 				<li class="sidebar__note">
 					<a class="sidebar__link" href="/webdevtips/local-validator.html">Local w3c html/css validator</a>
@@ -118,7 +118,7 @@
 				</li>
 			</ul>
 		</li>
-		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">webdev</button>
+		<li class="sidebar__notebook sidebar__notebook_open"><button class="sidebar__title">webdev</button>
 			<ul class="sidebar__notes">
 				<li class="sidebar__note">
 					<a class="sidebar__link" href="/webdevtips/powershell-vs-code-contrast.html">Контраст текста в VS Code Powershell</a>
@@ -180,29 +180,33 @@
           <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">regex tricks</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Контраст текста в VS Code Powershell</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2021-08-04T03:00:00+03:00" itemprop="datePublished">Aug 4, 2021
-      </time><a class="edit-button" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/2021-08-04-regex-tricks.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
+      <time class="dt-published" datetime="2023-05-31T12:23:00+03:00" itemprop="datePublished">May 31, 2023
+      </time><a class="edit-button" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/2023-05-31-powershell-vs-code-contrast.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
     </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Замена html элементов</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;/a&gt;\n*.*&lt;/div&gt;
-&lt;/a&gt;\n\t\t\t\t&lt;/a&gt;
-</code></pre></div></div>
+    <p>Если в VS Code используете powershell и у вас слишком низкий контраст текста.</p>
 
-<p>Удалить пустые строчки, проще всего расширением <a href="https://marketplace.visualstudio.com/items?itemName=usernamehw.remove-empty-lines">Remove Empty Lines</a> в vs code</p>
+<p>Найдите в настройках <code class="highlighter-rouge">Terminal &gt; Minimum Contrast Ratio</code> и поставьте больше. Например 7.</p>
+
+<p>Или:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"terminal.integrated.minimumContrastRatio": 7
+</code></pre></div></div>
 
   </div><h2 class="post-tags__heading">Теги</h2>
   
   
-  <a class="tag-link tag-link_home" href="/webdevtips/tag/regex"><span class="nobrake">regex</span></a>
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/powershell"><span class="nobrake">powershell</span></a>
   
   
-  <a class="tag-link tag-link_home" href="/webdevtips/tag/html"><span class="nobrake">html</span></a>
-  <a class="u-url" href="/webdevtips/regex-tricks.html" hidden></a>
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/vs-code"><span class="nobrake">vs-code</span></a>
+  
+  
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/contrast"><span class="nobrake">contrast</span></a>
+  <a class="u-url" href="/webdevtips/powershell-vs-code-contrast.html" hidden></a>
 </article>
 
         </div>

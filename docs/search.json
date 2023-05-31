@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "Контраст текста в VS Code Powershell",
+      "category" : "",
+      "tags"     : "powershell, vs code, contrast",
+      "url"      : "/webdevtips/powershell-vs-code-contrast.html",
+      "date"     : "2023-05-31 12:23:00 +0300",
+      "content"  : "Если в VS Code используете powershell и у вас слишком низкий контраст текста.Найдите в настройках Terminal &amp;gt; Minimum Contrast Ratio и поставьте больше. Например 7.Или:&quot;terminal.integrated.minimumContrastRatio&quot;: 7"
+    } ,
+  
+    {
       "title"    : "Local w3c html/css validator",
       "category" : "",
       "tags"     : "validation, html, css",
