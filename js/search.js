@@ -6,4 +6,5 @@ SimpleJekyllSearch({
 		noResultsText: 'No results found',
 		limit: 10,
 		fuzzy: false,
+		// debounceTime: 100,
 });

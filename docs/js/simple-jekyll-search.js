@@ -255,6 +255,8 @@
       if (delayMillis) {
         clearTimeout(debounceTimerHandle);
         debounceTimerHandle = setTimeout(func, delayMillis);
+        // Don't hide results container if debounce time > 0
+        options.resultsContainer.classList.remove('visually-hidden');
       } else {
         func.call();
       }
@@ -305,30 +307,32 @@
     function emptyResultsContainer () {
       options.resultsContainer.innerHTML = '';
     }
-    // Further comments by Vallek
     function appendToResultsContainer (text) {
-      // Hide results container when empty
+      // Show results container when not empty
       options.resultsContainer.classList.remove('visually-hidden');
       options.resultsContainer.innerHTML += text;
     }
     function registerInput () {
+      let searchInput = document.getElementById('search-input');
+      let resultsContainer = document.getElementById('results-container');
+      let searchWrapper = document.querySelector('.header__search'); 
       options.searchInput.addEventListener('input', function (e) {
         if (isWhitelistedKey(e.which)) {
           emptyResultsContainer();
-          // Show results container when not empty
+          // Hide results container when empty
           options.resultsContainer.classList.add('visually-hidden');
           debounce(function () { search(e.target.value); }, options.debounceTime);
+          if (searchInput.value == '') {
+             resultsContainer.classList.add('visually-hidden');
+          }
         }
         // Show on focus, hide on focus lost
-        let searchInput = document.getElementById('search-input');
-        let resultsContainer = document.getElementById('results-container');
-        let searchWrapper = document.querySelector('.header__search'); 
         searchInput.addEventListener('focus', showResults);
         searchInput.addEventListener('focusout', hideResults);
         document.addEventListener('click', hideResults);
         function showResults() {
           // Don't show on focus if empty
-          if (options.resultsContainer.innerHTML !== '') {
+          if (searchInput.value !== '') {
             resultsContainer.classList.remove('visually-hidden');
           }
         }
