@@ -357,7 +357,7 @@
       "tags"     : "regex, html",
       "url"      : "/webdevtips/regex-tricks.html",
       "date"     : "2021-08-04 03:00:00 +0300",
-      "content"  : "Замена html элементов&amp;lt;/a&amp;gt;n*.*&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;ntttt&amp;lt;/a&amp;gt;Удалить пустые строчки, проще всего расширением Remove Empty Lines в vs code"
+      "content"  : "Замена html элементов&amp;lt;/a&amp;gt;n*.*&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;ntttt&amp;lt;/a&amp;gt;Удалить пустые строчки, проще всего расширением Remove Empty Lines в vs codeПоиск слов/[wА-Яа-я]+/ig - все слова"
     } ,
   
     {
