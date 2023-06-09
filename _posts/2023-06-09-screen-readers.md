@@ -2,7 +2,7 @@
 layout: post
 title: 'Screen Readers: where to download'
 date: 2023-06-09 21:40 +0300
-notebook: frontend
+notebook: webdev
 tags: [accessibility]
 sources: [https://stackoverflow.com/a/43368748/9749171]
 ---
