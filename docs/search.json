@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "Screen Readers: where to download",
+      "category" : "",
+      "tags"     : "accessibility",
+      "url"      : "/webdevtips/screen-readers.html",
+      "date"     : "2023-06-09 21:40:00 +0300",
+      "content"  : "The best answer is to test in real screen readers, ideally by getting real users as they know how to use these tools. Consider contacting your local blind association and see if they offer testing services.Screen ReadersEach platform has a screen reader, most are built in. Windows has the most variety.For Windows  Use Narrator (it is built in, though not very good right now it is getting much better). Use it with Edge.  Download the free NVDA screen reader (but please donate to support it). Use it with Firefox  Download JAWS and use it in 40 minute increments for free. Use it with IE11.For macOS  Use VoiceOver (it is built in). Use it with Safari. old link from source, you can change versions in urlFor iOS  Use VoiceOver (it is built in). Use it with Safari.For Android  Use TalkBack. Use it with Firefox.For Ubuntu  Use Orca.For ChromeOS  Use ChromeVox (but only use ChromeVox in this scenario, not as a plug-in for Chrome on Windows or macOS).ResourcesThese are handy to get started with testing on your own. Keyboard shortcuts are necessary to use a screen reader well, beyond just hitting the Tab key over and over and over.      Basic screen reader commands for accessibility testing        Screen readers and web browsers – what’s the best pairing for testing?  Services  Assistivlabs - This is like Browserstack for screen readers and other ATsLinks are updated"
+    } ,
+  
+    {
       "title"    : "Переместить изменения в новую git ветку",
       "category" : "",
       "tags"     : "git",

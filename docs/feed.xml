@@ -1,4 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-06-07T22:47:43+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry><title type="html">Переместить изменения в новую git ветку</title><link href="http://0.0.0.0:4000/webdevtips/git-move-changes-to-branch.html" rel="alternate" type="text/html" title="Переместить изменения в новую git ветку" /><published>2023-06-01T12:08:00+03:00</published><updated>2023-06-01T12:08:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/git-move-changes-to-branch</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/git-move-changes-to-branch.html"><![CDATA[<p>Бывает, что вы сделали изменения и поняли, что они слишком большие для главной/активной ветки, требуют большей работы, чем вы думали и т.д. Вы можете перенести все изменения из working tree, которые вы еще не закоммитили в новую ветку.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-06-09T21:59:47+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry><title type="html">Screen Readers: where to download</title><link href="http://0.0.0.0:4000/webdevtips/screen-readers.html" rel="alternate" type="text/html" title="Screen Readers: where to download" /><published>2023-06-09T21:40:00+03:00</published><updated>2023-06-09T21:40:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/screen-readers</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/screen-readers.html"><![CDATA[<p>The best answer is to test in real screen readers, ideally by getting real users as they know how to use these tools. Consider contacting your local blind association and see if they offer testing services.
+Screen Readers</p>
+
+<p>Each platform has a screen reader, most are built in. Windows has the most variety.
+For Windows</p>
+
+<ul>
+  <li><a href="https://support.microsoft.com/en-us/help/17173/windows-10-hear-text-read-aloud">Use Narrator</a> (it is built in, though not very good right now it is getting much better). Use it with Edge.</li>
+  <li><a href="https://www.nvaccess.org/download/">Download the free NVDA</a> screen reader (but please donate to support it). Use it with Firefox</li>
+  <li><a href="https://support.freedomscientific.com/Downloads/JAWS">Download JAWS</a> and use it in 40 minute increments for free. Use it with IE11.</li>
+</ul>
+
+<p>For macOS</p>
+
+<ul>
+  <li><a href="https://support.apple.com/ru-ru/guide/voiceover/welcome/">Use VoiceOver</a> (it is built in). Use it with Safari. <a href="https://help.apple.com/voiceover/info/guide/10.12/">old link from source, you can change versions in url</a></li>
+</ul>
+
+<p>For iOS</p>
+
+<ul>
+  <li><a href="https://www.apple.com/accessibility/vision/">Use VoiceOver</a> (it is built in). Use it with Safari.</li>
+</ul>
+
+<p>For Android</p>
+
+<ul>
+  <li><a href="https://support.google.com/accessibility/android/answer/6283677?hl=en">Use TalkBack</a>. Use it with Firefox.</li>
+</ul>
+
+<p>For Ubuntu</p>
+
+<ul>
+  <li><a href="https://help.gnome.org/users/orca/stable/">Use Orca</a>.</li>
+</ul>
+
+<p>For ChromeOS</p>
+
+<ul>
+  <li><a href="https://support.google.com/chromebook/answer/7031755">Use ChromeVox</a> (but only use ChromeVox in this scenario, not as a plug-in for Chrome on Windows or macOS).</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<p>These are handy to get started with testing on your own. Keyboard shortcuts are necessary to use a screen reader well, beyond just hitting the Tab key over and over and over.</p>
+
+<ul>
+  <li>
+    <p><a href="https://www.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/">Basic screen reader commands for accessibility testing</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.digitala11y.com/screen-readers-browsers-which-is-the-best-combination-for-accessibility-testing/">Screen readers and web browsers – what’s the best pairing for testing?</a></p>
+  </li>
+</ul>
+
+<h2 id="services">Services</h2>
+
+<ul>
+  <li><a href="https://assistivlabs.com/assistive-tech/screen-readers">Assistivlabs</a> - This is like Browserstack for screen readers and other ATs</li>
+</ul>
+
+<p>Links are updated</p>]]></content><author><name></name></author><category term="accessibility" /><summary type="html"><![CDATA[The best answer is to test in real screen readers, ideally by getting real users as they know how to use these tools. Consider contacting your local blind association and see if they offer testing services. Screen Readers]]></summary></entry><entry><title type="html">Переместить изменения в новую git ветку</title><link href="http://0.0.0.0:4000/webdevtips/git-move-changes-to-branch.html" rel="alternate" type="text/html" title="Переместить изменения в новую git ветку" /><published>2023-06-01T12:08:00+03:00</published><updated>2023-06-01T12:08:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/git-move-changes-to-branch</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/git-move-changes-to-branch.html"><![CDATA[<p>Бывает, что вы сделали изменения и поняли, что они слишком большие для главной/активной ветки, требуют большей работы, чем вы думали и т.д. Вы можете перенести все изменения из working tree, которые вы еще не закоммитили в новую ветку.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git switch -c new-branch-name
 </code></pre></div></div>
@@ -155,38 +216,4 @@ end
 
 <p>Обратите внимание, что в моей версии другой regexp, потому что у markdown файлов расширение md.</p>
 
-<p>Проверено прямо вот на этом сайте) Но на всякий случай все файлы кроме этого будут названы с датами.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[Создайте _plugins/no_date.rb: class Jekyll::PostReader def read_posts(dir) read_publishable(dir, "_posts", /.*\.md$/) end end Перезапустите сборку.]]></summary></entry><entry><title type="html">Переменные среды редактора для терминала</title><link href="http://0.0.0.0:4000/webdevtips/editor-env-var.html" rel="alternate" type="text/html" title="Переменные среды редактора для терминала" /><published>2023-05-28T21:33:00+03:00</published><updated>2023-05-28T21:33:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/editor-env-var</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/editor-env-var.html"><![CDATA[<p>Расширение jekyll compose для Jekyll может автоматически открывать созданные файлы. Но для этого помимо <a href="https://github.com/jekyll/jekyll-compose#auto-open-new-drafts-or-posts-in-your-editor">настройки</a> нужно задать переменную среды редактора по умолчанию для вашего терминала. Я использую clink для cmd.</p>
-
-<ol>
-  <li>Создайте файл <strong>init.cmd</strong> в папке пользователя OC
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\YourName\init.cmd
-</code></pre></div>    </div>
-    <p>Он может быть и в другом месте (у меня он в папке с репами).</p>
-  </li>
-  <li>Синтаксис:
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set VAR_NAME=value
-</code></pre></div>    </div>
-    <p>Задаем VS Code как редактор по умолчанию.</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set JEKYLL_EDITOR=code
-</code></pre></div>    </div>
-    <p>Обратите внимание, что нужно именно такое название.</p>
-  </li>
-  <li>Теперь нужно это зарегистрировать, чтобы автоматически применять при запуске cmd.exe</li>
-</ol>
-
-<p>В терминале выполните:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reg add "HKCU\Software\Microsoft\Command Processor" /v AutoRun /t REG_EXPAND_SZ /d "%"USERPROFILE"%\init.cmd" /f 
-</code></pre></div></div>
-<p>Убедитесь, что путь до init.cmd указан верно</p>
-
-<p>Готово!</p>
-
-<p>Перезапустите cmd и переменная должна работать.</p>
-
-<p>Чтобы отменить регистрацию выполните:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reg delete "HKCU\Software\Microsoft\Command Processor" /v AutoRun
-</code></pre></div></div>
-
-<p>А еще так можно задать <a href="alias-for-command-in-cmd.html">сокращенные команды для cmd/powershell</a>.</p>]]></content><author><name></name></author><category term="terminal" /><category term="cmd" /><category term="powershell" /><category term="windows" /><category term="jekyll" /><summary type="html"><![CDATA[Расширение jekyll compose для Jekyll может автоматически открывать созданные файлы. Но для этого помимо настройки нужно задать переменную среды редактора по умолчанию для вашего терминала. Я использую clink для cmd.]]></summary></entry></feed>
+<p>Проверено прямо вот на этом сайте) Но на всякий случай все файлы кроме этого будут названы с датами.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[Создайте _plugins/no_date.rb: class Jekyll::PostReader def read_posts(dir) read_publishable(dir, "_posts", /.*\.md$/) end end Перезапустите сборку.]]></summary></entry></feed>
