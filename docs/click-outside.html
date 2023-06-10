@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>PHP GD Library extension | Web Dev Tips</title>
+<title>Detect click outside of element | Web Dev Tips</title>
 <meta name="generator" content="Jekyll v3.8.7" />
-<meta property="og:title" content="PHP GD Library extension" />
+<meta property="og:title" content="Detect click outside of element" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Если вы используете локальный сервер на php и получаете ошибку GD Library extension not available with this PHP installation или что-то подобное." />
-<meta property="og:description" content="Если вы используете локальный сервер на php и получаете ошибку GD Library extension not available with this PHP installation или что-то подобное." />
-<link rel="canonical" href="http://0.0.0.0:4000/webdevtips/gd-extension-php.html" />
-<meta property="og:url" content="http://0.0.0.0:4000/webdevtips/gd-extension-php.html" />
+<meta name="description" content="На примере выпадающего меню" />
+<meta property="og:description" content="На примере выпадающего меню" />
+<link rel="canonical" href="http://0.0.0.0:4000/webdevtips/click-outside.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/webdevtips/click-outside.html" />
 <meta property="og:site_name" content="Web Dev Tips" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-04-12T03:00:00+03:00" />
+<meta property="article:published_time" content="2023-06-10T12:43:00+03:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="PHP GD Library extension" />
+<meta property="twitter:title" content="Detect click outside of element" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-12T03:00:00+03:00","datePublished":"2023-04-12T03:00:00+03:00","description":"Если вы используете локальный сервер на php и получаете ошибку GD Library extension not available with this PHP installation или что-то подобное.","headline":"PHP GD Library extension","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/webdevtips/gd-extension-php.html"},"url":"http://0.0.0.0:4000/webdevtips/gd-extension-php.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-10T12:43:00+03:00","datePublished":"2023-06-10T12:43:00+03:00","description":"На примере выпадающего меню","headline":"Detect click outside of element","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/webdevtips/click-outside.html"},"url":"http://0.0.0.0:4000/webdevtips/click-outside.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="icon" type="image/png" sizes="32x32" href="/webdevtips/favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/webdevtips/favicon.png">
@@ -65,7 +65,7 @@
 <aside class="sidebar">
 	<h2 class="sidebar__heading">Рубрики и заметки</h2>
 	<ul class="sidebar__notebooks">
-		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">frontend</button>
+		<li class="sidebar__notebook sidebar__notebook_open"><button class="sidebar__title">frontend</button>
 			<ul class="sidebar__notes">
 				<li class="sidebar__note">
 					<a class="sidebar__link" href="/webdevtips/click-outside.html">Detect click outside of element</a>
@@ -159,7 +159,7 @@
 				</li>
 			</ul>
 		</li>
-		<li class="sidebar__notebook sidebar__notebook_open"><button class="sidebar__title">backend</button>
+		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">backend</button>
 			<ul class="sidebar__notes">
 				<li class="sidebar__note">
 					<a class="sidebar__link" href="/webdevtips/gd-extension-php.html">PHP GD Library extension</a>
@@ -186,27 +186,46 @@
           <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">PHP GD Library extension</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Detect click outside of element</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2023-04-12T03:00:00+03:00" itemprop="datePublished">Apr 12, 2023
-      </time><a class="edit-button" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/2023-04-12-gd-extension-php.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
+      <time class="dt-published" datetime="2023-06-10T12:43:00+03:00" itemprop="datePublished">Jun 10, 2023
+      </time><a class="edit-button" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/2023-06-10-click-outside.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
     </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Если вы используете локальный сервер на php и получаете ошибку
-<code class="highlighter-rouge">GD Library extension not available with this PHP installation</code> или что-то подобное.</p>
+    <p>На примере выпадающего меню</p>
 
-<p>Найдите файл <em>php.ini</em> и раскомментируйте строчку <code class="highlighter-rouge">extension=gd</code></p>
+<p>При условии, что верстка выглядит так:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="popup-menu"&gt;
+	&lt;button class="popup-menu__button"&gt;&lt;/button&gt;
+	&lt;ul class="popup-menu__list hide-popup"&gt;
+		...
+	&lt;/ul&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+<p>JS:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const popupWrapper = document.querySelector('.popup-menu');
+const popupMenu = document.querySelector('.popup-menu__list');
+
+// Выполняем функцию когда юзер кликает в любом месте
+document.addEventListener('click', hidePopup);
+
+function hidePopup(el) {
+	// Проверяем, есть ли внутри того по чему кликнули попап меню и кнопка
+	let targetInside = popupWrapper.contains(el.target);
+	// Если нет, то прячем меню
+	if (!targetInside) {
+		popupMenu.classList.add('hide-popup');
+	}	
+}
+</code></pre></div></div>
 
   </div><h2 class="post-tags__heading">Теги</h2>
   
   
-  <a class="tag-link tag-link_home" href="/webdevtips/tag/php"><span class="nobrake">php</span></a>
-  
-  
-  <a class="tag-link tag-link_home" href="/webdevtips/tag/local-server"><span class="nobrake">local-server</span></a>
-  <a class="u-url" href="/webdevtips/gd-extension-php.html" hidden></a>
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/javascript"><span class="nobrake">javascript</span></a>
+  <a class="u-url" href="/webdevtips/click-outside.html" hidden></a>
 </article>
 
         </div>

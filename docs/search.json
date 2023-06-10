@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "Detect click outside of element",
+      "category" : "",
+      "tags"     : "javascript",
+      "url"      : "/webdevtips/click-outside.html",
+      "date"     : "2023-06-10 12:43:00 +0300",
+      "content"  : "На примере выпадающего менюПри условии, что верстка выглядит так:&amp;lt;div class=&quot;popup-menu&quot;&amp;gt; &amp;lt;button class=&quot;popup-menu__button&quot;&amp;gt;&amp;lt;/button&amp;gt; &amp;lt;ul class=&quot;popup-menu__list hide-popup&quot;&amp;gt;  ... &amp;lt;/ul&amp;gt;&amp;lt;/div&amp;gt;JS:const popupWrapper = document.querySelector(&#39;.popup-menu&#39;);const popupMenu = document.querySelector(&#39;.popup-menu__list&#39;);// Выполняем функцию когда юзер кликает в любом местеdocument.addEventListener(&#39;click&#39;, hidePopup);function hidePopup(el) { // Проверяем, есть ли внутри того по чему кликнули попап меню и кнопка let targetInside = popupWrapper.contains(el.target); // Если нет, то прячем меню if (!targetInside) {  popupMenu.classList.add(&#39;hide-popup&#39;); } }"
+    } ,
+  
+    {
       "title"    : "Screen Readers: where to download",
       "category" : "",
       "tags"     : "accessibility",
