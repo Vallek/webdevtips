@@ -332,14 +332,25 @@ table {
   padding: 0;
   padding-left: 1.5em; }
 
+.siderbar__tags {
+  list-style: none; }
+
 .sidebar__link {
-  text-decoration: none;
-  color: #d9d9d9; }
+  text-decoration: none; }
 
 .sidebar__link:hover {
   text-decoration: underline; }
 
-.sidebar__notebook_close > .sidebar__notes {
+.sidebar__link_tag {
+  font-size: 1.15em; }
+
+.sidebar__link_note {
+  color: #d9d9d9; }
+
+.sidebar__link_active {
+  outline: 2px solid #2a7ae2; }
+
+.sidebar__notebook_close > .siderbar__tags {
   height: 0px;
   display: none; }
 

@@ -1,6 +1,7 @@
 'use strict';
-let accItem = document.querySelectorAll('.sidebar__notebook');
-let accHeading = document.querySelectorAll('.sidebar__title');
+const sidebar = document.querySelector('.sidebar');
+const accItem = document.querySelectorAll('.sidebar__notebook');
+const accHeading = document.querySelectorAll('.sidebar__title');
 
 accHeading.forEach(
     function getClick(el) {
@@ -25,3 +26,13 @@ function toggleItem() {
         this.parentNode.classList.add('sidebar__notebook_open'); 
     }
 }
+
+// Focus on active post link
+let activePost = document.querySelector('.sidebar__link_active');
+if (activePost != null) {
+    let dist = activePost.offsetTop;
+    window.addEventListener('load', () => {
+        sidebar.scrollTop = dist - 30;
+    });
+}
+ 
