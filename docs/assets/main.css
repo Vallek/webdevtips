@@ -342,6 +342,7 @@ table {
   text-decoration: underline; }
 
 .sidebar__link_tag {
+  color: #5ba1fd;
   font-size: 1.15em; }
 
 .sidebar__link_note {
