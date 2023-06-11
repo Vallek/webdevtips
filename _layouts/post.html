@@ -10,10 +10,11 @@ layout: default
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
+      <span class="post-notebook">&ensp;-&ensp;{{ page.notebook }}</span>
       {%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}
-      <a class="edit-button" href="https://www.github.com/{{ site.github_username }}/{{ site.git_repo }}/blob/master/{{ page.path }}"><img class="github-logo" width="16" height="16" src="{{site.baseurl}}/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
+      <a class="edit-button edit-button_post-page" href="https://www.github.com/{{ site.github_username }}/{{ site.git_repo }}/blob/master/{{ page.path }}"><img class="github-logo" width="16" height="16" src="{{site.baseurl}}/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
     </p>
   </header>
 

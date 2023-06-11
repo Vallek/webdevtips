@@ -407,8 +407,8 @@ table {
   font-size: 14px;
   color: #828282; }
 
-.post-header > .post-meta {
-  justify-content: space-between; }
+.edit-button_post-page {
+  margin-left: auto; }
 
 .post-link {
   display: block;
