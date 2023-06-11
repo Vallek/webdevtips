@@ -25,7 +25,7 @@
 			<ul class="siderbar__tags">
 				{% for tag in ar_tags %}
 				<li class="siderbar__tag">
-					<a class="sidebar__link sidebar__link_tag" href="{{site.baseurl}}/tag/{{tag}}">{{tag}}</a>
+					<a class="sidebar__link sidebar__link_tag" href="{{site.baseurl}}/tag/{{tag | replace: ' ', '-'}}">{{tag}}</a>
 					{% for post in site.posts %}
 					{%- if post.notebook == notebook.title -%}
 					{%- if post.tags contains tag -%}
