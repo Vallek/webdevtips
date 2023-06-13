@@ -43,7 +43,7 @@ paginate_path: /page:num/
 destination: docs
 
 # Change prod links from dates to simple title
-permalink: /:title.html
+permalink: /:title
 
 # Exclude from processing.
 # The following items will not be processed, by default.
