@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-06-13T18:40:10+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry><title type="html">Detect click outside of element</title><link href="http://0.0.0.0:4000/webdevtips/click-outside" rel="alternate" type="text/html" title="Detect click outside of element" /><published>2023-06-10T12:43:00+03:00</published><updated>2023-06-10T12:43:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/click-outside</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/click-outside"><![CDATA[<p>На примере выпадающего меню</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-06-14T14:25:42+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry><title type="html">Как работает flex-basis</title><link href="http://0.0.0.0:4000/webdevtips/flex-basis" rel="alternate" type="text/html" title="Как работает flex-basis" /><published>2023-06-14T13:57:00+03:00</published><updated>2023-06-14T13:57:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/flex-basis</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/flex-basis"><![CDATA[<h2 id="как-работает">Как работает</h2>
+
+<p><img src="img/rel-vs-abs-flex.svg" alt="" /></p>
+
+<ul>
+  <li>flex-basis: 0; - распределение <strong>пустого места</strong> в соответствии с flex-grow</li>
+  <li>flex-basis: auto; - распределение размера в соответствии с flex-grow</li>
+</ul>
+
+<p>Если у одного флекс элемента grow 2, а у другого 1, то при flex-basis: 0 будет поделено пустое место внутри флекс контейнера. И именно оно будет в два раза больше.</p>
+
+<p>А при flex-basis: auto размер всего элемента с содержимым будет в два раза больше.</p>
+
+<p><a href="https://codepen.io/vallek/pen/ExOVqbz">Демо на кодпене</a></p>
+
+<h2 id="значения-по-умолчанию">Значения по умолчанию</h2>
+
+<p>The initial values of the flex components are equivalent to <code class="highlighter-rouge">flex: 0 1 auto</code>.</p>
+
+<p><strong>Note:</strong> The initial values of flex-grow and flex-basis are different from their defaults when omitted in the flex shorthand. This is so that the flex shorthand can better accommodate the most common cases.</p>
+
+<p>Имеется в виду, что если использовать одно ключевое слово, то он может подставить не initial,
+а что-то другое. Для удобства. Примеры ниже:</p>
+
+<h2 id="common-cases">common cases</h2>
+
+<ul>
+  <li>
+    <p>flex: initial</p>
+
+    <p>Equivalent to <code class="highlighter-rouge">flex: 0 1 auto</code>. (This is the initial value.) Sizes the item based on the width/height properties. (If the item’s main size property computes to auto, this will size the flex item based on its contents.) Makes the flex item inflexible when there is positive free space, but allows it to shrink to its minimum size when there is insufficient space. The alignment abilities or auto margins can be used to align flex items along the main axis.</p>
+  </li>
+  <li>
+    <p>flex: auto</p>
+
+    <p>:Equivalent to <code class="highlighter-rouge">flex: 1 1 auto</code>. Sizes the item based on the width/height properties, but makes them fully flexible, so that they absorb any free space along the main axis. If all items are either flex: auto, flex: initial, or flex: none, any positive free space after the items have been sized will be distributed evenly to the items with flex: auto.</p>
+  </li>
+  <li>
+    <p>flex: none</p>
+
+    <p>:Equivalent to <code class="highlighter-rouge">flex: 0 0 auto</code>. This value sizes the item according to the width/height properties, but makes the flex item fully inflexible. This is similar to initial, except that flex items are not allowed to shrink, even in overflow situations.</p>
+  </li>
+  <li>
+    <p>flex: <code class="highlighter-rouge">&lt;positive-number&gt;</code></p>
+
+    <p>:Equivalent to flex: <code class="highlighter-rouge">&lt;positive-number&gt;</code> 1 0. Makes the flex item flexible and sets the flex basis to zero, resulting in an item that receives the specified proportion of the free space in the flex container. If all items in the flex container use this pattern, their sizes will be proportional to the specified flex factor.</p>
+  </li>
+</ul>
+
+<p>By default, flex items won’t shrink below their minimum content size (the length of the longest word or fixed-size element). To change this, set the min-width or min-height property. (See §4.5 Automatic Minimum Size of Flex Items.)</p>]]></content><author><name></name></author><category term="css" /><category term="flexbox" /><summary type="html"><![CDATA[Как работает]]></summary></entry><entry><title type="html">Detect click outside of element</title><link href="http://0.0.0.0:4000/webdevtips/click-outside" rel="alternate" type="text/html" title="Detect click outside of element" /><published>2023-06-10T12:43:00+03:00</published><updated>2023-06-10T12:43:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/click-outside</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/click-outside"><![CDATA[<p>На примере выпадающего меню</p>
 
 <p>При условии, что верстка выглядит так:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="popup-menu"&gt;
@@ -205,29 +254,4 @@ function setLight(el) {
 href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%20%3E%3Ctext%20y=%22.9em%22%20font-size=%2290%22%20%3E✊%3C/text%20%3E%3C/svg%20%3E"&gt;
 
 </code></pre></div></div>
-<p>Подробности истории у меня <a href="https://vallek.github.io/webval-blog/2022/06/02/fix-svg-favicon-error.html">в блоге</a>.</p>]]></content><author><name></name></author><category term="svg" /><category term="favicon" /><summary type="html"><![CDATA[Код включает в себя escape символы, чтобы не ругался валидатор. ```]]></summary></entry><entry><title type="html">Мои горячие клавиши для VS Code</title><link href="http://0.0.0.0:4000/webdevtips/vs-code-shortcuts" rel="alternate" type="text/html" title="Мои горячие клавиши для VS Code" /><published>2023-05-29T11:42:00+03:00</published><updated>2023-05-29T11:42:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/vs-code-shortcuts</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/vs-code-shortcuts"><![CDATA[<p>Набор мои сочетаний в vs code, которые позволяют экономить время и делать работу чуть проще. Вы можете добавить их в keybindings.json или просто в интерфейс горячих клавиш.</p>
-
-<p>Закомитить и все файлы одного репозитория или те, которые в stage. И сделать pull/push.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-	"key": "ctrl+alt+c",
-	"command": "git.commit"
-},
-{
-	"key": "ctrl+alt+g",
-	"command": "git.sync"
-},
-</code></pre></div></div>
-<p>Выделить диапазон с помомощью emmet. Например текст внутри html тегов.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-	"key": "ctrl+shift+a",
-	"command": "editor.emmet.action.balanceOut"
-},
-</code></pre></div></div>
-<p>Выделить все совпадения (если отключено автоматом при выделении)</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-  "key": "ctrl+shift+l",
-  "command": "editor.action.selectHighlights",
-  "when": "editorFocus"
-}
-</code></pre></div></div>]]></content><author><name></name></author><category term="vs code" /><category term="shortcuts" /><category term="git" /><category term="emmet" /><summary type="html"><![CDATA[Набор мои сочетаний в vs code, которые позволяют экономить время и делать работу чуть проще. Вы можете добавить их в keybindings.json или просто в интерфейс горячих клавиш.]]></summary></entry></feed>
+<p>Подробности истории у меня <a href="https://vallek.github.io/webval-blog/2022/06/02/fix-svg-favicon-error.html">в блоге</a>.</p>]]></content><author><name></name></author><category term="svg" /><category term="favicon" /><summary type="html"><![CDATA[Код включает в себя escape символы, чтобы не ругался валидатор. ```]]></summary></entry></feed>
