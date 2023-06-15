@@ -429,22 +429,12 @@
   background-color: hwb(var(--hue) 0% 20%/0.8);
 }
 
-.all-tags > a[class^="set-"] {
-  --hue: 219;
-  display: inline-block;
-  margin: 0.2em 0;
-  padding: 0 0.4em;
-  border-radius: 15px;
-  color: white;
-  background-color: hwb(var(--hue) 0% 20%/0.8);
-}
-
 .source-link {
   word-break: break-all;
 }
 
 // Tags cloud
-.tags-cloud {
+.tags-cloud_aside {
   position: sticky;
   top: 0;
   box-sizing: border-box;
@@ -467,7 +457,17 @@
   flex-wrap: wrap;
 }
 
-.tags-cloud__tags_all > a[class^="set-"] {
+.tags-cloud__tag_tag-page {
+  --hue: 219;
+  display: inline-block;
+  margin: 0.2em 0;
+  padding: 0 0.4em;
+  border-radius: 15px;
+  color: white;
+  background-color: hwb(var(--hue) 0% 20%/0.8);
+}
+
+.tags-cloud__tag_aside {
   --hue: 264;
   display: block;
   color: white;

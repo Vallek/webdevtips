@@ -27,7 +27,7 @@ layout: default
       {%- assign all_tags = post.tags -%}
       {%- for tag in all_tags -%}
       {% capture tag_name %}{{ tag | replace: " ", "-" }}{% endcapture %}
-      <a class="tag-link" href="{{site.baseurl}}/tag/{{ tag_name }}"><span class="nobrake">{{ tag_name }}</span></a>
+      <a class="tag-link" href="{{site.baseurl}}/tag/{{ tag_name }}"><span class="nobrake">{{ tag }}</span></a>
       {%- endfor -%}
     </li>
     {%- endfor -%}

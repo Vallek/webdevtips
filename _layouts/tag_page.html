@@ -8,7 +8,9 @@ layout: default
 {% endfor %}
 </ul>
 
-<div class="all-tags" id="tag-cloud">
+<div class="tags-cloud">
   <h2>Все темы</h2>
-  {{ site | tag_cloud }}
+  {% for tag in site.tags %}
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="{{site.baseurl}}/tag/{{ tag | first | replace: ' ', '-' }}">{{ tag | first }}</a>
+  {% endfor %}
 </div>

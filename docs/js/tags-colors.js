@@ -1,7 +1,7 @@
 'use strict';
 const tagsContainer = document.querySelector('.tags-cloud__tags_all');
-const firstTag = tagsContainer.querySelector('a[class^="set-"]');
-const tags = tagsContainer.querySelectorAll('a[class^="set-"]');
+const firstTag = tagsContainer.querySelector('.tags-cloud__tag');
+const tags = tagsContainer.querySelectorAll('.tags-cloud__tag');
 
 // Random color for first tag
 // function getRandomInt(max) {

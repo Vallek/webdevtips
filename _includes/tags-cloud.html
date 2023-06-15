@@ -1,6 +1,8 @@
-<aside class="tags-cloud">
+<aside class="tags-cloud tags-cloud_aside">
 	<h2 class="tags-cloud__heading">Все темы:</h2>
 	<div class="tags-cloud__tags tags-cloud__tags_all">
-		{{ site | tag_cloud }}
+		{% for tag in site.tags %}
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="{{site.baseurl}}/tag/{{ tag | first | replace: ' ', '-' }}">{{ tag | first }}</a>
+		{% endfor %}
 	</div>
 </aside>
