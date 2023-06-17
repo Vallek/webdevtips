@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "Как клонировать гит репозиторий в любую папку",
+      "category" : "",
+      "tags"     : "git",
+      "url"      : "/webdevtips/git-clone-in-folder",
+      "date"     : "2023-06-17 16:50:00 +0300",
+      "content"  : "Из любого места:git clone https://github.com/user/repo-name path/folder-nameИмя папки репозитория станет folder-name вместо имени репозитория (как это происходит при клонировании по умолчанию).В активную папку (то есть прямо сюда):git clone https://github.com/user/repo-name .В источнике гит адрес пишут по другому, но у меня работает обычный url."
+    } ,
+  
+    {
       "title"    : "Как работает flex-basis",
       "category" : "",
       "tags"     : "css, flexbox",

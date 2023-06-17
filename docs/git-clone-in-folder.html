@@ -4,13 +4,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin SEO -->
-  <title>Web Dev Tips | Заметки на тему shortcuts</title>
+  <title>Web Dev Tips | Как клонировать гит репозиторий в любую папку</title>
   <meta property="og:title" content="Web Dev Tips">
   <meta property="og:locale" content="en_US">
   <meta name="description" content="База знаний по фронтенду, веб-разработке и настройке пк">
   <meta property="og:description" content="База знаний по фронтенду, веб-разработке и настройке пк">
-  <link rel="canonical" href="https://vallek.github.io/webdevtips/tag/shortcuts">
-  <meta property="og:url" content="https://vallek.github.io/webdevtips/tag/shortcuts">
+  <link rel="canonical" href="https://vallek.github.io/webdevtips/git-clone-in-folder">
+  <meta property="og:url" content="https://vallek.github.io/webdevtips/git-clone-in-folder">
   <meta property="og:site_name" content="Web Dev Tips">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
@@ -317,7 +317,7 @@
 				
 			</ul>
 		</li>
-		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">webdev</button>
+		<li class="sidebar__notebook sidebar__notebook_open"><button class="sidebar__title">webdev</button>
 			
 			
 			
@@ -327,7 +327,7 @@
 				<li class="siderbar__tag">
 					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/git">git</a>
 					<ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/git-clone-in-folder">Как клонировать гит репозиторий в любую папку</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/git-clone-in-folder">Как клонировать гит репозиторий в любую папку</a></li>
 					</ul><ul class="sidebar__notes">
 						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/git-move-changes-to-branch">Переместить изменения в новую git ветку</a></li>
 					</ul><ul class="sidebar__notes">
@@ -575,109 +575,38 @@
 	</ul>
 </aside><main class="page__main main" aria-label="Content">
         <div class="main__content wrapper">
-          <h1>Заметки на тему shortcuts</h1>
-<ul>
+          <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <li><a href="/webdevtips/vs-code-shortcuts">Мои горячие клавиши для VS Code</a> (темы: <a href="/webdevtips/tag/vs-code.html" rel="tag">vs code</a>, <a href="/webdevtips/tag/shortcuts.html" rel="tag">shortcuts</a>, <a href="/webdevtips/tag/git.html" rel="tag">git</a>, <a href="/webdevtips/tag/emmet.html" rel="tag">emmet</a>)</li>
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Как клонировать гит репозиторий в любую папку</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2023-06-17T16:50:00+03:00" itemprop="datePublished">Jun 17, 2023
+      </time>
+      <span class="post-notebook">&ensp;-&ensp;webdev</span><a class="edit-button edit-button_post-page" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/2023-06-17-git-clone-in-folder.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
+    </p>
+  </header>
 
-</ul>
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Из любого места:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/user/repo-name path/folder-name
+</code></pre></div></div>
+<p>Имя папки репозитория станет <code class="highlighter-rouge">folder-name</code> вместо имени репозитория (как это происходит при клонировании по умолчанию).</p>
 
-<div class="tags-cloud">
-  <h2>Все темы</h2>
+<p>В активную папку (то есть прямо сюда):</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/user/repo-name .
+</code></pre></div></div>
+
+<p>В источнике гит адрес пишут по другому, но у меня работает обычный url.</p>
+
+  </div><span>Источник: </span>
+  <a class="source-link" href="https://stackoverflow.com/a/651079/9749171">https://stackoverflow.com/a/651079/9749171</a>
+  <h2 class="post-tags__heading">Теги</h2>
   
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/css">css</a>
   
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/flexbox">flexbox</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/terminal">terminal</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/cmd">cmd</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/clink">clink</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/javascript">javascript</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/qa">qa</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/html">html</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/selectors">selectors</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/regex">regex</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/devtools">devtools</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/focus">focus</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/chrome">chrome</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/firefox">firefox</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/emmet">emmet</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/vs-code">vs code</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/http">http</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/design">design</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/adblock">adblock</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/local-server">local server</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/mobile">mobile</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/powershell">powershell</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/git">git</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/jekyll">jekyll</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/windows">windows</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/accessibility">accessibility</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/postcss">postcss</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/nth-child">nth-child</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/php">php</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/nodejs">nodejs</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/npm">npm</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/nvm">nvm</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/https">https</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/openssl">openssl</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/events">events</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/animation">animation</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/fonts">fonts</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/responsive">responsive</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/regedit">regedit</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/grid">grid</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/shortcuts">shortcuts</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/svg">svg</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/favicon">favicon</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/dark-theme">dark theme</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/validation">validation</a>
-  
-  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/contrast">contrast</a>
-  
-</div>
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/git"><span class="nobrake">git</span></a>
+  <a class="u-url" href="/webdevtips/git-clone-in-folder" hidden></a>
+</article>
+
         </div>
       </main><aside class="tags-cloud tags-cloud_aside">
 	<h2 class="tags-cloud__heading">Все темы:</h2>
