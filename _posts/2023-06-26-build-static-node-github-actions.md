@@ -51,8 +51,8 @@ jobs:
         cd dist/
         git init
         git add -A
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "email@email.com"
+        git config --local user.name "username"
         git commit -m 'deploy'
         git config --global --add safe.directory /github/workspace
         
@@ -71,7 +71,7 @@ jobs:
 4. Make sure `cd dist/` and `directory: dist` have the right path for your prod folder
 5. Make sure your branch main name is right
 6. I run build on push changes (obviously) but also on timer once a day. This is what `schedule` is for. It's in [cron format](https://crontab.guru/#0_24_*_*_*) and UTC time.
-7. Use these user.email and user.name to not flood your own commit history.
+7. Original version had `user.email "action@github.com"` and `user.name "GitHub Action"` to not flood your own commit history BUT it was not working for me.
 
 
 Обратите внимание, что мой action отличается от источника.
