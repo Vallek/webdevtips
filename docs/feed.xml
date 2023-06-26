@@ -1,4 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-06-17T18:06:24+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry><title type="html">Как клонировать гит репозиторий в любую папку</title><link href="http://0.0.0.0:4000/webdevtips/git-clone-in-folder" rel="alternate" type="text/html" title="Как клонировать гит репозиторий в любую папку" /><published>2023-06-17T16:50:00+03:00</published><updated>2023-06-17T16:50:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/git-clone-in-folder</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/git-clone-in-folder"><![CDATA[<p>Из любого места:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-06-26T12:23:22+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry><title type="html">How to build static page with Node.js and Github Actions</title><link href="http://0.0.0.0:4000/webdevtips/build-static-node-github-actions" rel="alternate" type="text/html" title="How to build static page with Node.js and Github Actions" /><published>2023-06-26T10:38:00+03:00</published><updated>2023-06-26T10:38:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/build-static-node-github-actions</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/build-static-node-github-actions"><![CDATA[<h2 id="зачем-это-нужно">Зачем это нужно</h2>
+<p>Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для <a href="https://vallek.github.io/animatable-css/">списка анимируемых CSS свойств</a>. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)</p>
+
+<h2 id="how-to">How to</h2>
+<p>First of all create a github token. Go to account settings &gt; developer settings &gt; Personal access tokens. I chose classic. Set name and expiration.</p>
+
+<p>In remote repo on github:</p>
+
+<ol>
+  <li>Make sure to push all files (node_packages and so on)</li>
+  <li>Create production folder. I use <code class="highlighter-rouge">dist</code> in this example</li>
+  <li>Create gh-pages branch</li>
+  <li>In repo settings &gt; Actions &gt; General &gt; Workflow permissions. Set to <code class="highlighter-rouge">Read AND WRITE</code>.</li>
+  <li>Create Github Action</li>
+</ol>
+
+<p>Action code:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: Build and Deploy to GitHub pages
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  schedule:
+    - cron: '0 12 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Generate static files
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build
+
+    - name: Init new repo in dist folder and commit generated files
+      run: |
+        cd dist/
+        git init
+        git add -A
+        git config --local user.email "email@email.com"
+        git config --local user.name "username"
+        git commit -m 'deploy'
+        git config --global --add safe.directory /github/workspace
+        
+    - name: Force push to destination branch
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: $
+        branch: gh-pages
+        force: true
+        directory: dist
+</code></pre></div></div>
+<p><strong>IMPORTANT NOTES ABOUT ACTION</strong>:</p>
+<ol>
+  <li><code class="highlighter-rouge">actions/checkout@v2</code> - only worked with <strong>v2</strong> for me</li>
+  <li>Make sure <code class="highlighter-rouge">npm run build</code> runs the right js file. Set in <code class="highlighter-rouge">package.json</code> in <code class="highlighter-rouge">build</code>. Mine is <code class="highlighter-rouge">node index.js</code>.</li>
+  <li>Will not work without <code class="highlighter-rouge">git config --global --add safe.directory /github/workspace</code>. Before disabling, make sure you understand this security measure, and <a href="https://github.com/git/git/commit/8959555cee7ec045958f9b6dd62e541affb7e7d9">why it exists</a>. You should not do this if your repositories are stored on a shared drive. See <a href="https://stackoverflow.com/a/71904131/9749171">this answer</a>.</li>
+  <li>Make sure <code class="highlighter-rouge">cd dist/</code> and <code class="highlighter-rouge">directory: dist</code> have the right path for your prod folder</li>
+  <li>Make sure your branch main name is right</li>
+  <li>I run build on push changes (obviously) but also on timer once a day. This is what <code class="highlighter-rouge">schedule</code> is for. It’s in <a href="https://crontab.guru/#0_24_*_*_*">cron format</a> and UTC time.</li>
+</ol>
+
+<p>Обратите внимание, что мой action отличается от источника.</p>]]></content><author><name></name></author><category term="github" /><category term="nodejs" /><summary type="html"><![CDATA[Зачем это нужно Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для списка анимируемых CSS свойств. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)]]></summary></entry><entry><title type="html">Как клонировать гит репозиторий в любую папку</title><link href="http://0.0.0.0:4000/webdevtips/git-clone-in-folder" rel="alternate" type="text/html" title="Как клонировать гит репозиторий в любую папку" /><published>2023-06-17T16:50:00+03:00</published><updated>2023-06-17T16:50:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/git-clone-in-folder</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/git-clone-in-folder"><![CDATA[<p>Из любого места:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/user/repo-name path/folder-name
 </code></pre></div></div>
 <p>Имя папки репозитория станет <code class="highlighter-rouge">folder-name</code> вместо имени репозитория (как это происходит при клонировании по умолчанию).</p>
@@ -193,69 +262,4 @@ gfx.color_management.mode - 1
 gfx.color_management.native_srgb - true
 </code></pre></div></div>
 
-<p><a href="http://www.lagom.nl/lcd-test/gradient.php#gradient-h.png">Картинка для проверки</a>. Градиент должен быть плавным (сравните с Хромом, может быть дело и в вашем мониторе, софте и т.д).</p>]]></content><author><name></name></author><category term="firefox" /><summary type="html"><![CDATA[В Firefox не работает color management, то есть он игнорирует цветовой профиль монитора srgb и цвета искажены.]]></summary></entry><entry><title type="html">Как детектить выбор темной/светлой темы посетителя</title><link href="http://0.0.0.0:4000/webdevtips/dark-theme-detect" rel="alternate" type="text/html" title="Как детектить выбор темной/светлой темы посетителя" /><published>2023-05-29T13:50:00+03:00</published><updated>2023-05-29T13:50:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/dark-theme-detect</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/dark-theme-detect"><![CDATA[<p>На входе</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    // dark mode
-}
-</code></pre></div></div>
-
-<p>В реальном времени</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =&gt; {
-    const newColorScheme = event.matches ? "dark" : "light";
-});
-</code></pre></div></div>
-
-<p>Я использую этот метод в своей <a href="https://vallek.github.io/web-links/index.html">подборке ссылок</a>. На момент написания это выглядит так:</p>
-
-<p>В CSS я просто добавил класс dark, который динамически миксуется к классу page, переписывая цвета специфичностью (два класса). Не по БЭМу, но как часто советуют сначала делал, чтобы работало) Потом может перепишу под БЭМ.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.dark.page {background-color:#002B36;} 
-.dark header {color:#c3d5d9;} 
-и так далее
-</code></pre></div></div>
-<p>JS:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const page = document.querySelector('.page');
-// Theme switch buttons
-const lightThemeLink = document.querySelector('.themes__link_light');
-const darkThemeLink = document.querySelector('.themes__link_dark');
-
-// Check if user set dark theme before
-if (localStorage.getItem('themeIs') == 'Dark') {
-	page.classList.add('dark');
-}
-
-// Check if user prefers dark theme
-if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {
-	page.classList.add('dark');
-}
-
-// Check theme preference switch real time
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =&gt; {
-	const newColorScheme = event.matches ? 'dark' : 'light';
-	if (newColorScheme == 'dark') {
-		page.classList.add('dark');
-	}
-	if (newColorScheme == 'light') {
-		page.classList.remove('dark');
-	} 
-});
-
-// Turn dark theme on
-darkThemeLink.addEventListener('click', setDark);
-function setDark(el) {
-	el.preventDefault();
-	page.classList.add('dark');
-	localStorage.setItem('themeIs', 'Dark');
-}
-
-// Turn light theme on
-lightThemeLink.addEventListener('click', setLight);
-function setLight(el) {
-	el.preventDefault();
-	page.classList.remove('dark');
-		localStorage.setItem('themeIs', 'Light');
-}
-</code></pre></div></div>
-
-<p>Это, кажется, покрывает все кейсы.</p>
-
-<p>В CSS есть медиа-запрос prefers-color-scheme, но у него гораздо <em>у</em>же поддержка и без JS все равно не обойтись (интерактивное переключение), так что не вижу смысла его использовать.</p>]]></content><author><name></name></author><category term="css" /><category term="dark theme" /><category term="javascript" /><category term="accessibility" /><summary type="html"><![CDATA[На входе if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) { // dark mode }]]></summary></entry></feed>
+<p><a href="http://www.lagom.nl/lcd-test/gradient.php#gradient-h.png">Картинка для проверки</a>. Градиент должен быть плавным (сравните с Хромом, может быть дело и в вашем мониторе, софте и т.д).</p>]]></content><author><name></name></author><category term="firefox" /><summary type="html"><![CDATA[В Firefox не работает color management, то есть он игнорирует цветовой профиль монитора srgb и цвета искажены.]]></summary></entry></feed>

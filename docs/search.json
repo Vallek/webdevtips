@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "How to build static page with Node.js and Github Actions",
+      "category" : "",
+      "tags"     : "github, nodejs",
+      "url"      : "/webdevtips/build-static-node-github-actions",
+      "date"     : "2023-06-26 10:38:00 +0300",
+      "content"  : "Зачем это нужноЕсли вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для списка анимируемых CSS свойств. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)How toFirst of all create a github token. Go to account settings &amp;gt; developer settings &amp;gt; Personal access tokens. I chose classic. Set name and expiration.In remote repo on github:  Make sure to push all files (node_packages and so on)  Create production folder. I use dist in this example  Create gh-pages branch  In repo settings &amp;gt; Actions &amp;gt; General &amp;gt; Workflow permissions. Set to Read AND WRITE.  Create Github ActionAction code:name: Build and Deploy to GitHub pageson:  push:    branches: [ &quot;master&quot; ]  pull_request:    branches: [ &quot;master&quot; ]  schedule:    - cron: &#39;0 12 * * *&#39;jobs:  build:    runs-on: ubuntu-latest        steps:    - uses: actions/checkout@v2    - name: Generate static files      uses: actions/setup-node@v3      with:        node-version: &#39;18&#39;        cache: &#39;npm&#39;    - run: npm ci    - run: npm run build    - name: Init new repo in dist folder and commit generated files      run: |        cd dist/        git init        git add -A        git config --local user.email &quot;email@email.com&quot;        git config --local user.name &quot;username&quot;        git commit -m &#39;deploy&#39;        git config --global --add safe.directory /github/workspace            - name: Force push to destination branch      uses: ad-m/github-push-action@master      with:        github_token: $        branch: gh-pages        force: true        directory: distIMPORTANT NOTES ABOUT ACTION:  actions/checkout@v2 - only worked with v2 for me  Make sure npm run build runs the right js file. Set in package.json in build. Mine is node index.js.  Will not work without git config --global --add safe.directory /github/workspace. Before disabling, make sure you understand this security measure, and why it exists. You should not do this if your repositories are stored on a shared drive. See this answer.  Make sure cd dist/ and directory: dist have the right path for your prod folder  Make sure your branch main name is right  I run build on push changes (obviously) but also on timer once a day. This is what schedule is for. It’s in cron format and UTC time.Обратите внимание, что мой action отличается от источника."
+    } ,
+  
+    {
       "title"    : "Как клонировать гит репозиторий в любую папку",
       "category" : "",
       "tags"     : "git",
