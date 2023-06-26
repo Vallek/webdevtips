@@ -4,13 +4,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin SEO -->
-  <title>Web Dev Tips | Почему не стоит использовать .class > tag?</title>
+  <title>Web Dev Tips | Если map() с template literal выдает лишние символы</title>
   <meta property="og:title" content="Web Dev Tips">
   <meta property="og:locale" content="en_US">
   <meta name="description" content="База знаний по фронтенду, веб-разработке и настройке пк">
   <meta property="og:description" content="База знаний по фронтенду, веб-разработке и настройке пк">
-  <link rel="canonical" href="https://vallek.github.io/webdevtips/dont-use-this-selector">
-  <meta property="og:url" content="https://vallek.github.io/webdevtips/dont-use-this-selector">
+  <link rel="canonical" href="https://vallek.github.io/webdevtips/map-symbols-join">
+  <meta property="og:url" content="https://vallek.github.io/webdevtips/map-symbols-join">
   <meta property="og:site_name" content="Web Dev Tips">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
@@ -74,7 +74,7 @@
 				<li class="siderbar__tag">
 					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/javascript">javascript</a>
 					<ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/map-symbols-join">Если map() с template literal выдает лишние символы</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/map-symbols-join">Если map() с template literal выдает лишние символы</a></li>
 					</ul><ul class="sidebar__notes">
 						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/click-outside">Detect click outside of element</a></li>
 					</ul><ul class="sidebar__notes">
@@ -115,7 +115,7 @@
 					</ul><ul class="sidebar__notes">
 						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/css-debug">Показ границ элементов для тестирования</a></li>
 					</ul><ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/dont-use-this-selector">Почему не стоит использовать .class > tag?</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/dont-use-this-selector">Почему не стоит использовать .class > tag?</a></li>
 					</ul><ul class="sidebar__notes">
 						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/get-overflow">Найти элемент выходящий за вьюпорт</a></li>
 					</ul><ul class="sidebar__notes">
@@ -255,7 +255,7 @@
 					<ul class="sidebar__notes">
 						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/1-2-4-5-nth-child">Селектор для выбора ряда 1, 2, 4, 5</a></li>
 					</ul><ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/dont-use-this-selector">Почему не стоит использовать .class > tag?</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/dont-use-this-selector">Почему не стоит использовать .class > tag?</a></li>
 					</ul>
 				</li>
 				
@@ -594,29 +594,31 @@
           <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Почему не стоит использовать .class &gt; tag?</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Если map() с template literal выдает лишние символы</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2021-08-03T03:00:00+03:00" itemprop="datePublished">Aug 3, 2021
+      <time class="dt-published" datetime="2023-06-26T18:31:00+03:00" itemprop="datePublished">Jun 26, 2023
       </time>
-      <span class="post-notebook">&ensp;-&ensp;frontend</span><a class="edit-button edit-button_post-page" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/2021-08-03-dont-use-this-selector.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
+      <span class="post-notebook">&ensp;-&ensp;frontend</span><a class="edit-button edit-button_post-page" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/2023-06-26-map-symbols-join.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
     </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Почему не стоит использовать <code class="highlighter-rouge">.class &gt; tag</code>? Часто хочется, потому что лень задавать классы всем пунктам списка и т.п.</p>
+    <p>Если вы используете метод <code class="highlighter-rouge">map()</code> и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после <code class="highlighter-rouge">map()</code> метод <code class="highlighter-rouge">join()</code>.</p>
 
-<p>Потому что специфичность. Этот селектор перепишет другие с одним классом. Сейчас это может не быть проблемой, но обязательно будет потом.</p>
+<p>Вот так:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let variable = array.map(el =&gt; {
+		// code with template literal
+		return result;
+	}).join('');
+</code></pre></div></div>
 
-<p>Например (тру стори) класс <code class="highlighter-rouge">.item</code> для пункта списка не сможет переписать свойства текста из <code class="highlighter-rouge">.list &gt; li</code>.</p>
-
-  </div><h2 class="post-tags__heading">Теги</h2>
+  </div><span>Источник: </span>
+  <a class="source-link" href="https://stackoverflow.com/a/45812277/9749171">https://stackoverflow.com/a/45812277/9749171</a>
+  <h2 class="post-tags__heading">Теги</h2>
   
   
-  <a class="tag-link tag-link_home" href="/webdevtips/tag/css"><span class="nobrake">css</span></a>
-  
-  
-  <a class="tag-link tag-link_home" href="/webdevtips/tag/selectors"><span class="nobrake">selectors</span></a>
-  <a class="u-url" href="/webdevtips/dont-use-this-selector" hidden></a>
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/javascript"><span class="nobrake">javascript</span></a>
+  <a class="u-url" href="/webdevtips/map-symbols-join" hidden></a>
 </article>
 
         </div>
