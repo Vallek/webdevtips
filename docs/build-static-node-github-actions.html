@@ -607,12 +607,11 @@
 <p>Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для <a href="https://vallek.github.io/animatable-css/">списка анимируемых CSS свойств</a>. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)</p>
 
 <h2 id="how-to">How to</h2>
-<p>First of all create a github token. Go to account settings &gt; developer settings &gt; Personal access tokens. I chose classic. Set name and expiration.</p>
+<p>First of all create a github token. Go to account settings &gt; developer settings &gt; Personal access tokens. I chose classic. Set name and expiration. Save it somewhere.</p>
 
 <p>In remote repo on github:</p>
 
 <ol>
-  <li>Make sure to push all files (node_packages and so on)</li>
   <li>Create production folder. I use <code class="highlighter-rouge">dist</code> in this example</li>
   <li>Create gh-pages branch</li>
   <li>In repo settings &gt; Actions &gt; General &gt; Workflow permissions. Set to <code class="highlighter-rouge">Read AND WRITE</code>.</li>
@@ -664,6 +663,8 @@ jobs:
 </code></pre></div></div>
 <p><strong>IMPORTANT NOTES ABOUT ACTION</strong>:</p>
 <ol>
+  <li>Make sure to push all node files (node_modules and so on)</li>
+  <li>BUT DO NOT PUSH static index.html. Let github create it. Add it to .gitignore</li>
   <li><code class="highlighter-rouge">actions/checkout@v2</code> - only worked with <strong>v2</strong> for me</li>
   <li>Make sure <code class="highlighter-rouge">npm run build</code> runs the right js file. Set in <code class="highlighter-rouge">package.json</code> in <code class="highlighter-rouge">build</code>. Mine is <code class="highlighter-rouge">node index.js</code>.</li>
   <li>Will not work without <code class="highlighter-rouge">git config --global --add safe.directory /github/workspace</code>. Before disabling, make sure you understand this security measure, and <a href="https://github.com/git/git/commit/8959555cee7ec045958f9b6dd62e541affb7e7d9">why it exists</a>. You should not do this if your repositories are stored on a shared drive. See <a href="https://stackoverflow.com/a/71904131/9749171">this answer</a>.</li>
