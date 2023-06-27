@@ -24,6 +24,9 @@ Action code:
 name: Build and Deploy to GitHub pages
 on:
   push:
+    paths-ignore:
+      - 'dist/index.html'
+      - 'README.md'
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
@@ -73,6 +76,6 @@ jobs:
 7. Make sure your branch main name is right
 8. I run build on push changes (obviously) but also on timer once a day. This is what `schedule` is for. It's in [cron format](https://crontab.guru/#0_24_*_*_*) and UTC time.
 9. Original version had `user.email "action@github.com"` and `user.name "GitHub Action"` to not flood your own commit history BUT it was not working for me.
-
+10. `paths-ignore` allows you to not run build on pushing files when it's not needed.
 
 Обратите внимание, что мой action отличается от источника.
