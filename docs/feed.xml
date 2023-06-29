@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-06-27T13:49:48+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry><title type="html">Если map() с template literal выдает лишние символы</title><link href="http://0.0.0.0:4000/webdevtips/map-symbols-join" rel="alternate" type="text/html" title="Если map() с template literal выдает лишние символы" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/map-symbols-join</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/map-symbols-join"><![CDATA[<p>Если вы используете метод <code class="highlighter-rouge">map()</code> и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после <code class="highlighter-rouge">map()</code> метод <code class="highlighter-rouge">join()</code>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-06-29T14:04:57+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry><title type="html">Если map() с template literal выдает лишние символы</title><link href="http://0.0.0.0:4000/webdevtips/map-symbols-join" rel="alternate" type="text/html" title="Если map() с template literal выдает лишние символы" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/map-symbols-join</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/map-symbols-join"><![CDATA[<p>Если вы используете метод <code class="highlighter-rouge">map()</code> и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после <code class="highlighter-rouge">map()</code> метод <code class="highlighter-rouge">join()</code>.</p>
 
 <p>Вот так:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let variable = array.map(el =&gt; {
@@ -23,6 +23,8 @@
 <p>Action code:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: Build and Deploy to GitHub pages
 on:
+  schedule:
+    - cron: '0 9 * * *'
   push:
     paths-ignore:
       - 'dist/index.html'
@@ -30,8 +32,6 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  schedule:
-    - cron: '0 12 * * *'
 
 jobs:
   build:

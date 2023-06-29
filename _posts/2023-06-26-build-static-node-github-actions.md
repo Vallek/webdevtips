@@ -23,6 +23,8 @@ Action code:
 ```
 name: Build and Deploy to GitHub pages
 on:
+  schedule:
+    - cron: '0 9 * * *'
   push:
     paths-ignore:
       - 'dist/index.html'
@@ -30,8 +32,6 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  schedule:
-    - cron: '0 12 * * *'
 
 jobs:
   build:
