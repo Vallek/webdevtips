@@ -29,6 +29,9 @@ github_username:  Vallek
 git_repo: webdevtips
 host: 0.0.0.0
 
+disqus:
+  shortname: vallek-webdevtips
+
 # Build settings
 theme: minima
 plugins:

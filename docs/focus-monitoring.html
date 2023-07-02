@@ -636,7 +636,23 @@ setInterval(function() {
   
   
   <a class="tag-link tag-link_home" href="/webdevtips/tag/firefox"><span class="nobrake">firefox</span></a>
-  <a class="u-url" href="/webdevtips/focus-monitoring" hidden></a>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://0.0.0.0:4000/webdevtips/focus-monitoring';
+      this.page.identifier = 'http://0.0.0.0:4000/webdevtips/focus-monitoring';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://vallek-webdevtips.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/webdevtips/focus-monitoring" hidden></a>
 </article>
 
         </div>
