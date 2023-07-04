@@ -45,8 +45,39 @@ paginate_path: /page:num/
 # Change prod folder from site to docs
 destination: docs
 
+# jekyll-tagging
+tag_page_layout: tag_page
+tag_page_dir: tag
+
+# jekyll_compose
+jekyll_compose:
+  auto_open: true
+  default_front_matter:
+    posts:
+      layout: post
+      title: ''
+      notebook: 'frontend'
+      tags: []
+      sources: []
+
 # Change prod links from dates to simple title
 permalink: /:title
+
+defaults:
+-
+  scope:
+    path: '_posts'
+    type: 'posts'
+  values:
+    permalink: '/:title'
+    language: ru
+-
+  scope:
+    path: '_posts/en'
+    type: 'posts'
+  values:
+    permalink: 'en/:title'
+    language: en
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -69,18 +100,3 @@ permalink: /:title
 #   - vendor/ruby/
 
 # show_excerpts: true
-
-# jekyll-tagging
-tag_page_layout: tag_page
-tag_page_dir: tag
-
-# jekyll_compose
-jekyll_compose:
-  auto_open: true
-  default_front_matter:
-    posts:
-      layout: post
-      title: ''
-      notebook: 'frontend'
-      tags: []
-      sources: []
