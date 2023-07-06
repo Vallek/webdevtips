@@ -2,14 +2,14 @@
 <aside class="sidebar">
 	{% if page.lang == "en" %}
 	<h2 class="sidebar__heading">Topics and notes</h2>
-	{% else if %}
+	{% else %}
 	<h2 class="sidebar__heading">Рубрики и заметки</h2>
 	{%- endif -%}
 	<ul class="sidebar__notebooks">
 		{% for notebook in sidebar %}
 		{%- if page.notebook == notebook.title -%}
 		<li class="sidebar__notebook sidebar__notebook_open">
-		{%- else if -%}
+		{%- else -%}
 		<li class="sidebar__notebook sidebar__notebook_close">
 			{%- endif -%}
 			<button class="sidebar__title">{{notebook.title}}</button>
@@ -38,7 +38,7 @@
 						<li class="sidebar__note">
 							{%- if page.url == post.url -%}
 							<a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips{{post.url}}">{{post.title}}</a>
-							{%- else if -%}
+							{%- else -%}
 							<a class="sidebar__link sidebar__link_note" href="/webdevtips{{post.url}}">{{post.title}}</a>
 							{%- endif -%}
 						</li>
