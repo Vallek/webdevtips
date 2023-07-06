@@ -65,9 +65,6 @@ jekyll_compose:
       tags: []
       sources: []
 
-# Change prod links from dates to simple title
-permalink: /:title
-
 defaults:
   -
     scope:
