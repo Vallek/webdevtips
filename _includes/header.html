@@ -3,7 +3,7 @@
   <div class="header__content">
     {% if page.lang == "en" %}
     <a class="header__title" rel="author" href="{{site.baseurl}}/en">{{ site.title | escape }}</a>
-    {% else if %}
+    {% else %}
     <a class="header__title" rel="author" href="{{site.baseurl}}/">{{ site.title | escape }}</a>
     {% endif %}
     <!-- HTML elements for search -->
@@ -24,19 +24,23 @@
           <section class="locales">
             <h3 class="locales__text visually-hidden">Выбор языка/Language</h3>
             {% if page.dir != "/tag/" %}
+
             {% if page.lang == "en" %}
-            {% if page.layout != "home" %}
+            {% if page.url != "/en/" %}
             <a class="locales__lang locales__lang_ru" href="{{site.baseurl}}/ru{{page.url | replace: 'en/', ''}}">RU</a>
-            {% else if %}
-            <a class="locales__lang locales__lang_ru" href="{{site.baseurl}}/">RU</a>
+            {% else %}
+            <a class="locales__lang locales__lang_ru" href="{{site.baseurl}}{{page.url | replace: 'en/', ''}}">RU</a>
             {% endif %}
             <span> / </span>
             <a class="locales__lang locales__lang_en" href="{{site.baseurl}}{{page.url}}">EN</a>
-            {% else if %}
-            <a class="locales__lang locales__lang_ru" href="{{site.baseurl}}{{page.url}}">RU</a>
-            <span> / </span>
-            <a class="locales__lang locales__lang_en" href="{{site.baseurl}}/en{{page.url | replace: 'ru/', ''}}">EN</a>
             {% endif %}
+
+            {% if page.lang == "ru" %}
+            <a class="locales__lang locales__lang_en" href="{{site.baseurl}}{{page.url}}">RU</a>
+            <span> / </span>
+            <a class="locales__lang locales__lang_ru" href="{{site.baseurl}}/en{{page.url | replace: 'ru/', ''}}">EN</a>
+            {% endif %}
+
             {% endif %}
           </section>
           <a class="page-link" href="https://github.com/Vallek/webdevtips">GitHub</a>
