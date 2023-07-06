@@ -606,12 +606,12 @@
     <p>Подходит для рядов элементов а-ля галлерея, когда не нужен точный дизайн на адаптиве. Пример: карточки на моем <a href="https://vallek.github.io/Portfolio/index.html">портфолио</a></p>
 
 <p>Версия с min()</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
 </code></pre></div></div>
 <p>Проверьте необходимую поддержку браузеров!</p>
 
 <p>Оригинальная версия</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 </code></pre></div></div>
 <p>Обратите внимание, что используется auto-fill, а не auto-fit. Это важно, когда у вас мало грид элементов, чтобы они не вытягивались.</p>
 

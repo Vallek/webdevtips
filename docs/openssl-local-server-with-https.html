@@ -609,7 +609,7 @@
 
 <p>Открываете терминал. Переходите в папку проекта и выполняете</p>
 
-<p><code class="highlighter-rouge">openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem</code></p>
+<p><code class="language-plaintext highlighter-rouge">openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem</code></p>
 
 <p>Это создаст для файла сертификатов, необходимых для работы https</p>
 
@@ -617,11 +617,11 @@
 
 <p>Дальше ставим сервер. У меня вот с этим сразу получилось. Для live server нужно писать конфиг с путями к файлам.</p>
 
-<p><code class="highlighter-rouge">npm install --global http-server</code></p>
+<p><code class="language-plaintext highlighter-rouge">npm install --global http-server</code></p>
 
 <p>И запускаем</p>
 
-<p><code class="highlighter-rouge">http-server -S -C cert.pem</code></p>
+<p><code class="language-plaintext highlighter-rouge">http-server -S -C cert.pem</code></p>
 
 <p>-S - это https
 -C - это путь к файлам. У меня работало только когда в папке проекта.</p>

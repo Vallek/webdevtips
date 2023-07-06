@@ -607,15 +607,15 @@
 
 <ol>
   <li>Создайте файл <strong>init.cmd</strong> в папке пользователя OC
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\YourName\init.cmd
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\YourName\init.cmd
 </code></pre></div>    </div>
     <p>Он может быть и в другом месте (у меня он в папке с репами).</p>
   </li>
   <li>Синтаксис:
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set VAR_NAME=value
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set VAR_NAME=value
 </code></pre></div>    </div>
     <p>Задаем VS Code как редактор по умолчанию.</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set JEKYLL_EDITOR=code
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set JEKYLL_EDITOR=code
 </code></pre></div>    </div>
     <p>Обратите внимание, что нужно именно такое название.</p>
   </li>
@@ -624,7 +624,7 @@
 
 <p>В терминале выполните:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reg add "HKCU\Software\Microsoft\Command Processor" /v AutoRun /t REG_EXPAND_SZ /d "%"USERPROFILE"%\init.cmd" /f 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reg add "HKCU\Software\Microsoft\Command Processor" /v AutoRun /t REG_EXPAND_SZ /d "%"USERPROFILE"%\init.cmd" /f 
 </code></pre></div></div>
 <p>Убедитесь, что путь до init.cmd указан верно</p>
 
@@ -634,7 +634,7 @@
 
 <p>Чтобы отменить регистрацию выполните:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reg delete "HKCU\Software\Microsoft\Command Processor" /v AutoRun
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reg delete "HKCU\Software\Microsoft\Command Processor" /v AutoRun
 </code></pre></div></div>
 
 <p>А еще так можно задать <a href="alias-for-command-in-cmd.html">сокращенные команды для cmd/powershell</a>.</p>

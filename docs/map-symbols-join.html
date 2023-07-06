@@ -603,10 +603,10 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Если вы используете метод <code class="highlighter-rouge">map()</code> и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после <code class="highlighter-rouge">map()</code> метод <code class="highlighter-rouge">join()</code>.</p>
+    <p>Если вы используете метод <code class="language-plaintext highlighter-rouge">map()</code> и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после <code class="language-plaintext highlighter-rouge">map()</code> метод <code class="language-plaintext highlighter-rouge">join()</code>.</p>
 
 <p>Вот так:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let variable = array.map(el =&gt; {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let variable = array.map(el =&gt; {
 		// code with template literal
 		return result;
 	}).join('');

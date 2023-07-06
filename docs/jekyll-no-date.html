@@ -604,7 +604,7 @@
 
   <div class="post-content e-content" itemprop="articleBody">
     <p>Создайте _plugins/no_date.rb:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Jekyll::PostReader
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Jekyll::PostReader
   def read_posts(dir)
     read_publishable(dir, "_posts", /.*\.md$/)
   end

@@ -63,22 +63,6 @@ jekyll_compose:
 # Change prod links from dates to simple title
 permalink: /:title
 
-defaults:
--
-  scope:
-    path: '_posts'
-    type: 'posts'
-  values:
-    permalink: '/:title'
-    language: ru
--
-  scope:
-    path: '_posts/en'
-    type: 'posts'
-  values:
-    permalink: 'en/:title'
-    language: en
-
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

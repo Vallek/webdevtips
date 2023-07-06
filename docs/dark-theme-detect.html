@@ -604,13 +604,13 @@
 
   <div class="post-content e-content" itemprop="articleBody">
     <p>На входе</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {
     // dark mode
 }
 </code></pre></div></div>
 
 <p>В реальном времени</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =&gt; {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =&gt; {
     const newColorScheme = event.matches ? "dark" : "light";
 });
 </code></pre></div></div>
@@ -618,12 +618,12 @@
 <p>Я использую этот метод в своей <a href="https://vallek.github.io/web-links/index.html">подборке ссылок</a>. На момент написания это выглядит так:</p>
 
 <p>В CSS я просто добавил класс dark, который динамически миксуется к классу page, переписывая цвета специфичностью (два класса). Не по БЭМу, но как часто советуют сначала делал, чтобы работало) Потом может перепишу под БЭМ.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.dark.page {background-color:#002B36;} 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.dark.page {background-color:#002B36;} 
 .dark header {color:#c3d5d9;} 
 и так далее
 </code></pre></div></div>
 <p>JS:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const page = document.querySelector('.page');
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const page = document.querySelector('.page');
 // Theme switch buttons
 const lightThemeLink = document.querySelector('.themes__link_light');
 const darkThemeLink = document.querySelector('.themes__link_dark');

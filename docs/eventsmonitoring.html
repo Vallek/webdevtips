@@ -605,18 +605,18 @@
   <div class="post-content e-content" itemprop="articleBody">
     <h2 id="chrome">Chrome</h2>
 
-<p>Для того, чтобы видеть все браузерные события в реальном времени введите в консоли браузера <code class="highlighter-rouge">monitorEvents(tempVar, 'events type')</code></p>
+<p>Для того, чтобы видеть все браузерные события в реальном времени введите в консоли браузера <code class="language-plaintext highlighter-rouge">monitorEvents(tempVar, 'events type')</code></p>
 
-<p><code class="highlighter-rouge">tempVar</code> временная переменная, которую можно создать в девтулзах (ПКМ на любом узле &gt; store as global variable).</p>
+<p><code class="language-plaintext highlighter-rouge">tempVar</code> временная переменная, которую можно создать в девтулзах (ПКМ на любом узле &gt; store as global variable).</p>
 
-<p>Можно просто найти узел. Например <code class="highlighter-rouge">monitorEvents(document.body, 'mouse')</code>.</p>
+<p>Можно просто найти узел. Например <code class="language-plaintext highlighter-rouge">monitorEvents(document.body, 'mouse')</code>.</p>
 
-<p><code class="highlighter-rouge">events type</code> - тип событий, например ‘mouse’. Можно и отдельные события.</p>
+<p><code class="language-plaintext highlighter-rouge">events type</code> - тип событий, например ‘mouse’. Можно и отдельные события.</p>
 
 <h2 id="firefox">Firefox</h2>
 
 <p>В лисе к сожалению такой встроенной функции нет. Но ее можно создать самому!</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function monitorEvents(element) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function monitorEvents(element) {
   let log = function(e) { console.log(e);};
   let events = [];
 
@@ -628,7 +628,7 @@
   });
 }
 </code></pre></div></div>
-<p>Затем выполните с нужным узлом в качестве аргумента. Например <code class="highlighter-rouge">monitorEvents(temp0)</code> или monitorEvents(document.body).</p>
+<p>Затем выполните с нужным узлом в качестве аргумента. Например <code class="language-plaintext highlighter-rouge">monitorEvents(temp0)</code> или monitorEvents(document.body).</p>
 
 <p><em>Совет со stackoverflow</em>: If you’re trying to see all the events are happening inside an element (such as the body), you should log during the capture phase - element.addEventListener(eventName, log, true);</p>
 

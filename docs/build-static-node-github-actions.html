@@ -612,14 +612,14 @@
 <p>In remote repo on github:</p>
 
 <ol>
-  <li>Create production folder. I use <code class="highlighter-rouge">dist</code> in this example</li>
+  <li>Create production folder. I use <code class="language-plaintext highlighter-rouge">dist</code> in this example</li>
   <li>Create gh-pages branch</li>
-  <li>In repo settings &gt; Actions &gt; General &gt; Workflow permissions. Set to <code class="highlighter-rouge">Read AND WRITE</code>.</li>
+  <li>In repo settings &gt; Actions &gt; General &gt; Workflow permissions. Set to <code class="language-plaintext highlighter-rouge">Read AND WRITE</code>.</li>
   <li>Create Github Action</li>
 </ol>
 
 <p>Action code:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: Build and Deploy to GitHub pages
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: Build and Deploy to GitHub pages
 on:
   schedule:
     - cron: '0 9 * * *'
@@ -668,14 +668,14 @@ jobs:
 <ol>
   <li>Make sure to push all node files (node_modules and so on)</li>
   <li>BUT DO NOT PUSH static index.html. Let github create it. Add it to .gitignore</li>
-  <li><code class="highlighter-rouge">actions/checkout@v2</code> - only worked with <strong>v2</strong> for me</li>
-  <li>Make sure <code class="highlighter-rouge">npm run build</code> runs the right js file. Set in <code class="highlighter-rouge">package.json</code> in <code class="highlighter-rouge">build</code>. Mine is <code class="highlighter-rouge">node index.js</code>.</li>
-  <li>Will not work without <code class="highlighter-rouge">git config --global --add safe.directory /github/workspace</code>. Before disabling, make sure you understand this security measure, and <a href="https://github.com/git/git/commit/8959555cee7ec045958f9b6dd62e541affb7e7d9">why it exists</a>. You should not do this if your repositories are stored on a shared drive. See <a href="https://stackoverflow.com/a/71904131/9749171">this answer</a>.</li>
-  <li>Make sure <code class="highlighter-rouge">cd dist/</code> and <code class="highlighter-rouge">directory: dist</code> have the right path for your prod folder</li>
+  <li><code class="language-plaintext highlighter-rouge">actions/checkout@v2</code> - only worked with <strong>v2</strong> for me</li>
+  <li>Make sure <code class="language-plaintext highlighter-rouge">npm run build</code> runs the right js file. Set in <code class="language-plaintext highlighter-rouge">package.json</code> in <code class="language-plaintext highlighter-rouge">build</code>. Mine is <code class="language-plaintext highlighter-rouge">node index.js</code>.</li>
+  <li>Will not work without <code class="language-plaintext highlighter-rouge">git config --global --add safe.directory /github/workspace</code>. Before disabling, make sure you understand this security measure, and <a href="https://github.com/git/git/commit/8959555cee7ec045958f9b6dd62e541affb7e7d9">why it exists</a>. You should not do this if your repositories are stored on a shared drive. See <a href="https://stackoverflow.com/a/71904131/9749171">this answer</a>.</li>
+  <li>Make sure <code class="language-plaintext highlighter-rouge">cd dist/</code> and <code class="language-plaintext highlighter-rouge">directory: dist</code> have the right path for your prod folder</li>
   <li>Make sure your branch main name is right</li>
-  <li>I run build on push changes (obviously) but also on timer once a day. This is what <code class="highlighter-rouge">schedule</code> is for. It’s in <a href="https://crontab.guru/#0_24_*_*_*">cron format</a> and UTC time.</li>
-  <li>Original version had <code class="highlighter-rouge">user.email "action@github.com"</code> and <code class="highlighter-rouge">user.name "GitHub Action"</code> to not flood your own commit history BUT it was not working for me.</li>
-  <li><code class="highlighter-rouge">paths-ignore</code> allows you to not run build on pushing files when it’s not needed.</li>
+  <li>I run build on push changes (obviously) but also on timer once a day. This is what <code class="language-plaintext highlighter-rouge">schedule</code> is for. It’s in <a href="https://crontab.guru/#0_24_*_*_*">cron format</a> and UTC time.</li>
+  <li>Original version had <code class="language-plaintext highlighter-rouge">user.email "action@github.com"</code> and <code class="language-plaintext highlighter-rouge">user.name "GitHub Action"</code> to not flood your own commit history BUT it was not working for me.</li>
+  <li><code class="language-plaintext highlighter-rouge">paths-ignore</code> allows you to not run build on pushing files when it’s not needed.</li>
 </ol>
 
 <p>Обратите внимание, что мой action отличается от источника.</p>

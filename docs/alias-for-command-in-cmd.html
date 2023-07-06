@@ -609,26 +609,26 @@
 
 <ol>
   <li>Создайте файл <strong>init.cmd</strong> в папке пользователя OC
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\YourName\init.cmd
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\YourName\init.cmd
 </code></pre></div>    </div>
     <p>Он может быть и в другом месте (у меня он в папке с репами).</p>
   </li>
   <li>Пример содержимого файла:
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@echo off
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@echo off
 doskey c=cls
 doskey d=cd %USERPROFILE%\Desktop
 doskey e=explorer $*
 doskey jp=cd C:\John\Pictures
 doskey l=dir /a $* 
 </code></pre></div>    </div>
-    <p>Каждый doskey задает alias. Синтаксис <code class="highlighter-rouge">doskey alias=command</code>.</p>
+    <p>Каждый doskey задает alias. Синтаксис <code class="language-plaintext highlighter-rouge">doskey alias=command</code>.</p>
   </li>
   <li>Теперь нужно это зарегистрировать, чтобы автоматически применять при запуске cmd.exe</li>
 </ol>
 
 <p>В терминале выполните:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reg add "HKCU\Software\Microsoft\Command Processor" /v AutoRun /t REG_EXPAND_SZ /d "%"USERPROFILE"%\init.cmd" /f 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reg add "HKCU\Software\Microsoft\Command Processor" /v AutoRun /t REG_EXPAND_SZ /d "%"USERPROFILE"%\init.cmd" /f 
 </code></pre></div></div>
 <p>Убедитесь, что путь до init.cmd указан верно</p>
 
@@ -638,12 +638,12 @@ doskey l=dir /a $*
 
 <p>Чтобы отменить регистрацию выполните:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reg delete "HKCU\Software\Microsoft\Command Processor" /v AutoRun
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reg delete "HKCU\Software\Microsoft\Command Processor" /v AutoRun
 </code></pre></div></div>
 
 <p>Для PowerShell:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function bundleExecJekyllServe {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function bundleExecJekyllServe {
     bundle exec jekyll serve
 }
 New-Alias bejs bundleExecJekyllServe
