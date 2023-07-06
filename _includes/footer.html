@@ -25,7 +25,11 @@
       </div>
 
       <div class="footer-col footer-col-3 footer__description">
-        <p class="footer__about">{{- site.description | escape -}}</p>
+        {% if page.lang == "en" %}
+        <p class="footer__about">Frontend, web development and pc setup knowledge base</p>
+        {% else if %}
+        <p class="footer__about">База знаний по фронтенду, веб-разработке и настройке пк</p>
+        {% endif %}
         <p class="footer__copy">Favicon from <a href="https://www.svgrepo.com/svg/397378/man-technologist">svgrepo</a> under Apache License</p>
       </div>
     </div>

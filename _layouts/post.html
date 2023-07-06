@@ -23,10 +23,9 @@ layout: default
   </div>
 
   {%- if page.sources -%}
-  {%- if page.sources.size > 1 -%}
-  <span>Источники: </span>
-  {%- endif -%}
-  {%- if page.sources.size == 1 -%}
+  {% if page.lang == "en" %}
+  <span>Source: </span>
+  {%- else if -%}
   <span>Источник: </span>
   {%- endif -%}
   {% for source in page.sources %}

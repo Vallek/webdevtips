@@ -3,16 +3,14 @@ layout: default
 ---
 
 <div class="home">
-  {%- if page.title -%}
-  <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
   
   {{ content }}
   
   {%- if site.posts.size > 0 -%}
-  <h2 class="post-list-heading">Все заметки</h2>
+  <h1 class="post-list-heading">Все заметки</h1>
   <ul class="post-list">
     {% for post in paginator.posts %}
+    {% if post.lang == page.lang %}
     <li class="post-item">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <span class="post-meta">{{ post.date | date: date_format }}<span class="post-notebook">&ensp;-&ensp;{{ post.notebook }}</span></span>
@@ -30,6 +28,7 @@ layout: default
       <a class="tag-link" href="{{site.baseurl}}/tag/{{ tag_name }}"><span class="nobrake">{{ tag }}</span></a>
       {%- endfor -%}
     </li>
+    {%- endif -%}
     {%- endfor -%}
   </ul>
   

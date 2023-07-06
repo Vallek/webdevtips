@@ -1,9 +1,11 @@
 <header class="header site-header">
 
   <div class="header__content">
-    {%- assign default_paths = site.pages | map: "path" -%}
-    {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="header__title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    {% if page.lang == "en" %}
+    <a class="header__title" rel="author" href="{{site.baseurl}}/en">{{ site.title | escape }}</a>
+    {% else if %}
+    <a class="header__title" rel="author" href="{{site.baseurl}}/">{{ site.title | escape }}</a>
+    {% endif %}
     <!-- HTML elements for search -->
     <div class="header__search search">
       <input class="search__input" type="text" id="search-input" placeholder="Поиск по содержимому...">
@@ -19,6 +21,24 @@
           </span>
         </label>
         <div class="trigger">
+          <section class="locales">
+            <h3 class="locales__text visually-hidden">Выбор языка/Language</h3>
+            {% if page.dir != "/tag/" %}
+            {% if page.lang == "en" %}
+            {% if page.layout != "home" %}
+            <a class="locales__lang locales__lang_ru" href="{{site.baseurl}}/ru{{page.url | replace: 'en/', ''}}">RU</a>
+            {% else if %}
+            <a class="locales__lang locales__lang_ru" href="{{site.baseurl}}/">RU</a>
+            {% endif %}
+            <span> / </span>
+            <a class="locales__lang locales__lang_en" href="{{site.baseurl}}{{page.url}}">EN</a>
+            {% else if %}
+            <a class="locales__lang locales__lang_ru" href="{{site.baseurl}}{{page.url}}">RU</a>
+            <span> / </span>
+            <a class="locales__lang locales__lang_en" href="{{site.baseurl}}/en{{page.url | replace: 'ru/', ''}}">EN</a>
+            {% endif %}
+            {% endif %}
+          </section>
           <a class="page-link" href="https://github.com/Vallek/webdevtips">GitHub</a>
           <a class="page-link" href="{{site.baseurl}}/about/index.html">О сайте</a>
         </div>

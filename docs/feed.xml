@@ -1,11 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-07-02T19:45:42+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry><title type="html">Если map() с template literal выдает лишние символы</title><link href="http://0.0.0.0:4000/webdevtips/map-symbols-join" rel="alternate" type="text/html" title="Если map() с template literal выдает лишние символы" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/map-symbols-join</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/map-symbols-join"><![CDATA[<p>Если вы используете метод <code class="highlighter-rouge">map()</code> и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после <code class="highlighter-rouge">map()</code> метод <code class="highlighter-rouge">join()</code>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-07-06T11:21:50+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">Если map() с template literal выдает лишние символы</title><link href="http://0.0.0.0:4000/webdevtips/en/map-symbols-join" rel="alternate" type="text/html" title="Если map() с template literal выдает лишние символы" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/map-symbols-join</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/map-symbols-join"><![CDATA[<p>Если вы используете метод <code class="language-plaintext highlighter-rouge">map()</code> и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после <code class="language-plaintext highlighter-rouge">map()</code> метод <code class="language-plaintext highlighter-rouge">join()</code>.</p>
 
 <p>Вот так:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let variable = array.map(el =&gt; {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let variable = array.map(el =&gt; {
 		// code with template literal
 		return result;
 	}).join('');
-</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[Если вы используете метод map() и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после map() метод join().]]></summary></entry><entry><title type="html">How to build static page with Node.js and Github Actions</title><link href="http://0.0.0.0:4000/webdevtips/build-static-node-github-actions" rel="alternate" type="text/html" title="How to build static page with Node.js and Github Actions" /><published>2023-06-26T10:38:00+03:00</published><updated>2023-06-26T10:38:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/build-static-node-github-actions</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/build-static-node-github-actions"><![CDATA[<h2 id="зачем-это-нужно">Зачем это нужно</h2>
+</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[Если вы используете метод map() и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после map() метод join().]]></summary></entry><entry xml:lang="ru"><title type="html">Если map() с template literal выдает лишние символы</title><link href="http://0.0.0.0:4000/webdevtips/ru/map-symbols-join" rel="alternate" type="text/html" title="Если map() с template literal выдает лишние символы" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/map-symbols-join</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/map-symbols-join"><![CDATA[<p>Если вы используете метод <code class="language-plaintext highlighter-rouge">map()</code> и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после <code class="language-plaintext highlighter-rouge">map()</code> метод <code class="language-plaintext highlighter-rouge">join()</code>.</p>
+
+<p>Вот так:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let variable = array.map(el =&gt; {
+		// code with template literal
+		return result;
+	}).join('');
+</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[Если вы используете метод map() и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после map() метод join().]]></summary></entry><entry xml:lang="en"><title type="html">How to build static page with Node.js and Github Actions</title><link href="http://0.0.0.0:4000/webdevtips/en/build-static-node-github-actions" rel="alternate" type="text/html" title="How to build static page with Node.js and Github Actions" /><published>2023-06-26T10:38:00+03:00</published><updated>2023-06-26T10:38:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/build-static-node-github-actions</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/build-static-node-github-actions"><![CDATA[<h2 id="зачем-это-нужно">Зачем это нужно</h2>
 <p>Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для <a href="https://vallek.github.io/animatable-css/">списка анимируемых CSS свойств</a>. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)</p>
 
 <h2 id="how-to">How to</h2>
@@ -14,14 +21,14 @@
 <p>In remote repo on github:</p>
 
 <ol>
-  <li>Create production folder. I use <code class="highlighter-rouge">dist</code> in this example</li>
+  <li>Create production folder. I use <code class="language-plaintext highlighter-rouge">dist</code> in this example</li>
   <li>Create gh-pages branch</li>
-  <li>In repo settings &gt; Actions &gt; General &gt; Workflow permissions. Set to <code class="highlighter-rouge">Read AND WRITE</code>.</li>
+  <li>In repo settings &gt; Actions &gt; General &gt; Workflow permissions. Set to <code class="language-plaintext highlighter-rouge">Read AND WRITE</code>.</li>
   <li>Create Github Action</li>
 </ol>
 
 <p>Action code:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: Build and Deploy to GitHub pages
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: Build and Deploy to GitHub pages
 on:
   schedule:
     - cron: '0 9 * * *'
@@ -70,26 +77,110 @@ jobs:
 <ol>
   <li>Make sure to push all node files (node_modules and so on)</li>
   <li>BUT DO NOT PUSH static index.html. Let github create it. Add it to .gitignore</li>
-  <li><code class="highlighter-rouge">actions/checkout@v2</code> - only worked with <strong>v2</strong> for me</li>
-  <li>Make sure <code class="highlighter-rouge">npm run build</code> runs the right js file. Set in <code class="highlighter-rouge">package.json</code> in <code class="highlighter-rouge">build</code>. Mine is <code class="highlighter-rouge">node index.js</code>.</li>
-  <li>Will not work without <code class="highlighter-rouge">git config --global --add safe.directory /github/workspace</code>. Before disabling, make sure you understand this security measure, and <a href="https://github.com/git/git/commit/8959555cee7ec045958f9b6dd62e541affb7e7d9">why it exists</a>. You should not do this if your repositories are stored on a shared drive. See <a href="https://stackoverflow.com/a/71904131/9749171">this answer</a>.</li>
-  <li>Make sure <code class="highlighter-rouge">cd dist/</code> and <code class="highlighter-rouge">directory: dist</code> have the right path for your prod folder</li>
+  <li><code class="language-plaintext highlighter-rouge">actions/checkout@v2</code> - only worked with <strong>v2</strong> for me</li>
+  <li>Make sure <code class="language-plaintext highlighter-rouge">npm run build</code> runs the right js file. Set in <code class="language-plaintext highlighter-rouge">package.json</code> in <code class="language-plaintext highlighter-rouge">build</code>. Mine is <code class="language-plaintext highlighter-rouge">node index.js</code>.</li>
+  <li>Will not work without <code class="language-plaintext highlighter-rouge">git config --global --add safe.directory /github/workspace</code>. Before disabling, make sure you understand this security measure, and <a href="https://github.com/git/git/commit/8959555cee7ec045958f9b6dd62e541affb7e7d9">why it exists</a>. You should not do this if your repositories are stored on a shared drive. See <a href="https://stackoverflow.com/a/71904131/9749171">this answer</a>.</li>
+  <li>Make sure <code class="language-plaintext highlighter-rouge">cd dist/</code> and <code class="language-plaintext highlighter-rouge">directory: dist</code> have the right path for your prod folder</li>
   <li>Make sure your branch main name is right</li>
-  <li>I run build on push changes (obviously) but also on timer once a day. This is what <code class="highlighter-rouge">schedule</code> is for. It’s in <a href="https://crontab.guru/#0_24_*_*_*">cron format</a> and UTC time.</li>
-  <li>Original version had <code class="highlighter-rouge">user.email "action@github.com"</code> and <code class="highlighter-rouge">user.name "GitHub Action"</code> to not flood your own commit history BUT it was not working for me.</li>
-  <li><code class="highlighter-rouge">paths-ignore</code> allows you to not run build on pushing files when it’s not needed.</li>
+  <li>I run build on push changes (obviously) but also on timer once a day. This is what <code class="language-plaintext highlighter-rouge">schedule</code> is for. It’s in <a href="https://crontab.guru/#0_24_*_*_*">cron format</a> and UTC time.</li>
+  <li>Original version had <code class="language-plaintext highlighter-rouge">user.email "action@github.com"</code> and <code class="language-plaintext highlighter-rouge">user.name "GitHub Action"</code> to not flood your own commit history BUT it was not working for me.</li>
+  <li><code class="language-plaintext highlighter-rouge">paths-ignore</code> allows you to not run build on pushing files when it’s not needed.</li>
 </ol>
 
-<p>Обратите внимание, что мой action отличается от источника.</p>]]></content><author><name></name></author><category term="github" /><category term="nodejs" /><summary type="html"><![CDATA[Зачем это нужно Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для списка анимируемых CSS свойств. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)]]></summary></entry><entry><title type="html">Как клонировать гит репозиторий в любую папку</title><link href="http://0.0.0.0:4000/webdevtips/git-clone-in-folder" rel="alternate" type="text/html" title="Как клонировать гит репозиторий в любую папку" /><published>2023-06-17T16:50:00+03:00</published><updated>2023-06-17T16:50:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/git-clone-in-folder</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/git-clone-in-folder"><![CDATA[<p>Из любого места:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/user/repo-name path/folder-name
+<p>Обратите внимание, что мой action отличается от источника.</p>]]></content><author><name></name></author><category term="github" /><category term="nodejs" /><summary type="html"><![CDATA[Зачем это нужно Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для списка анимируемых CSS свойств. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)]]></summary></entry><entry xml:lang="ru"><title type="html">Как генерировать статичный html файл на Node.js и Github Actions</title><link href="http://0.0.0.0:4000/webdevtips/ru/build-static-node-github-actions" rel="alternate" type="text/html" title="Как генерировать статичный html файл на Node.js и Github Actions" /><published>2023-06-26T10:38:00+03:00</published><updated>2023-06-26T10:38:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/build-static-node-github-actions</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/build-static-node-github-actions"><![CDATA[<h2 id="зачем-это-нужно">Зачем это нужно</h2>
+<p>Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для <a href="https://vallek.github.io/animatable-css/">списка анимируемых CSS свойств</a>. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)</p>
+
+<h2 id="how-to">How to</h2>
+<p>Прежде всего создайте github token. Откройте настройки аккаунта (не репозитория) &gt; developer settings &gt; Personal access tokens. Я выбрал классический. Установите имя и дату окончания. Сохраните токен где-то у себя (как пароль).</p>
+
+<p>Для репозитория на гитхабе:</p>
+
+<ol>
+  <li>Создайте папку для продакшена. Я использую ‘dist’ в этом примере</li>
+  <li>Создайте ветку gh-pages</li>
+  <li>В настройках репозитория &gt; Actions &gt; General &gt; Workflow permissions. Выберете <code class="language-plaintext highlighter-rouge">Read AND WRITE</code>.</li>
+  <li>Создайте Github Action</li>
+</ol>
+
+<p>Код экшена:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: Build and Deploy to GitHub pages
+on:
+  schedule:
+    - cron: '0 9 * * *'
+  push:
+    paths-ignore:
+      - 'dist/index.html'
+      - 'README.md'
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Generate static files
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build
+
+    - name: Init new repo in dist folder and commit generated files
+      run: |
+        cd dist/
+        git init
+        git add -A
+        git config --local user.email "email@email.com"
+        git config --local user.name "username"
+        git commit -m 'deploy'
+        git config --global --add safe.directory /github/workspace
+        
+    - name: Force push to destination branch
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: $
+        branch: gh-pages
+        force: true
+        directory: dist
 </code></pre></div></div>
-<p>Имя папки репозитория станет <code class="highlighter-rouge">folder-name</code> вместо имени репозитория (как это происходит при клонировании по умолчанию).</p>
+<p><strong>ВАЖНЫЕ ЗАМЕЧАНИЯ</strong>:</p>
+<ol>
+  <li>Убедитесь, что вы загрузили все файлы ноды (node_modules и так далее).</li>
+  <li>НО НЕ пуште статический index.html. Пусть github создает его сам. Добавьте его в .gitignore</li>
+  <li><code class="language-plaintext highlighter-rouge">actions/checkout@v2</code> - у меня работало только с <strong>v2</strong></li>
+  <li>Убедитесь, что “npm run build” запускает правильный js-файл. Задайте в <code class="language-plaintext highlighter-rouge">package.json</code> в <code class="language-plaintext highlighter-rouge">build</code>. Мой - это <code class="language-plaintext highlighter-rouge">node index.js</code>.</li>
+  <li>Не будет работать без строчки <code class="language-plaintext highlighter-rouge">git config --global --add safe.directory /github/workspace</code>. Перед отключением убедитесь, что вы понимаете эту меру безопасности и <a href="https://github.com/git/git/commit/8959555cee7ec045958f9b6dd62e541affb7e7d9">почему она существует</a>. Подробности в <a href="https://stackoverflow.com/a/71904131/9749171">этом ответе</a>.</li>
+  <li>Убедитесь, что <code class="language-plaintext highlighter-rouge">cd dist/</code> и <code class="language-plaintext highlighter-rouge">directory: dist</code> указывают правильный путь к вашей папке прода</li>
+  <li>Убедитесь, что название вашей главной ветки указано правильно</li>
+  <li>Я запускаю сборку по  пушу изменений (очевидно), но также по таймеру один раз в день. Именно для этого существует <code class="language-plaintext highlighter-rouge">schedule</code>. Уазывается в формате <a href="https://crontab.guru/#0_24_ *_*_*">cron</a> и универсальному UTC времени.</li>
+  <li>В оригинальной версии был <code class="language-plaintext highlighter-rouge">user.email "action@github.com"</code> и <code class="language-plaintext highlighter-rouge">user.name "GitHub Action"</code>, чтобы не зафлудить вашу собственную историю коммитов, НО у меня это не сработало.</li>
+  <li><code class="language-plaintext highlighter-rouge">paths-ignore</code> позволяет вам не запускать сборку при пуше файлов, когда это не нужно.</li>
+</ol>
+
+<p>Обратите внимание, что мой action отличается от источника.</p>]]></content><author><name></name></author><category term="github" /><category term="nodejs" /><summary type="html"><![CDATA[Зачем это нужно Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для списка анимируемых CSS свойств. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)]]></summary></entry><entry xml:lang="ru"><title type="html">Как клонировать гит репозиторий в любую папку</title><link href="http://0.0.0.0:4000/webdevtips/ru/git-clone-in-folder" rel="alternate" type="text/html" title="Как клонировать гит репозиторий в любую папку" /><published>2023-06-17T16:50:00+03:00</published><updated>2023-06-17T16:50:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/git-clone-in-folder</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/git-clone-in-folder"><![CDATA[<p>Из любого места:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/user/repo-name path/folder-name
+</code></pre></div></div>
+<p>Имя папки репозитория станет <code class="language-plaintext highlighter-rouge">folder-name</code> вместо имени репозитория (как это происходит при клонировании по умолчанию).</p>
 
 <p>В активную папку (то есть прямо сюда):</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/user/repo-name .
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/user/repo-name .
 </code></pre></div></div>
 
-<p>В источнике гит адрес пишут по другому, но у меня работает обычный url.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Из любого места: git clone https://github.com/user/repo-name path/folder-name Имя папки репозитория станет folder-name вместо имени репозитория (как это происходит при клонировании по умолчанию).]]></summary></entry><entry><title type="html">Как работает flex-basis</title><link href="http://0.0.0.0:4000/webdevtips/flex-basis" rel="alternate" type="text/html" title="Как работает flex-basis" /><published>2023-06-14T13:57:00+03:00</published><updated>2023-06-14T13:57:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/flex-basis</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/flex-basis"><![CDATA[<h2 id="как-работает">Как работает</h2>
+<p>В источнике гит адрес пишут по другому, но у меня работает обычный url.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Из любого места: git clone https://github.com/user/repo-name path/folder-name Имя папки репозитория станет folder-name вместо имени репозитория (как это происходит при клонировании по умолчанию).]]></summary></entry><entry xml:lang="en"><title type="html">Как клонировать гит репозиторий в любую папку</title><link href="http://0.0.0.0:4000/webdevtips/en/git-clone-in-folder" rel="alternate" type="text/html" title="Как клонировать гит репозиторий в любую папку" /><published>2023-06-17T16:50:00+03:00</published><updated>2023-06-17T16:50:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/git-clone-in-folder</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/git-clone-in-folder"><![CDATA[<p>Из любого места:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/user/repo-name path/folder-name
+</code></pre></div></div>
+<p>Имя папки репозитория станет <code class="language-plaintext highlighter-rouge">folder-name</code> вместо имени репозитория (как это происходит при клонировании по умолчанию).</p>
+
+<p>В активную папку (то есть прямо сюда):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/user/repo-name .
+</code></pre></div></div>
+
+<p>В источнике гит адрес пишут по другому, но у меня работает обычный url.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Из любого места: git clone https://github.com/user/repo-name path/folder-name Имя папки репозитория станет folder-name вместо имени репозитория (как это происходит при клонировании по умолчанию).]]></summary></entry><entry xml:lang="en"><title type="html">Как работает flex-basis</title><link href="http://0.0.0.0:4000/webdevtips/en/flex-basis" rel="alternate" type="text/html" title="Как работает flex-basis" /><published>2023-06-14T13:57:00+03:00</published><updated>2023-06-14T13:57:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/flex-basis</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/flex-basis"><![CDATA[<h2 id="как-работает">Как работает</h2>
 
 <p><img src="img/rel-vs-abs-flex.svg" alt="" /></p>
 
@@ -106,7 +197,7 @@ jobs:
 
 <h2 id="значения-по-умолчанию">Значения по умолчанию</h2>
 
-<p>The initial values of the flex components are equivalent to <code class="highlighter-rouge">flex: 0 1 auto</code>.</p>
+<p>The initial values of the flex components are equivalent to <code class="language-plaintext highlighter-rouge">flex: 0 1 auto</code>.</p>
 
 <p><strong>Note:</strong> The initial values of flex-grow and flex-basis are different from their defaults when omitted in the flex shorthand. This is so that the flex shorthand can better accommodate the most common cases.</p>
 
@@ -119,29 +210,77 @@ jobs:
   <li>
     <p>flex: initial</p>
 
-    <p>Equivalent to <code class="highlighter-rouge">flex: 0 1 auto</code>. (This is the initial value.) Sizes the item based on the width/height properties. (If the item’s main size property computes to auto, this will size the flex item based on its contents.) Makes the flex item inflexible when there is positive free space, but allows it to shrink to its minimum size when there is insufficient space. The alignment abilities or auto margins can be used to align flex items along the main axis.</p>
+    <p>Equivalent to <code class="language-plaintext highlighter-rouge">flex: 0 1 auto</code>. (This is the initial value.) Sizes the item based on the width/height properties. (If the item’s main size property computes to auto, this will size the flex item based on its contents.) Makes the flex item inflexible when there is positive free space, but allows it to shrink to its minimum size when there is insufficient space. The alignment abilities or auto margins can be used to align flex items along the main axis.</p>
   </li>
   <li>
     <p>flex: auto</p>
 
-    <p>Equivalent to <code class="highlighter-rouge">flex: 1 1 auto</code>. Sizes the item based on the width/height properties, but makes them fully flexible, so that they absorb any free space along the main axis. If all items are either flex: auto, flex: initial, or flex: none, any positive free space after the items have been sized will be distributed evenly to the items with flex: auto.</p>
+    <p>Equivalent to <code class="language-plaintext highlighter-rouge">flex: 1 1 auto</code>. Sizes the item based on the width/height properties, but makes them fully flexible, so that they absorb any free space along the main axis. If all items are either flex: auto, flex: initial, or flex: none, any positive free space after the items have been sized will be distributed evenly to the items with flex: auto.</p>
   </li>
   <li>
     <p>flex: none</p>
 
-    <p>Equivalent to <code class="highlighter-rouge">flex: 0 0 auto</code>. This value sizes the item according to the width/height properties, but makes the flex item fully inflexible. This is similar to initial, except that flex items are not allowed to shrink, even in overflow situations.</p>
+    <p>Equivalent to <code class="language-plaintext highlighter-rouge">flex: 0 0 auto</code>. This value sizes the item according to the width/height properties, but makes the flex item fully inflexible. This is similar to initial, except that flex items are not allowed to shrink, even in overflow situations.</p>
   </li>
   <li>
-    <p>flex: <code class="highlighter-rouge">&lt;positive-number&gt;</code></p>
+    <p>flex: <code class="language-plaintext highlighter-rouge">&lt;positive-number&gt;</code></p>
 
-    <p>Equivalent to flex: <code class="highlighter-rouge">&lt;positive-number&gt;</code> 1 0. Makes the flex item flexible and sets the flex basis to zero, resulting in an item that receives the specified proportion of the free space in the flex container. If all items in the flex container use this pattern, their sizes will be proportional to the specified flex factor.</p>
+    <p>Equivalent to flex: <code class="language-plaintext highlighter-rouge">&lt;positive-number&gt;</code> 1 0. Makes the flex item flexible and sets the flex basis to zero, resulting in an item that receives the specified proportion of the free space in the flex container. If all items in the flex container use this pattern, their sizes will be proportional to the specified flex factor.</p>
   </li>
 </ul>
 
-<p>By default, flex items won’t shrink below their minimum content size (the length of the longest word or fixed-size element). To change this, set the min-width or min-height property. (See §4.5 Automatic Minimum Size of Flex Items.)</p>]]></content><author><name></name></author><category term="css" /><category term="flexbox" /><summary type="html"><![CDATA[Как работает]]></summary></entry><entry><title type="html">Detect click outside of element</title><link href="http://0.0.0.0:4000/webdevtips/click-outside" rel="alternate" type="text/html" title="Detect click outside of element" /><published>2023-06-10T12:43:00+03:00</published><updated>2023-06-10T12:43:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/click-outside</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/click-outside"><![CDATA[<p>На примере выпадающего меню</p>
+<p>By default, flex items won’t shrink below their minimum content size (the length of the longest word or fixed-size element). To change this, set the min-width or min-height property. (See §4.5 Automatic Minimum Size of Flex Items.)</p>]]></content><author><name></name></author><category term="css" /><category term="flexbox" /><summary type="html"><![CDATA[Как работает]]></summary></entry><entry xml:lang="ru"><title type="html">Как работает flex-basis</title><link href="http://0.0.0.0:4000/webdevtips/ru/flex-basis" rel="alternate" type="text/html" title="Как работает flex-basis" /><published>2023-06-14T13:57:00+03:00</published><updated>2023-06-14T13:57:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/flex-basis</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/flex-basis"><![CDATA[<h2 id="как-работает">Как работает</h2>
+
+<p><img src="img/rel-vs-abs-flex.svg" alt="" /></p>
+
+<ul>
+  <li>flex-basis: 0; - распределение <strong>пустого места</strong> в соответствии с flex-grow</li>
+  <li>flex-basis: auto; - распределение размера в соответствии с flex-grow</li>
+</ul>
+
+<p>Если у одного флекс элемента grow 2, а у другого 1, то при flex-basis: 0 будет поделено пустое место внутри флекс контейнера. И именно оно будет в два раза больше.</p>
+
+<p>А при flex-basis: auto размер всего элемента с содержимым будет в два раза больше.</p>
+
+<p><a href="https://codepen.io/vallek/pen/ExOVqbz">Демо на кодпене</a></p>
+
+<h2 id="значения-по-умолчанию">Значения по умолчанию</h2>
+
+<p>Изначальное значение (initial) флекс элемента <code class="language-plaintext highlighter-rouge">flex: 0 1 auto</code>.</p>
+
+<p><strong>Замечание:</strong> Начальные значения flex-grow и flex-basis отличаются от значений по умолчанию, если они опущены в сокращении flex. Это делается для того, чтобы сокращение flex подходило для наиболее популярных задач.</p>
+
+<p>Имеется в виду, что если использовать одно ключевое слово, то он может подставить не initial, а что-то другое. Для удобства. Примеры из спеков далее.</p>
+
+<h2 id="common-cases">common cases</h2>
+
+<ul>
+  <li>
+    <p>flex: initial</p>
+
+    <p>Эквивалентно <code class="language-plaintext highlighter-rouge">flex: 0 1 auto</code>. (Это начальное значение.) Изменяет размер элемента на основе свойств ширины/высоты. (Если свойство основного размера элемента вычисляется автоматически, это приведет к изменению размера элемента flex на основе его содержимого.) Делает флекс элемент негибким при наличии достаточного свободного пространства, но позволяет ему сжиматься до минимального размера при нехватке места. Возможности выравнивания или автоматические отступы можно использовать для выравнивания флекс элементов вдоль главной оси.</p>
+  </li>
+  <li>
+    <p>flex: auto</p>
+
+    <p>Эквивалентно <code class="language-plaintext highlighter-rouge">flex: 1 1 auto</code>. Определяет размер элемента на основе свойств ширины/высоты, но делает их полностью гибкими, так что они занимают все свободное пространство вдоль главной оси. Если все элементы имеют либо flex: auto, либо flex: initial, либо flex: none, любое положительное свободное пространство после определения размера элементов будет равномерно распределено между элементами с помощью flex: auto.</p>
+  </li>
+  <li>
+    <p>flex: none</p>
+
+    <p>Эквивалентно <code class="language-plaintext highlighter-rouge">flex: 0 0 auto</code>. Это значение определяет размер элемента в соответствии со свойствами ширины/высоты, но делает флекс элемент полностью негибким. Это похоже на initial, за исключением того, что флекс элементам не разрешается сжиматься даже в ситуациях переполнения.</p>
+  </li>
+  <li>
+    <p>flex: <code class="language-plaintext highlighter-rouge">&lt;positive-number&gt;</code></p>
+
+    <p>Эквивалент flex: <code class="language-plaintext highlighter-rouge">&lt;положительное число&gt;</code> 1 0. Делает флекс элемент гибким и устанавливает flex basis равным нулю, в результате чего элемент получает указанную долю свободного пространства во флекс контейнере. Если все элементы в контейнере используют этот шаблон, их размеры будут пропорциональны указанному коэффициенту гибкости.</p>
+  </li>
+</ul>
+
+<p>По умолчанию флекс элементы не будут уменьшаться ниже минимального размера содержимого (длина самого длинного слова или элемента фиксированного размера). Чтобы изменить это, установите свойство min-width или min-height. (См. <a href="https://www.w3.org/TR/css-flexbox-1/#min-size-auto">§4.5 Автоматический минимальный размер гибких элементов</a>.)</p>]]></content><author><name></name></author><category term="css" /><category term="flexbox" /><summary type="html"><![CDATA[Как работает]]></summary></entry><entry xml:lang="en"><title type="html">Detect click outside of element</title><link href="http://0.0.0.0:4000/webdevtips/en/click-outside" rel="alternate" type="text/html" title="Detect click outside of element" /><published>2023-06-10T12:43:00+03:00</published><updated>2023-06-10T12:43:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/click-outside</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/click-outside"><![CDATA[<p>На примере выпадающего меню</p>
 
 <p>При условии, что верстка выглядит так:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="popup-menu"&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="popup-menu"&gt;
 	&lt;button class="popup-menu__button"&gt;&lt;/button&gt;
 	&lt;ul class="popup-menu__list hide-popup"&gt;
 		...
@@ -149,7 +288,7 @@ jobs:
 &lt;/div&gt;
 </code></pre></div></div>
 <p>JS:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const popupWrapper = document.querySelector('.popup-menu');
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const popupWrapper = document.querySelector('.popup-menu');
 const popupMenu = document.querySelector('.popup-menu__list');
 
 // Выполняем функцию когда юзер кликает в любом месте
@@ -163,107 +302,29 @@ function hidePopup(el) {
 		popupMenu.classList.add('hide-popup');
 	}	
 }
-</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[На примере выпадающего меню]]></summary></entry><entry><title type="html">Screen Readers: where to download</title><link href="http://0.0.0.0:4000/webdevtips/screen-readers" rel="alternate" type="text/html" title="Screen Readers: where to download" /><published>2023-06-09T21:40:00+03:00</published><updated>2023-06-09T21:40:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/screen-readers</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/screen-readers"><![CDATA[<p>The best answer is to test in real screen readers, ideally by getting real users as they know how to use these tools. Consider contacting your local blind association and see if they offer testing services.
-Screen Readers</p>
+</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[На примере выпадающего меню]]></summary></entry><entry xml:lang="ru"><title type="html">Обнаружить клик вне элемента на JS</title><link href="http://0.0.0.0:4000/webdevtips/ru/click-outside" rel="alternate" type="text/html" title="Обнаружить клик вне элемента на JS" /><published>2023-06-10T12:43:00+03:00</published><updated>2023-06-10T12:43:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/click-outside</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/click-outside"><![CDATA[<p>На примере выпадающего меню</p>
 
-<p>Each platform has a screen reader, most are built in. Windows has the most variety.
-For Windows</p>
-
-<ul>
-  <li><a href="https://support.microsoft.com/en-us/help/17173/windows-10-hear-text-read-aloud">Use Narrator</a> (it is built in, though not very good right now it is getting much better). Use it with Edge.</li>
-  <li><a href="https://www.nvaccess.org/download/">Download the free NVDA</a> screen reader (but please donate to support it). Use it with Firefox</li>
-  <li><a href="https://support.freedomscientific.com/Downloads/JAWS">Download JAWS</a> and use it in 40 minute increments for free. Use it with IE11.</li>
-</ul>
-
-<p>For macOS</p>
-
-<ul>
-  <li><a href="https://support.apple.com/ru-ru/guide/voiceover/welcome/">Use VoiceOver</a> (it is built in). Use it with Safari. <a href="https://help.apple.com/voiceover/info/guide/10.12/">old link from source, you can change versions in url</a></li>
-</ul>
-
-<p>For iOS</p>
-
-<ul>
-  <li><a href="https://www.apple.com/accessibility/vision/">Use VoiceOver</a> (it is built in). Use it with Safari.</li>
-</ul>
-
-<p>For Android</p>
-
-<ul>
-  <li><a href="https://support.google.com/accessibility/android/answer/6283677?hl=en">Use TalkBack</a>. Use it with Firefox.</li>
-</ul>
-
-<p>For Ubuntu</p>
-
-<ul>
-  <li><a href="https://help.gnome.org/users/orca/stable/">Use Orca</a>.</li>
-</ul>
-
-<p>For ChromeOS</p>
-
-<ul>
-  <li><a href="https://support.google.com/chromebook/answer/7031755">Use ChromeVox</a> (but only use ChromeVox in this scenario, not as a plug-in for Chrome on Windows or macOS).</li>
-</ul>
-
-<h2 id="resources">Resources</h2>
-
-<p>These are handy to get started with testing on your own. Keyboard shortcuts are necessary to use a screen reader well, beyond just hitting the Tab key over and over and over.</p>
-
-<ul>
-  <li>
-    <p><a href="https://www.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/">Basic screen reader commands for accessibility testing</a></p>
-  </li>
-  <li>
-    <p><a href="https://www.digitala11y.com/screen-readers-browsers-which-is-the-best-combination-for-accessibility-testing/">Screen readers and web browsers – what’s the best pairing for testing?</a></p>
-  </li>
-</ul>
-
-<h2 id="services">Services</h2>
-
-<ul>
-  <li><a href="https://assistivlabs.com/assistive-tech/screen-readers">Assistivlabs</a> - This is like Browserstack for screen readers and other ATs</li>
-</ul>
-
-<p>Links are updated</p>]]></content><author><name></name></author><category term="accessibility" /><summary type="html"><![CDATA[The best answer is to test in real screen readers, ideally by getting real users as they know how to use these tools. Consider contacting your local blind association and see if they offer testing services. Screen Readers]]></summary></entry><entry><title type="html">Переместить изменения в новую git ветку</title><link href="http://0.0.0.0:4000/webdevtips/git-move-changes-to-branch" rel="alternate" type="text/html" title="Переместить изменения в новую git ветку" /><published>2023-06-01T12:08:00+03:00</published><updated>2023-06-01T12:08:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/git-move-changes-to-branch</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/git-move-changes-to-branch"><![CDATA[<p>Бывает, что вы сделали изменения и поняли, что они слишком большие для главной/активной ветки, требуют большей работы, чем вы думали и т.д. Вы можете перенести все изменения из working tree, которые вы еще не закоммитили в новую ветку.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git switch -c new-branch-name
+<p>При условии, что верстка выглядит так:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="popup-menu"&gt;
+	&lt;button class="popup-menu__button"&gt;&lt;/button&gt;
+	&lt;ul class="popup-menu__list hide-popup"&gt;
+		...
+	&lt;/ul&gt;
+&lt;/div&gt;
 </code></pre></div></div>
-<p>До появления команды switch в 2.23 использовали <code class="highlighter-rouge">git checkout -b new-branch-name</code>.</p>
+<p>JS:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const popupWrapper = document.querySelector('.popup-menu');
+const popupMenu = document.querySelector('.popup-menu__list');
 
-<p>Далее просто коммитите изменения уже в новую ветку. После чего можно вернуться в изначальную.</p>
+// Выполняем функцию когда юзер кликает в любом месте
+document.addEventListener('click', hidePopup);
 
-<p>Этот метод подходит, когда вы поняли, что начали делать целую новую фичу, которую планируете реализовать потом (дойдут ли до этого руки уже другой вопрос:). Если же вы просто хотите временно отложить изменения, то используйте <a href="https://www.atlassian.com/ru/git/tutorials/saving-changes/git-stash">git stash</a>.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Бывает, что вы сделали изменения и поняли, что они слишком большие для главной/активной ветки, требуют большей работы, чем вы думали и т.д. Вы можете перенести все изменения из working tree, которые вы еще не закоммитили в новую ветку.]]></summary></entry><entry><title type="html">Контраст текста в VS Code Powershell</title><link href="http://0.0.0.0:4000/webdevtips/powershell-vs-code-contrast" rel="alternate" type="text/html" title="Контраст текста в VS Code Powershell" /><published>2023-05-31T12:23:00+03:00</published><updated>2023-05-31T12:23:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/powershell-vs-code-contrast</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/powershell-vs-code-contrast"><![CDATA[<p>Если в VS Code используете powershell и у вас слишком низкий контраст текста.</p>
-
-<p>Найдите в настройках <code class="highlighter-rouge">Terminal &gt; Minimum Contrast Ratio</code> и поставьте больше. Например 7.</p>
-
-<p>Или:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"terminal.integrated.minimumContrastRatio": 7
-</code></pre></div></div>]]></content><author><name></name></author><category term="powershell" /><category term="vs code" /><category term="contrast" /><summary type="html"><![CDATA[Если в VS Code используете powershell и у вас слишком низкий контраст текста.]]></summary></entry><entry><title type="html">Local w3c html/css validator</title><link href="http://0.0.0.0:4000/webdevtips/local-validator" rel="alternate" type="text/html" title="Local w3c html/css validator" /><published>2023-05-31T12:11:00+03:00</published><updated>2023-05-31T12:11:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/local-validator</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/local-validator"><![CDATA[<p>You can run <a href="https://validator.w3.org/nu/">Nu Validator</a> locally.</p>
-
-<ol>
-  <li>
-    <p>Скачайте <a href="https://github.com/validator/validator/releases/tag/latest">latest</a> release. File <code class="highlighter-rouge">vnu.windows.zip</code> for windows</p>
-  </li>
-  <li>
-    <p>Запустите команду в терминале <code class="highlighter-rouge">путь_к_папке/vnu-runtime-image/bin/java nu.validator.servlet.Main 8888</code></p>
-  </li>
-  <li>
-    <p>Сайт будет доступен по адресу http://localhost:8888/</p>
-  </li>
-</ol>
-
-<p>Другие варианты запуска можно <a href="https://validator.github.io/validator/">посмотреть в доках</a>, например как npm пакет</p>]]></content><author><name></name></author><category term="validation" /><category term="html" /><category term="css" /><summary type="html"><![CDATA[You can run Nu Validator locally.]]></summary></entry><entry><title type="html">Highlight Matching Tag в VS Code</title><link href="http://0.0.0.0:4000/webdevtips/highlight-matching-tag" rel="alternate" type="text/html" title="Highlight Matching Tag в VS Code" /><published>2023-05-29T14:18:00+03:00</published><updated>2023-05-29T14:18:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/highlight-matching-tag</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/highlight-matching-tag"><![CDATA[<p>Кто тоже использует расширение Highlight Matching Tag в VS Code и хочет сделать подчеркивание и отметки справа разными цветами ловите настройки:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"highlight-matching-tag.styles": {
-        "opening": {
-            "name": {
-                "custom": {
-                    "dark": {
-                        "overviewRulerColor": "yellow"
-                    },
-                },
-                "underline": "#839496",
-            }
-        }
-    },
-</code></pre></div></div>
-<p>это для темной темы. Для светлой ставьте “light”</p>]]></content><author><name></name></author><category term="vs code" /><summary type="html"><![CDATA[Кто тоже использует расширение Highlight Matching Tag в VS Code и хочет сделать подчеркивание и отметки справа разными цветами ловите настройки: "highlight-matching-tag.styles": { "opening": { "name": { "custom": { "dark": { "overviewRulerColor": "yellow" }, }, "underline": "#839496", } } }, это для темной темы. Для светлой ставьте “light”]]></summary></entry></feed>
+function hidePopup(el) {
+	// Проверяем, есть ли внутри того по чему кликнули попап меню и кнопка
+	let targetInside = popupWrapper.contains(el.target);
+	// Если нет, то прячем меню
+	if (!targetInside) {
+		popupMenu.classList.add('hide-popup');
+	}	
+}
+</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[На примере выпадающего меню]]></summary></entry></feed>

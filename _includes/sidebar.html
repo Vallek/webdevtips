@@ -1,6 +1,10 @@
 {% assign sidebar = site.data.sidebar %}
 <aside class="sidebar">
+	{% if page.lang == "en" %}
+	<h2 class="sidebar__heading">Topics and notes</h2>
+	{% else if %}
 	<h2 class="sidebar__heading">Рубрики и заметки</h2>
+	{%- endif -%}
 	<ul class="sidebar__notebooks">
 		{% for notebook in sidebar %}
 		{%- if page.notebook == notebook.title -%}
@@ -12,7 +16,7 @@
 			{% assign tags = '' | split: ',' %}
 			{% assign unique_tags = '' | split: ',' %}
 			{% assign ar_posts = '' | split: ',' %}
-			
+
 			{% for post in site.posts %}
 			{%- if post.notebook == notebook.title -%}
 			{% for tag in post.tags %}
@@ -29,6 +33,7 @@
 					{% for post in site.posts %}
 					{%- if post.notebook == notebook.title -%}
 					{%- if post.tags contains tag -%}
+					{% if page.lang == post.lang %}
 					<ul class="sidebar__notes">
 						<li class="sidebar__note">
 							{%- if page.url == post.url -%}
@@ -38,6 +43,7 @@
 							{%- endif -%}
 						</li>
 					</ul>
+					{%- endif -%}
 					{%- endif -%}
 					{%- endif -%}
 					{% endfor %}
