@@ -44,7 +44,11 @@
             {% endif %}
           </section>
           <a class="page-link" href="https://github.com/Vallek/webdevtips">GitHub</a>
-          <a class="page-link" href="{{site.baseurl}}/about/index.html">О сайте</a>
+          {% if page.lang == "ru" %}
+          <a class="page-link" href="{{site.baseurl}}/ru/about/">О сайте</a>
+          {% else if page.lang == "en" %}
+          <a class="page-link" href="{{site.baseurl}}/en/about/">About</a>
+          {% endif %}
         </div>
       </nav>
   </div>

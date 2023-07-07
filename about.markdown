@@ -1,7 +1,8 @@
 ---
 layout: page
 title: О сайте
-permalink: /about/
+lang: ru
+permalink: ru/about/
 ---
 # Добро пожаловать на Web Dev Tips!
 

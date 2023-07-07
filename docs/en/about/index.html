@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin SEO -->
-  <title>Web Dev Tips | How to get negative value in css variable</title>
+  <title>Web Dev Tips | About this project</title>
   <meta property="og:title" content="Web Dev Tips">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:locale:alternate" content="en_US">
@@ -13,8 +13,8 @@
   <meta name="description" content="Frontend, web development and pc setup knowledge base">
   <meta property="og:description" content="Frontend, web development and pc setup knowledge base">
   
-  <link rel="canonical" href="https://vallek.github.io/webdevtips/en/negative-css-variable">
-  <meta property="og:url" content="https://vallek.github.io/webdevtips/en/negative-css-variable">
+  <link rel="canonical" href="https://vallek.github.io/webdevtips/en/about/">
+  <meta property="og:url" content="https://vallek.github.io/webdevtips/en/about/">
   <meta property="og:site_name" content="Web Dev Tips">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
@@ -68,10 +68,10 @@
 
             
             
-            <a class="locales__lang locales__lang_ru" href="/webdevtips/ru/negative-css-variable">RU</a>
+            <a class="locales__lang locales__lang_ru" href="/webdevtips/ru/about/">RU</a>
             
             <span> / </span>
-            <a class="locales__lang locales__lang_en" href="/webdevtips/en/negative-css-variable">EN</a>
+            <a class="locales__lang locales__lang_en" href="/webdevtips/en/about/">EN</a>
             
 
             
@@ -91,7 +91,7 @@
 	
 	<h2 class="sidebar__heading">Topics and notes</h2>
 	<ul class="sidebar__notebooks">
-		<li class="sidebar__notebook sidebar__notebook_open"><button class="sidebar__title">frontend</button>
+		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">frontend</button>
 			
 			
 			
@@ -155,7 +155,7 @@
 						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/visually-hidden">Accessible ways to visually hide element</a></li>
 					</ul>
 					<ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/negative-css-variable">How to get negative value in css variable</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/negative-css-variable">How to get negative value in css variable</a></li>
 					</ul>
 					<ul class="sidebar__notes">
 						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/css-debug">Show borders of all elements for testing</a></li>
@@ -724,42 +724,92 @@
 	</ul>
 </aside><main class="page__main main" aria-label="Content">
         <div class="main__content wrapper">
-          <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+          <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">How to get negative value in css variable</h1>
-    <p class="post-meta">
-      <time class="dt-published" datetime="2023-02-17T03:00:00+03:00" itemprop="datePublished">Feb 17, 2023
-      </time>
-      <span class="post-notebook">&ensp;-&ensp;frontend</span><a class="edit-button edit-button_post-page" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/en/2023-02-17-negative-css-variable.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
-    </p>
+    <h1 class="post-title">About this project</h1>
   </header>
 
-  <div class="post-content e-content" itemprop="articleBody">
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calc(var(--name) * -1)
+  <div class="post-content">
+    <h1 id="welcome-to-web-dev-tips">Welcome to Web Dev Tips!</h1>
+
+<p>Web Dev Tips is a collection of tips and tricks for web development (mainly frontend) and customizing a PC, which at some point helped me and which I collected into a knowledge base. Perhaps they will be useful to you too!</p>
+
+<p>I want to emphasize that this is <em>not</em> an encyclopedia. For extensive basic knowledge go to <a href="https://developer.mozilla.or/">MDN</a> and <a href="https://javascript.info/">javascript.info</a>. Some of the notes here are taken from similar sites, but mostly Web Dev Tips are things that can only be learned from practice. Partly from my own experience, partly from stackoverflow, blogs and the rest of the web.</p>
+
+<p>By the way, you can find different sources of information about web development from <a href="https://vallek.github.io/web-links/index.html">my links selection</a>.</p>
+
+<p>Another disclaimer: you follow any advice here at your own risk. Some of them may not work for you or work the wrong way.</p>
+
+<h2 id="how-to-use">How to use</h2>
+<p>On the left in the sidebar you will find all the notes divided into several general headings and tags.</p>
+
+<p>In the header there is a search for all notes (searches by titles, tags and content).</p>
+
+<p>On the right is a panel with tags. Each note can have many tags (topics).</p>
+
+<h2 id="how-to-participate">How to participate</h2>
+<p>These notes are from my personal practice and only a small fraction of what may be needed in development. You can help make this collection much more versatile and useful!</p>
+
+<p>The Web Dev Tips website is made on <a href="https://jekyllrb.com/docs/">Jekyll</a>, but you don’t have to install and build anything to participate. You can just edit a note on github or create a new one. To edit, click on the link “Edit on GitHub!” on any page of the site. All notes are files in <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">markdown format</a>.</p>
+
+<p>The file name <strong>must</strong> contain the date in the format <code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-name.md </code>, for example <code class="language-plaintext highlighter-rouge">2023-04-22-how-to.md </code>.Front matter (hidden properties of the page) should be filled at the top of each new file. Syntax:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: post
+title: 'The title that will be visible to users'
+notebook: 'frontend'
+tags: [css, html, animation]
+---
 </code></pre></div></div>
+<p><strong>notebook</strong> is one of the main categories (see below and in the sidebar).</p>
 
-  </div><h2 class="post-tags__heading">Теги</h2>
+<p>You can specify a link to the source in <strong>sources</strong>, if there is one. the url must be in quotation marks.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sources: ['https://www.site.com/']
+</code></pre></div></div>
+<p>After that, click on the “Send pull request” button, I will receive a notification and will check it out. I may accept it, not accept it, change it, or offer to change it to you.</p>
+
+<h2 id="categories">Categories</h2>
+<p>At the moment, the site has frontend, webdev, backend and pc categories.</p>
+<ul>
+  <li>frontend - html, css, js, layout and everything around it.</li>
+  <li>webdev - here I put things that do not necessarily relate to the frontend, but can be used for it. For example, npm packages, static sites generators, etc. This is done simply to not lump everything into one pile.</li>
+  <li>backend - for any web backend languages. I don’t do backend much myself, so I don’t have a lot of notes here.</li>
+  <li>pc - tips that are not related to development. Similar questions can be found on superuser, not stackoverflow.</li>
+</ul>
+
+<p>You can also suggest creating a new section if you have something to add to it.</p>
+
+<h2 id="roadmap---what-has-already-been-done-and-plans-for-the-future-may-change">Roadmap - what has already been done and plans for the future (may change)</h2>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Prototype layout based on the default Jekyll minima theme instead of the finished one, because I’m not looking for easy ways</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Automatic sidebar filling</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Tag cloud, tags in posts</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Site Search</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Pagination</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Transferring my notes from the knowledge base in a more presentable form [partially]</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Edit button on github</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />A story about creating a website and why I’m not looking for easy ways</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Displaying sources from front matter on post pages</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Transfer answers from stackoverflow from my bookmarks that were not in the notes</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Home page with widgets, transferring all posts to a separate one</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Number of posts in the tag cloud</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Transferring to my own css layout completely (BEM without nesting, outdated practices, remove everything from minima, etc.)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Dark theme</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Accordion in the sidebar</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Posts by tags in the sidebar</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Prepare the layout as a theme for jekyll</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Search Fork</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Search improvements (working fuzzy, details in the results)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Documentation for participants</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Localization of the interface and content into English (and into Russian, where in English)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Your suggestions)</li>
+</ul>
+
+<p>If something doesn’t work, please start an issue. With any questions about the project, write in the discussion. Other suggestions and questions can be written to <a href="mailto:vwebdis@gmail.com">mail</a> or <a href="https://t.me/webval">telegram</a>.</p>
+
+  </div>
   
-  
-  <a class="tag-link tag-link_home" href="/webdevtips/tag/css"><span class="nobrake">css</span></a>
-  <div id="disqus_thread"></div>
-  <script>
-    var disqus_config = function () {
-      this.page.url = 'http://0.0.0.0:4000/webdevtips/en/negative-css-variable';
-      this.page.identifier = 'http://0.0.0.0:4000/webdevtips/en/negative-css-variable';
-    };
 
-    (function() {
-      var d = document, s = d.createElement('script');
-
-      s.src = 'https://vallek-webdevtips.disqus.com/embed.js';
-
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/webdevtips/en/negative-css-variable" hidden></a>
 </article>
 
         </div>
