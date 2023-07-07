@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Заготовка для transform: perspective'
+title: 'Template for transform: perspective'
 date: 2023-04-12 00:00 +0000
 notebook: frontend
 tags: [css]

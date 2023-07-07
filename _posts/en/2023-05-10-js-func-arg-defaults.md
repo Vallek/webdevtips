@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 'Значение по умолчанию аргумента функции'
+title: 'JS function default arguments values'
 date: 2023-05-10 00:00 +0000
 notebook: 'frontend'
 tags: [javascript]
 ---
-`function (arg-1 = "значение по умолчанию", arg-2 = "значение по умолчанию") {}`
+`function (arg-1 = "default value", arg-2 = "default value") {}`
 
-Eсли мы передадим любое значение, отличное от undefined, будет взято оно. Даже falsy значение, например null.
+If we pass any value other than undefined, it will be used. Even a false value, such as null.

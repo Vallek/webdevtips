@@ -6,9 +6,9 @@ notebook: frontend
 tags: [javascript]
 sources: []
 ---
-На примере выпадающего меню
+Drop down menu example
 
-При условии, что верстка выглядит так:
+If you have this html:
 ```
 <div class="popup-menu">
 	<button class="popup-menu__button"></button>
@@ -22,13 +22,13 @@ JS:
 const popupWrapper = document.querySelector('.popup-menu');
 const popupMenu = document.querySelector('.popup-menu__list');
 
-// Выполняем функцию когда юзер кликает в любом месте
+// Run function when user clicks anywhere
 document.addEventListener('click', hidePopup);
 
 function hidePopup(el) {
-	// Проверяем, есть ли внутри того по чему кликнули попап меню и кнопка
+	// Check if there is a menu and a button inside what was clicked on
 	let targetInside = popupWrapper.contains(el.target);
-	// Если нет, то прячем меню
+	// If not, then hide the menu
 	if (!targetInside) {
 		popupMenu.classList.add('hide-popup');
 	}	

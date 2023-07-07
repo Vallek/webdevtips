@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Убрать файл из коммита'
+title: 'REmove file from a commit'
 date: 2023-02-17 00:00 +0000
 notebook: webdev
 tags: [git]
@@ -8,5 +8,4 @@ tags: [git]
 ```
 git reset --soft HEAD~1
 ```
-
-после этого изменения можно будет снова отправить в stage и закоммитить только нужный файл
+after that, the changes can be sent back to stage and only the necessary file can be committed.

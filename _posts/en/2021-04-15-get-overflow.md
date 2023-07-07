@@ -1,15 +1,14 @@
 ---
 layout: post
-title: 'Найти элемент выходящий за вьюпорт'
+title: 'Find the element that overflows viewport'
 date: 2021-04-15 00:00 +0000
 notebook: frontend
 tags: [javascript, css, qa]
 sources: []
 ---
-Как найти элемент, выходящий за вьюпорт/родителя
+If you see horizontal scroll on your site it means some elements boxes are overflowing (go beyon viewport borders). 
 
-Выполните в консоле браузера:
-
+To find it open browser console and execute:
 ```
 var docWidth = document.documentElement.offsetWidth;
 

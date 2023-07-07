@@ -1,32 +1,32 @@
 ---
 layout: post
-title: 'Как детектить выбор темной/светлой темы посетителя'
+title: 'How to detect light/dark theme preference'
 date: 2023-05-29 13:50 +0300
 notebook: frontend
 tags: [css, dark theme, javascript, accessibility]
 sources: [https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript/57795495#57795495]
 ---
-На входе
+On load
 ```
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     // dark mode
 }
 ```
 
-В реальном времени
+In real time
 ```
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
     const newColorScheme = event.matches ? "dark" : "light";
 });
 ```
 
-Я использую этот метод в своей [подборке ссылок](https://vallek.github.io/web-links/index.html). На момент написания это выглядит так:
+I use this method in my [frontend links page](https://vallek.github.io/web-links/en/index.html). На момент написания это выглядит так:
 
-В CSS я просто добавил класс dark, который динамически миксуется к классу page, переписывая цвета специфичностью (два класса). Не по БЭМу, но как часто советуют сначала делал, чтобы работало) Потом может перепишу под БЭМ.
+In CSS, I just added a dark theme class that got dynamically mixed to the page class, rewriting colors with specificity (two classes). Not by BEM, but as often advised, I did it first to make it work) Then maybe I'll rewrite it under BEM.
 ```
 .dark.page {background-color:#002B36;} 
 .dark header {color:#c3d5d9;} 
-и так далее
+and so on
 ``` 
 JS:
 ```
@@ -73,6 +73,6 @@ function setLight(el) {
 }
 ```
 
-Это, кажется, покрывает все кейсы.
+This about to cover all cases
 
-В CSS есть медиа-запрос prefers-color-scheme, но у него гораздо *у*же поддержка и без JS все равно не обойтись (интерактивное переключение), так что не вижу смысла его использовать.
+CSS has a `prefers-color-scheme` media query, but it has much less support and you can't do it without JS anyway (interactive switching).

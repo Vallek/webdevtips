@@ -6,7 +6,7 @@ notebook: webdev
 tags: [terminal, cmd, clink]
 sources: []
 ---
-Install Clink [оригинал](http://mridgers.github.io/clink/) или [форк с поддержкой](https://chrisant996.github.io/clink/) and change the "terminate_autoanswer" setting. The settings file [should be here](https://github.com/mridgers/clink/blob/master/docs/clink.md#file-locations): `C:\Users\<username>\AppData\Local\clink\settings`.
+Install Clink [old orininal](http://mridgers.github.io/clink/) or [newer fork](https://chrisant996.github.io/clink/) and change the "terminate_autoanswer" setting. The settings file [should be here](https://github.com/mridgers/clink/blob/master/docs/clink.md#file-locations): `C:\Users\<username>\AppData\Local\clink\settings`.
 ```
 # name: Auto-answer terminate prompt 
 # type: enum 

@@ -6,8 +6,8 @@ notebook: backend
 tags: [github, nodejs]
 sources: [https://medium.com/@danieljimgarcia/publishing-static-sites-to-github-pages-using-github-actions-8040f57dfeaf]
 ---
-## Зачем это нужно
-Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для [списка анимируемых CSS свойств](https://vallek.github.io/animatable-css/). Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)
+## Why
+If you need to build on a timer (once a day, for example) one static page with a complex template with data from API that you do not want to load, then this method can help you. I used it for [list of animatable CSS properties](https://vallek.github.io/animatable-css/). In all other cases, it may be better to choose a normal backend server)
 
 ## How to 
 First of all create a github token. Go to account settings > developer settings > Personal access tokens. I chose classic. Set name and expiration. Save it somewhere.
@@ -78,4 +78,4 @@ jobs:
 9. Original version had `user.email "action@github.com"` and `user.name "GitHub Action"` to not flood your own commit history BUT it was not working for me.
 10. `paths-ignore` allows you to not run build on pushing files when it's not needed.
 
-Обратите внимание, что мой action отличается от источника.
+Note that my action is different from the source.

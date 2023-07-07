@@ -1,33 +1,36 @@
 ---
 layout: post
-title: 'Мои горячие клавиши для VS Code'
+title: 'My VS Code hotkeys shortcuts'
 date: 2023-05-29 11:42 +0300
 notebook: webdev
 tags: [vs code, shortcuts, git, emmet]
 sources: []
 ---
-Набор мои сочетаний в vs code, которые позволяют экономить время и делать работу чуть проще. Вы можете добавить их в keybindings.json или просто в интерфейс горячих клавиш.
+You can add these to `keybindings.json` or just in keyboard shortcuts ui.
 
-Закомитить и все файлы одного репозитория или те, которые в stage. И сделать pull/push.
+Commit all files or the ones from stage. 
 
 ```
 {
 	"key": "ctrl+alt+c",
 	"command": "git.commit"
 },
+```
+Do pull/push
+```
 {
 	"key": "ctrl+alt+g",
 	"command": "git.sync"
 },
 ```
-Выделить диапазон с помомощью emmet. Например текст внутри html тегов.
+Select range with emmet. For example text inside html element.
 ```
 {
 	"key": "ctrl+shift+a",
 	"command": "editor.emmet.action.balanceOut"
 },
 ```
-Выделить все совпадения (если отключено автоматом при выделении)
+Select all occurrences (if auto is turned off)
 ```
 {
   "key": "ctrl+shift+l",

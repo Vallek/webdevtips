@@ -1,22 +1,22 @@
 ---
 layout: post
-title: 'Мониторинг браузерных событий'
+title: 'Browser events monitoring'
 notebook: 'frontend'
 tags: [devtools, events, chrome, firefox]
 ---
 ## Chrome
 
-Для того, чтобы видеть все браузерные события в реальном времени введите в консоли браузера `monitorEvents(tempVar, 'events type')`
+In order to see all browser events in real time, enter in the browser console `monitorEvents(tempVar, 'events type')`
 
-`tempVar` временная переменная, которую можно создать в девтулзах (ПКМ на любом узле > store as global variable).
+`tempVar` - temp variable that you need to create in devtools (right clikc on any node > store as global variable).
 
-Можно просто найти узел. Например `monitorEvents(document.body, 'mouse')`.
+You can just find a node. For example `monitorEvents(document.body, 'mouse')`.
 
-`events type` - тип событий, например 'mouse'. Можно и отдельные события.
+`events type` - event type, for example 'mouse'. Or specific event
 
 ## Firefox
 
-В лисе к сожалению такой встроенной функции нет. Но ее можно создать самому! 
+There is no native function in Firefox. But you can create it! 
 ```
 function monitorEvents(element) {
   let log = function(e) { console.log(e);};
@@ -30,6 +30,6 @@ function monitorEvents(element) {
   });
 }
 ```
-Затем выполните с нужным узлом в качестве аргумента. Например `monitorEvents(temp0)` или monitorEvents(document.body).
+Then run with the node as argument. For example `monitorEvents(temp0)` or `monitorEvents(document.body)`.
 
-*Совет со stackoverflow*: If you're trying to see all the events are happening inside an element (such as the body), you should log during the capture phase - element.addEventListener(eventName, log, true);
+*Advice from stackoverflow*: If you're trying to see all the events are happening inside an element (such as the body), you should log during the capture phase - element.addEventListener(eventName, log, true);

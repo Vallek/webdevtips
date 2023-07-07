@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Спецсимволы пробелов в html'
+title: 'HTML codes for all whitespace symbols'
 date: 2022-06-23 00:00 +0000
 notebook: frontend
 tags: [html]

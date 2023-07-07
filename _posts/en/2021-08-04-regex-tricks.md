@@ -6,14 +6,14 @@ notebook: frontend
 tags: [regex, html]
 sources: []
 ---
-## Замена html элементов
+## REplace html elements
 ```
 </a>\n*.*</div>
 </a>\n\t\t\t\t</a>
 ```
 
-Удалить пустые строчки, проще всего расширением [Remove Empty Lines](https://marketplace.visualstudio.com/items?itemName=usernamehw.remove-empty-lines) в vs code 
+It's easier to delete empty lines with extension [Remove Empty Lines](https://marketplace.visualstudio.com/items?itemName=usernamehw.remove-empty-lines) for vs code 
 
-## Поиск слов
+## Find all words
 
-`/[\wА-Яа-я]+/ig` - все слова
+`/[\wА-Яа-я]+/ig` - all words including cyrillic

@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-07-07T09:51:39+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">Если map() с template literal выдает лишние символы</title><link href="http://0.0.0.0:4000/webdevtips/en/map-symbols-join" rel="alternate" type="text/html" title="Если map() с template literal выдает лишние символы" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/map-symbols-join</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/map-symbols-join"><![CDATA[<p>Если вы используете метод <code class="language-plaintext highlighter-rouge">map()</code> и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после <code class="language-plaintext highlighter-rouge">map()</code> метод <code class="language-plaintext highlighter-rouge">join()</code>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2023-07-07T17:16:23+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">If map() with template literal generate extra characters</title><link href="http://0.0.0.0:4000/webdevtips/en/map-symbols-join" rel="alternate" type="text/html" title="If map() with template literal generate extra characters" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/map-symbols-join</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/map-symbols-join"><![CDATA[<p>If you use the <code class="language-plaintext highlighter-rouge">map()</code> method and as a result of executing a function with a template literal you have extra characters from the array (commas, brackets), then apply <code class="language-plaintext highlighter-rouge">join()</code> method after <code class="language-plaintext highlighter-rouge">map()</code>.</p>
+
+<p>Like this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let variable = array.map(el =&gt; {
+		// code with template literal
+		return result;
+	}).join('');
+</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[If you use the map() method and as a result of executing a function with a template literal you have extra characters from the array (commas, brackets), then apply join() method after map().]]></summary></entry><entry xml:lang="ru"><title type="html">Если map() с template literal выдает лишние символы</title><link href="http://0.0.0.0:4000/webdevtips/ru/map-symbols-join" rel="alternate" type="text/html" title="Если map() с template literal выдает лишние символы" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/map-symbols-join</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/map-symbols-join"><![CDATA[<p>Если вы используете метод <code class="language-plaintext highlighter-rouge">map()</code> и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после <code class="language-plaintext highlighter-rouge">map()</code> метод <code class="language-plaintext highlighter-rouge">join()</code>.</p>
 
 <p>Вот так:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let variable = array.map(el =&gt; {
 		// code with template literal
 		return result;
 	}).join('');
-</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[Если вы используете метод map() и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после map() метод join().]]></summary></entry><entry xml:lang="ru"><title type="html">Если map() с template literal выдает лишние символы</title><link href="http://0.0.0.0:4000/webdevtips/ru/map-symbols-join" rel="alternate" type="text/html" title="Если map() с template literal выдает лишние символы" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/map-symbols-join</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/map-symbols-join"><![CDATA[<p>Если вы используете метод <code class="language-plaintext highlighter-rouge">map()</code> и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после <code class="language-plaintext highlighter-rouge">map()</code> метод <code class="language-plaintext highlighter-rouge">join()</code>.</p>
-
-<p>Вот так:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let variable = array.map(el =&gt; {
-		// code with template literal
-		return result;
-	}).join('');
-</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[Если вы используете метод map() и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после map() метод join().]]></summary></entry><entry xml:lang="en"><title type="html">How to build static page with Node.js and Github Actions</title><link href="http://0.0.0.0:4000/webdevtips/en/build-static-node-github-actions" rel="alternate" type="text/html" title="How to build static page with Node.js and Github Actions" /><published>2023-06-26T10:38:00+03:00</published><updated>2023-06-26T10:38:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/build-static-node-github-actions</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/build-static-node-github-actions"><![CDATA[<h2 id="зачем-это-нужно">Зачем это нужно</h2>
-<p>Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для <a href="https://vallek.github.io/animatable-css/">списка анимируемых CSS свойств</a>. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)</p>
+</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[Если вы используете метод map() и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после map() метод join().]]></summary></entry><entry xml:lang="en"><title type="html">How to build static page with Node.js and Github Actions</title><link href="http://0.0.0.0:4000/webdevtips/en/build-static-node-github-actions" rel="alternate" type="text/html" title="How to build static page with Node.js and Github Actions" /><published>2023-06-26T10:38:00+03:00</published><updated>2023-06-26T10:38:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/build-static-node-github-actions</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/build-static-node-github-actions"><![CDATA[<h2 id="why">Why</h2>
+<p>If you need to build on a timer (once a day, for example) one static page with a complex template with data from API that you do not want to load, then this method can help you. I used it for <a href="https://vallek.github.io/animatable-css/">list of animatable CSS properties</a>. In all other cases, it may be better to choose a normal backend server)</p>
 
 <h2 id="how-to">How to</h2>
 <p>First of all create a github token. Go to account settings &gt; developer settings &gt; Personal access tokens. I chose classic. Set name and expiration. Save it somewhere.</p>
@@ -87,10 +87,10 @@ jobs:
   <li><code class="language-plaintext highlighter-rouge">paths-ignore</code> allows you to not run build on pushing files when it’s not needed.</li>
 </ol>
 
-<p>Обратите внимание, что мой action отличается от источника.</p>]]></content><author><name></name></author><category term="github" /><category term="nodejs" /><summary type="html"><![CDATA[Зачем это нужно Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для списка анимируемых CSS свойств. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)]]></summary></entry><entry xml:lang="ru"><title type="html">Как генерировать статичный html файл на Node.js и Github Actions</title><link href="http://0.0.0.0:4000/webdevtips/ru/build-static-node-github-actions" rel="alternate" type="text/html" title="Как генерировать статичный html файл на Node.js и Github Actions" /><published>2023-06-26T10:38:00+03:00</published><updated>2023-06-26T10:38:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/build-static-node-github-actions</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/build-static-node-github-actions"><![CDATA[<h2 id="зачем-это-нужно">Зачем это нужно</h2>
+<p>Note that my action is different from the source.</p>]]></content><author><name></name></author><category term="github" /><category term="nodejs" /><summary type="html"><![CDATA[Why If you need to build on a timer (once a day, for example) one static page with a complex template with data from API that you do not want to load, then this method can help you. I used it for list of animatable CSS properties. In all other cases, it may be better to choose a normal backend server)]]></summary></entry><entry xml:lang="ru"><title type="html">Как генерировать статичный html файл на Node.js и Github Actions</title><link href="http://0.0.0.0:4000/webdevtips/ru/build-static-node-github-actions" rel="alternate" type="text/html" title="Как генерировать статичный html файл на Node.js и Github Actions" /><published>2023-06-26T10:38:00+03:00</published><updated>2023-06-26T10:38:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/build-static-node-github-actions</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/build-static-node-github-actions"><![CDATA[<h2 id="зачем-это-нужно">Зачем это нужно</h2>
 <p>Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для <a href="https://vallek.github.io/animatable-css/">списка анимируемых CSS свойств</a>. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)</p>
 
-<h2 id="how-to">How to</h2>
+<h2 id="инструкция">Инструкция</h2>
 <p>Прежде всего создайте github token. Откройте настройки аккаунта (не репозитория) &gt; developer settings &gt; Personal access tokens. Я выбрал классический. Установите имя и дату окончания. Сохраните токен где-то у себя (как пароль).</p>
 
 <p>Для репозитория на гитхабе:</p>
@@ -171,38 +171,38 @@ jobs:
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/user/repo-name .
 </code></pre></div></div>
 
-<p>В источнике гит адрес пишут по другому, но у меня работает обычный url.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Из любого места: git clone https://github.com/user/repo-name path/folder-name Имя папки репозитория станет folder-name вместо имени репозитория (как это происходит при клонировании по умолчанию).]]></summary></entry><entry xml:lang="en"><title type="html">Как клонировать гит репозиторий в любую папку</title><link href="http://0.0.0.0:4000/webdevtips/en/git-clone-in-folder" rel="alternate" type="text/html" title="Как клонировать гит репозиторий в любую папку" /><published>2023-06-17T16:50:00+03:00</published><updated>2023-06-17T16:50:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/git-clone-in-folder</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/git-clone-in-folder"><![CDATA[<p>Из любого места:</p>
+<p>В источнике гит адрес пишут по другому, но у меня работает обычный url.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Из любого места: git clone https://github.com/user/repo-name path/folder-name Имя папки репозитория станет folder-name вместо имени репозитория (как это происходит при клонировании по умолчанию).]]></summary></entry><entry xml:lang="en"><title type="html">How to clone repo in any folder</title><link href="http://0.0.0.0:4000/webdevtips/en/git-clone-in-folder" rel="alternate" type="text/html" title="How to clone repo in any folder" /><published>2023-06-17T16:50:00+03:00</published><updated>2023-06-17T16:50:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/git-clone-in-folder</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/git-clone-in-folder"><![CDATA[<p>From any place:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/user/repo-name path/folder-name
 </code></pre></div></div>
-<p>Имя папки репозитория станет <code class="language-plaintext highlighter-rouge">folder-name</code> вместо имени репозитория (как это происходит при клонировании по умолчанию).</p>
+<p>Repo folder name will become <code class="language-plaintext highlighter-rouge">folder-name</code> instead of repo name (default behavior).</p>
 
-<p>В активную папку (то есть прямо сюда):</p>
+<p>In active folder (right here):</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/user/repo-name .
 </code></pre></div></div>
 
-<p>В источнике гит адрес пишут по другому, но у меня работает обычный url.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Из любого места: git clone https://github.com/user/repo-name path/folder-name Имя папки репозитория станет folder-name вместо имени репозитория (как это происходит при клонировании по умолчанию).]]></summary></entry><entry xml:lang="en"><title type="html">Как работает flex-basis</title><link href="http://0.0.0.0:4000/webdevtips/en/flex-basis" rel="alternate" type="text/html" title="Как работает flex-basis" /><published>2023-06-14T13:57:00+03:00</published><updated>2023-06-14T13:57:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/flex-basis</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/flex-basis"><![CDATA[<h2 id="как-работает">Как работает</h2>
+<p>In the source, git address is written differently, but the usual url works for me.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[From any place: git clone https://github.com/user/repo-name path/folder-name Repo folder name will become folder-name instead of repo name (default behavior).]]></summary></entry><entry xml:lang="en"><title type="html">How flex-basis works</title><link href="http://0.0.0.0:4000/webdevtips/en/flex-basis" rel="alternate" type="text/html" title="How flex-basis works" /><published>2023-06-14T13:57:00+03:00</published><updated>2023-06-14T13:57:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/flex-basis</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/flex-basis"><![CDATA[<h2 id="how-it-works">How it works</h2>
 
 <p><img src="img/rel-vs-abs-flex.svg" alt="" /></p>
 
 <ul>
-  <li>flex-basis: 0; - распределение <strong>пустого места</strong> в соответствии с flex-grow</li>
-  <li>flex-basis: auto; - распределение размера в соответствии с flex-grow</li>
+  <li>flex-basis: 0; - <strong>empty space</strong> distribution according to flex-grow</li>
+  <li>flex-basis: auto; - size distribution according to  flex-grow</li>
 </ul>
 
-<p>Если у одного флекс элемента grow 2, а у другого 1, то при flex-basis: 0 будет поделено пустое место внутри флекс контейнера. И именно оно будет в два раза больше.</p>
+<p>If one flex element has grow 2 and the other has 1, then with flex-basis: 0, the empty space inside the flex container will be divided. And it will be twice as much.</p>
 
-<p>А при flex-basis: auto размер всего элемента с содержимым будет в два раза больше.</p>
+<p>With flex-basis: auto the size of the entire element with the contents will be twice as large.</p>
 
-<p><a href="https://codepen.io/vallek/pen/ExOVqbz">Демо на кодпене</a></p>
+<p><a href="https://codepen.io/vallek/pen/ExOVqbz">Demo</a></p>
 
-<h2 id="значения-по-умолчанию">Значения по умолчанию</h2>
+<h2 id="defaults">Defaults</h2>
 
 <p>The initial values of the flex components are equivalent to <code class="language-plaintext highlighter-rouge">flex: 0 1 auto</code>.</p>
 
 <p><strong>Note:</strong> The initial values of flex-grow and flex-basis are different from their defaults when omitted in the flex shorthand. This is so that the flex shorthand can better accommodate the most common cases.</p>
 
-<p>Имеется в виду, что если использовать одно ключевое слово, то он может подставить не initial,
-а что-то другое. Для удобства. Примеры ниже:</p>
+<p>It means that if you use one keyword, then it can substitute not <code class="language-plaintext highlighter-rouge">initial</code>,
+but something else according to popular uses. Examples from specs below:</p>
 
 <h2 id="common-cases">common cases</h2>
 
@@ -229,7 +229,7 @@ jobs:
   </li>
 </ul>
 
-<p>By default, flex items won’t shrink below their minimum content size (the length of the longest word or fixed-size element). To change this, set the min-width or min-height property. (See §4.5 Automatic Minimum Size of Flex Items.)</p>]]></content><author><name></name></author><category term="css" /><category term="flexbox" /><summary type="html"><![CDATA[Как работает]]></summary></entry><entry xml:lang="ru"><title type="html">Как работает flex-basis</title><link href="http://0.0.0.0:4000/webdevtips/ru/flex-basis" rel="alternate" type="text/html" title="Как работает flex-basis" /><published>2023-06-14T13:57:00+03:00</published><updated>2023-06-14T13:57:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/flex-basis</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/flex-basis"><![CDATA[<h2 id="как-работает">Как работает</h2>
+<p>By default, flex items won’t shrink below their minimum content size (the length of the longest word or fixed-size element). To change this, set the min-width or min-height property. (See §4.5 Automatic Minimum Size of Flex Items.)</p>]]></content><author><name></name></author><category term="css" /><category term="flexbox" /><summary type="html"><![CDATA[How it works]]></summary></entry><entry xml:lang="ru"><title type="html">Как работает flex-basis</title><link href="http://0.0.0.0:4000/webdevtips/ru/flex-basis" rel="alternate" type="text/html" title="Как работает flex-basis" /><published>2023-06-14T13:57:00+03:00</published><updated>2023-06-14T13:57:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/flex-basis</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/flex-basis"><![CDATA[<h2 id="как-работает">Как работает</h2>
 
 <p><img src="img/rel-vs-abs-flex.svg" alt="" /></p>
 
@@ -277,9 +277,9 @@ jobs:
   </li>
 </ul>
 
-<p>По умолчанию флекс элементы не будут уменьшаться ниже минимального размера содержимого (длина самого длинного слова или элемента фиксированного размера). Чтобы изменить это, установите свойство min-width или min-height. (См. <a href="https://www.w3.org/TR/css-flexbox-1/#min-size-auto">§4.5 Автоматический минимальный размер гибких элементов</a>.)</p>]]></content><author><name></name></author><category term="css" /><category term="flexbox" /><summary type="html"><![CDATA[Как работает]]></summary></entry><entry xml:lang="en"><title type="html">Detect click outside of element</title><link href="http://0.0.0.0:4000/webdevtips/en/click-outside" rel="alternate" type="text/html" title="Detect click outside of element" /><published>2023-06-10T12:43:00+03:00</published><updated>2023-06-10T12:43:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/click-outside</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/click-outside"><![CDATA[<p>На примере выпадающего меню</p>
+<p>По умолчанию флекс элементы не будут уменьшаться ниже минимального размера содержимого (длина самого длинного слова или элемента фиксированного размера). Чтобы изменить это, установите свойство min-width или min-height. (См. <a href="https://www.w3.org/TR/css-flexbox-1/#min-size-auto">§4.5 Автоматический минимальный размер гибких элементов</a>.)</p>]]></content><author><name></name></author><category term="css" /><category term="flexbox" /><summary type="html"><![CDATA[Как работает]]></summary></entry><entry xml:lang="en"><title type="html">Detect click outside of element</title><link href="http://0.0.0.0:4000/webdevtips/en/click-outside" rel="alternate" type="text/html" title="Detect click outside of element" /><published>2023-06-10T12:43:00+03:00</published><updated>2023-06-10T12:43:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/click-outside</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/click-outside"><![CDATA[<p>Drop down menu example</p>
 
-<p>При условии, что верстка выглядит так:</p>
+<p>If you have this html:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="popup-menu"&gt;
 	&lt;button class="popup-menu__button"&gt;&lt;/button&gt;
 	&lt;ul class="popup-menu__list hide-popup"&gt;
@@ -291,20 +291,20 @@ jobs:
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const popupWrapper = document.querySelector('.popup-menu');
 const popupMenu = document.querySelector('.popup-menu__list');
 
-// Выполняем функцию когда юзер кликает в любом месте
+// Run function when user clicks anywhere
 document.addEventListener('click', hidePopup);
 
 function hidePopup(el) {
-	// Проверяем, есть ли внутри того по чему кликнули попап меню и кнопка
+	// Check if there is a menu and a button inside what was clicked on
 	let targetInside = popupWrapper.contains(el.target);
-	// Если нет, то прячем меню
+	// If not, then hide the menu
 	if (!targetInside) {
 		popupMenu.classList.add('hide-popup');
 	}	
 }
-</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[На примере выпадающего меню]]></summary></entry><entry xml:lang="ru"><title type="html">Обнаружить клик вне элемента на JS</title><link href="http://0.0.0.0:4000/webdevtips/ru/click-outside" rel="alternate" type="text/html" title="Обнаружить клик вне элемента на JS" /><published>2023-06-10T12:43:00+03:00</published><updated>2023-06-10T12:43:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/click-outside</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/click-outside"><![CDATA[<p>На примере выпадающего меню</p>
+</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[Drop down menu example]]></summary></entry><entry xml:lang="ru"><title type="html">Обнаружить клик вне элемента на JS</title><link href="http://0.0.0.0:4000/webdevtips/ru/click-outside" rel="alternate" type="text/html" title="Обнаружить клик вне элемента на JS" /><published>2023-06-10T12:43:00+03:00</published><updated>2023-06-10T12:43:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/click-outside</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/click-outside"><![CDATA[<p>На примере выпадающего меню</p>
 
-<p>При условии, что верстка выглядит так:</p>
+<p>При условии, что разметка выглядит так:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="popup-menu"&gt;
 	&lt;button class="popup-menu__button"&gt;&lt;/button&gt;
 	&lt;ul class="popup-menu__list hide-popup"&gt;

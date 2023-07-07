@@ -1,32 +1,32 @@
 ---
 layout: post
-title: 'Как работает flex-basis'
+title: 'How flex-basis works'
 date: 2023-06-14 13:57 +0300
 notebook: frontend
 tags: [css, flexbox]
 sources: [https://www.w3.org/TR/css-flexbox-1/#flex-basis-property]
 ---
-## Как работает
+## How it works
 
 ![](img/rel-vs-abs-flex.svg)
 
-* flex-basis: 0; - распределение **пустого места** в соответствии с flex-grow
-* flex-basis: auto; - распределение размера в соответствии с flex-grow 
+* flex-basis: 0; - **empty space** distribution according to flex-grow
+* flex-basis: auto; - size distribution according to  flex-grow 
 
-Если у одного флекс элемента grow 2, а у другого 1, то при flex-basis: 0 будет поделено пустое место внутри флекс контейнера. И именно оно будет в два раза больше. 
+If one flex element has grow 2 and the other has 1, then with flex-basis: 0, the empty space inside the flex container will be divided. And it will be twice as much.
 
-А при flex-basis: auto размер всего элемента с содержимым будет в два раза больше.
+With flex-basis: auto the size of the entire element with the contents will be twice as large.
 
-[Демо на кодпене](https://codepen.io/vallek/pen/ExOVqbz)
+[Demo](https://codepen.io/vallek/pen/ExOVqbz)
 
-## Значения по умолчанию
+## Defaults
 
 The initial values of the flex components are equivalent to `flex: 0 1 auto`.
 
 **Note:** The initial values of flex-grow and flex-basis are different from their defaults when omitted in the flex shorthand. This is so that the flex shorthand can better accommodate the most common cases.
 
-Имеется в виду, что если использовать одно ключевое слово, то он может подставить не initial,
-а что-то другое. Для удобства. Примеры ниже:
+It means that if you use one keyword, then it can substitute not `initial`,
+but something else according to popular uses. Examples from specs below:
 
 ## common cases
 

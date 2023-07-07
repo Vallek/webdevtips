@@ -5,7 +5,7 @@ date: 2023-05-25 00:00 +0000
 notebook: 'frontend'
 tags: [css, animation]
 ---
-Плавные функции для анимаций из разных источников
+Smooth animation functions from different sources
 
 ```
 .smooth {
@@ -19,7 +19,7 @@ tags: [css, animation]
 }
 ```
 
-Из webkit docs
+From webkit docs
 ```
 transform .25s cubic-bezier(.1,.7,.1,1),box-shadow .25s
 ```

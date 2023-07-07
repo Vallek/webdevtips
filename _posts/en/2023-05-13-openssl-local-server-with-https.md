@@ -5,25 +5,25 @@ date: 2023-05-13 00:00 +0000
 notebook: 'webdev'
 tags: [local server, https, openssl]
 ---
-Как запустить локальный сервер на https. Нужно, например, для тестирования js модулей.
+How to run a local server on https. It is necessary, for example, to test js modules.
 
-Для начала устанавливаете openssl [отсюда](https://wiki.openssl.org/index.php/Binaries). На винде там неофиц. версии, но вроде пишут, что норм. По крайней мере для теста.
+First, install openssl [from here](https://wiki.openssl.org/index.php/Binaries ). On Windows there is a unofficial version, but it says it's ok) At least for the testing.
 
-Открываете терминал. Переходите в папку проекта и выполняете 
+Open the terminal. Go to the project folder and execute
 
 `openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem`
 
-Это создаст для файла сертификатов, необходимых для работы https
+This will create two certificate files required for https to work.
 
-Оно спросит ввести несколько параметров типа имени, страны. Вроде бы можно вводить любые кроме Common Name. Тут нужен 127.0.0.1 для локального сервера.
+It will ask you to enter several parameters such as name, country. It seems that you can enter any except Common Name. Here you need `127.0.0.1` for the local server.
 
-Дальше ставим сервер. У меня вот с этим сразу получилось. Для live server нужно писать конфиг с путями к файлам.
+Then install the server. I did work right away for me. For live server, you need to write a config with file paths.
 
 `npm install --global http-server`
 
-И запускаем 
+And launch
 
 `http-server -S -C cert.pem`
 
--S - это https
--C - это путь к файлам. У меня работало только когда в папке проекта.
+-S is https
+-C is the path to the files. It worked for me only when they are in the project folder.

@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 'Доступные способы визуально скрыть элемент'
+title: 'Accessible ways to visually hide element'
 date: 2023-03-13 00:00 +0000
 notebook: frontend
 tags: [css, accessibility]
 ---
-Рекомендация w3c:
+w3c recommendation:
 ```
 .visually-hidden {
   border: 0;
@@ -19,7 +19,7 @@ tags: [css, accessibility]
 }
 ```
 
-Расширенный набор свойств и селектор
+Extended selector and properties:
 ```
 .visually-hidden:not(:focus):not(:active) {
 	border: 0;
@@ -35,4 +35,4 @@ tags: [css, accessibility]
 }
 ```
 
-visibility: hidden - убирает с дерева доступности
+visibility: hidden - removes from accessibility tree

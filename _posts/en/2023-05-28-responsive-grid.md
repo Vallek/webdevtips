@@ -1,21 +1,21 @@
 ---
 layout: post
-title: 'Адаптивные гриды одной строкой'
+title: Responsive grid with one line'
 date: 2023-05-28 11:12 +0300
 notebook: frontend
 tags: [css, responsive, grid]
 sources: ['https://www.freecodecamp.org/news/how-to-make-your-html-responsive-by-adding-a-single-line-of-css-2a62de81e431/']
 ---
-Подходит для рядов элементов а-ля галлерея, когда не нужен точный дизайн на адаптиве. Пример: карточки на моем [портфолио](https://vallek.github.io/Portfolio/index.html)
+It is suitable for rows of elements a la gallery, when you do not need to follow the design very accurately. Example: cards on my [portfolio](https://vallek.github.io/Portfolio/en/index.html)
 
-Версия с min()
+Version with min()
 ```
 grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
 ```
-Проверьте необходимую поддержку браузеров!
+Don't forget to check browser support
 
-Оригинальная версия 
+Original version
 ```
 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 ```
-Обратите внимание, что используется auto-fill, а не auto-fit. Это важно, когда у вас мало грид элементов, чтобы они не вытягивались.
+Note that it uses auto-fill, and not auto-fit. This is important when you have few grid elements so that they do not stretch.

@@ -1,22 +1,22 @@
 ---
 layout: post
-title: 'Alias - сокращенные команды для cmd/powershell'
+title: 'Alias for cmd/powershell CLI'
 date: 2023-02-03 00:00 +0000
 notebook: webdev
 tags: [terminal, cmd, powershell]
 sources: ['https://stackoverflow.com/questions/54866820/create-alias-for-a-specific-command-in-cmd/65823225#65823225']
 ---
-Alias - это сокращенные команды, которые можно использовать вместо слишком длинных в терминале. Например я часто запускаю bejs вместо bundle exec jekyll serve.
+Alias are abbreviated commands that can be used instead of too long ones in the terminal. For example, I often use run `bejs` instead of `bundle exec jekyll serve`.
 
-Я использую cmd.exe с расширением clink (рецепт работает и без него). Проверено в Windows 10/11.
+I use cmd.exe with clink extension (should work without it). Tested in Windows 10/11.
 
-1.  Создайте файл **init.cmd** в папке пользователя OC 
+1.  Create **init.cmd** file in your OS user folder 
 ```
 C:\Users\YourName\init.cmd
 ```
-Он может быть и в другом месте (у меня он в папке с репами).
+You can put it in different place (i put it in repos folder).
 
-2. Пример содержимого файла:
+2. Example of file contents:
 ```
 @echo off
 doskey c=cls
@@ -25,28 +25,28 @@ doskey e=explorer $*
 doskey jp=cd C:\John\Pictures
 doskey l=dir /a $* 
 ```
-Каждый doskey задает alias. Синтаксис `doskey alias=command`.
+Each `doskey` set alias. Синтаксис `doskey alias=command`.
 
-3.  Теперь нужно это зарегистрировать, чтобы автоматически применять при запуске cmd.exe
+3.  Now you need to register it in order to apply it automatically on cmd.exe startup 
 
-В терминале выполните:
+Execute:
 
 ```
 reg add "HKCU\Software\Microsoft\Command Processor" /v AutoRun /t REG_EXPAND_SZ /d "%"USERPROFILE"%\init.cmd" /f 
 ```
-Убедитесь, что путь до init.cmd указан верно
+Make sure the path to init.cmd is right
 
-Готово!
+Reload cmd 
 
-Перезапустите cmd и alias должны работать.
+That's it, now alias should work
 
-Чтобы отменить регистрацию выполните:
+To undo registration:
 
 ```
 reg delete "HKCU\Software\Microsoft\Command Processor" /v AutoRun
 ```
 
-Для PowerShell:
+For PowerShell:
 
 ```
 function bundleExecJekyllServe {
@@ -60,4 +60,4 @@ function runW3CValidatorServer {
 New-Alias valid runW3CValidatorServer
 ```
 
-А еще так можно задать [переменные среды для терминала](editor-env-var.html).
+You can also set [environment variables](editor-env-var.html).

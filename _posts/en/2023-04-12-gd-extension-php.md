@@ -5,7 +5,7 @@ date: 2023-04-12 00:00 +0000
 notebook: backend
 tags: [php, local server]
 ---
-Если вы используете локальный сервер на php и получаете ошибку
-`GD Library extension not available with this PHP installation` или что-то подобное.
+If you are using local php server and getting 
+`GD Library extension not available with this PHP installation` error or something like it
 
-Найдите файл *php.ini* и раскомментируйте строчку `extension=gd`
+Find *php.ini* file in server and uncomment `extension=gd` line

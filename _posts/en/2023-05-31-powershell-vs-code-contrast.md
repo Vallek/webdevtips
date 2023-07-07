@@ -1,16 +1,16 @@
 ---
 layout: post
-title: 'Контраст текста в VS Code Powershell'
+title: 'Text contrast in VS Code Powershell'
 date: 2023-05-31 12:23 +0300
 notebook: webdev
 tags: [powershell, vs code, contrast]
 sources: []
 ---
-Если в VS Code используете powershell и у вас слишком низкий контраст текста.
+If you use powershell in VS Code and your text contrast is too low.
 
-Найдите в настройках `Terminal > Minimum Contrast Ratio` и поставьте больше. Например 7.
+Find in settings `Terminal > Minimum Contrast Ratio` and set more. 7 for example.
 
-Или:
+Or:
 ```
 "terminal.integrated.minimumContrastRatio": 7
 ```

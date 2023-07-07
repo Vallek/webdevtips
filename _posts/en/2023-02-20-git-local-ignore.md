@@ -1,15 +1,15 @@
 ---
 layout: post
-title: 'Когда git ignore не работает'
+title: 'When git ignore not working'
 date: 2023-02-20 00:00 +0000
 notebook: webdev
 tags: [git]
 ---
-Зайдите в скрытую папку **.git** в репозитории и найдите внутри папки **info** файл **exclude** без расширения. Полный путь `.git/info/exclude`
+Go to the hidden **.git** folder in the repository and find the **exclude** file without extension inside the **info** folder. Full path `.git/info/exclude`
 
-Он работает как локальный git ignore (только для вашей копии репы) и иногда может скрыть от гита файлы, которые не получается скрыть через git.ignore
+It works as a local gitignore (only for your copy of the repo) and can sometimes hide files from git that cannot be hidden through git.ignore
 
-## gitignore папку, которая уже в гите
+## gitignore folder, what already in git
 Remove the files from the index (not the actual files in the working copy)
 ```
 $ git rm -r --cached .

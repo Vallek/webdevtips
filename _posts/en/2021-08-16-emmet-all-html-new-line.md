@@ -1,14 +1,12 @@
 ---
 layout: post
-title: 'Emmet все html элементы на своей строке'
+title: 'Emmet each element on separate line'
 date: 2021-08-16 00:00 +0000
 notebook: frontend
 tags: [emmet, html, vs code]
 sources: []
 ---
-Для встроенного в VS Code emmet. Чтобы все элементы создавались на новой строке, а не одной. Включая например ссылки внутри пунктов меню. 
-
-В settings.json добавьте
+Add to settings.json
 ```
 "emmet.syntaxProfiles": {
 	"html": {

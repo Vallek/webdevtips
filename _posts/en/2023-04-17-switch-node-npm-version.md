@@ -1,30 +1,30 @@
 ---
 layout: post
-title: 'Переключение версий node.js/npm'
+title: 'Use and switch multiple node.js/npm versions'
 date: 2023-04-17 00:00 +0000
 notebook: 'webdev'
 tags: [nodejs, npm, nvm]
 ---
-Иногда старые проекты на node.js не запускаются на новых версиях ноды или npm. Если при сборке вы видите кучу ошибок об устаревших версиях и конфликтах, не спешите сдаваться. Возможно поможет использование старой ноды или npm. 
+Sometimes old projects on node.js does not run on new versions of the node or npm. If during the build you see a bunch of errors about outdated versions and conflicts, do not rush to give up. Perhaps using an old node or npm will help.
 
-Для установки разных версий на одну ОС существует несколько разных программ. Я использую **nvm**. Версию для винды можно [скачать тут](https://github.com/coreybutler/nvm-windows).
+There are several different programs for installing different versions on the same OS. I use **nvm**. The version for Windows can be [downloaded here](https://github.com/coreybutler/nvm-windows).
 
-С помощью nvm можно установить не только разные версии ноды, но и разные npm. Их можно привязать к версиях ноды. То есть например ноду берете предыдущий патч, а npm устанавливаете, который вам нужно.
+With nvm, you can install not only different versions of the node, but also different npm. They can be linked to node versions. That is, for example, you take the previous patch to the node, and install the npm that you need.
 
-Узнать, куда nvm устанавливает версии ноды `nvm root`. Осторожно! Эта же команда с путем меняет путь установки.
+Find out where nvm installs versions of the node with `nvm root` node. Caution! The same command with the path changes the installation path.
 
-Установить конкретную версия npm на активную версию ноды
+Install a specific version of npm on the active version of the node
 
 `npm install npm@X.X.X`
 
-Например `npm install npm@6.14.18`
+For example `npm install npm@6.14.18 `
 
-Переключить версию ноды (версия npm привязана к версии ноды)
+Switch the node version (the npm version is linked to the node version)
 
 `nvm use XX`
 
-Например `nvm use 16`
+For example `nvm use 16`
 
-Про все остальные команды читайте по ссылке в readme репозитория выше.
+Read about all the other commands at the link in the repository readme above.
 
 

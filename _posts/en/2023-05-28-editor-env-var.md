@@ -1,46 +1,48 @@
 ---
 layout: post
-title: 'Переменные среды редактора для терминала'
+title: 'Editor environment variables for terminal'
 date: 2023-05-28 21:33 +0300
 notebook: webdev
 tags: [terminal, cmd, powershell, windows, jekyll]
 sources: []
 ---
-Расширение jekyll compose для Jekyll может автоматически открывать созданные файлы. Но для этого помимо [настройки](https://github.com/jekyll/jekyll-compose#auto-open-new-drafts-or-posts-in-your-editor) нужно задать переменную среды редактора по умолчанию для вашего терминала. Я использую clink для cmd.
+The jekyll-compose extension for Jekyll can automatically open created files. But for this in addition to [settings](https://github.com/jekyll/jekyll-compose#auto-open-new-drafts-or-posts-in-your-editor) you need to set the default editor environment variable for your terminal. I use clink for cmd.
 
-1.  Создайте файл **init.cmd** в папке пользователя OC 
+1. Create the **init.cmd** file in the user's OC folder
 ```
 C:\Users\YourName\init.cmd
 ```
-Он может быть и в другом месте (у меня он в папке с репами).
+It can be in another place (I have it in my rep folder).
 
-2. Синтаксис:
+2. Syntax:
+
 ```
 set VAR_NAME=value
 ```
-Задаем VS Code как редактор по умолчанию.
+
+We set VS Code as the default editor.
 ```
 set JEKYLL_EDITOR=code
 ```
-Обратите внимание, что нужно именно такое название.
+Note that this is the name you need.
 
-3.  Теперь нужно это зарегистрировать, чтобы автоматически применять при запуске cmd.exe
+3. Now you need to register it in order to apply it automatically at startup cmd.exe
 
-В терминале выполните:
+In the terminal, run:
 
 ```
-reg add "HKCU\Software\Microsoft\Command Processor" /v AutoRun /t REG_EXPAND_SZ /d "%"USERPROFILE"%\init.cmd" /f 
-```
-Убедитесь, что путь до init.cmd указан верно
+reg add "HKCU\Software\Microsoft\Command Processor" /v AutoRun /t REG_EXPAND_SZ /d "%"USERPROFILE"%\init.cmd" /f
+```	
+Make sure that the path to init.cmd is specified correctly
 
-Готово!
+Ready!
 
-Перезапустите cmd и переменная должна работать.
+Restart cmd and the variable should work.
 
-Чтобы отменить регистрацию выполните:
+To cancel registration, run:
 
 ```
 reg delete "HKCU\Software\Microsoft\Command Processor" /v AutoRun
 ```
 
-А еще так можно задать [сокращенные команды для cmd/powershell](alias-for-command-in-cmd.html).
+And so you can also set [abbreviated commands for cmd/powershell](alias-for-command-in-cmd.html).

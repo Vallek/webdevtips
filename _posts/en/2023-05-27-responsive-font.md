@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Адаптивные шрифты'
+title: 'Responsive fonts'
 date: 2023-05-27 00:00 +0000
 notebook: frontend
 tags: [css, fonts, responsive]
@@ -12,4 +12,4 @@ sources: ['https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-
 }
 ```
 
-Размер регулируется максимально гибко, между минимальным, предпочтительным с учетом вьюпорта и максимальным.
+The size is adjusted as flexibly as possible, between the minimum, the preferable taking the viewport into account and the maximum.

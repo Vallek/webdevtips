@@ -1,19 +1,19 @@
 ---
 layout: post
-title: 'Открыть localhost на мобильном'
+title: 'Open localhost on smartphone'
 date: 2023-02-02 00:00 +0000
 notebook: webdev
 tags: [local server, mobile, qa]
 sources: ['https://stackoverflow.com/questions/4779963/how-can-i-access-my-localhost-from-my-android-device/4779992#4779992']
 ---
-Работает, при условии, что вы на своем вайфае. Краткое содержание:
+Works if you on your wifi.
 
-1. В терминале ipconfig
+1. Execute ipconfig in terminal
 
-2. Берете IPv4-адрес
+2. Copy IPv4-address value
 
-3. Добавляете к нему соотв порт. Например, у вас локальный сервер на :5500/ 
+3. Add your local server port to it. For example :5500/ 
 
-Это работает для live server на vs code. Но не работает на jekyll server. Чтобы заработало нужно в _config.yml добавить host: 0.0.0.0
+Works for live server in vs code. But not for jekyll server. For that you need to add добавить `host: 0.0.0.0` in `_config.yml`
 
-Сам адрес в браузере при этом менять не нужно.
+You don't need to change url in browser

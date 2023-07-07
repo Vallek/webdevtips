@@ -730,32 +730,35 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Набор мои сочетаний в vs code, которые позволяют экономить время и делать работу чуть проще. Вы можете добавить их в keybindings.json или просто в интерфейс горячих клавиш.</p>
+    <p>Набор мои сочетаний в vs code, которые позволяют экономить время и делать работу чуть проще. Вы можете добавить их в <code class="language-plaintext highlighter-rouge">keybindings.json</code> или просто в интерфейс горячих клавиш.</p>
 
-<p>Закомитить и все файлы одного репозитория или те, которые в stage. И сделать pull/push.</p>
+<p>Закомитить все файлы одного репозитория или те, которые в stage.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
 	"key": "ctrl+alt+c",
 	"command": "git.commit"
 },
-{
+</code></pre></div></div>
+<p>И сделать pull/push.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
 	"key": "ctrl+alt+g",
 	"command": "git.sync"
 },
 </code></pre></div></div>
-<p>Выделить диапазон с помомощью emmet. Например текст внутри html тегов.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-	"key": "ctrl+shift+a",
-	"command": "editor.emmet.action.balanceOut"
-},
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Выделить диапазон с помощью emmet. Например текст внутри html тегов.
 </code></pre></div></div>
-<p>Выделить все совпадения (если отключено автоматом при выделении)</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-  "key": "ctrl+shift+l",
-  "command": "editor.action.selectHighlights",
-  "when": "editorFocus"
+<p>{
+	“key”: “ctrl+shift+a”,
+	“command”: “editor.emmet.action.balanceOut”
+},</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Выделить все совпадения (если отключено автоматом при выделении)
+</code></pre></div></div>
+<p>{
+  “key”: “ctrl+shift+l”,
+  “command”: “editor.action.selectHighlights”,
+  “when”: “editorFocus”
 }
-</code></pre></div></div>
+```</p>
 
   </div><span>Источник: </span><h2 class="post-tags__heading">Теги</h2>
   

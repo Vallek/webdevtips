@@ -6,7 +6,7 @@ notebook: webdev
 tags: [vs code]
 sources: []
 ---
-Кто тоже использует расширение Highlight Matching Tag в VS Code и хочет сделать подчеркивание и отметки справа разными цветами ловите настройки:
+If you also use the HighlightMatchingTag extension in VS Code and want to make underscores and marks on the right gutter be different colors set the settings:
 ```
 "highlight-matching-tag.styles": {
         "opening": {
@@ -21,4 +21,4 @@ sources: []
         }
     },
 ```
-это для темной темы. Для светлой ставьте "light"
+for dark theme. `light` for light)

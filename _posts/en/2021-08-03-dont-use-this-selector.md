@@ -1,13 +1,13 @@
 ---
 layout: post
-title: 'Почему не стоит использовать .class > tag?'
+title: 'Do not use selector .class > tag?'
 date: 2021-08-03 00:00 +0000
 notebook: frontend
 tags: [css, selectors]
 sources: []
 ---
-Почему не стоит использовать `.class > tag`? Часто хочется, потому что лень задавать классы всем пунктам списка и т.п.
+Why not use `.class > tag`? I often want to, because I'm too lazy to set classes for all the items in the list, etc.
 
-Потому что специфичность. Этот селектор перепишет другие с одним классом. Сейчас это может не быть проблемой, но обязательно будет потом.
+But you shouldn't because of the specificity. This selector will overwrite others with the same class. It may not be a problem now, but it will be sooner or later.
 
-Например (тру стори) класс `.item` для пункта списка не сможет переписать свойства текста из `.list > li`.
+For example (true story) the `.item` class for a list item will not be able to rewrite the text properties from `.list > li`.
