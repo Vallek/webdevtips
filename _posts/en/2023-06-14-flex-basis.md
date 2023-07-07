@@ -8,7 +8,7 @@ sources: [https://www.w3.org/TR/css-flexbox-1/#flex-basis-property]
 ---
 ## How it works
 
-![](img/rel-vs-abs-flex.svg)
+![](../img/rel-vs-abs-flex.svg)
 
 * flex-basis: 0; - **empty space** distribution according to flex-grow
 * flex-basis: auto; - size distribution according to  flex-grow 
