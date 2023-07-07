@@ -34,14 +34,14 @@ layout: default
   
   {% if paginator.total_pages > 1 %}
   <div class="pagination">
-    
     {% if page.lang == "ru" %}
-    {% if paginator.page == 2 %}
-    <a href="{{site.baseurl}}/">
+    {% if paginator.previous_page and paginator.page != 2 %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">
       &laquo; Заметки новее
     </a>
-    {% else if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}">
+    {% endif %}
+    {% if paginator.previous_page and paginator.page == 2 %}
+    <a href="{{site.baseurl}}/">
       &laquo; Заметки новее
     </a>
     {% endif %}
@@ -64,12 +64,13 @@ layout: default
     {% endif %}
 
     {% else if page.lang == "en" %}
-    {% if paginator.page == 2 %}
-    <a href="{{site.baseurl}}/en/">
+    {% if paginator.previous_page and paginator.page != 2 %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">
       &laquo; Newer notes
     </a>
-    {% else if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}">
+    {% endif %}
+    {% if paginator.previous_page and paginator.page == 2 %}
+    <a href="{{site.baseurl}}/en">
       &laquo; Newer notes
     </a>
     {% endif %}
