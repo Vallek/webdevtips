@@ -65,7 +65,7 @@ You can also suggest creating a new section if you have something to add to it.
 - [ ] Transfer answers from stackoverflow from my bookmarks that were not in the notes
 - [ ] Home page with widgets, transferring all posts to a separate one
 - [x] Number of posts in the tag cloud
-- [ ] Transferring to my own css layout completely (BEM without nesting, outdated practices, remove everything from minima, etc.)
+- [x] Transferring to my own css layout completely (BEM without nesting, outdated practices, remove everything from minima, etc.)
 - [ ] Dark theme
 - [x] Accordion in the sidebar
 - [x] Posts by tags in the sidebar
@@ -73,7 +73,7 @@ You can also suggest creating a new section if you have something to add to it.
 - [x] Search Fork
 - [ ] Search improvements (working fuzzy, details in the results)
 - [ ] Documentation for participants
-- [ ] Localization of the interface and content into English (and into Russian, where in English)
+- [x] Localization of the interface and content into English (and into Russian, where in English)
 - [ ] Your suggestions)
 
 If something doesn't work, please start an issue. With any questions about the project, write in the discussion. Other suggestions and questions can be written to [mail](mailto:vwebdis@gmail.com) or [telegram](https://t.me/webval).
