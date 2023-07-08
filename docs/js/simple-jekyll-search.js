@@ -324,34 +324,31 @@
           });
     }
     function registerInput () {
-      let searchInput = document.getElementById('search-input');
-      let resultsContainer = document.getElementById('results-container');
       let searchWrapper = document.querySelector('.header__search');
       options.searchInput.addEventListener('input', function (e) {
         if (isWhitelistedKey(e.which)) {
           emptyResultsContainer();
-          // Hide results container when empty
-          options.resultsContainer.classList.add('visually-hidden');
           debounce(function () { search(e.target.value); }, options.debounceTime);
-          if (searchInput.value == '') {
-             resultsContainer.classList.add('visually-hidden');
+          // Hide results container when empty
+          if (options.searchInput.value == '') {
+            options.resultsContainer.classList.add('visually-hidden');
           }
         }
         // Show on focus, hide on focus lost
-        searchInput.addEventListener('focus', showResults);
-        searchInput.addEventListener('focusout', hideResults);
+        options.searchInput.addEventListener('focus', showResults);
+        options.searchInput.addEventListener('focusout', hideResults);
         document.addEventListener('click', hideResults);
         function showResults() {
           // Don't show on focus if empty
-          if (searchInput.value !== '') {
-            resultsContainer.classList.remove('visually-hidden');
+          if (options.searchInput.value !== '') {
+            options.resultsContainer.classList.remove('visually-hidden');
           }
         }
         function hideResults(el) {
           // Don't hide when click on results
           let targetInside = searchWrapper.contains(el.target);
           if (!targetInside) {
-            resultsContainer.classList.add('visually-hidden');  
+            options.resultsContainer.classList.add('visually-hidden');  
           }	
           else {
             return;
