@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin SEO -->
+  <title>Web Dev Tips | Design principles</title>
+  <meta property="og:title" content="Web Dev Tips">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="author" content="Vallek">
+  
+  <meta name="description" content="Frontend, web development and pc setup knowledge base">
+  <meta property="og:description" content="Frontend, web development and pc setup knowledge base">
+  
+  <link rel="canonical" href="https://vallek.github.io/webdevtips/en/design-principles">
+  <meta property="og:url" content="https://vallek.github.io/webdevtips/en/design-principles">
+  <meta property="og:site_name" content="Web Dev Tips">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta property="twitter:title" content="Web Dev Tips">
+  <meta name="twitter:image" content="https://vallek.github.io/webdevtips/favicon.png">
+  <!-- End SEO -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/webdevtips/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/webdevtips/favicon.png">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/webdevtips/favicon.svg">
+  <link rel="stylesheet" href="/webdevtips/assets/main.css"> 
+  <script defer src="/webdevtips/js/simple-jekyll-search.js"></script>
+  <script defer src="/webdevtips/js/tags-lang.js"></script>
+  <script defer src="/webdevtips/js/search.js"></script>
+  <script defer src="/webdevtips/js/accordion.js"></script>
+  <script defer src="/webdevtips/js/tags-colors.js"></script>
+  <link type="application/atom+xml" rel="alternate" href="https://vallek.github.io/webdevtips/feed.xml" title="Web Dev Tips"><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MH46X0DQW4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MH46X0DQW4');
+</script>
+
+</head>
+<body class="page"><header class="header site-header">
+
+  <div class="header__content">
+    
+    <a class="header__title" rel="author" href="/webdevtips/en">Web Dev Tips</a>
+    
+    <!-- HTML elements for search -->
+    <div class="header__search search">
+      <input class="search__input" type="text" id="search-input" placeholder="Поиск по содержимому...">
+      <ul class="search__list visually-hidden" id="results-container"></ul>
+    </div>
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+        <div class="trigger">
+          <section class="locales">
+            <h3 class="locales__text visually-hidden">Выбор языка/Language</h3>
+            
+
+            
+            
+            <a class="locales__lang locales__lang_ru" href="/webdevtips/ru/design-principles">RU</a>
+            
+            <span> / </span>
+            <a class="locales__lang locales__lang_en" href="/webdevtips/en/design-principles">EN</a>
+            
+
+            
+
+            
+          </section>
+          <a class="page-link" href="https://github.com/Vallek/webdevtips">GitHub</a>
+          
+          <a class="page-link" href="/webdevtips/en/about/">About</a>
+          
+        </div>
+      </nav>
+  </div>
+</header>
+<div class="page__content">
+<aside class="sidebar">
+	
+	<h2 class="sidebar__heading">Topics and notes</h2>
+	<ul class="sidebar__notebooks">
+		<li class="sidebar__notebook sidebar__notebook_open"><button class="sidebar__title">frontend</button>
+			
+			
+			
+
+			<ul class="siderbar__tags">
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/javascript">javascript</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/map-symbols-join">If map() with template literal generate extra characters</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/click-outside">Detect click outside of element</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/dark-theme-detect">How to detect light/dark theme preference</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/js-func-arg-defaults">JS function default arguments values</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/detect-current-page">Find current page with JS</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/get-overflow">Find the element that overflows viewport</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/css">css</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/flex-basis">How flex-basis works</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/local-validator">Local w3c html/css validator</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/dark-theme-detect">How to detect light/dark theme preference</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/responsive-grid">Responsive grid with one line'</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/responsive-font">Responsive fonts</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/smooth-animations">Smooth animations</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/transform-perspective">Template for transform: perspective</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/1-2-4-5-nth-child">Selector for 1, 2, 4, 5 elements</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/post-css-plugins">Launching postcss plugins</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/visually-hidden">Accessible ways to visually hide element</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/negative-css-variable">How to get negative value in css variable</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/css-debug">Show borders of all elements for testing</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/dont-use-this-selector">Do not use selector .class > tag?</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/get-overflow">Find the element that overflows viewport</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/press-footer-down">How to press down footer</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/flexbox">flexbox</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/flex-basis">How flex-basis works</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/press-footer-down">How to press down footer</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/validation">validation</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/local-validator">Local w3c html/css validator</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/html">html</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/local-validator">Local w3c html/css validator</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/html-spaces">HTML codes for all whitespace symbols</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/emmet-all-html-new-line">Emmet each element on separate line</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/regex-tricks">regex tricks</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/iframe-links-new-tab">Links inside iframe to open new tabs</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/dark-theme">dark theme</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/dark-theme-detect">How to detect light/dark theme preference</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/accessibility">accessibility</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/dark-theme-detect">How to detect light/dark theme preference</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/visually-hidden">Accessible ways to visually hide element</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/svg">svg</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/inline-svg-favicon">Inline svg favicon</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/favicon">favicon</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/inline-svg-favicon">Inline svg favicon</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/responsive">responsive</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/responsive-grid">Responsive grid with one line'</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/responsive-font">Responsive fonts</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/grid">grid</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/responsive-grid">Responsive grid with one line'</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/fonts">fonts</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/responsive-font">Responsive fonts</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/animation">animation</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/smooth-animations">Smooth animations</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/devtools">devtools</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/eventsmonitoring">Browser events monitoring</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/detect-current-page">Find current page with JS</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/focus-monitoring">Monitoring focus event</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/events">events</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/eventsmonitoring">Browser events monitoring</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/chrome">chrome</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/eventsmonitoring">Browser events monitoring</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/focus-monitoring">Monitoring focus event</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/firefox">firefox</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/eventsmonitoring">Browser events monitoring</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/focus-monitoring">Monitoring focus event</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/selectors">selectors</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/1-2-4-5-nth-child">Selector for 1, 2, 4, 5 elements</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/dont-use-this-selector">Do not use selector .class > tag?</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/nth-child">nth-child</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/1-2-4-5-nth-child">Selector for 1, 2, 4, 5 elements</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/postcss">postcss</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/post-css-plugins">Launching postcss plugins</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/qa">qa</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/css-debug">Show borders of all elements for testing</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/get-overflow">Find the element that overflows viewport</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/design">design</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/design-principles">Design principles</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/emmet">emmet</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/emmet-all-html-new-line">Emmet each element on separate line</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/vs-code">vs code</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/emmet-all-html-new-line">Emmet each element on separate line</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/focus">focus</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/focus-monitoring">Monitoring focus event</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/regex">regex</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/regex-tricks">regex tricks</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+		</li>
+		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">webdev</button>
+			
+			
+			
+
+			<ul class="siderbar__tags">
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/git">git</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/git-clone-in-folder">How to clone repo in any folder</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/git-move-changes-to-branch">Move changes to new git branch</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/vs-code-shortcuts">My VS Code hotkeys shortcuts</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/push-pull-error">If remote pull/push not working</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/git-local-ignore">When git ignore not working</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/remove-file-from-commit">REmove file from a commit</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/repo-inside-repo-vscode">Repo inside repo in vs code</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/accessibility">accessibility</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/screen-readers">Screen Readers: where to download</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/powershell">powershell</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/powershell-vs-code-contrast">Text contrast in VS Code Powershell</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/editor-env-var">Editor environment variables for terminal</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/alias-for-command-in-cmd">Alias for cmd/powershell CLI</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/vs-code">vs code</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/powershell-vs-code-contrast">Text contrast in VS Code Powershell</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/highlight-matching-tag">Highlight Matching Tag в VS Code</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/vs-code-shortcuts">My VS Code hotkeys shortcuts</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/repo-inside-repo-vscode">Repo inside repo in vs code</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/contrast">contrast</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/powershell-vs-code-contrast">Text contrast in VS Code Powershell</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/jekyll">jekyll</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/jekyll-no-date">Jekyll posts without date in file name</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/editor-env-var">Editor environment variables for terminal</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/repo-inside-repo-vscode">Repo inside repo in vs code</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/shortcuts">shortcuts</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/vs-code-shortcuts">My VS Code hotkeys shortcuts</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/emmet">emmet</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/vs-code-shortcuts">My VS Code hotkeys shortcuts</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/terminal">terminal</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/editor-env-var">Editor environment variables for terminal</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/alias-for-command-in-cmd">Alias for cmd/powershell CLI</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/suppress-cmd-y-n">How to suppress "Terminate batch job (Y/N)" confirmation?</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/cmd">cmd</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/editor-env-var">Editor environment variables for terminal</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/alias-for-command-in-cmd">Alias for cmd/powershell CLI</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/suppress-cmd-y-n">How to suppress "Terminate batch job (Y/N)" confirmation?</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/windows">windows</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/editor-env-var">Editor environment variables for terminal</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/local-server">local server</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/openssl-local-server-with-https">OpenSSL local server with HTTPS</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/localhost-on-mobile">Open localhost on smartphone</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/https">https</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/openssl-local-server-with-https">OpenSSL local server with HTTPS</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/openssl">openssl</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/openssl-local-server-with-https">OpenSSL local server with HTTPS</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/nodejs">nodejs</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/switch-node-npm-version">Use and switch multiple node.js/npm versions</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/npm">npm</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/switch-node-npm-version">Use and switch multiple node.js/npm versions</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/nvm">nvm</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/switch-node-npm-version">Use and switch multiple node.js/npm versions</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/mobile">mobile</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/localhost-on-mobile">Open localhost on smartphone</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/qa">qa</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/localhost-on-mobile">Open localhost on smartphone</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/http">http</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/http-3">HTTP/2 and HTTP/3 difference</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/clink">clink</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/suppress-cmd-y-n">How to suppress "Terminate batch job (Y/N)" confirmation?</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+		</li>
+		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">backend</button>
+			
+			
+			
+
+			<ul class="siderbar__tags">
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/github">github</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/build-static-node-github-actions">How to build static page with Node.js and Github Actions</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/nodejs">nodejs</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/build-static-node-github-actions">How to build static page with Node.js and Github Actions</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/php">php</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/gd-extension-php">PHP GD Library extension</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/local-server">local server</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/gd-extension-php">PHP GD Library extension</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+		</li>
+		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">pc</button>
+			
+			
+			
+
+			<ul class="siderbar__tags">
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/firefox">firefox</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/firefox-color-management">Firefox ignores monitor color profile</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/regedit">regedit</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/disable-alt-tab-thumb-win10">Disable thumbnails for alt+tab in Windows 10</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/windows">windows</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/disable-alt-tab-thumb-win10">Disable thumbnails for alt+tab in Windows 10</a></li>
+					</ul>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/win-r-commands">win+r commands</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/adblock">adblock</a>
+					
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/adblock-content">Block element with adblock based on text content</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+		</li>
+		
+	</ul>
+</aside><main class="page__main main" aria-label="Content">
+        <div class="main__content wrapper">
+          <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Design principles</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-06-01T03:00:00+03:00" itemprop="datePublished">Jun 1, 2022
+      </time>
+      <span class="post-notebook">&ensp;-&ensp;frontend</span><a class="edit-button edit-button_post-page" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/en/2022-06-01-design-principles.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Similarity — people perceive similar objects as the same or at least part of the same concept.</p>
+
+<p>Proximity — things close to each other are perceived as part of the same group.</p>
+
+<p>Continuity — you want your visitor’s gaze to move naturally from one element to another.</p>
+
+<p>Closure — an object that’s not entirely closed is still perceived as a whole because people’s brains will always fill in the gaps.</p>
+
+<p>Figure and ground — people simplify images into the main objects they’re looking at (the figure) and the other elements (background).</p>
+
+  </div>
+  <span>Source: </span>
+  <a class="source-link" href="https://www.smashingmagazine.com/2014/03/design-principles-visual-perception-and-the-principles-of-gestalt/">https://www.smashingmagazine.com/2014/03/design-principles-visual-perception-and-the-principles-of-gestalt/</a>
+  <h2 class="post-tags__heading">Теги</h2>
+  
+  
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/design"><span class="nobrake">design</span></a>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://0.0.0.0:4000/webdevtips/en/design-principles';
+      this.page.identifier = 'http://0.0.0.0:4000/webdevtips/en/design-principles';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://vallek-webdevtips.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/webdevtips/en/design-principles" hidden></a>
+</article>
+
+        </div>
+      </main><aside class="tags-cloud tags-cloud_aside">
+	
+	<h2 class="tags-cloud__heading">All tags:</h2>
+	
+	<div class="tags-cloud__tags tags-cloud__tags_all">
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/css">css (15)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/flexbox">flexbox (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/terminal">terminal (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/cmd">cmd (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/clink">clink (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/javascript">javascript (6)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/qa">qa (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/html">html (5)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/selectors">selectors (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/regex">regex (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/devtools">devtools (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/focus">focus (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/chrome">chrome (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/firefox">firefox (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/emmet">emmet (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/vs-code">vs code (5)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/http">http (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/design">design (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/adblock">adblock (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/local-server">local server (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/mobile">mobile (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/powershell">powershell (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/git">git (7)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/jekyll">jekyll (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/windows">windows (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/accessibility">accessibility (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/postcss">postcss (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/nth-child">nth-child (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/php">php (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/nodejs">nodejs (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/npm">npm (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/nvm">nvm (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/https">https (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/openssl">openssl (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/events">events (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/animation">animation (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/fonts">fonts (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/responsive">responsive (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/regedit">regedit (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/grid">grid (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/shortcuts">shortcuts (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/svg">svg (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/favicon">favicon (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/dark-theme">dark theme (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/validation">validation (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/contrast">contrast (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/github">github (1)
+		</a>
+		
+	</div>
+</aside></div><footer class="site-footer h-card">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Web Dev Tips</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Web Dev Tips</li><li><a class="u-email" href="mailto:vwebdis@gmail.com">vwebdis@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/Vallek"><svg class="svg-icon"><use xlink:href="/webdevtips/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Vallek</span></a></li><li><a href="https://www.twitter.com/_vallek"><svg class="svg-icon"><use xlink:href="/webdevtips/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">_vallek</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3 footer__description">
+        
+        <p class="footer__about">Frontend, web development and pc setup knowledge base</p>
+        
+        <p class="footer__copy">Favicon from <a href="https://www.svgrepo.com/svg/397378/man-technologist">svgrepo</a> under Apache License</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

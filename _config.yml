@@ -39,8 +39,13 @@ plugins:
   - jekyll-paginate
 
 # jekyll-paginate
-paginate: 10
-paginate_path: /page:num/
+paginate_multiple:
+  - paginate: 10
+    paginate_path: 'ru/page:num/'
+    sub_dir: '/ru'
+  - paginate: 10
+    paginate_path: 'en/page:num/'
+    sub_dir: '/en'
 
 # Change prod folder from site to docs
 destination: docs
@@ -60,8 +65,21 @@ jekyll_compose:
       tags: []
       sources: []
 
-# Change prod links from dates to simple title
-permalink: /:title
+defaults:
+  -
+    scope:
+      path: '_posts/ru'
+      type: 'posts'
+    values:
+      permalink: 'ru/:title'
+      lang: ru
+  -
+    scope:
+      path: '_posts/en'
+      type: 'posts'
+    values:
+      permalink: 'en/:title'
+      lang: en
 
 # Exclude from processing.
 # The following items will not be processed, by default.

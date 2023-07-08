@@ -45,6 +45,8 @@
 }
 
 .site-nav {
+  display: flex;
+  justify-content: center;
   flex: 1 2;
   box-sizing: border-box;
   padding: 0 1em;
@@ -71,7 +73,10 @@
       margin-right: 20px;
     }
   }
-  
+
+  .trigger {
+    display: flex;
+  }
   // @include media-query($on-palm) {
   //   // position: absolute;
   //   // top: 9px;
@@ -174,12 +179,26 @@
 }
 
 .search__link {
-  display: block;
+  display: flex;
 }
 
 .search__link:hover {
   color: $background-color;
   background-color: $brand-color;
+}
+
+.search__lang {
+  margin-left: auto;
+}
+
+// Lang
+.locales {
+  color: white;
+  margin-right: 2em;
+}
+
+.locales__lang {
+  color: white;
 }
 
 // Sidebar

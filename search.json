@@ -9,7 +9,8 @@ layout: none
       "tags"     : "{{ post.tags | join: ', ' }}",
       "url"      : "{{ site.baseurl }}{{ post.url }}",
       "date"     : "{{ post.date }}",
-      "content"  : "{{ post.content | strip_html | strip_newlines | escape | remove: '\'| replace:  "	", ' ' }}"
+      "content"  : "{{ post.content | strip_html | strip_newlines | escape | remove: '\'| replace:  "	", ' ' }}",
+      "lang": "{{ post.lang }}"
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]

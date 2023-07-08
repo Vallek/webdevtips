@@ -3,16 +3,14 @@ layout: default
 ---
 
 <div class="home">
-  {%- if page.title -%}
-  <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
   
   {{ content }}
   
   {%- if site.posts.size > 0 -%}
-  <h2 class="post-list-heading">Все заметки</h2>
+  <h1 class="post-list-heading">Все заметки</h1>
   <ul class="post-list">
     {% for post in paginator.posts %}
+    {% if post.lang == page.lang %}
     <li class="post-item">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <span class="post-meta">{{ post.date | date: date_format }}<span class="post-notebook">&ensp;-&ensp;{{ post.notebook }}</span></span>
@@ -30,36 +28,71 @@ layout: default
       <a class="tag-link" href="{{site.baseurl}}/tag/{{ tag_name }}"><span class="nobrake">{{ tag }}</span></a>
       {%- endfor -%}
     </li>
+    {%- endif -%}
     {%- endfor -%}
   </ul>
   
   {% if paginator.total_pages > 1 %}
   <div class="pagination">
-    {% if paginator.previous_page %}
+    {% if page.lang == "ru" %}
+    {% if paginator.previous_page and paginator.page != 2 %}
     <a href="{{ paginator.previous_page_path | relative_url }}">
       &laquo; Заметки новее
     </a>
     {% endif %}
-    
+    {% if paginator.previous_page and paginator.page == 2 %}
+    <a href="{{site.baseurl}}/">
+      &laquo; Заметки новее
+    </a>
+    {% endif %}
     {% for page in (1..paginator.total_pages) %}
     {% if page == paginator.page %}
     <em>{{ page }}</em>
     {% elsif page == 1 %}
-    <a href="{{ paginator.previous_page_path | relative_url }}">
-      {{ page }}
-    </a>
+    <a href="{{ '/' | relative_url }}">{{ page }}</a>
     {% else %}
-    <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">
+    <a href="{{site.baseurl}}/ru/page{{ page }}">
       {{ page }}
     </a>
     {% endif %}
     {% endfor %}
-    
+
     {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path | relative_url }}">
       Заметки старше &raquo;
     </a>
     {% endif %}
+
+    {% else if page.lang == "en" %}
+    {% if paginator.previous_page and paginator.page != 2 %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">
+      &laquo; Newer notes
+    </a>
+    {% endif %}
+    {% if paginator.previous_page and paginator.page == 2 %}
+    <a href="{{site.baseurl}}/en">
+      &laquo; Newer notes
+    </a>
+    {% endif %}
+    {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+    <em>{{ page }}</em>
+    {% elsif page == 1 %}
+    <a href="{{ '/en' | relative_url }}">{{ page }}</a>
+    {% else %}
+    <a href="{{site.baseurl}}/en/page{{ page }}">
+      {{ page }}
+    </a>
+    {% endif %}
+    {% endfor %}
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}">
+      Older notes &raquo;
+    </a>
+    {% endif %}
+    {% endif %}
+    
+    
   </div>
   {% endif %}
   

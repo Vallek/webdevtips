@@ -1,15 +1,30 @@
 ---
 layout: default
 ---
-<h1>Заметки на тему {{ page.tag }}</h1>
-<ul>
-{% for post in page.posts %}
+<div class="tags_ru">
+  <h1>Заметки на тему {{ page.tag }}</h1>
+  <ul>
+  {% for post in page.posts %}
+  {% if post.url contains "/ru/" %}
   <li><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a> (темы: {{ post | tags }})</li>
-{% endfor %}
-</ul>
+  {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+<div class="tags_en">
+  <h1>Notes about {{ page.tag }}</h1>
+  <ul>
+  {% for post in page.posts %}
+  {% if post.url contains "/en/" %}
+  <li><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a> (tags: {{ post | tags }})</li>
+  {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 
 <div class="tags-cloud">
-  <h2>Все темы</h2>
+  <h2>Все темы / All tags</h2>
   {% for tag in site.tags %}
   <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="{{site.baseurl}}/tag/{{ tag | first | replace: ' ', '-' }}">{{ tag | first }}</a>
   {% endfor %}

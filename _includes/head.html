@@ -5,9 +5,16 @@
   <!-- Begin SEO -->
   <title>Web Dev Tips | {{ page.title }}</title>
   <meta property="og:title" content="Web Dev Tips">
-  <meta property="og:locale" content="en_US">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="author" content="Vallek">
+  {% if page.lang == "en" %}
+  <meta name="description" content="Frontend, web development and pc setup knowledge base">
+  <meta property="og:description" content="Frontend, web development and pc setup knowledge base">
+  {% else %}
   <meta name="description" content="База знаний по фронтенду, веб-разработке и настройке пк">
   <meta property="og:description" content="База знаний по фронтенду, веб-разработке и настройке пк">
+  {% endif %}
   <link rel="canonical" href="https://vallek.github.io/webdevtips{{page.url}}">
   <meta property="og:url" content="https://vallek.github.io/webdevtips{{page.url}}">
   <meta property="og:site_name" content="Web Dev Tips">
@@ -21,6 +28,7 @@
   <link rel="icon" type="image/svg+xml" sizes="any" href="{{site.baseurl}}/favicon.svg">
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}"> 
   <script defer src="{{site.baseurl}}/js/simple-jekyll-search.js"></script>
+  <script defer src="{{site.baseurl}}/js/tags-lang.js"></script>
   <script defer src="{{site.baseurl}}/js/search.js"></script>
   <script defer src="{{site.baseurl}}/js/accordion.js"></script>
   <script defer src="{{site.baseurl}}/js/tags-colors.js"></script>

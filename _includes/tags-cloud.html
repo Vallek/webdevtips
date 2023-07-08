@@ -1,8 +1,12 @@
 <aside class="tags-cloud tags-cloud_aside">
+	{% if page.lang == "en" %}
+	<h2 class="tags-cloud__heading">All tags:</h2>
+	{% else %}
 	<h2 class="tags-cloud__heading">Все темы:</h2>
+	{% endif %}
 	<div class="tags-cloud__tags tags-cloud__tags_all">
 		{% for tag in site.tags %}
-		<a class="tags-cloud__tag tags-cloud__tag_aside" href="{{site.baseurl}}/tag/{{ tag | first | replace: ' ', '-' }}">{{ tag | first }} ({{tag[1].size}})
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="{{site.baseurl}}/tag/{{ tag | first | replace: ' ', '-' }}">{{ tag | first }} ({{tag[1].size | divided_by: 2 }})
 		</a>
 		{% endfor %}
 	</div>

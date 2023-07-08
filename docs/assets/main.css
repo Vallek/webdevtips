@@ -255,6 +255,8 @@ table td {
 }
 
 .site-nav {
+  display: flex;
+  justify-content: center;
   flex: 1 2;
   box-sizing: border-box;
   padding: 0 1em;
@@ -274,6 +276,9 @@ table td {
 }
 .site-nav .page-link:not(:last-child) {
   margin-right: 20px;
+}
+.site-nav .trigger {
+  display: flex;
 }
 
 .header__search {
@@ -316,12 +321,25 @@ table td {
 }
 
 .search__link {
-  display: block;
+  display: flex;
 }
 
 .search__link:hover {
   color: #fdfdfd;
   background-color: #2a7ae2;
+}
+
+.search__lang {
+  margin-left: auto;
+}
+
+.locales {
+  color: white;
+  margin-right: 2em;
+}
+
+.locales__lang {
+  color: white;
 }
 
 .sidebar {
