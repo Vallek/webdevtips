@@ -200,6 +200,8 @@ pre > code {
 
 .site-nav__content {
 	display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 .page-link {
