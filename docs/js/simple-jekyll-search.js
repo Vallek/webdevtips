@@ -308,14 +308,25 @@
       options.resultsContainer.innerHTML = '';
     }
     function appendToResultsContainer (text) {
+      let pageLang = document.querySelector('html').getAttribute('lang'); 
       // Show results container when not empty
       options.resultsContainer.classList.remove('visually-hidden');
       options.resultsContainer.innerHTML += text;
+      let searchItem = options.resultsContainer.querySelectorAll('.search__item'); 
+          searchItem.forEach((el) => {
+            let langEl = el.querySelector('.search__lang');
+            if (pageLang == 'ru' && langEl.textContent.includes('en')) {
+              el.remove();
+            } 
+            if (pageLang == 'en' && langEl.textContent.includes('ru')) {
+              el.remove();
+            } 
+          });
     }
     function registerInput () {
       let searchInput = document.getElementById('search-input');
       let resultsContainer = document.getElementById('results-container');
-      let searchWrapper = document.querySelector('.header__search'); 
+      let searchWrapper = document.querySelector('.header__search');
       options.searchInput.addEventListener('input', function (e) {
         if (isWhitelistedKey(e.which)) {
           emptyResultsContainer();

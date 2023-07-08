@@ -179,12 +179,16 @@
 }
 
 .search__link {
-  display: block;
+  display: flex;
 }
 
 .search__link:hover {
   color: $background-color;
   background-color: $brand-color;
+}
+
+.search__lang {
+  margin-left: auto;
 }
 
 // Lang

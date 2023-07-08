@@ -321,12 +321,16 @@ table td {
 }
 
 .search__link {
-  display: block;
+  display: flex;
 }
 
 .search__link:hover {
   color: #fdfdfd;
   background-color: #2a7ae2;
+}
+
+.search__lang {
+  margin-left: auto;
 }
 
 .locales {
