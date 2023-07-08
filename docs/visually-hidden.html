@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin SEO -->
+  <title>Web Dev Tips | Доступные способы визуально скрыть элемент</title>
+  <meta property="og:title" content="Web Dev Tips">
+  <meta property="og:locale" content="en_US">
+  <meta name="description" content="База знаний по фронтенду, веб-разработке и настройке пк">
+  <meta property="og:description" content="База знаний по фронтенду, веб-разработке и настройке пк">
+  <link rel="canonical" href="https://vallek.github.io/webdevtips/visually-hidden">
+  <meta property="og:url" content="https://vallek.github.io/webdevtips/visually-hidden">
+  <meta property="og:site_name" content="Web Dev Tips">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta property="twitter:title" content="Web Dev Tips">
+  <meta name="twitter:image" content="https://vallek.github.io/webdevtips/favicon.png">
+  <!-- End SEO -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/webdevtips/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/webdevtips/favicon.png">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/webdevtips/favicon.svg">
+  <link rel="stylesheet" href="/webdevtips/assets/main.css"> 
+  <script defer src="/webdevtips/js/simple-jekyll-search.js"></script>
+  <script defer src="/webdevtips/js/search.js"></script>
+  <script defer src="/webdevtips/js/accordion.js"></script>
+  <script defer src="/webdevtips/js/tags-colors.js"></script>
+  <link type="application/atom+xml" rel="alternate" href="https://vallek.github.io/webdevtips/feed.xml" title="Web Dev Tips"><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MH46X0DQW4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MH46X0DQW4');
+</script>
+
+</head>
+<body class="page"><header class="header site-header">
+
+  <div class="header__content"><a class="header__title" rel="author" href="/webdevtips/">Web Dev Tips</a>
+    <!-- HTML elements for search -->
+    <div class="header__search search">
+      <input class="search__input" type="text" id="search-input" placeholder="Поиск по содержимому...">
+      <ul class="search__list visually-hidden" id="results-container"></ul>
+    </div>
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+        <div class="trigger">
+          <a class="page-link" href="https://github.com/Vallek/webdevtips">GitHub</a>
+          <a class="page-link" href="/webdevtips/about/index.html">О сайте</a>
+        </div>
+      </nav>
+  </div>
+</header>
+<div class="page__content">
+<aside class="sidebar">
+	<h2 class="sidebar__heading">Рубрики и заметки</h2>
+	<ul class="sidebar__notebooks">
+		<li class="sidebar__notebook sidebar__notebook_open"><button class="sidebar__title">frontend</button>
+			
+			
+			
+			
+			<ul class="siderbar__tags">
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/javascript">javascript</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/map-symbols-join">Если map() с template literal выдает лишние символы</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/click-outside">Detect click outside of element</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/dark-theme-detect">Как детектить выбор темной/светлой темы посетителя</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/js-func-arg-defaults">Значение по умолчанию аргумента функции</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/detect-current-page">Как найти текущую страницу на сайте в JS</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/get-overflow">Найти элемент выходящий за вьюпорт</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/css">css</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/flex-basis">Как работает flex-basis</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/local-validator">Local w3c html/css validator</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/dark-theme-detect">Как детектить выбор темной/светлой темы посетителя</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/responsive-grid">Адаптивные гриды одной строкой</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/responsive-font">Адаптивные шрифты</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/smooth-animations">Smooth animations</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/transform-perspective">Заготовка для transform: perspective</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/1-2-4-5-nth-child">Селектор для выбора ряда 1, 2, 4, 5</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/post-css-plugins">Запуск css плагинов postcss</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/visually-hidden">Доступные способы визуально скрыть элемент</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/negative-css-variable">Как получить отрицательное значение css переменной</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/css-debug">Показ границ элементов для тестирования</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/dont-use-this-selector">Почему не стоит использовать .class > tag?</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/get-overflow">Найти элемент выходящий за вьюпорт</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/press-footer-down">Как прижать футер</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/flexbox">flexbox</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/flex-basis">Как работает flex-basis</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/press-footer-down">Как прижать футер</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/validation">validation</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/local-validator">Local w3c html/css validator</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/html">html</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/local-validator">Local w3c html/css validator</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/html-spaces">Спецсимволы пробелов в html</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/emmet-all-html-new-line">Emmet все html элементы на своей строке</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/regex-tricks">regex tricks</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/iframe-links-new-tab">Ссылки в iframe</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/dark-theme">dark theme</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/dark-theme-detect">Как детектить выбор темной/светлой темы посетителя</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/accessibility">accessibility</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/dark-theme-detect">Как детектить выбор темной/светлой темы посетителя</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/visually-hidden">Доступные способы визуально скрыть элемент</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/svg">svg</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/inline-svg-favicon">Inline svg favicon</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/favicon">favicon</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/inline-svg-favicon">Inline svg favicon</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/responsive">responsive</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/responsive-grid">Адаптивные гриды одной строкой</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/responsive-font">Адаптивные шрифты</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/grid">grid</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/responsive-grid">Адаптивные гриды одной строкой</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/fonts">fonts</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/responsive-font">Адаптивные шрифты</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/animation">animation</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/smooth-animations">Smooth animations</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/devtools">devtools</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/eventsmonitoring">Мониторинг браузерных событий</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/detect-current-page">Как найти текущую страницу на сайте в JS</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/focus-monitoring">Мониторинг элементов в фокусе</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/events">events</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/eventsmonitoring">Мониторинг браузерных событий</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/chrome">chrome</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/eventsmonitoring">Мониторинг браузерных событий</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/focus-monitoring">Мониторинг элементов в фокусе</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/firefox">firefox</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/eventsmonitoring">Мониторинг браузерных событий</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/focus-monitoring">Мониторинг элементов в фокусе</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/selectors">selectors</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/1-2-4-5-nth-child">Селектор для выбора ряда 1, 2, 4, 5</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/dont-use-this-selector">Почему не стоит использовать .class > tag?</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/nth-child">nth-child</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/1-2-4-5-nth-child">Селектор для выбора ряда 1, 2, 4, 5</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/postcss">postcss</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/post-css-plugins">Запуск css плагинов postcss</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/qa">qa</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/css-debug">Показ границ элементов для тестирования</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/get-overflow">Найти элемент выходящий за вьюпорт</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/design">design</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/design-principles">Дизайн принципы</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/emmet">emmet</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/emmet-all-html-new-line">Emmet все html элементы на своей строке</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/vs-code">vs code</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/emmet-all-html-new-line">Emmet все html элементы на своей строке</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/focus">focus</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/focus-monitoring">Мониторинг элементов в фокусе</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/regex">regex</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/regex-tricks">regex tricks</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+		</li>
+		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">webdev</button>
+			
+			
+			
+			
+			<ul class="siderbar__tags">
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/git">git</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/git-clone-in-folder">Как клонировать гит репозиторий в любую папку</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/git-move-changes-to-branch">Переместить изменения в новую git ветку</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/vs-code-shortcuts">Мои горячие клавиши для VS Code</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/push-pull-error">Если не работает remote pull/push</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/git-local-ignore">Когда git ignore не работает</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/remove-file-from-commit">Убрать файл из коммита</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/repo-inside-repo-vscode">Репозиторий внутри репозитория в vs code</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/accessibility">accessibility</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/screen-readers">Screen Readers: where to download</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/powershell">powershell</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/powershell-vs-code-contrast">Контраст текста в VS Code Powershell</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/editor-env-var">Переменные среды редактора для терминала</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/alias-for-command-in-cmd">Alias - сокращенные команды для cmd/powershell</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/vs-code">vs code</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/powershell-vs-code-contrast">Контраст текста в VS Code Powershell</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/highlight-matching-tag">Highlight Matching Tag в VS Code</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/vs-code-shortcuts">Мои горячие клавиши для VS Code</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/repo-inside-repo-vscode">Репозиторий внутри репозитория в vs code</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/contrast">contrast</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/powershell-vs-code-contrast">Контраст текста в VS Code Powershell</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/jekyll">jekyll</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/jekyll-no-date">Посты в Jekyll без даты в имени файла</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/editor-env-var">Переменные среды редактора для терминала</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/repo-inside-repo-vscode">Репозиторий внутри репозитория в vs code</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/shortcuts">shortcuts</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/vs-code-shortcuts">Мои горячие клавиши для VS Code</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/emmet">emmet</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/vs-code-shortcuts">Мои горячие клавиши для VS Code</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/terminal">terminal</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/editor-env-var">Переменные среды редактора для терминала</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/alias-for-command-in-cmd">Alias - сокращенные команды для cmd/powershell</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/suppress-cmd-y-n">How to suppress "Terminate batch job (Y/N)" confirmation?</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/cmd">cmd</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/editor-env-var">Переменные среды редактора для терминала</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/alias-for-command-in-cmd">Alias - сокращенные команды для cmd/powershell</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/suppress-cmd-y-n">How to suppress "Terminate batch job (Y/N)" confirmation?</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/windows">windows</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/editor-env-var">Переменные среды редактора для терминала</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/local-server">local server</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/openssl-local-server-with-https">OpenSSL local server with HTTPS</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/localhost-on-mobile">Открыть localhost на мобильном</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/https">https</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/openssl-local-server-with-https">OpenSSL local server with HTTPS</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/openssl">openssl</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/openssl-local-server-with-https">OpenSSL local server with HTTPS</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/nodejs">nodejs</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/switch-node-npm-version">Переключение версий node.js/npm</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/npm">npm</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/switch-node-npm-version">Переключение версий node.js/npm</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/nvm">nvm</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/switch-node-npm-version">Переключение версий node.js/npm</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/mobile">mobile</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/localhost-on-mobile">Открыть localhost на мобильном</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/qa">qa</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/localhost-on-mobile">Открыть localhost на мобильном</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/http">http</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/http-3">Чем отличаются HTTP/2 и HTTP/3</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/clink">clink</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/suppress-cmd-y-n">How to suppress "Terminate batch job (Y/N)" confirmation?</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+		</li>
+		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">backend</button>
+			
+			
+			
+			
+			<ul class="siderbar__tags">
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/github">github</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/build-static-node-github-actions">How to build static page with Node.js and Github Actions</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/nodejs">nodejs</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/build-static-node-github-actions">How to build static page with Node.js and Github Actions</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/php">php</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/gd-extension-php">PHP GD Library extension</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/local-server">local server</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/gd-extension-php">PHP GD Library extension</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+		</li>
+		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">pc</button>
+			
+			
+			
+			
+			<ul class="siderbar__tags">
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/firefox">firefox</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/firefox-color-management">Firefox игнорирует цветовой профиль монитора</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/regedit">regedit</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/disable-alt-tab-thumb-win10">Disable thumbnails for alt+tab in win10</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/windows">windows</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/disable-alt-tab-thumb-win10">Disable thumbnails for alt+tab in win10</a></li>
+					</ul><ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/win-r-commands">win+r команды выполнить</a></li>
+					</ul>
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/adblock">adblock</a>
+					<ul class="sidebar__notes">
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/adblock-content">Заблокировать элемент в adblock по содержимому</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+		</li>
+		
+	</ul>
+</aside><main class="page__main main" aria-label="Content">
+        <div class="main__content wrapper">
+          <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Доступные способы визуально скрыть элемент</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2023-03-13T03:00:00+03:00" itemprop="datePublished">Mar 13, 2023
+      </time>
+      <span class="post-notebook">&ensp;-&ensp;frontend</span><a class="edit-button edit-button_post-page" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/2023-03-13-visually-hidden.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Рекомендация w3c:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+</code></pre></div></div>
+
+<p>Расширенный набор свойств и селектор</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.visually-hidden:not(:focus):not(:active) {
+	border: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+</code></pre></div></div>
+
+<p>visibility: hidden - убирает с дерева доступности</p>
+
+  </div><h2 class="post-tags__heading">Теги</h2>
+  
+  
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/css"><span class="nobrake">css</span></a>
+  
+  
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/accessibility"><span class="nobrake">accessibility</span></a>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://0.0.0.0:4000/webdevtips/visually-hidden';
+      this.page.identifier = 'http://0.0.0.0:4000/webdevtips/visually-hidden';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://vallek-webdevtips.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/webdevtips/visually-hidden" hidden></a>
+</article>
+
+        </div>
+      </main><aside class="tags-cloud tags-cloud_aside">
+	<h2 class="tags-cloud__heading">Все темы:</h2>
+	<div class="tags-cloud__tags tags-cloud__tags_all">
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/css">css (15)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/flexbox">flexbox (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/terminal">terminal (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/cmd">cmd (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/clink">clink (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/javascript">javascript (6)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/qa">qa (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/html">html (5)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/selectors">selectors (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/regex">regex (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/devtools">devtools (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/focus">focus (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/chrome">chrome (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/firefox">firefox (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/emmet">emmet (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/vs-code">vs code (5)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/http">http (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/design">design (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/adblock">adblock (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/local-server">local server (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/mobile">mobile (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/powershell">powershell (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/git">git (7)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/jekyll">jekyll (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/windows">windows (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/accessibility">accessibility (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/postcss">postcss (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/nth-child">nth-child (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/php">php (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/nodejs">nodejs (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/npm">npm (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/nvm">nvm (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/https">https (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/openssl">openssl (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/events">events (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/animation">animation (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/fonts">fonts (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/responsive">responsive (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/regedit">regedit (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/grid">grid (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/shortcuts">shortcuts (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/svg">svg (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/favicon">favicon (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/dark-theme">dark theme (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/validation">validation (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/contrast">contrast (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/github">github (1)
+		</a>
+		
+	</div>
+</aside></div><footer class="site-footer h-card">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Web Dev Tips</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Web Dev Tips</li><li><a class="u-email" href="mailto:vwebdis@gmail.com">vwebdis@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/Vallek"><svg class="svg-icon"><use xlink:href="/webdevtips/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Vallek</span></a></li><li><a href="https://www.twitter.com/_vallek"><svg class="svg-icon"><use xlink:href="/webdevtips/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">_vallek</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3 footer__description">
+        <p class="footer__about">База знаний по фронтенду, веб-разработке и настройке пк</p>
+        <p class="footer__copy">Favicon from <a href="https://www.svgrepo.com/svg/397378/man-technologist">svgrepo</a> under Apache License</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
