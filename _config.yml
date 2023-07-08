@@ -33,7 +33,6 @@ disqus:
   shortname: vallek-webdevtips
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-paginate
