@@ -112,7 +112,7 @@ pre > code {
 	--base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	--base-font-size: 16px;
 	--base-font-weight: 400;
-	--small-font-size: var(--base-font-size) * 0.875;
+	--small-font-size: calc(var(--base-font-size) * 0.875);
 	--base-line-height: 1.5;
 
 	--spacing-unit: 30px;
@@ -448,7 +448,7 @@ pre > code {
 
 .post-link {
   display: block;
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 .edit-button {
@@ -608,12 +608,12 @@ pre > code {
 }
 
 /* Site footer */
-.site-footer {
+.footer {
   border-top: 1px solid var(--grey-color-light);
   padding: var(--spacing-unit) 0;
 }
 
-.footer-heading {
+.footer__heading {
 	font-size: 1.125em;
   margin-bottom: calc(var(--spacing-unit) / 2);
 }
