@@ -75,7 +75,7 @@ jobs:
 6. Make sure `cd dist/` and `directory: dist` have the right path for your prod folder
 7. Make sure your branch main name is right
 8. I run build on push changes (obviously) but also on timer once a day. This is what `schedule` is for. It's in [cron format](https://crontab.guru/#0_24_*_*_*) and UTC time.
-9. Original version had `user.email "action@github.com"` and `user.name "GitHub Action"` to not flood your own commit history BUT it was not working for me.
+9. Original version had `user.email "action@github.com"` and `user.name "GitHub Action"` to not flood your own commit history. If build is not working try to put your own user data here.
 10. `paths-ignore` allows you to not run build on pushing files when it's not needed.
 
 Note that my action is different from the source.

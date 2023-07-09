@@ -796,7 +796,7 @@ jobs:
   <li>Убедитесь, что <code class="language-plaintext highlighter-rouge">cd dist/</code> и <code class="language-plaintext highlighter-rouge">directory: dist</code> указывают правильный путь к вашей папке прода</li>
   <li>Убедитесь, что название вашей главной ветки указано правильно</li>
   <li>Я запускаю сборку по  пушу изменений (очевидно), но также по таймеру один раз в день. Именно для этого существует <code class="language-plaintext highlighter-rouge">schedule</code>. Уазывается в формате <a href="https://crontab.guru/#0_24_ *_*_*">cron</a> и универсальному UTC времени.</li>
-  <li>В оригинальной версии был <code class="language-plaintext highlighter-rouge">user.email "action@github.com"</code> и <code class="language-plaintext highlighter-rouge">user.name "GitHub Action"</code>, чтобы не зафлудить вашу собственную историю коммитов, НО у меня это не сработало.</li>
+  <li>В оригинальной версии в качестве юзера указан <code class="language-plaintext highlighter-rouge">user.email "action@github.com"</code> и <code class="language-plaintext highlighter-rouge">user.name "GitHub Action"</code>. Это бот, который может коммитить вместо вас, чтобы не зафлудить вашу собственную историю коммитов. Если сборка не работает попробуйте поменять на свои данные.</li>
   <li><code class="language-plaintext highlighter-rouge">paths-ignore</code> позволяет вам не запускать сборку при пуше файлов, когда это не нужно.</li>
 </ol>
 
