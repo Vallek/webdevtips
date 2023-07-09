@@ -628,6 +628,7 @@ pre > code {
 
 .footer__info {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 	font-size: 0.9375em;
   color: var(--grey-color);
@@ -637,6 +638,12 @@ pre > code {
 .footer__section {
   margin-bottom: calc(var(--spacing-unit) / 2);
   padding-left: calc(var(--spacing-unit) / 2);
+}
+
+@media screen and (max-width: 800px) {
+  .footer__section {
+    text-align: center;
+  }
 }
 
 .footer__author {
