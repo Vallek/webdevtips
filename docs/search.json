@@ -746,7 +746,7 @@
       "tags"     : "local server, mobile, qa",
       "url"      : "/webdevtips/ru/localhost-on-mobile",
       "date"     : "2023-02-02 03:00:00 +0300",
-      "content"  : "Когда нужно протестировать сайт работающий на локальном сервере на смартфоне.Работает, при условии, что вы на своем вайфае. Краткое содержание:      В терминале ipconfig        Берете IPv4-адрес        Добавляете к нему соотв порт. Например, у вас локальный сервер на :5500/  Это работает для live server на vs code. Но не работает на jekyll server. Чтобы заработало нужно в _config.yml добавить host: 0.0.0.0Сам адрес в браузере при этом менять не нужно.",
+      "content"  : "Когда нужно протестировать сайт работающий на локальном сервере на смартфоне.Работает, при условии, что вы на своем вайфае. Краткое содержание:      В терминале ipconfig        Берете IPv4-адрес        Добавляете к нему соотв порт. Например, у вас локальный сервер на :5500/  Это работает для live server на vs code. Но не работает на jekyll server. Чтобы заработало нужно в _config.yml добавить host: 0.0.0.0Учтите, что в этом случае команда jekyll serve будет писать localhost в feed и возможно другие места. Поэтому для сборки на продакшен используйте jekyll build.Сам адрес в браузере при этом менять не нужно.",
       "lang": "ru"
     } ,
   
@@ -756,7 +756,7 @@
       "tags"     : "local server, mobile, qa",
       "url"      : "/webdevtips/en/localhost-on-mobile",
       "date"     : "2023-02-02 03:00:00 +0300",
-      "content"  : "Works if you on your wifi.      Execute ipconfig in terminal        Copy IPv4-address value        Add your local server port to it. For example :5500/  Works for live server in vs code. But not for jekyll server. For that you need to add добавить host: 0.0.0.0 in _config.ymlYou don’t need to change url in browser",
+      "content"  : "Works if you on your wifi.      Execute ipconfig in terminal        Copy IPv4-address value        Add your local server port to it. For example :5500/  Works for live server in vs code. But not for jekyll server. For that you need to add добавить host: 0.0.0.0 in _config.ymlNote that with this jekyll serve will put localhost in feed urls and maybe other places so for production build use jekyll build.You don’t need to change url in browser",
       "lang": "en"
     } ,
   

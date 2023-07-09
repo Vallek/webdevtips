@@ -18,4 +18,6 @@ sources: ['https://stackoverflow.com/questions/4779963/how-can-i-access-my-local
 
 Это работает для live server на vs code. Но не работает на jekyll server. Чтобы заработало нужно в _config.yml добавить host: 0.0.0.0
 
+Учтите, что в этом случае команда jekyll serve будет писать localhost в feed и возможно другие места. Поэтому для сборки на продакшен используйте jekyll build.
+
 Сам адрес в браузере при этом менять не нужно.

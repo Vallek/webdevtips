@@ -16,4 +16,6 @@ Works if you on your wifi.
 
 Works for live server in vs code. But not for jekyll server. For that you need to add добавить `host: 0.0.0.0` in `_config.yml`
 
+Note that with this `jekyll serve` will put localhost in feed urls and maybe other places so for production build use `jekyll build`.
+
 You don't need to change url in browser
