@@ -27,6 +27,7 @@ url: "https://vallek.github.io" # the base hostname & protocol for your site, e.
 twitter_username: _vallek
 github_username:  Vallek
 git_repo: webdevtips
+host: 0.0.0.0
 
 disqus:
   shortname: vallek-webdevtips
