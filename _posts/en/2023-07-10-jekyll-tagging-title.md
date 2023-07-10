@@ -4,7 +4,6 @@ title: 'How to set tags pages title for jekyll-tagging'
 date: 2023-07-10 09:54 +0300
 notebook: webdev
 tags: [jekyll, ruby]
-sources: []
 ---
 Find Ruby: `where ruby`
 

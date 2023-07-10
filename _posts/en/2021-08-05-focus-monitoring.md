@@ -4,7 +4,6 @@ title: 'Monitoring focus event'
 date: 2021-08-05 00:00 +0000
 notebook: frontend
 tags: [devtools, focus, chrome, firefox]
-sources: []
 ---
 ## Chrome
 Console > Create Live Expression

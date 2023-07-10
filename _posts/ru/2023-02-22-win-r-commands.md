@@ -4,7 +4,6 @@ title: 'win+r команды выполнить'
 date: 2023-02-22 00:00 +0000
 notebook: pc
 tags: [windows]
-sources: []
 ---
 Проверялось на Windows 10
 ```

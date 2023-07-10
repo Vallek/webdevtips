@@ -4,7 +4,6 @@ title: 'Block element with adblock based on text content'
 date: 2022-08-09 00:00 +0000
 notebook: pc
 tags: [adblock]
-sources: []
 ---
 Syntax:
 ```

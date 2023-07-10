@@ -4,7 +4,6 @@ title: 'Обнаружить клик вне элемента на JS'
 date: 2023-06-10 12:43 +0300
 notebook: frontend
 tags: [javascript]
-sources: []
 ---
 На примере выпадающего меню
 

@@ -4,7 +4,6 @@ title: 'My VS Code hotkeys shortcuts'
 date: 2023-05-29 11:42 +0300
 notebook: webdev
 tags: [vs code, shortcuts, git, emmet]
-sources: []
 ---
 You can add these to `keybindings.json` or just in keyboard shortcuts ui.
 

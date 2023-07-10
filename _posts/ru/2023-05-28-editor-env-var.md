@@ -4,7 +4,6 @@ title: 'Переменные среды редактора в терминалe 
 date: 2023-05-28 21:33 +0300
 notebook: webdev
 tags: [terminal, cmd, powershell, windows, jekyll]
-sources: []
 ---
 Расширение jekyll compose для Jekyll может автоматически открывать созданные файлы. Но для этого помимо [настройки](https://github.com/jekyll/jekyll-compose#auto-open-new-drafts-or-posts-in-your-editor) нужно задать переменную среды редактора по умолчанию для вашего терминала. Я использую clink для cmd.
 

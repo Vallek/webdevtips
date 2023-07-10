@@ -4,7 +4,6 @@ title: 'Локальный валидатор html/css от w3c'
 date: 2023-05-31 12:11 +0300
 notebook: frontend
 tags: [validation, html, css]
-sources: []
 ---
 Не все знают, что [новый w3c валидатор](https://validator.w3.org/nu/) можно запускать локально.
 

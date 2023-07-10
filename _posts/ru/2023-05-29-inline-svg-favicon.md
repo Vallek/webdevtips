@@ -4,7 +4,6 @@ title: 'Инлайновая svg фавиконка'
 date: 2023-05-29 12:02 +0300
 notebook: frontend
 tags: [svg, favicon]
-sources: []
 ---
 Код включает в себя escape символы, чтобы не ругался валидатор.
 ```

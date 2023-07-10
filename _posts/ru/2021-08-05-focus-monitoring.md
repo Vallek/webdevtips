@@ -4,7 +4,6 @@ title: 'Мониторинг элементов в фокусе'
 date: 2021-08-05 00:00 +0000
 notebook: frontend
 tags: [devtools, focus, chrome, firefox]
-sources: []
 ---
 ## Chrome
 Devtools > Console > Create Live Expression

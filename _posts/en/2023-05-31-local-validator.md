@@ -4,7 +4,6 @@ title: 'Local w3c html/css validator'
 date: 2023-05-31 12:11 +0300
 notebook: frontend
 tags: [validation, html, css]
-sources: []
 ---
 You can run [Nu Validator](https://validator.w3.org/nu/) locally.
 

@@ -4,7 +4,6 @@ title: 'Detect click outside of element'
 date: 2023-06-10 12:43 +0300
 notebook: frontend
 tags: [javascript]
-sources: []
 ---
 Drop down menu example
 

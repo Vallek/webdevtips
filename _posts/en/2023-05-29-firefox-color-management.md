@@ -4,7 +4,6 @@ title: 'Firefox ignores monitor color profile'
 date: 2023-05-29 14:10 +0300
 notebook: pc
 tags: [firefox]
-sources: []
 ---
 Color management does not work in Firefox, that is, it ignores the color profile of the srgb monitor and the colors are distorted.
 

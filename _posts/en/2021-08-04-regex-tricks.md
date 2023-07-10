@@ -4,7 +4,6 @@ title: 'regex tricks'
 date: 2021-08-04 00:00 +0000
 notebook: frontend
 tags: [regex, html]
-sources: []
 ---
 ## REplace html elements
 ```

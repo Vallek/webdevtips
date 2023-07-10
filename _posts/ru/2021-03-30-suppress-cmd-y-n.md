@@ -4,7 +4,6 @@ title: 'Как избавиться от вопроса "Terminate batch job (Y/
 date: 2021-03-30 00:00 +0000
 notebook: webdev
 tags: [terminal, cmd, clink]
-sources: []
 ---
 Установите Clink [оригинал](http://mridgers.github.io/clink/) или [форк с поддержкой](https://chrisant996.github.io/clink/) и измените настройку "terminate_autoanswer". Файл с настройками [должен быть здесь](https://github.com/mridgers/clink/blob/master/docs/clink.md#file-locations): `C:\Users\<username>\AppData\Local\clink\settings`.
 ```

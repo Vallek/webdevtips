@@ -4,7 +4,6 @@ title: 'Inline svg favicon'
 date: 2023-05-29 12:02 +0300
 notebook: frontend
 tags: [svg, favicon]
-sources: []
 ---
 Code includes escape symbols so validator wouldn't show error
 ```

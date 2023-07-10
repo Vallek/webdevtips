@@ -4,7 +4,6 @@ title: 'Заблокировать элемент в adblock по содержи
 date: 2022-08-09 00:00 +0000
 notebook: pc
 tags: [adblock]
-sources: []
 ---
 Синтаксис
 

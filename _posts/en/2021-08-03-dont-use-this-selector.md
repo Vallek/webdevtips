@@ -4,7 +4,6 @@ title: 'Do not use selector .class > tag?'
 date: 2021-08-03 00:00 +0000
 notebook: frontend
 tags: [css, selectors]
-sources: []
 ---
 Why not use `.class > tag`? I often want to, because I'm too lazy to set classes for all the items in the list, etc.
 

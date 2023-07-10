@@ -4,7 +4,6 @@ title: 'Editor environment variables for terminal'
 date: 2023-05-28 21:33 +0300
 notebook: webdev
 tags: [terminal, cmd, powershell, windows, jekyll]
-sources: []
 ---
 The jekyll-compose extension for Jekyll can automatically open created files. But for this in addition to [settings](https://github.com/jekyll/jekyll-compose#auto-open-new-drafts-or-posts-in-your-editor) you need to set the default editor environment variable for your terminal. I use clink for cmd.
 

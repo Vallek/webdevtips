@@ -4,7 +4,6 @@ title: 'win+r commands'
 date: 2023-02-22 00:00 +0000
 notebook: pc
 tags: [windows]
-sources: []
 ---
 Tested in Windows 10
 ```
