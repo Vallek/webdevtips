@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin SEO -->
-  <title>Web Dev Tips | Highlight Matching Tag в VS Code</title>
+  <title>Web Dev Tips | How to remove localhost from jekyll-feed</title>
   <meta property="og:title" content="Web Dev Tips">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:locale:alternate" content="en_US">
@@ -13,8 +13,8 @@
   <meta name="description" content="Frontend, web development and pc setup knowledge base">
   <meta property="og:description" content="Frontend, web development and pc setup knowledge base">
   
-  <link rel="canonical" href="https://vallek.github.io/webdevtips/en/highlight-matching-tag">
-  <meta property="og:url" content="https://vallek.github.io/webdevtips/en/highlight-matching-tag">
+  <link rel="canonical" href="https://vallek.github.io/webdevtips/en/localhost-in-feed">
+  <meta property="og:url" content="https://vallek.github.io/webdevtips/en/localhost-in-feed">
   <meta property="og:site_name" content="Web Dev Tips">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
@@ -60,10 +60,10 @@
 
             
             
-            <a class="locales__lang locales__lang_ru" href="/webdevtips/ru/highlight-matching-tag">RU</a>
+            <a class="locales__lang locales__lang_ru" href="/webdevtips/ru/localhost-in-feed">RU</a>
             
             <span> / </span>
-            <a class="locales__lang locales__lang_en" href="/webdevtips/en/highlight-matching-tag">EN</a>
+            <a class="locales__lang locales__lang_en" href="/webdevtips/en/localhost-in-feed">EN</a>
             
 
             
@@ -407,7 +407,7 @@
 					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/jekyll">jekyll</a>
 					
 					<ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/localhost-in-feed">How to remove localhost from jekyll-feed</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/localhost-in-feed">How to remove localhost from jekyll-feed</a></li>
 					</ul>
 					<ul class="sidebar__notes">
 						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/jekyll-tagging-title">How to set tags pages title for jekyll-tagging</a></li>
@@ -486,7 +486,7 @@
 						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/powershell-vs-code-contrast">Text contrast in VS Code Powershell</a></li>
 					</ul>
 					<ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/highlight-matching-tag">Highlight Matching Tag в VS Code</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/highlight-matching-tag">Highlight Matching Tag в VS Code</a></li>
 					</ul>
 					<ul class="sidebar__notes">
 						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/vs-code-shortcuts">My VS Code hotkeys shortcuts</a></li>
@@ -733,40 +733,38 @@
           <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Highlight Matching Tag в VS Code</h1>
+    <h1 class="post-title p-name" itemprop="name headline">How to remove localhost from jekyll-feed</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2023-05-29T14:18:00+03:00" itemprop="datePublished">May 29, 2023
+      <time class="dt-published" datetime="2023-07-10T10:33:00+03:00" itemprop="datePublished">Jul 10, 2023
       </time>
-      <span class="post-notebook">&ensp;-&ensp;webdev</span><a class="edit-button edit-button_post-page" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/en/2023-05-29-highlight-matching-tag.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
+      <span class="post-notebook">&ensp;-&ensp;webdev</span><a class="edit-button edit-button_post-page" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/en/2023-07-10-localhost-in-feed.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
     </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>If you also use the HighlightMatchingTag extension in VS Code and want to make underscores and marks on the right gutter be different colors set the settings:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"highlight-matching-tag.styles": {
-        "opening": {
-            "name": {
-                "custom": {
-                    "dark": {
-                        "overviewRulerColor": "yellow"
-                    },
-                },
-                "underline": "#839496",
-            }
-        }
-    },
-</code></pre></div></div>
-<p>for dark theme. <code class="language-plaintext highlighter-rouge">light</code> for light)</p>
+    <p><code class="language-plaintext highlighter-rouge">jekyll serve</code> might put <code class="language-plaintext highlighter-rouge">localhost</code> in feed urls. One way to fix it is just use <code class="language-plaintext highlighter-rouge">jekyll build</code> for production after local server test. But that’s not really a fix.</p>
+
+<p>But you can manually edit jekyll-feed gem and put your url there.</p>
+
+<p>Find Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
+
+<p>Gems are at: <code class="language-plaintext highlighter-rouge">Ruby\lib\ruby\gems\version\gems\</code></p>
+
+<p>Open <code class="language-plaintext highlighter-rouge">jekyll-feed-0.17.0\lib\jekyll-feed\feed.xml</code></p>
+
+<p>This is a template for your feed xml file. You have to find instances of <code class="language-plaintext highlighter-rouge">http://0.0.0.0:4000/webdevtips/en/localhost-in-feed</code> and `` and replace them with <code class="language-plaintext highlighter-rouge">https://username.github.io/example/en/localhost-in-feed</code> and <code class="language-plaintext highlighter-rouge">https://username.github.io/example</code>.</p>
+
+<p>Make sure that you didn’t mix up posts and pages.</p>
 
   </div><h2 class="post-tags__heading">Теги</h2>
   
   
-  <a class="tag-link tag-link_home" href="/webdevtips/tag/vs-code"><span class="nobrake">vs-code</span></a>
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/jekyll"><span class="nobrake">jekyll</span></a>
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = 'https://vallek.github.io/webdevtips/en/highlight-matching-tag';
-      this.page.identifier = 'https://vallek.github.io/webdevtips/en/highlight-matching-tag';
+      this.page.url = 'https://vallek.github.io/webdevtips/en/localhost-in-feed';
+      this.page.identifier = 'https://vallek.github.io/webdevtips/en/localhost-in-feed';
     };
 
     (function() {
@@ -778,7 +776,7 @@
       (d.head || d.body).appendChild(s);
     })();
   </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/webdevtips/en/highlight-matching-tag" hidden></a>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/webdevtips/en/localhost-in-feed" hidden></a>
 </article>
 
         </div>

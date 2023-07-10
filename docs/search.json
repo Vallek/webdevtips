@@ -1,6 +1,26 @@
 [
   
     {
+      "title"    : "Как убрать localhost из jekyll-feed",
+      "category" : "",
+      "tags"     : "jekyll",
+      "url"      : "/webdevtips/ru/localhost-in-feed",
+      "date"     : "2023-07-10 10:33:00 +0300",
+      "content"  : "jekyll serve может заменять url вашего сайта в фиде на localhost. Это можно исправить командой jekyll build, каждный раз отдельно выполняя сборку для продакшена. Но это не реальное решение проблемы.Вместо этого можно вручную отредактировать расширение jekyll-feed и добавить туда ваш адрес.Найдите папку с Ruby: where rubyПуть к гемам: RubylibrubygemsversiongemsОткройте файл jekyll-feed-0.17.0libjekyll-feedfeed.xmlЭто шаблон для rss фида. Вам нужно найти все места с http://0.0.0.0:4000/webdevtips/ru/localhost-in-feed и `` и заменить их на https://username.github.io/example/ru/localhost-in-feed и https://username.github.io/example.Не перепутайте посты со страницами.",
+      "lang": "ru"
+    } ,
+  
+    {
+      "title"    : "How to remove localhost from jekyll-feed",
+      "category" : "",
+      "tags"     : "jekyll",
+      "url"      : "/webdevtips/en/localhost-in-feed",
+      "date"     : "2023-07-10 10:33:00 +0300",
+      "content"  : "jekyll serve might put localhost in feed urls. One way to fix it is just use jekyll build for production after local server test. But that’s not really a fix.But you can manually edit jekyll-feed gem and put your url there.Find Ruby: where rubyGems are at: RubylibrubygemsversiongemsOpen jekyll-feed-0.17.0libjekyll-feedfeed.xmlThis is a template for your feed xml file. You have to find instances of http://0.0.0.0:4000/webdevtips/en/localhost-in-feed and `` and replace them with https://username.github.io/example/en/localhost-in-feed and https://username.github.io/example.Make sure that you didn’t mix up posts and pages.",
+      "lang": "en"
+    } ,
+  
+    {
       "title"    : "Как задать title страницы тегов при использовании jekyll-tagging",
       "category" : "",
       "tags"     : "jekyll, ruby",

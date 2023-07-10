@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2023-07-10T10:29:51+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">How to set tags pages title for jekyll-tagging</title><link href="https://vallek.github.io/webdevtips/en/jekyll-tagging-title" rel="alternate" type="text/html" title="How to set tags pages title for jekyll-tagging" /><published>2023-07-10T09:54:00+03:00</published><updated>2023-07-10T09:54:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/jekyll-tagging-title</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/jekyll-tagging-title"><![CDATA[<p>Find Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2023-07-10T11:16:39+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">How to remove localhost from jekyll-feed</title><link href="https://vallek.github.io/webdevtips/en/localhost-in-feed" rel="alternate" type="text/html" title="How to remove localhost from jekyll-feed" /><published>2023-07-10T10:33:00+03:00</published><updated>2023-07-10T10:33:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/localhost-in-feed</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/localhost-in-feed"><![CDATA[<p><code class="language-plaintext highlighter-rouge">jekyll serve</code> might put <code class="language-plaintext highlighter-rouge">localhost</code> in feed urls. One way to fix it is just use <code class="language-plaintext highlighter-rouge">jekyll build</code> for production after local server test. But that’s not really a fix.</p>
+
+<p>But you can manually edit jekyll-feed gem and put your url there.</p>
+
+<p>Find Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
+
+<p>Gems are at: <code class="language-plaintext highlighter-rouge">Ruby\lib\ruby\gems\version\gems\</code></p>
+
+<p>Open <code class="language-plaintext highlighter-rouge">jekyll-feed-0.17.0\lib\jekyll-feed\feed.xml</code></p>
+
+<p>This is a template for your feed xml file. You have to find instances of <code class="language-plaintext highlighter-rouge">http://0.0.0.0:4000/webdevtips/en/localhost-in-feed</code> and `` and replace them with <code class="language-plaintext highlighter-rouge">https://username.github.io/example/en/localhost-in-feed</code> and <code class="language-plaintext highlighter-rouge">https://username.github.io/example</code>.</p>
+
+<p>Make sure that you didn’t mix up posts and pages.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[jekyll serve might put localhost in feed urls. One way to fix it is just use jekyll build for production after local server test. But that’s not really a fix.]]></summary></entry><entry xml:lang="ru"><title type="html">Как убрать localhost из jekyll-feed</title><link href="https://vallek.github.io/webdevtips/ru/localhost-in-feed" rel="alternate" type="text/html" title="Как убрать localhost из jekyll-feed" /><published>2023-07-10T10:33:00+03:00</published><updated>2023-07-10T10:33:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/localhost-in-feed</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/localhost-in-feed"><![CDATA[<p><code class="language-plaintext highlighter-rouge">jekyll serve</code> может заменять url вашего сайта в фиде на <code class="language-plaintext highlighter-rouge">localhost</code>. Это можно исправить командой <code class="language-plaintext highlighter-rouge">jekyll build</code>, каждный раз отдельно выполняя сборку для продакшена. Но это не реальное решение проблемы.</p>
+
+<p>Вместо этого можно вручную отредактировать расширение jekyll-feed и добавить туда ваш адрес.</p>
+
+<p>Найдите папку с Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
+
+<p>Путь к гемам: <code class="language-plaintext highlighter-rouge">Ruby\lib\ruby\gems\version\gems\</code></p>
+
+<p>Откройте файл <code class="language-plaintext highlighter-rouge">jekyll-feed-0.17.0\lib\jekyll-feed\feed.xml</code></p>
+
+<p>Это шаблон для rss фида. Вам нужно найти все места с <code class="language-plaintext highlighter-rouge">http://0.0.0.0:4000/webdevtips/ru/localhost-in-feed</code> и `` и заменить их на <code class="language-plaintext highlighter-rouge">https://username.github.io/example/ru/localhost-in-feed</code> и <code class="language-plaintext highlighter-rouge">https://username.github.io/example</code>.</p>
+
+<p>Не перепутайте посты со страницами.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[jekyll serve может заменять url вашего сайта в фиде на localhost. Это можно исправить командой jekyll build, каждный раз отдельно выполняя сборку для продакшена. Но это не реальное решение проблемы.]]></summary></entry><entry xml:lang="en"><title type="html">How to set tags pages title for jekyll-tagging</title><link href="https://vallek.github.io/webdevtips/en/jekyll-tagging-title" rel="alternate" type="text/html" title="How to set tags pages title for jekyll-tagging" /><published>2023-07-10T09:54:00+03:00</published><updated>2023-07-10T09:54:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/jekyll-tagging-title</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/jekyll-tagging-title"><![CDATA[<p>Find Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
 
 <p>Gems are at: <code class="language-plaintext highlighter-rouge">Ruby\lib\ruby\gems\version\gems\</code></p>
 
@@ -32,96 +56,21 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data = { 'layout' =&gt; layout, 'posts' =&gt; posts.sort.reverse!, 'tag' =&gt; tag, 'title' =&gt; 'Posts about' + ' ' + tag }
 </code></pre></div></div>
 
-<p>Таким же образом вы можете добавить или изменить здесь другие параметры страницы. Например, для мультиязычной версии сайта мне нужно было убрать значение lang у страниц с тегами. И я добавил <code class="language-plaintext highlighter-rouge">'lang' =&gt; ''</code>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="ruby" /><summary type="html"><![CDATA[Если вы используете расширение jekyll-tagging дял Jekyll, то могли заметить, что на страницах с тегами нет заголовка. Это можно исправить, отредактировав само расширение, то есть ruby gem.]]></summary></entry><entry xml:lang="en"><title type="html">If map() with template literal generate extra characters</title><link href="https://vallek.github.io/webdevtips/en/map-symbols-join" rel="alternate" type="text/html" title="If map() with template literal generate extra characters" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/map-symbols-join</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/map-symbols-join"><![CDATA[<p>If you use the <code class="language-plaintext highlighter-rouge">map()</code> method and as a result of executing a function with a template literal you have extra characters from the array (commas, brackets), then apply <code class="language-plaintext highlighter-rouge">join()</code> method after <code class="language-plaintext highlighter-rouge">map()</code>.</p>
-
-<p>Like this:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let variable = array.map(el =&gt; {
-		// code with template literal
-		return result;
-	}).join('');
-</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[If you use the map() method and as a result of executing a function with a template literal you have extra characters from the array (commas, brackets), then apply join() method after map().]]></summary></entry><entry xml:lang="ru"><title type="html">Если map() с template literal выдает лишние символы</title><link href="https://vallek.github.io/webdevtips/ru/map-symbols-join" rel="alternate" type="text/html" title="Если map() с template literal выдает лишние символы" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/map-symbols-join</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/map-symbols-join"><![CDATA[<p>Если вы используете метод <code class="language-plaintext highlighter-rouge">map()</code> и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после <code class="language-plaintext highlighter-rouge">map()</code> метод <code class="language-plaintext highlighter-rouge">join()</code>.</p>
+<p>Таким же образом вы можете добавить или изменить здесь другие параметры страницы. Например, для мультиязычной версии сайта мне нужно было убрать значение lang у страниц с тегами. И я добавил <code class="language-plaintext highlighter-rouge">'lang' =&gt; ''</code>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="ruby" /><summary type="html"><![CDATA[Если вы используете расширение jekyll-tagging дял Jekyll, то могли заметить, что на страницах с тегами нет заголовка. Это можно исправить, отредактировав само расширение, то есть ruby gem.]]></summary></entry><entry xml:lang="ru"><title type="html">Если map() с template literal выдает лишние символы</title><link href="https://vallek.github.io/webdevtips/ru/map-symbols-join" rel="alternate" type="text/html" title="Если map() с template literal выдает лишние символы" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/map-symbols-join</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/map-symbols-join"><![CDATA[<p>Если вы используете метод <code class="language-plaintext highlighter-rouge">map()</code> и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после <code class="language-plaintext highlighter-rouge">map()</code> метод <code class="language-plaintext highlighter-rouge">join()</code>.</p>
 
 <p>Вот так:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let variable = array.map(el =&gt; {
 		// code with template literal
 		return result;
 	}).join('');
-</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[Если вы используете метод map() и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после map() метод join().]]></summary></entry><entry xml:lang="ru"><title type="html">Как генерировать статичный html файл на Node.js и Github Actions</title><link href="https://vallek.github.io/webdevtips/ru/build-static-node-github-actions" rel="alternate" type="text/html" title="Как генерировать статичный html файл на Node.js и Github Actions" /><published>2023-06-26T10:38:00+03:00</published><updated>2023-06-26T10:38:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/build-static-node-github-actions</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/build-static-node-github-actions"><![CDATA[<h2 id="зачем-это-нужно">Зачем это нужно</h2>
-<p>Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для <a href="https://vallek.github.io/animatable-css/">списка анимируемых CSS свойств</a>. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)</p>
+</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[Если вы используете метод map() и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после map() метод join().]]></summary></entry><entry xml:lang="en"><title type="html">If map() with template literal generate extra characters</title><link href="https://vallek.github.io/webdevtips/en/map-symbols-join" rel="alternate" type="text/html" title="If map() with template literal generate extra characters" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/map-symbols-join</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/map-symbols-join"><![CDATA[<p>If you use the <code class="language-plaintext highlighter-rouge">map()</code> method and as a result of executing a function with a template literal you have extra characters from the array (commas, brackets), then apply <code class="language-plaintext highlighter-rouge">join()</code> method after <code class="language-plaintext highlighter-rouge">map()</code>.</p>
 
-<h2 id="инструкция">Инструкция</h2>
-<p>Прежде всего создайте github token. Откройте настройки аккаунта (не репозитория) &gt; developer settings &gt; Personal access tokens. Я выбрал классический. Установите имя и дату окончания. Сохраните токен где-то у себя (как пароль).</p>
-
-<p>Для репозитория на гитхабе:</p>
-
-<ol>
-  <li>Создайте папку для продакшена. Я использую ‘dist’ в этом примере</li>
-  <li>Создайте ветку gh-pages</li>
-  <li>В настройках репозитория &gt; Actions &gt; General &gt; Workflow permissions. Выберете <code class="language-plaintext highlighter-rouge">Read AND WRITE</code>.</li>
-  <li>Создайте Github Action</li>
-</ol>
-
-<p>Код экшена:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: Build and Deploy to GitHub pages
-on:
-  schedule:
-    - cron: '0 9 * * *'
-  push:
-    paths-ignore:
-      - 'dist/index.html'
-      - 'README.md'
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Generate static files
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build
-
-    - name: Init new repo in dist folder and commit generated files
-      run: |
-        cd dist/
-        git init
-        git add -A
-        git config --local user.email "email@email.com"
-        git config --local user.name "username"
-        git commit -m 'deploy'
-        git config --global --add safe.directory /github/workspace
-        
-    - name: Force push to destination branch
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: $
-        branch: gh-pages
-        force: true
-        directory: dist
-</code></pre></div></div>
-<p><strong>ВАЖНЫЕ ЗАМЕЧАНИЯ</strong>:</p>
-<ol>
-  <li>Убедитесь, что вы загрузили все файлы ноды (node_modules и так далее).</li>
-  <li>НО НЕ пуште статический index.html. Пусть github создает его сам. Добавьте его в .gitignore</li>
-  <li><code class="language-plaintext highlighter-rouge">actions/checkout@v2</code> - у меня работало только с <strong>v2</strong></li>
-  <li>Убедитесь, что “npm run build” запускает правильный js-файл. Задайте в <code class="language-plaintext highlighter-rouge">package.json</code> в <code class="language-plaintext highlighter-rouge">build</code>. Мой - это <code class="language-plaintext highlighter-rouge">node index.js</code>.</li>
-  <li>Не будет работать без строчки <code class="language-plaintext highlighter-rouge">git config --global --add safe.directory /github/workspace</code>. Перед отключением убедитесь, что вы понимаете эту меру безопасности и <a href="https://github.com/git/git/commit/8959555cee7ec045958f9b6dd62e541affb7e7d9">почему она существует</a>. Подробности в <a href="https://stackoverflow.com/a/71904131/9749171">этом ответе</a>.</li>
-  <li>Убедитесь, что <code class="language-plaintext highlighter-rouge">cd dist/</code> и <code class="language-plaintext highlighter-rouge">directory: dist</code> указывают правильный путь к вашей папке прода</li>
-  <li>Убедитесь, что название вашей главной ветки указано правильно</li>
-  <li>Я запускаю сборку по  пушу изменений (очевидно), но также по таймеру один раз в день. Именно для этого существует <code class="language-plaintext highlighter-rouge">schedule</code>. Уазывается в формате <a href="https://crontab.guru/#0_24_ *_*_*">cron</a> и универсальному UTC времени.</li>
-  <li>В оригинальной версии в качестве юзера указан <code class="language-plaintext highlighter-rouge">user.email "action@github.com"</code> и <code class="language-plaintext highlighter-rouge">user.name "GitHub Action"</code>. Это бот, который может коммитить вместо вас, чтобы не зафлудить вашу собственную историю коммитов. Если сборка не работает попробуйте поменять на свои данные.</li>
-  <li><code class="language-plaintext highlighter-rouge">paths-ignore</code> позволяет вам не запускать сборку при пуше файлов, когда это не нужно.</li>
-</ol>
-
-<p>Обратите внимание, что мой action отличается от источника.</p>]]></content><author><name></name></author><category term="github" /><category term="nodejs" /><summary type="html"><![CDATA[Зачем это нужно Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для списка анимируемых CSS свойств. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)]]></summary></entry><entry xml:lang="en"><title type="html">How to build static page with Node.js and Github Actions</title><link href="https://vallek.github.io/webdevtips/en/build-static-node-github-actions" rel="alternate" type="text/html" title="How to build static page with Node.js and Github Actions" /><published>2023-06-26T10:38:00+03:00</published><updated>2023-06-26T10:38:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/build-static-node-github-actions</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/build-static-node-github-actions"><![CDATA[<h2 id="why">Why</h2>
+<p>Like this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let variable = array.map(el =&gt; {
+		// code with template literal
+		return result;
+	}).join('');
+</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[If you use the map() method and as a result of executing a function with a template literal you have extra characters from the array (commas, brackets), then apply join() method after map().]]></summary></entry><entry xml:lang="en"><title type="html">How to build static page with Node.js and Github Actions</title><link href="https://vallek.github.io/webdevtips/en/build-static-node-github-actions" rel="alternate" type="text/html" title="How to build static page with Node.js and Github Actions" /><published>2023-06-26T10:38:00+03:00</published><updated>2023-06-26T10:38:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/build-static-node-github-actions</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/build-static-node-github-actions"><![CDATA[<h2 id="why">Why</h2>
 <p>If you need to build on a timer (once a day, for example) one static page with a complex template with data from API that you do not want to load, then this method can help you. I used it for <a href="https://vallek.github.io/animatable-css/">list of animatable CSS properties</a>. In all other cases, it may be better to choose a normal backend server)</p>
 
 <h2 id="how-to">How to</h2>
@@ -196,7 +145,82 @@ jobs:
   <li><code class="language-plaintext highlighter-rouge">paths-ignore</code> allows you to not run build on pushing files when it’s not needed.</li>
 </ol>
 
-<p>Note that my action is different from the source.</p>]]></content><author><name></name></author><category term="github" /><category term="nodejs" /><summary type="html"><![CDATA[Why If you need to build on a timer (once a day, for example) one static page with a complex template with data from API that you do not want to load, then this method can help you. I used it for list of animatable CSS properties. In all other cases, it may be better to choose a normal backend server)]]></summary></entry><entry xml:lang="en"><title type="html">How to clone repo in any folder</title><link href="https://vallek.github.io/webdevtips/en/git-clone-in-folder" rel="alternate" type="text/html" title="How to clone repo in any folder" /><published>2023-06-17T16:50:00+03:00</published><updated>2023-06-17T16:50:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/git-clone-in-folder</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/git-clone-in-folder"><![CDATA[<p>From any place:</p>
+<p>Note that my action is different from the source.</p>]]></content><author><name></name></author><category term="github" /><category term="nodejs" /><summary type="html"><![CDATA[Why If you need to build on a timer (once a day, for example) one static page with a complex template with data from API that you do not want to load, then this method can help you. I used it for list of animatable CSS properties. In all other cases, it may be better to choose a normal backend server)]]></summary></entry><entry xml:lang="ru"><title type="html">Как генерировать статичный html файл на Node.js и Github Actions</title><link href="https://vallek.github.io/webdevtips/ru/build-static-node-github-actions" rel="alternate" type="text/html" title="Как генерировать статичный html файл на Node.js и Github Actions" /><published>2023-06-26T10:38:00+03:00</published><updated>2023-06-26T10:38:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/build-static-node-github-actions</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/build-static-node-github-actions"><![CDATA[<h2 id="зачем-это-нужно">Зачем это нужно</h2>
+<p>Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для <a href="https://vallek.github.io/animatable-css/">списка анимируемых CSS свойств</a>. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)</p>
+
+<h2 id="инструкция">Инструкция</h2>
+<p>Прежде всего создайте github token. Откройте настройки аккаунта (не репозитория) &gt; developer settings &gt; Personal access tokens. Я выбрал классический. Установите имя и дату окончания. Сохраните токен где-то у себя (как пароль).</p>
+
+<p>Для репозитория на гитхабе:</p>
+
+<ol>
+  <li>Создайте папку для продакшена. Я использую ‘dist’ в этом примере</li>
+  <li>Создайте ветку gh-pages</li>
+  <li>В настройках репозитория &gt; Actions &gt; General &gt; Workflow permissions. Выберете <code class="language-plaintext highlighter-rouge">Read AND WRITE</code>.</li>
+  <li>Создайте Github Action</li>
+</ol>
+
+<p>Код экшена:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: Build and Deploy to GitHub pages
+on:
+  schedule:
+    - cron: '0 9 * * *'
+  push:
+    paths-ignore:
+      - 'dist/index.html'
+      - 'README.md'
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Generate static files
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build
+
+    - name: Init new repo in dist folder and commit generated files
+      run: |
+        cd dist/
+        git init
+        git add -A
+        git config --local user.email "email@email.com"
+        git config --local user.name "username"
+        git commit -m 'deploy'
+        git config --global --add safe.directory /github/workspace
+        
+    - name: Force push to destination branch
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: $
+        branch: gh-pages
+        force: true
+        directory: dist
+</code></pre></div></div>
+<p><strong>ВАЖНЫЕ ЗАМЕЧАНИЯ</strong>:</p>
+<ol>
+  <li>Убедитесь, что вы загрузили все файлы ноды (node_modules и так далее).</li>
+  <li>НО НЕ пуште статический index.html. Пусть github создает его сам. Добавьте его в .gitignore</li>
+  <li><code class="language-plaintext highlighter-rouge">actions/checkout@v2</code> - у меня работало только с <strong>v2</strong></li>
+  <li>Убедитесь, что “npm run build” запускает правильный js-файл. Задайте в <code class="language-plaintext highlighter-rouge">package.json</code> в <code class="language-plaintext highlighter-rouge">build</code>. Мой - это <code class="language-plaintext highlighter-rouge">node index.js</code>.</li>
+  <li>Не будет работать без строчки <code class="language-plaintext highlighter-rouge">git config --global --add safe.directory /github/workspace</code>. Перед отключением убедитесь, что вы понимаете эту меру безопасности и <a href="https://github.com/git/git/commit/8959555cee7ec045958f9b6dd62e541affb7e7d9">почему она существует</a>. Подробности в <a href="https://stackoverflow.com/a/71904131/9749171">этом ответе</a>.</li>
+  <li>Убедитесь, что <code class="language-plaintext highlighter-rouge">cd dist/</code> и <code class="language-plaintext highlighter-rouge">directory: dist</code> указывают правильный путь к вашей папке прода</li>
+  <li>Убедитесь, что название вашей главной ветки указано правильно</li>
+  <li>Я запускаю сборку по  пушу изменений (очевидно), но также по таймеру один раз в день. Именно для этого существует <code class="language-plaintext highlighter-rouge">schedule</code>. Уазывается в формате <a href="https://crontab.guru/#0_24_ *_*_*">cron</a> и универсальному UTC времени.</li>
+  <li>В оригинальной версии в качестве юзера указан <code class="language-plaintext highlighter-rouge">user.email "action@github.com"</code> и <code class="language-plaintext highlighter-rouge">user.name "GitHub Action"</code>. Это бот, который может коммитить вместо вас, чтобы не зафлудить вашу собственную историю коммитов. Если сборка не работает попробуйте поменять на свои данные.</li>
+  <li><code class="language-plaintext highlighter-rouge">paths-ignore</code> позволяет вам не запускать сборку при пуше файлов, когда это не нужно.</li>
+</ol>
+
+<p>Обратите внимание, что мой action отличается от источника.</p>]]></content><author><name></name></author><category term="github" /><category term="nodejs" /><summary type="html"><![CDATA[Зачем это нужно Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для списка анимируемых CSS свойств. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)]]></summary></entry><entry xml:lang="en"><title type="html">How to clone repo in any folder</title><link href="https://vallek.github.io/webdevtips/en/git-clone-in-folder" rel="alternate" type="text/html" title="How to clone repo in any folder" /><published>2023-06-17T16:50:00+03:00</published><updated>2023-06-17T16:50:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/git-clone-in-folder</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/git-clone-in-folder"><![CDATA[<p>From any place:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/user/repo-name path/folder-name
 </code></pre></div></div>
 <p>Repo folder name will become <code class="language-plaintext highlighter-rouge">folder-name</code> instead of repo name (default behavior).</p>
@@ -214,101 +238,4 @@ jobs:
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/user/repo-name .
 </code></pre></div></div>
 
-<p>В источнике гит адрес пишут по другому, но у меня работает обычный url.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Из любого места: git clone https://github.com/user/repo-name path/folder-name Имя папки репозитория станет folder-name вместо имени репозитория (как это происходит при клонировании по умолчанию).]]></summary></entry><entry xml:lang="en"><title type="html">How flex-basis works</title><link href="https://vallek.github.io/webdevtips/en/flex-basis" rel="alternate" type="text/html" title="How flex-basis works" /><published>2023-06-14T13:57:00+03:00</published><updated>2023-06-14T13:57:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/flex-basis</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/flex-basis"><![CDATA[<h2 id="how-it-works">How it works</h2>
-
-<p><img src="../img/rel-vs-abs-flex.svg" alt="" /></p>
-
-<ul>
-  <li>flex-basis: 0; - <strong>empty space</strong> distribution according to flex-grow</li>
-  <li>flex-basis: auto; - size distribution according to  flex-grow</li>
-</ul>
-
-<p>If one flex element has grow 2 and the other has 1, then with flex-basis: 0, the empty space inside the flex container will be divided. And it will be twice as much.</p>
-
-<p>With flex-basis: auto the size of the entire element with the contents will be twice as large.</p>
-
-<p><a href="https://codepen.io/vallek/pen/ExOVqbz">Demo</a></p>
-
-<h2 id="defaults">Defaults</h2>
-
-<p>The initial values of the flex components are equivalent to <code class="language-plaintext highlighter-rouge">flex: 0 1 auto</code>.</p>
-
-<p><strong>Note:</strong> The initial values of flex-grow and flex-basis are different from their defaults when omitted in the flex shorthand. This is so that the flex shorthand can better accommodate the most common cases.</p>
-
-<p>It means that if you use one keyword, then it can substitute not <code class="language-plaintext highlighter-rouge">initial</code>,
-but something else according to popular uses. Examples from specs below:</p>
-
-<h2 id="common-cases">common cases</h2>
-
-<ul>
-  <li>
-    <p>flex: initial</p>
-
-    <p>Equivalent to <code class="language-plaintext highlighter-rouge">flex: 0 1 auto</code>. (This is the initial value.) Sizes the item based on the width/height properties. (If the item’s main size property computes to auto, this will size the flex item based on its contents.) Makes the flex item inflexible when there is positive free space, but allows it to shrink to its minimum size when there is insufficient space. The alignment abilities or auto margins can be used to align flex items along the main axis.</p>
-  </li>
-  <li>
-    <p>flex: auto</p>
-
-    <p>Equivalent to <code class="language-plaintext highlighter-rouge">flex: 1 1 auto</code>. Sizes the item based on the width/height properties, but makes them fully flexible, so that they absorb any free space along the main axis. If all items are either flex: auto, flex: initial, or flex: none, any positive free space after the items have been sized will be distributed evenly to the items with flex: auto.</p>
-  </li>
-  <li>
-    <p>flex: none</p>
-
-    <p>Equivalent to <code class="language-plaintext highlighter-rouge">flex: 0 0 auto</code>. This value sizes the item according to the width/height properties, but makes the flex item fully inflexible. This is similar to initial, except that flex items are not allowed to shrink, even in overflow situations.</p>
-  </li>
-  <li>
-    <p>flex: <code class="language-plaintext highlighter-rouge">&lt;positive-number&gt;</code></p>
-
-    <p>Equivalent to flex: <code class="language-plaintext highlighter-rouge">&lt;positive-number&gt;</code> 1 0. Makes the flex item flexible and sets the flex basis to zero, resulting in an item that receives the specified proportion of the free space in the flex container. If all items in the flex container use this pattern, their sizes will be proportional to the specified flex factor.</p>
-  </li>
-</ul>
-
-<p>By default, flex items won’t shrink below their minimum content size (the length of the longest word or fixed-size element). To change this, set the min-width or min-height property. (See §4.5 Automatic Minimum Size of Flex Items.)</p>]]></content><author><name></name></author><category term="css" /><category term="flexbox" /><summary type="html"><![CDATA[How it works]]></summary></entry><entry xml:lang="ru"><title type="html">Как работает flex-basis</title><link href="https://vallek.github.io/webdevtips/ru/flex-basis" rel="alternate" type="text/html" title="Как работает flex-basis" /><published>2023-06-14T13:57:00+03:00</published><updated>2023-06-14T13:57:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/flex-basis</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/flex-basis"><![CDATA[<h2 id="как-работает">Как работает</h2>
-
-<p><img src="../img/rel-vs-abs-flex.svg" alt="" /></p>
-
-<ul>
-  <li>flex-basis: 0; - распределение <strong>пустого места</strong> в соответствии с flex-grow</li>
-  <li>flex-basis: auto; - распределение размера в соответствии с flex-grow</li>
-</ul>
-
-<p>Если у одного флекс элемента grow 2, а у другого 1, то при flex-basis: 0 будет поделено пустое место внутри флекс контейнера. И именно оно будет в два раза больше.</p>
-
-<p>А при flex-basis: auto размер всего элемента с содержимым будет в два раза больше.</p>
-
-<p><a href="https://codepen.io/vallek/pen/ExOVqbz">Демо на кодпене</a></p>
-
-<h2 id="значения-по-умолчанию">Значения по умолчанию</h2>
-
-<p>Изначальное значение (initial) флекс элемента <code class="language-plaintext highlighter-rouge">flex: 0 1 auto</code>.</p>
-
-<p><strong>Замечание:</strong> Начальные значения flex-grow и flex-basis отличаются от значений по умолчанию, если они опущены в сокращении flex. Это делается для того, чтобы сокращение flex подходило для наиболее популярных задач.</p>
-
-<p>Имеется в виду, что если использовать одно ключевое слово, то он может подставить не initial, а что-то другое. Для удобства. Примеры из спеков далее.</p>
-
-<h2 id="common-cases">common cases</h2>
-
-<ul>
-  <li>
-    <p>flex: initial</p>
-
-    <p>Эквивалентно <code class="language-plaintext highlighter-rouge">flex: 0 1 auto</code>. (Это начальное значение.) Изменяет размер элемента на основе свойств ширины/высоты. (Если свойство основного размера элемента вычисляется автоматически, это приведет к изменению размера элемента flex на основе его содержимого.) Делает флекс элемент негибким при наличии достаточного свободного пространства, но позволяет ему сжиматься до минимального размера при нехватке места. Возможности выравнивания или автоматические отступы можно использовать для выравнивания флекс элементов вдоль главной оси.</p>
-  </li>
-  <li>
-    <p>flex: auto</p>
-
-    <p>Эквивалентно <code class="language-plaintext highlighter-rouge">flex: 1 1 auto</code>. Определяет размер элемента на основе свойств ширины/высоты, но делает их полностью гибкими, так что они занимают все свободное пространство вдоль главной оси. Если все элементы имеют либо flex: auto, либо flex: initial, либо flex: none, любое положительное свободное пространство после определения размера элементов будет равномерно распределено между элементами с помощью flex: auto.</p>
-  </li>
-  <li>
-    <p>flex: none</p>
-
-    <p>Эквивалентно <code class="language-plaintext highlighter-rouge">flex: 0 0 auto</code>. Это значение определяет размер элемента в соответствии со свойствами ширины/высоты, но делает флекс элемент полностью негибким. Это похоже на initial, за исключением того, что флекс элементам не разрешается сжиматься даже в ситуациях переполнения.</p>
-  </li>
-  <li>
-    <p>flex: <code class="language-plaintext highlighter-rouge">&lt;positive-number&gt;</code></p>
-
-    <p>Эквивалент flex: <code class="language-plaintext highlighter-rouge">&lt;положительное число&gt;</code> 1 0. Делает флекс элемент гибким и устанавливает flex basis равным нулю, в результате чего элемент получает указанную долю свободного пространства во флекс контейнере. Если все элементы в контейнере используют этот шаблон, их размеры будут пропорциональны указанному коэффициенту гибкости.</p>
-  </li>
-</ul>
-
-<p>По умолчанию флекс элементы не будут уменьшаться ниже минимального размера содержимого (длина самого длинного слова или элемента фиксированного размера). Чтобы изменить это, установите свойство min-width или min-height. (См. <a href="https://www.w3.org/TR/css-flexbox-1/#min-size-auto">§4.5 Автоматический минимальный размер гибких элементов</a>.)</p>]]></content><author><name></name></author><category term="css" /><category term="flexbox" /><summary type="html"><![CDATA[Как работает]]></summary></entry></feed>
+<p>В источнике гит адрес пишут по другому, но у меня работает обычный url.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Из любого места: git clone https://github.com/user/repo-name path/folder-name Имя папки репозитория станет folder-name вместо имени репозитория (как это происходит при клонировании по умолчанию).]]></summary></entry></feed>
