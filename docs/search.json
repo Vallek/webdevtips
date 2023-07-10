@@ -1,6 +1,26 @@
 [
   
     {
+      "title"    : "Как задать title страницы тегов при использовании jekyll-tagging",
+      "category" : "",
+      "tags"     : "jekyll, ruby",
+      "url"      : "/webdevtips/ru/jekyll-tagging-title",
+      "date"     : "2023-07-10 09:54:00 +0300",
+      "content"  : "Если вы используете расширение jekyll-tagging дял Jekyll, то могли заметить, что на страницах с тегами нет заголовка. Это можно исправить, отредактировав само расширение, то есть ruby gem.Найдите папку с Ruby: where rubyПуть к гемам: RubylibrubygemsversiongemsОткройте файл jekyll-tagging-1.1.0libjekylltagging.rbНайдитеdata = { &#39;layout&#39; =&amp;gt; layout, &#39;posts&#39; =&amp;gt; posts.sort.reverse!, &#39;tag&#39; =&amp;gt; tag }И поменяйте на что-то вроде:data = { &#39;layout&#39; =&amp;gt; layout, &#39;posts&#39; =&amp;gt; posts.sort.reverse!, &#39;tag&#39; =&amp;gt; tag, &#39;title&#39; =&amp;gt; &#39;Posts about&#39; + &#39; &#39; + tag }Таким же образом вы можете добавить или изменить здесь другие параметры страницы. Например, для мультиязычной версии сайта мне нужно было убрать значение lang у страниц с тегами. И я добавил &#39;lang&#39; =&amp;gt; &#39;&#39;.",
+      "lang": "ru"
+    } ,
+  
+    {
+      "title"    : "How to set tags pages title for jekyll-tagging",
+      "category" : "",
+      "tags"     : "jekyll, ruby",
+      "url"      : "/webdevtips/en/jekyll-tagging-title",
+      "date"     : "2023-07-10 09:54:00 +0300",
+      "content"  : "Find Ruby: where rubyGems are at: RubylibrubygemsversiongemsOpen jekyll-tagging-1.1.0libjekylltagging.rbFinddata = { &#39;layout&#39; =&amp;gt; layout, &#39;posts&#39; =&amp;gt; posts.sort.reverse!, &#39;tag&#39; =&amp;gt; tag }and change it to something like:data = { &#39;layout&#39; =&amp;gt; layout, &#39;posts&#39; =&amp;gt; posts.sort.reverse!, &#39;tag&#39; =&amp;gt; tag, &#39;title&#39; =&amp;gt; &#39;Posts about&#39; + &#39; &#39; + tag }You can add or change other page setting like this. For example I needed to remove lang value for multilang site and did it like this: &#39;lang&#39; =&amp;gt; &#39;&#39;.",
+      "lang": "en"
+    } ,
+  
+    {
       "title"    : "Если map() с template literal выдает лишние символы",
       "category" : "",
       "tags"     : "javascript",
