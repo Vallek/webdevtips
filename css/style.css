@@ -552,15 +552,15 @@ pre > code {
   scrollbar-width: thin;
 }
 
-.sidebar::-webkit-scrollbar {
+.tags-cloud_aside::-webkit-scrollbar {
   width: 8px;
 }
 
-.sidebar::-webkit-scrollbar-thumb {
+.tags-cloud_aside::-webkit-scrollbar-thumb {
   background-color: revert;
 }
 
-.sidebar::-webkit-scrollbar-track {
+.tags-cloud_aside::-webkit-scrollbar-track {
   background-color: revert;
 }
 
