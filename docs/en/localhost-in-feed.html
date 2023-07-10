@@ -752,7 +752,7 @@
 
 <p>Open <code class="language-plaintext highlighter-rouge">jekyll-feed-0.17.0\lib\jekyll-feed\feed.xml</code></p>
 
-<p>This is a template for your feed xml file. You have to find instances of <code class="language-plaintext highlighter-rouge">http://0.0.0.0:4000/webdevtips/en/localhost-in-feed</code> and `` and replace them with <code class="language-plaintext highlighter-rouge">https://username.github.io/example/en/localhost-in-feed</code> and <code class="language-plaintext highlighter-rouge">https://username.github.io/example</code>.</p>
+<p>This is a template for your feed xml file. You have to find instances of <code class="language-plaintext highlighter-rouge">{{ page.url | absolute_url }}</code> and <code class="language-plaintext highlighter-rouge">{{ post.url | absolute_url }}</code> and replace them with <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ page.url }}</code> and <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ post.url }}</code>.</p>
 
 <p>Make sure that you didn’t mix up posts and pages.</p>
 

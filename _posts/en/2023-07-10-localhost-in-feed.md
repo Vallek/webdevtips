@@ -15,6 +15,6 @@ Gems are at: `Ruby\lib\ruby\gems\version\gems\`
 
 Open `jekyll-feed-0.17.0\lib\jekyll-feed\feed.xml`
 
-This is a template for your feed xml file. You have to find instances of `{{ page.url | absolute_url }}` and `{{ post.url | absolute_url }}` and replace them with `https://username.github.io/example{{ page.url }}` and `https://username.github.io/example{{ post.url }}`.
+This is a template for your feed xml file. You have to find instances of `{% raw %}{{ page.url | absolute_url }}{% endraw %}` and `{% raw %}{{ post.url | absolute_url }}{% endraw %}` and replace them with `https://username.github.io/example{% raw %}{{ page.url }}{% endraw %}` and `https://username.github.io/example{% raw %}{{ post.url }}{% endraw %}`.
 
 Make sure that you didn't mix up posts and pages.

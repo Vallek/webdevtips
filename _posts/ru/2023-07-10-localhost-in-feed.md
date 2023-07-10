@@ -15,6 +15,6 @@ tags: [jekyll]
 
 Откройте файл `jekyll-feed-0.17.0\lib\jekyll-feed\feed.xml`
 
-Это шаблон для rss фида. Вам нужно найти все места с `{{ page.url | absolute_url }}` и `{{ post.url | absolute_url }}` и заменить их на `https://username.github.io/example{{ page.url }}` и `https://username.github.io/example{{ post.url }}`.
+Это шаблон для rss фида. Вам нужно найти все места с `{% raw %}{{ page.url | absolute_url }}{% endraw %}` и `{% raw %}{{ post.url | absolute_url }}{% endraw %}` и заменить их на `https://username.github.io/example{% raw %}{{ page.url }}{% endraw %}` и `https://username.github.io/example{% raw %}{{ post.url }}{% endraw %}`.
 
 Не перепутайте посты со страницами.
