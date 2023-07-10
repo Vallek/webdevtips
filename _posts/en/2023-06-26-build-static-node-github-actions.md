@@ -61,7 +61,7 @@ jobs:
     - name: Force push to destination branch
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${% raw %}{{ secrets.GITHUB_TOKEN }}{% endraw %}
         branch: gh-pages
         force: true
         directory: dist
