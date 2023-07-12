@@ -2,7 +2,7 @@
 layout: post
 title: 'Как задать title страницы тегов при использовании jekyll-tagging'
 date: 2023-07-10 09:54 +0300
-notebook: webdev
+notebook: backend
 tags: [jekyll, ruby]
 ---
 Если вы используете расширение jekyll-tagging дял Jekyll, то могли заметить, что на страницах с тегами нет заголовка. Это можно исправить, отредактировав само расширение, то есть ruby gem.
