@@ -5,7 +5,7 @@ const lightThemeLink = document.querySelector('.site-nav__link_light');
 const darkThemeLink = document.querySelector('.site-nav__link_dark');
 
 // Check if user set dark theme before
-if (localStorage.getItem('themeIs') == 'Dark') {
+if (localStorage.getItem('webdevtips-theme') == 'dark') {
 	page.classList.add('dark');
 }
 // Check if user prefers dark theme
@@ -28,7 +28,7 @@ darkThemeLink.addEventListener('click', setDark);
 function setDark(el) {
 	el.preventDefault();
 	page.classList.add('dark');
-	localStorage.setItem('themeIs', 'Dark');
+	localStorage.setItem('webdevtips-theme', 'dark');
 }
 
 // Turn light theme on
@@ -36,5 +36,5 @@ lightThemeLink.addEventListener('click', setLight);
 function setLight(el) {
 	el.preventDefault();
 	page.classList.remove('dark');
-		localStorage.setItem('themeIs', 'Light');
+		localStorage.setItem('webdevtips-theme', 'light');
 }
