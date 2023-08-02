@@ -29,16 +29,16 @@
             <ul class="site-nav__list visually-hidden">
               {% if page.lang == "en" %}
               {% if page.url != "/en/" %}
-              <li class="site-nav__item"><a class="site-nav__page-link locales__lang_ru" href="{{site.baseurl}}/ru{{page.url | replace: 'en/', ''}}">RU</a></li>
+              <li class="site-nav__item"><a class="site-nav__link locales__lang_ru" href="{{site.baseurl}}/ru{{page.url | replace: 'en/', ''}}">RU</a></li>
               {% else %}
-              <li class="site-nav__item"><a class="site-nav__page-link locales__lang_ru" href="{{site.baseurl}}{{page.url | replace: 'en/', ''}}">RU</a></li>
+              <li class="site-nav__item"><a class="site-nav__link locales__lang_ru" href="{{site.baseurl}}{{page.url | replace: 'en/', ''}}">RU</a></li>
               {% endif %}
-              <li class="site-nav__item"><a class="site-nav__page-link locales__lang_en" href="{{site.baseurl}}{{page.url}}">EN</a></li>
+              <li class="site-nav__item"><a class="site-nav__link locales__lang_en" href="{{site.baseurl}}{{page.url}}">EN</a></li>
               {% endif %}
   
               {% if page.lang == "ru" %}
-              <li class="site-nav__item"><a class="site-nav__page-link locales__lang_en" href="{{site.baseurl}}{{page.url}}">RU</a></li>
-              <li class="site-nav__item"><a class="site-nav__page-link locales__lang_ru" href="{{site.baseurl}}/en{{page.url | replace: 'ru/', ''}}">EN</a></li>
+              <li class="site-nav__item"><a class="site-nav__link locales__lang_en" href="{{site.baseurl}}{{page.url}}">RU</a></li>
+              <li class="site-nav__item"><a class="site-nav__link locales__lang_ru" href="{{site.baseurl}}/en{{page.url | replace: 'ru/', ''}}">EN</a></li>
               {% endif %}
             </ul>
 
@@ -46,24 +46,24 @@
           </div>  
           <div class="site-nav__dropdown">
             {% if page.lang == "ru" %}
-            <button class="site-nav__button">Темы</button>
+            <button class="site-nav__button">Тема</button>
             {% else if page.lang == "en" %}
-            <button class="site-nav__button">Themes</button>
+            <button class="site-nav__button">Theme</button>
             {% endif %}
             <ul class="site-nav__list visually-hidden">
               {% if page.lang == "ru" %}
               <li class="site-nav__item">
-                <a class="site-nav__page-link" href="">Светлая</a>
+                <a class="site-nav__link site-nav__link_light" href="#">Светлая</a>
               </li>
               <li class="site-nav__item">
-                <a class="site-nav__page-link" href="">Темная</a>
+                <a class="site-nav__link site-nav__link_dark" href="#">Темная</a>
               </li>
               {% else if page.lang == "en" %}
               <li class="site-nav__item">
-                <a class="site-nav__page-link" href="">Light</a>
+                <a class="site-nav__link site-nav__link_light" href="#">Light</a>
               </li>
               <li class="site-nav__item">
-                <a class="site-nav__page-link" href="">Dark</a>
+                <a class="site-nav__link site-nav__link_dark" href="#">Dark</a>
               </li>
               {% endif %}
             </ul>
@@ -76,15 +76,15 @@
             {% endif %}
             <ul class="site-nav__list visually-hidden">
               <li class="site-nav__item">
-                <a class="site-nav__page-link" href="https://github.com/Vallek/webdevtips">GitHub</a>
+                <a class="site-nav__link" href="https://github.com/Vallek/webdevtips">GitHub</a>
               </li>
               {% if page.lang == "ru" %}
               <li class="site-nav__item">
-                <a class="site-nav__page-link" href="{{site.baseurl}}/ru/about/">О сайте</a>
+                <a class="site-nav__link" href="{{site.baseurl}}/ru/about/">О сайте</a>
               </li>
               {% else if page.lang == "en" %}
               <li class="site-nav__item">
-                <a class="site-nav__page-link" href="{{site.baseurl}}/en/about/">About</a>
+                <a class="site-nav__link" href="{{site.baseurl}}/en/about/">About</a>
               </li>
               {% endif %}
             </ul>

@@ -99,4 +99,7 @@ defaults:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+# exclude:
+#   - _posts/
+
 # show_excerpts: true

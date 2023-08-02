@@ -28,6 +28,8 @@
   <script defer src="/webdevtips/js/simple-jekyll-search.js"></script>
   <script defer src="/webdevtips/js/tags-lang.js"></script>
   <script defer src="/webdevtips/js/search.js"></script>
+  <script defer src="/webdevtips/js/header-dropdowns.js"></script>
+  <script defer src="/webdevtips/js/themes.js"></script>
   <script defer src="/webdevtips/js/accordion.js"></script>
   <script defer src="/webdevtips/js/tags-colors.js"></script>
   <link type="application/atom+xml" rel="alternate" href="https://vallek.github.io/webdevtips/feed.xml" title="Web Dev Tips"><!-- Google tag (gtag.js) -->
@@ -56,24 +58,54 @@
     </div>
       <nav class="site-nav">
         <div class="site-nav__content">
-          <section class="locales">
-            <h3 class="locales__text visually-hidden">Выбор языка/Language</h3>
+          <div class="site-nav__dropdown">
             
 
             
-
-            
-            <a class="locales__lang locales__lang_en" href="/webdevtips/ru/dont-use-this-selector">RU</a>
-            <span> / </span>
-            <a class="locales__lang locales__lang_ru" href="/webdevtips/en/dont-use-this-selector">EN</a>
+            <button class="site-nav__button">Язык</button>
             
 
+            <ul class="site-nav__list visually-hidden">
+              
+  
+              
+              <li class="site-nav__item"><a class="site-nav__link locales__lang_en" href="/webdevtips/ru/dont-use-this-selector">RU</a></li>
+              <li class="site-nav__item"><a class="site-nav__link locales__lang_ru" href="/webdevtips/en/dont-use-this-selector">EN</a></li>
+              
+            </ul>
+
             
-          </section>
-          <a class="page-link" href="https://github.com/Vallek/webdevtips">GitHub</a>
-          
-          <a class="page-link" href="/webdevtips/ru/about/">О сайте</a>
-          
+          </div>  
+          <div class="site-nav__dropdown">
+            
+            <button class="site-nav__button">Тема</button>
+            
+            <ul class="site-nav__list visually-hidden">
+              
+              <li class="site-nav__item">
+                <a class="site-nav__link site-nav__link_light" href="#">Светлая</a>
+              </li>
+              <li class="site-nav__item">
+                <a class="site-nav__link site-nav__link_dark" href="#">Темная</a>
+              </li>
+              
+            </ul>
+          </div>
+          <div class="site-nav__dropdown">
+            
+            <button class="site-nav__button">Страницы</button>
+            
+            <ul class="site-nav__list visually-hidden">
+              <li class="site-nav__item">
+                <a class="site-nav__link" href="https://github.com/Vallek/webdevtips">GitHub</a>
+              </li>
+              
+              <li class="site-nav__item">
+                <a class="site-nav__link" href="/webdevtips/ru/about/">О сайте</a>
+              </li>
+              
+            </ul>
+          </div>
         </div>
       </nav>
   </div>

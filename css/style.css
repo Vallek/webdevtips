@@ -151,6 +151,20 @@ pre > code {
   flex-direction: column;
 }
 
+/* Dark theme */
+.dark.page {
+  color: var(--color-grey);
+  background-color: var(--background-dark);
+} 
+.dark pre,
+.dark code {
+  background-color: transparent;
+}
+
+.dark .post-link {
+  color: var(--color-grey);
+}
+
 /* Site header */
 .site-header {
 	border-top: 5px solid var(--grey-color-dark);
@@ -230,7 +244,7 @@ pre > code {
   z-index: 1; /* for link hover height */
 }
 
-.site-nav__page-link {
+.site-nav__link {
   text-align: center;
   display: block;
   padding: 0.5em;
@@ -238,7 +252,7 @@ pre > code {
 	line-height: var(--base-line-height);
 }
 
-.site-nav__page-link:hover {
+.site-nav__link:hover {
   background-color: var(--color-grey);
 }
 
