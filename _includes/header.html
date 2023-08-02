@@ -17,34 +17,78 @@
     </div>
       <nav class="site-nav">
         <div class="site-nav__content">
-          <section class="locales">
-            <h3 class="locales__text visually-hidden">Выбор языка/Language</h3>
+          <div class="site-nav__dropdown">
             {% if page.dir != "/tag/" %}
 
-            {% if page.lang == "en" %}
-            {% if page.url != "/en/" %}
-            <a class="locales__lang locales__lang_ru" href="{{site.baseurl}}/ru{{page.url | replace: 'en/', ''}}">RU</a>
-            {% else %}
-            <a class="locales__lang locales__lang_ru" href="{{site.baseurl}}{{page.url | replace: 'en/', ''}}">RU</a>
-            {% endif %}
-            <span> / </span>
-            <a class="locales__lang locales__lang_en" href="{{site.baseurl}}{{page.url}}">EN</a>
-            {% endif %}
-
             {% if page.lang == "ru" %}
-            <a class="locales__lang locales__lang_en" href="{{site.baseurl}}{{page.url}}">RU</a>
-            <span> / </span>
-            <a class="locales__lang locales__lang_ru" href="{{site.baseurl}}/en{{page.url | replace: 'ru/', ''}}">EN</a>
+            <button class="site-nav__button">Язык</button>
+            {% else if page.lang == "en" %}
+            <button class="site-nav__button">Lang</button>
             {% endif %}
 
+            <ul class="site-nav__list visually-hidden">
+              {% if page.lang == "en" %}
+              {% if page.url != "/en/" %}
+              <li class="site-nav__item"><a class="site-nav__page-link locales__lang_ru" href="{{site.baseurl}}/ru{{page.url | replace: 'en/', ''}}">RU</a></li>
+              {% else %}
+              <li class="site-nav__item"><a class="site-nav__page-link locales__lang_ru" href="{{site.baseurl}}{{page.url | replace: 'en/', ''}}">RU</a></li>
+              {% endif %}
+              <li class="site-nav__item"><a class="site-nav__page-link locales__lang_en" href="{{site.baseurl}}{{page.url}}">EN</a></li>
+              {% endif %}
+  
+              {% if page.lang == "ru" %}
+              <li class="site-nav__item"><a class="site-nav__page-link locales__lang_en" href="{{site.baseurl}}{{page.url}}">RU</a></li>
+              <li class="site-nav__item"><a class="site-nav__page-link locales__lang_ru" href="{{site.baseurl}}/en{{page.url | replace: 'ru/', ''}}">EN</a></li>
+              {% endif %}
+            </ul>
+
             {% endif %}
-          </section>
-          <a class="page-link" href="https://github.com/Vallek/webdevtips">GitHub</a>
-          {% if page.lang == "ru" %}
-          <a class="page-link" href="{{site.baseurl}}/ru/about/">О сайте</a>
-          {% else if page.lang == "en" %}
-          <a class="page-link" href="{{site.baseurl}}/en/about/">About</a>
-          {% endif %}
+          </div>  
+          <div class="site-nav__dropdown">
+            {% if page.lang == "ru" %}
+            <button class="site-nav__button">Темы</button>
+            {% else if page.lang == "en" %}
+            <button class="site-nav__button">Themes</button>
+            {% endif %}
+            <ul class="site-nav__list visually-hidden">
+              {% if page.lang == "ru" %}
+              <li class="site-nav__item">
+                <a class="site-nav__page-link" href="">Светлая</a>
+              </li>
+              <li class="site-nav__item">
+                <a class="site-nav__page-link" href="">Темная</a>
+              </li>
+              {% else if page.lang == "en" %}
+              <li class="site-nav__item">
+                <a class="site-nav__page-link" href="">Light</a>
+              </li>
+              <li class="site-nav__item">
+                <a class="site-nav__page-link" href="">Dark</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+          <div class="site-nav__dropdown">
+            {% if page.lang == "ru" %}
+            <button class="site-nav__button">Страницы</button>
+            {% else if page.lang == "en" %}
+            <button class="site-nav__button">Pages</button>
+            {% endif %}
+            <ul class="site-nav__list visually-hidden">
+              <li class="site-nav__item">
+                <a class="site-nav__page-link" href="https://github.com/Vallek/webdevtips">GitHub</a>
+              </li>
+              {% if page.lang == "ru" %}
+              <li class="site-nav__item">
+                <a class="site-nav__page-link" href="{{site.baseurl}}/ru/about/">О сайте</a>
+              </li>
+              {% else if page.lang == "en" %}
+              <li class="site-nav__item">
+                <a class="site-nav__page-link" href="{{site.baseurl}}/en/about/">About</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
         </div>
       </nav>
   </div>

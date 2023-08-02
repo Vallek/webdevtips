@@ -202,11 +202,44 @@ pre > code {
 	display: flex;
   align-items: center;
   text-align: center;
+  gap: 1em;
 }
 
-.page-link {
-	color: var(--background-color);
+.site-nav__dropdown {
+  position: relative;
+}
+
+.site-nav__button::after {
+  display: inline-block;
+  content: "▾";
+  transform: scale(1.5);
+  margin-left: 0.5em;
+}
+
+.site-nav__list {
+  position: absolute;
+  min-width: 100%;
+  margin: 0;
+  margin-top: -2px;
+  border: 1px solid #aca9a9;
+  border-radius: 5px;
+  text-align: start;
+  list-style: none;
+  background-color: rgb(249, 249, 251);
+  box-shadow: 0 0 3px -1px gray;
+  z-index: 1; /* for link hover height */
+}
+
+.site-nav__page-link {
+  text-align: center;
+  display: block;
+  padding: 0.5em;
+	color: var(--text-color);
 	line-height: var(--base-line-height);
+}
+
+.site-nav__page-link:hover {
+  background-color: var(--color-grey);
 }
 
 /* Gaps between nav items, but not on the last one */
@@ -272,12 +305,7 @@ pre > code {
 
 /* Lang */
 .locales {
-  color: white;
   margin-right: 2em;
-}
-
-.locales__lang {
-  color: white;
 }
 
 /* Sidebar */
