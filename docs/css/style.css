@@ -223,6 +223,17 @@ pre > code {
   position: relative;
 }
 
+.site-nav__button {
+  background: none;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.site-nav__button:hover {
+  outline: 2px solid var(--color-grey);
+}
+
 .site-nav__button::after {
   display: inline-block;
   content: "▾";
