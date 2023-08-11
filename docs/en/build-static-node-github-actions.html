@@ -829,10 +829,10 @@ jobs:
         cd dist/
         git init
         git add -A
+        git config --global --add safe.directory /github/workspace
         git config --local user.email "email@email.com"
         git config --local user.name "username"
         git commit -m 'deploy'
-        git config --global --add safe.directory /github/workspace
         
     - name: Force push to destination branch
       uses: ad-m/github-push-action@master
