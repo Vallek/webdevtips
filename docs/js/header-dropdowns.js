@@ -1,41 +1,47 @@
 'use strict';
-// Находим нужные узлы
+// Nodes
 const popupButton = document.querySelectorAll('.site-nav__button');
 const popupWrap = document.querySelectorAll('.site-nav__dropdown');
+const links = document.querySelectorAll('.site-nav__link');
 
-// Выполняем функцию когда юзер кликает по кнопке
+// Show/hide menu on buttons focus/unfocus
 popupButton.forEach((el) => {
-	el.addEventListener('click', handleMenu);
+	el.addEventListener('focus', showMenu);
+	el.addEventListener('focusout', hideMenu);
+	el.addEventListener('mousedown', toggleMenu);
 });
 
-// Функция, которая показывает и скрывает попап
-function handleMenu(el) {
-	let a = el.target.nextElementSibling.classList;
-	if (a.contains('visually-hidden')) {
-		a.remove('visually-hidden');
-		a.add('visually-show');
-	}
-	else if (!a.contains('visually-hidden')) {
-		a.add('visually-hidden');
-		a.remove('visually-show');
-	}
+// Show/hide menu on links focus/unfocus
+links.forEach((el) => {
+	el.addEventListener('focus', showMenu);
+	el.addEventListener('focusout', hideMenu);
+});
+
+// Show menu
+function showMenu(el) {
+	// Universal list node search from button or links
+	let list = el.target.closest('.site-nav__dropdown').querySelector('.site-nav__list').classList;
+	list.remove('visually-hidden');
+	list.add('visually-show');
 }
 
-// Выполняем функцию когда юзер кликает в любом месте
-document.addEventListener('click', hidePopup);
+// Hide menu
+function hideMenu(el) {
+	// Universal list node search from button or links
+	let list = el.target.closest('.site-nav__dropdown').querySelector('.site-nav__list').classList;
+	list.remove('visually-show');
+	list.add('visually-hidden');
+}
 
-// Проверяем, есть ли внутри того по чему кликнули попап меню и кнопка
-function hidePopup(el) {
-
-	popupWrap.forEach((it) => {
-		let targetInside = it.contains(el.target);
-		let popupList = it.querySelector('.site-nav__list');
-		if (!targetInside) {
-			popupList.classList.add('visually-hidden');
-			popupList.classList.remove('visually-show');
-		}	
-		else {
-			return;
-		}
-	});
+// Show/hide menu
+function toggleMenu(el) {
+	let list = el.target.nextElementSibling.classList;
+	if (list.contains('visually-show')) {
+		list.remove('visually-show');
+		list.add('visually-hidden');
+	}
+	else {
+		list.remove('visually-hidden');
+		list.add('visually-show');
+	}
 }
