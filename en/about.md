@@ -62,11 +62,11 @@ You can also suggest creating a new section if you have something to add to it.
 - [x] Edit button on github
 - [ ] A story about creating a website and why I'm not looking for easy ways
 - [x] Displaying sources from front matter on post pages
-- [ ] Transfer answers from stackoverflow from my bookmarks that were not in the notes
+- [x] Transfer answers from stackoverflow from my bookmarks that were not in the notes (partially)
 - [ ] Home page with widgets, transferring all posts to a separate one
 - [x] Number of posts in the tag cloud
 - [x] Transferring to my own css layout completely (BEM without nesting, outdated practices, remove everything from minima, etc.)
-- [ ] Dark theme
+- [x] Dark theme
 - [x] Accordion in the sidebar
 - [x] Posts by tags in the sidebar
 - [ ] Prepare the layout as a theme for jekyll
@@ -74,7 +74,7 @@ You can also suggest creating a new section if you have something to add to it.
 - [ ] Search improvements (working fuzzy, details in the results)
 - [ ] Documentation for participants
 - [x] Localization of the interface and content into English (and into Russian, where in English)
-- [ ] Comments
+- [x] Comments
 - [ ] Your suggestions)
 
 If something doesn't work, please start an issue. With any questions about the project, write in the discussion. Other suggestions and questions can be written to [mail](mailto:vwebdis@gmail.com) or [telegram](https://t.me/webval).
