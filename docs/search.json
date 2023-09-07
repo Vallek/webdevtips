@@ -656,7 +656,7 @@
       "tags"     : "windows",
       "url"      : "/webdevtips/en/win-r-commands",
       "date"     : "2023-02-22 03:00:00 +0300",
-      "content"  : "Tested in Windows 10```explorer.exe - desktop process in case you need to close and start againms-settings:taskbar - taskbar settingsshell:startup - autorun folder, you can add shortcutsshell:sendto - context menu Sendcontrol - control paneldevmgmt.msc - device managerdccw - screen calibrationmmsys.cpl - sound settingsmsinfo32.exe - detailed pc and system propertiespowercfg.cpl - power settingsregedit - registry editormsconfig - system settingscompmgmt.msc - computer managementtaskschd.msc - task schedulergpedit.msc - local group policyservices.msc - OS servicesdiskmgmt.msc - disk managementdiskpart - cli disk management utilitycleanmgr - disk cleanupnetstat - active network connections``",
+      "content"  : "Tested in Windows 10explorer.exe - desktop process in case you need to close and start againms-settings:taskbar - taskbar settingsshell:startup - autorun folder, you can add shortcutsshell:sendto - context menu Sendcontrol - control paneldevmgmt.msc - device managerdccw - screen calibrationmmsys.cpl - sound settingsmsinfo32.exe - detailed pc and system propertiespowercfg.cpl - power settingsregedit - registry editormsconfig - system settingscompmgmt.msc - computer managementtaskschd.msc - task schedulergpedit.msc - local group policyservices.msc - OS servicesdiskmgmt.msc - disk managementdiskpart - cli disk management utilitycleanmgr - disk cleanupnetstat - active network connections",
       "lang": "en"
     } ,
   

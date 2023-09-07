@@ -12,27 +12,27 @@ ms-settings:taskbar - taskbar settings
 shell:startup - autorun folder, you can add shortcuts
 shell:sendto - context menu Send
 control - control panel
-
-`` ``
+```
+```
 devmgmt.msc - device manager
 dccw - screen calibration
 mmsys.cpl - sound settings
 msinfo32.exe - detailed pc and system properties
 powercfg.cpl - power settings
-
-`` ``
+```
+```
 regedit - registry editor
 msconfig - system settings
 compmgmt.msc - computer management
 taskschd.msc - task scheduler
 gpedit.msc - local group policy
 services.msc - OS services
-
-`` ``
+```
+```
 diskmgmt.msc - disk management
 diskpart - cli disk management utility
 cleanmgr - disk cleanup
-
-`` ``
+```
+```
 netstat - active network connections
-``
+```
