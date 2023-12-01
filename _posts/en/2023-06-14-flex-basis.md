@@ -10,12 +10,12 @@ sources: [https://www.w3.org/TR/css-flexbox-1/#flex-basis-property]
 
 ![](../img/rel-vs-abs-flex.svg)
 
-* flex-basis: 0; - **empty space** distribution according to flex-grow
-* flex-basis: auto; - size distribution according to  flex-grow 
+* flex-basis: 0; - size distribution according to flex-grow
+* flex-basis: auto; - **empty space** distribution according to flex-grow
 
-If one flex element has grow 2 and the other has 1, then with flex-basis: 0, the empty space inside the flex container will be divided. And it will be twice as much.
+If one flex element has grow 2 and the other has 1, then with flex-basis: auto, the empty space inside the flex container will be divided. And it will be twice as much.
 
-With flex-basis: auto the size of the entire element with the contents will be twice as large.
+With flex-basis: 0 the size of the entire element with the contents will be twice as large.
 
 [Demo](https://codepen.io/vallek/pen/ExOVqbz)
 

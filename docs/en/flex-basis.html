@@ -786,13 +786,13 @@
 <p><img src="../img/rel-vs-abs-flex.svg" alt="" /></p>
 
 <ul>
-  <li>flex-basis: 0; - <strong>empty space</strong> distribution according to flex-grow</li>
-  <li>flex-basis: auto; - size distribution according to  flex-grow</li>
+  <li>flex-basis: 0; - size distribution according to flex-grow</li>
+  <li>flex-basis: auto; - <strong>empty space</strong> distribution according to flex-grow</li>
 </ul>
 
-<p>If one flex element has grow 2 and the other has 1, then with flex-basis: 0, the empty space inside the flex container will be divided. And it will be twice as much.</p>
+<p>If one flex element has grow 2 and the other has 1, then with flex-basis: auto, the empty space inside the flex container will be divided. And it will be twice as much.</p>
 
-<p>With flex-basis: auto the size of the entire element with the contents will be twice as large.</p>
+<p>With flex-basis: 0 the size of the entire element with the contents will be twice as large.</p>
 
 <p><a href="https://codepen.io/vallek/pen/ExOVqbz">Demo</a></p>
 
