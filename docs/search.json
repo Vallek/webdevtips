@@ -1,6 +1,26 @@
 [
   
     {
+      "title"    : "Проблемы с темной/светлой темой в Firefox",
+      "category" : "",
+      "tags"     : "firefox, dark theme",
+      "url"      : "/webdevtips/ru/firefox-dark-theme",
+      "date"     : "2023-12-09 03:00:00 +0300",
+      "content"  : "Для тех у кого проблемы в Firefox с настройками темной темы. А именно: не следует системной настройке или вы хотите, чтобы не следовал цветовой теме в браузере (после Firefox 95 пользовательские темы теперь могут зачем-то переключить темную/светлую) или проблемы с usercss, кастомной темной темой на сайте и т.п.  Идете в about:config  Находите layout.css.prefers-color-scheme.content-override  Темная (0), светлая (1), как в системе (2) или как в браузере (3).",
+      "lang": "ru"
+    } ,
+  
+    {
+      "title"    : "Problems with dark/light themes in Firefox",
+      "category" : "",
+      "tags"     : "firefox, dark theme",
+      "url"      : "/webdevtips/en/firefox-dark-theme",
+      "date"     : "2023-12-09 03:00:00 +0300",
+      "content"  : "If you have problems with dark/light themes in Firefox. Browser not following system setting or you don’t want it to follow theme (Firefox does it since 95) or you have problems with custom dark theme and so on.  Go to about:config  Find layout.css.prefers-color-scheme.content-override  Dark (0), light (1), system (2) or browser (3).",
+      "lang": "en"
+    } ,
+  
+    {
       "title"    : "Как убрать localhost из jekyll-feed",
       "category" : "",
       "tags"     : "jekyll",
