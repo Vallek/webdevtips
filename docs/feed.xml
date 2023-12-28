@@ -1,4 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2023-12-09T17:36:54+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">Problems with dark/light themes in Firefox</title><link href="https://vallek.github.io/webdevtips/en/firefox-dark-theme" rel="alternate" type="text/html" title="Problems with dark/light themes in Firefox" /><published>2023-12-09T03:00:00+03:00</published><updated>2023-12-09T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/firefox-dark-theme</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/firefox-dark-theme"><![CDATA[<p>If you have problems with dark/light themes in Firefox. Browser not following system setting or you don’t want it to follow theme (Firefox does it since 95) or you have problems with custom dark theme and so on.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2023-12-28T19:07:01+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">Тriple redirect</title><link href="https://vallek.github.io/webdevtips/en/triple-redirect" rel="alternate" type="text/html" title="Тriple redirect" /><published>2023-12-28T03:00:00+03:00</published><updated>2023-12-28T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/triple-redirect</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/triple-redirect"><![CDATA[<p>If you need to redirect users to a new address, but you don’t have a server, you can use “triple” redirection. It includes:</p>
+
+<ol>
+  <li>meta tag in <strong>HTML</strong> with <code class="language-plaintext highlighter-rouge">meta http-equiv="refresh"</code>. The number after content is a delay in seconds. You can set to 1, 5 and so on.</li>
+  <li><strong>JS</strong> code inside script in the head with <code class="language-plaintext highlighter-rouge">window.location.href</code></li>
+  <li>In case of all that somehow didn’t work put text explanation for users with a link.</li>
+</ol>
+
+<p>Result could look like this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+	&lt;meta http-equiv="refresh" content="0; url=https://example.com/"&gt;
+	&lt;title&gt;title&lt;/title&gt;
+	&lt;link rel="canonical" href="https://example.com/"&gt;
+	&lt;script&gt;
+		window.location.href = "https://example.com/"
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;h1&gt;The website moves to &lt;a href="https://example.com/"&gt;https://example.com/&lt;/a&gt;. If you weren't redirected please click a &lt;a href="https://example.com/"&gt;link&lt;/a&gt;&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div></div>
+
+<p>Although it’s better to <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections">start with HTTP</a> if you can.</p>]]></content><author><name></name></author><category term="http" /><category term="html" /><category term="javascript" /><summary type="html"><![CDATA[If you need to redirect users to a new address, but you don’t have a server, you can use “triple” redirection. It includes:]]></summary></entry><entry xml:lang="ru"><title type="html">Тройная переадресация</title><link href="https://vallek.github.io/webdevtips/ru/triple-redirect" rel="alternate" type="text/html" title="Тройная переадресация" /><published>2023-12-28T03:00:00+03:00</published><updated>2023-12-28T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/triple-redirect</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/triple-redirect"><![CDATA[<p>Если вы хотите переадресовать посетителя на новый сайт, но у вас нет доступа к серверу (например, если сайт на Github Pages) то можно использовать “тройную” переадресацию без HTTP. А именно:</p>
+
+<ol>
+  <li>В <strong>HTML</strong> через тег <code class="language-plaintext highlighter-rouge">meta http-equiv="refresh"</code>. Число после content - задержка в секундах. Можно поставить 1, 5 и т.п. Дальше сам адрес.</li>
+  <li>С помощью <strong>JS</strong> внутри script в head через <code class="language-plaintext highlighter-rouge">window.location.href</code></li>
+  <li>На случай, если это все не сработает, вставить ссылку в содержимое и попросить посетителей перейти самим.</li>
+</ol>
+
+<p>Результат выглядит примерно так:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+	&lt;meta http-equiv="refresh" content="0; url=https://example.com/"&gt;
+	&lt;title&gt;title&lt;/title&gt;
+	&lt;link rel="canonical" href="https://example.com/"&gt;
+	&lt;script&gt;
+		window.location.href = "https://example.com/"
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;h1&gt;Сайт переехал на новый домен &lt;a href="https://example.com/"&gt;https://example.com/&lt;/a&gt;. Вас должно автоматически переадресовать на новый адрес. Если этого не произошло, пожалуйста, нажмите на &lt;a href="https://example.com/"&gt;ссылку&lt;/a&gt; сами)&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div></div>
+
+<p>Но, если есть возможность, то лучше <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Redirections">начать с HTTP</a>.</p>]]></content><author><name></name></author><category term="http" /><category term="html" /><category term="javascript" /><summary type="html"><![CDATA[Если вы хотите переадресовать посетителя на новый сайт, но у вас нет доступа к серверу (например, если сайт на Github Pages) то можно использовать “тройную” переадресацию без HTTP. А именно:]]></summary></entry><entry xml:lang="en"><title type="html">Problems with dark/light themes in Firefox</title><link href="https://vallek.github.io/webdevtips/en/firefox-dark-theme" rel="alternate" type="text/html" title="Problems with dark/light themes in Firefox" /><published>2023-12-09T03:00:00+03:00</published><updated>2023-12-09T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/firefox-dark-theme</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/firefox-dark-theme"><![CDATA[<p>If you have problems with dark/light themes in Firefox. Browser not following system setting or you don’t want it to follow theme (Firefox does it since 95) or you have problems with custom dark theme and so on.</p>
 
 <ol>
   <li>Go to about:config</li>
@@ -10,19 +64,7 @@
   <li>Идете в about:config</li>
   <li>Находите <code class="language-plaintext highlighter-rouge">layout.css.prefers-color-scheme.content-override</code></li>
   <li>Темная (0), светлая (1), как в системе (2) или как в браузере (3).</li>
-</ol>]]></content><author><name></name></author><category term="firefox" /><category term="dark theme" /><summary type="html"><![CDATA[Для тех у кого проблемы в Firefox с настройками темной темы. А именно: не следует системной настройке или вы хотите, чтобы не следовал цветовой теме в браузере (после Firefox 95 пользовательские темы теперь могут зачем-то переключить темную/светлую) или проблемы с usercss, кастомной темной темой на сайте и т.п.]]></summary></entry><entry xml:lang="en"><title type="html">How to remove localhost from jekyll-feed</title><link href="https://vallek.github.io/webdevtips/en/localhost-in-feed" rel="alternate" type="text/html" title="How to remove localhost from jekyll-feed" /><published>2023-07-10T10:33:00+03:00</published><updated>2023-07-10T10:33:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/localhost-in-feed</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/localhost-in-feed"><![CDATA[<p><code class="language-plaintext highlighter-rouge">jekyll serve</code> might put <code class="language-plaintext highlighter-rouge">localhost</code> in feed urls. One way to fix it is just use <code class="language-plaintext highlighter-rouge">jekyll build</code> for production after local server test. But that’s not really a fix.</p>
-
-<p>But you can manually edit jekyll-feed gem and put your url there.</p>
-
-<p>Find Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
-
-<p>Gems are at: <code class="language-plaintext highlighter-rouge">Ruby\lib\ruby\gems\version\gems\</code></p>
-
-<p>Open <code class="language-plaintext highlighter-rouge">jekyll-feed-0.17.0\lib\jekyll-feed\feed.xml</code></p>
-
-<p>This is a template for your feed xml file. You have to find instances of <code class="language-plaintext highlighter-rouge">{{ page.url | absolute_url }}</code> and <code class="language-plaintext highlighter-rouge">{{ post.url | absolute_url }}</code> and replace them with <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ page.url }}</code> and <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ post.url }}</code>.</p>
-
-<p>Make sure that you didn’t mix up posts and pages.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[jekyll serve might put localhost in feed urls. One way to fix it is just use jekyll build for production after local server test. But that’s not really a fix.]]></summary></entry><entry xml:lang="ru"><title type="html">Как убрать localhost из jekyll-feed</title><link href="https://vallek.github.io/webdevtips/ru/localhost-in-feed" rel="alternate" type="text/html" title="Как убрать localhost из jekyll-feed" /><published>2023-07-10T10:33:00+03:00</published><updated>2023-07-10T10:33:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/localhost-in-feed</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/localhost-in-feed"><![CDATA[<p><code class="language-plaintext highlighter-rouge">jekyll serve</code> может заменять url вашего сайта в фиде на <code class="language-plaintext highlighter-rouge">localhost</code>. Это можно исправить командой <code class="language-plaintext highlighter-rouge">jekyll build</code>, каждный раз отдельно выполняя сборку для продакшена. Но это не реальное решение проблемы.</p>
+</ol>]]></content><author><name></name></author><category term="firefox" /><category term="dark theme" /><summary type="html"><![CDATA[Для тех у кого проблемы в Firefox с настройками темной темы. А именно: не следует системной настройке или вы хотите, чтобы не следовал цветовой теме в браузере (после Firefox 95 пользовательские темы теперь могут зачем-то переключить темную/светлую) или проблемы с usercss, кастомной темной темой на сайте и т.п.]]></summary></entry><entry xml:lang="ru"><title type="html">Как убрать localhost из jekyll-feed</title><link href="https://vallek.github.io/webdevtips/ru/localhost-in-feed" rel="alternate" type="text/html" title="Как убрать localhost из jekyll-feed" /><published>2023-07-10T10:33:00+03:00</published><updated>2023-07-10T10:33:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/localhost-in-feed</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/localhost-in-feed"><![CDATA[<p><code class="language-plaintext highlighter-rouge">jekyll serve</code> может заменять url вашего сайта в фиде на <code class="language-plaintext highlighter-rouge">localhost</code>. Это можно исправить командой <code class="language-plaintext highlighter-rouge">jekyll build</code>, каждный раз отдельно выполняя сборку для продакшена. Но это не реальное решение проблемы.</p>
 
 <p>Вместо этого можно вручную отредактировать расширение jekyll-feed и добавить туда ваш адрес.</p>
 
@@ -34,7 +76,35 @@
 
 <p>Это шаблон для rss фида. Вам нужно найти все места с <code class="language-plaintext highlighter-rouge">{{ page.url | absolute_url }}</code> и <code class="language-plaintext highlighter-rouge">{{ post.url | absolute_url }}</code> и заменить их на <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ page.url }}</code> и <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ post.url }}</code>.</p>
 
-<p>Не перепутайте посты со страницами.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[jekyll serve может заменять url вашего сайта в фиде на localhost. Это можно исправить командой jekyll build, каждный раз отдельно выполняя сборку для продакшена. Но это не реальное решение проблемы.]]></summary></entry><entry xml:lang="ru"><title type="html">Как задать title страницы тегов при использовании jekyll-tagging</title><link href="https://vallek.github.io/webdevtips/ru/jekyll-tagging-title" rel="alternate" type="text/html" title="Как задать title страницы тегов при использовании jekyll-tagging" /><published>2023-07-10T09:54:00+03:00</published><updated>2023-07-10T09:54:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/jekyll-tagging-title</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/jekyll-tagging-title"><![CDATA[<p>Если вы используете расширение jekyll-tagging дял Jekyll, то могли заметить, что на страницах с тегами нет заголовка. Это можно исправить, отредактировав само расширение, то есть ruby gem.</p>
+<p>Не перепутайте посты со страницами.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[jekyll serve может заменять url вашего сайта в фиде на localhost. Это можно исправить командой jekyll build, каждный раз отдельно выполняя сборку для продакшена. Но это не реальное решение проблемы.]]></summary></entry><entry xml:lang="en"><title type="html">How to remove localhost from jekyll-feed</title><link href="https://vallek.github.io/webdevtips/en/localhost-in-feed" rel="alternate" type="text/html" title="How to remove localhost from jekyll-feed" /><published>2023-07-10T10:33:00+03:00</published><updated>2023-07-10T10:33:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/localhost-in-feed</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/localhost-in-feed"><![CDATA[<p><code class="language-plaintext highlighter-rouge">jekyll serve</code> might put <code class="language-plaintext highlighter-rouge">localhost</code> in feed urls. One way to fix it is just use <code class="language-plaintext highlighter-rouge">jekyll build</code> for production after local server test. But that’s not really a fix.</p>
+
+<p>But you can manually edit jekyll-feed gem and put your url there.</p>
+
+<p>Find Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
+
+<p>Gems are at: <code class="language-plaintext highlighter-rouge">Ruby\lib\ruby\gems\version\gems\</code></p>
+
+<p>Open <code class="language-plaintext highlighter-rouge">jekyll-feed-0.17.0\lib\jekyll-feed\feed.xml</code></p>
+
+<p>This is a template for your feed xml file. You have to find instances of <code class="language-plaintext highlighter-rouge">{{ page.url | absolute_url }}</code> and <code class="language-plaintext highlighter-rouge">{{ post.url | absolute_url }}</code> and replace them with <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ page.url }}</code> and <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ post.url }}</code>.</p>
+
+<p>Make sure that you didn’t mix up posts and pages.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[jekyll serve might put localhost in feed urls. One way to fix it is just use jekyll build for production after local server test. But that’s not really a fix.]]></summary></entry><entry xml:lang="en"><title type="html">How to set tags pages title for jekyll-tagging</title><link href="https://vallek.github.io/webdevtips/en/jekyll-tagging-title" rel="alternate" type="text/html" title="How to set tags pages title for jekyll-tagging" /><published>2023-07-10T09:54:00+03:00</published><updated>2023-07-10T09:54:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/jekyll-tagging-title</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/jekyll-tagging-title"><![CDATA[<p>Find Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
+
+<p>Gems are at: <code class="language-plaintext highlighter-rouge">Ruby\lib\ruby\gems\version\gems\</code></p>
+
+<p>Open <code class="language-plaintext highlighter-rouge">jekyll-tagging-1.1.0\lib\jekyll\tagging.rb</code></p>
+
+<p>Find</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data = { 'layout' =&gt; layout, 'posts' =&gt; posts.sort.reverse!, 'tag' =&gt; tag }
+</code></pre></div></div>
+
+<p>and change it to something like:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data = { 'layout' =&gt; layout, 'posts' =&gt; posts.sort.reverse!, 'tag' =&gt; tag, 'title' =&gt; 'Posts about' + ' ' + tag }
+</code></pre></div></div>
+
+<p>You can add or change other page setting like this. For example I needed to remove lang value for multilang site and did it like this: <code class="language-plaintext highlighter-rouge">'lang' =&gt; ''</code>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="ruby" /><summary type="html"><![CDATA[Find Ruby: where ruby]]></summary></entry><entry xml:lang="ru"><title type="html">Как задать title страницы тегов при использовании jekyll-tagging</title><link href="https://vallek.github.io/webdevtips/ru/jekyll-tagging-title" rel="alternate" type="text/html" title="Как задать title страницы тегов при использовании jekyll-tagging" /><published>2023-07-10T09:54:00+03:00</published><updated>2023-07-10T09:54:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/jekyll-tagging-title</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/jekyll-tagging-title"><![CDATA[<p>Если вы используете расширение jekyll-tagging дял Jekyll, то могли заметить, что на страницах с тегами нет заголовка. Это можно исправить, отредактировав само расширение, то есть ruby gem.</p>
 
 <p>Найдите папку с Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
 
@@ -52,23 +122,7 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data = { 'layout' =&gt; layout, 'posts' =&gt; posts.sort.reverse!, 'tag' =&gt; tag, 'title' =&gt; 'Posts about' + ' ' + tag }
 </code></pre></div></div>
 
-<p>Таким же образом вы можете добавить или изменить здесь другие параметры страницы. Например, для мультиязычной версии сайта мне нужно было убрать значение lang у страниц с тегами. И я добавил <code class="language-plaintext highlighter-rouge">'lang' =&gt; ''</code>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="ruby" /><summary type="html"><![CDATA[Если вы используете расширение jekyll-tagging дял Jekyll, то могли заметить, что на страницах с тегами нет заголовка. Это можно исправить, отредактировав само расширение, то есть ruby gem.]]></summary></entry><entry xml:lang="en"><title type="html">How to set tags pages title for jekyll-tagging</title><link href="https://vallek.github.io/webdevtips/en/jekyll-tagging-title" rel="alternate" type="text/html" title="How to set tags pages title for jekyll-tagging" /><published>2023-07-10T09:54:00+03:00</published><updated>2023-07-10T09:54:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/jekyll-tagging-title</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/jekyll-tagging-title"><![CDATA[<p>Find Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
-
-<p>Gems are at: <code class="language-plaintext highlighter-rouge">Ruby\lib\ruby\gems\version\gems\</code></p>
-
-<p>Open <code class="language-plaintext highlighter-rouge">jekyll-tagging-1.1.0\lib\jekyll\tagging.rb</code></p>
-
-<p>Find</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data = { 'layout' =&gt; layout, 'posts' =&gt; posts.sort.reverse!, 'tag' =&gt; tag }
-</code></pre></div></div>
-
-<p>and change it to something like:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data = { 'layout' =&gt; layout, 'posts' =&gt; posts.sort.reverse!, 'tag' =&gt; tag, 'title' =&gt; 'Posts about' + ' ' + tag }
-</code></pre></div></div>
-
-<p>You can add or change other page setting like this. For example I needed to remove lang value for multilang site and did it like this: <code class="language-plaintext highlighter-rouge">'lang' =&gt; ''</code>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="ruby" /><summary type="html"><![CDATA[Find Ruby: where ruby]]></summary></entry><entry xml:lang="en"><title type="html">If map() with template literal generate extra characters</title><link href="https://vallek.github.io/webdevtips/en/map-symbols-join" rel="alternate" type="text/html" title="If map() with template literal generate extra characters" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/map-symbols-join</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/map-symbols-join"><![CDATA[<p>If you use the <code class="language-plaintext highlighter-rouge">map()</code> method and as a result of executing a function with a template literal you have extra characters from the array (commas, brackets), then apply <code class="language-plaintext highlighter-rouge">join()</code> method after <code class="language-plaintext highlighter-rouge">map()</code>.</p>
+<p>Таким же образом вы можете добавить или изменить здесь другие параметры страницы. Например, для мультиязычной версии сайта мне нужно было убрать значение lang у страниц с тегами. И я добавил <code class="language-plaintext highlighter-rouge">'lang' =&gt; ''</code>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="ruby" /><summary type="html"><![CDATA[Если вы используете расширение jekyll-tagging дял Jekyll, то могли заметить, что на страницах с тегами нет заголовка. Это можно исправить, отредактировав само расширение, то есть ruby gem.]]></summary></entry><entry xml:lang="en"><title type="html">If map() with template literal generate extra characters</title><link href="https://vallek.github.io/webdevtips/en/map-symbols-join" rel="alternate" type="text/html" title="If map() with template literal generate extra characters" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/map-symbols-join</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/map-symbols-join"><![CDATA[<p>If you use the <code class="language-plaintext highlighter-rouge">map()</code> method and as a result of executing a function with a template literal you have extra characters from the array (commas, brackets), then apply <code class="language-plaintext highlighter-rouge">join()</code> method after <code class="language-plaintext highlighter-rouge">map()</code>.</p>
 
 <p>Like this:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let variable = array.map(el =&gt; {
@@ -82,154 +136,4 @@
 		// code with template literal
 		return result;
 	}).join('');
-</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[Если вы используете метод map() и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после map() метод join().]]></summary></entry><entry xml:lang="en"><title type="html">How to build static page with Node.js and Github Actions</title><link href="https://vallek.github.io/webdevtips/en/build-static-node-github-actions" rel="alternate" type="text/html" title="How to build static page with Node.js and Github Actions" /><published>2023-06-26T10:38:00+03:00</published><updated>2023-06-26T10:38:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/build-static-node-github-actions</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/build-static-node-github-actions"><![CDATA[<h2 id="why">Why</h2>
-<p>If you need to build on a timer (once a day, for example) one static page with a complex template with data from API that you do not want to load, then this method can help you. I used it for <a href="https://vallek.github.io/animatable-css/">list of animatable CSS properties</a>. In all other cases, it may be better to choose a normal backend server)</p>
-
-<h2 id="how-to">How to</h2>
-<p>First of all create a github token. Go to account settings &gt; developer settings &gt; Personal access tokens. I chose classic. Set name and expiration. Save it somewhere.</p>
-
-<p>In remote repo on github:</p>
-
-<ol>
-  <li>Create production folder. I use <code class="language-plaintext highlighter-rouge">dist</code> in this example</li>
-  <li>Create gh-pages branch</li>
-  <li>In repo settings &gt; Actions &gt; General &gt; Workflow permissions. Set to <code class="language-plaintext highlighter-rouge">Read AND WRITE</code>.</li>
-  <li>Create Github Action</li>
-</ol>
-
-<p>Action code:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: Build and Deploy to GitHub pages
-on:
-  schedule:
-    - cron: '0 9 * * *'
-  push:
-    paths-ignore:
-      - 'dist/index.html'
-      - 'README.md'
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Generate static files
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build
-
-    - name: Init new repo in dist folder and commit generated files
-      run: |
-        cd dist/
-        git init
-        git add -A
-        git config --global --add safe.directory /github/workspace
-        git config --local user.email "email@email.com"
-        git config --local user.name "username"
-        git commit -m 'deploy'
-        
-    - name: Force push to destination branch
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: gh-pages
-        force: true
-        directory: dist
-</code></pre></div></div>
-<p><strong>IMPORTANT NOTES ABOUT ACTION</strong>:</p>
-<ol>
-  <li>Make sure to push all node files (node_modules and so on)</li>
-  <li>BUT DO NOT PUSH static index.html. Let github create it. Add it to .gitignore</li>
-  <li><code class="language-plaintext highlighter-rouge">actions/checkout@v2</code> - only worked with <strong>v2</strong> for me</li>
-  <li>Make sure <code class="language-plaintext highlighter-rouge">npm run build</code> runs the right js file. Set in <code class="language-plaintext highlighter-rouge">package.json</code> in <code class="language-plaintext highlighter-rouge">build</code>. Mine is <code class="language-plaintext highlighter-rouge">node index.js</code>.</li>
-  <li>Will not work without <code class="language-plaintext highlighter-rouge">git config --global --add safe.directory /github/workspace</code>. Before disabling, make sure you understand this security measure, and <a href="https://github.com/git/git/commit/8959555cee7ec045958f9b6dd62e541affb7e7d9">why it exists</a>. You should not do this if your repositories are stored on a shared drive. See <a href="https://stackoverflow.com/a/71904131/9749171">this answer</a>.</li>
-  <li>Make sure <code class="language-plaintext highlighter-rouge">cd dist/</code> and <code class="language-plaintext highlighter-rouge">directory: dist</code> have the right path for your prod folder</li>
-  <li>Make sure your branch main name is right</li>
-  <li>I run build on push changes (obviously) but also on timer once a day. This is what <code class="language-plaintext highlighter-rouge">schedule</code> is for. It’s in <a href="https://crontab.guru/#0_24_*_*_*">cron format</a> and UTC time.</li>
-  <li>Original version had <code class="language-plaintext highlighter-rouge">user.email "action@github.com"</code> and <code class="language-plaintext highlighter-rouge">user.name "GitHub Action"</code> to not flood your own commit history. If build is not working try to put your own user data here.</li>
-  <li><code class="language-plaintext highlighter-rouge">paths-ignore</code> allows you to not run build on pushing files when it’s not needed.</li>
-</ol>
-
-<p>Note that my action is different from the source.</p>]]></content><author><name></name></author><category term="github" /><category term="nodejs" /><summary type="html"><![CDATA[Why If you need to build on a timer (once a day, for example) one static page with a complex template with data from API that you do not want to load, then this method can help you. I used it for list of animatable CSS properties. In all other cases, it may be better to choose a normal backend server)]]></summary></entry><entry xml:lang="ru"><title type="html">Как генерировать статичный html файл на Node.js и Github Actions</title><link href="https://vallek.github.io/webdevtips/ru/build-static-node-github-actions" rel="alternate" type="text/html" title="Как генерировать статичный html файл на Node.js и Github Actions" /><published>2023-06-26T10:38:00+03:00</published><updated>2023-06-26T10:38:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/build-static-node-github-actions</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/build-static-node-github-actions"><![CDATA[<h2 id="зачем-это-нужно">Зачем это нужно</h2>
-<p>Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для <a href="https://vallek.github.io/animatable-css/">списка анимируемых CSS свойств</a>. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)</p>
-
-<h2 id="инструкция">Инструкция</h2>
-<p>Прежде всего создайте github token. Откройте настройки аккаунта (не репозитория) &gt; developer settings &gt; Personal access tokens. Я выбрал классический. Установите имя и дату окончания. Сохраните токен где-то у себя (как пароль).</p>
-
-<p>Для репозитория на гитхабе:</p>
-
-<ol>
-  <li>Создайте папку для продакшена. Я использую ‘dist’ в этом примере</li>
-  <li>Создайте ветку gh-pages</li>
-  <li>В настройках репозитория &gt; Actions &gt; General &gt; Workflow permissions. Выберете <code class="language-plaintext highlighter-rouge">Read AND WRITE</code>.</li>
-  <li>Создайте Github Action</li>
-</ol>
-
-<p>Код экшена:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: Build and Deploy to GitHub pages
-on:
-  schedule:
-    - cron: '0 9 * * *'
-  push:
-    paths-ignore:
-      - 'dist/index.html'
-      - 'README.md'
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Generate static files
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build
-
-    - name: Init new repo in dist folder and commit generated files
-      run: |
-        cd dist/
-        git init
-        git add -A
-        git config --global --add safe.directory /github/workspace
-        git config --local user.email "email@email.com"
-        git config --local user.name "username"
-        git commit -m 'deploy'
-        
-    - name: Force push to destination branch
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: gh-pages
-        force: true
-        directory: dist
-</code></pre></div></div>
-<p><strong>ВАЖНЫЕ ЗАМЕЧАНИЯ</strong>:</p>
-<ol>
-  <li>Убедитесь, что вы загрузили все файлы ноды (node_modules и так далее).</li>
-  <li>НО НЕ пуште статический index.html. Пусть github создает его сам. Добавьте его в .gitignore</li>
-  <li><code class="language-plaintext highlighter-rouge">actions/checkout@v2</code> - у меня работало только с <strong>v2</strong></li>
-  <li>Убедитесь, что “npm run build” запускает правильный js-файл. Задайте в <code class="language-plaintext highlighter-rouge">package.json</code> в <code class="language-plaintext highlighter-rouge">build</code>. Мой - это <code class="language-plaintext highlighter-rouge">node index.js</code>.</li>
-  <li>Не будет работать без строчки <code class="language-plaintext highlighter-rouge">git config --global --add safe.directory /github/workspace</code>. Перед отключением убедитесь, что вы понимаете эту меру безопасности и <a href="https://github.com/git/git/commit/8959555cee7ec045958f9b6dd62e541affb7e7d9">почему она существует</a>. Подробности в <a href="https://stackoverflow.com/a/71904131/9749171">этом ответе</a>.</li>
-  <li>Убедитесь, что <code class="language-plaintext highlighter-rouge">cd dist/</code> и <code class="language-plaintext highlighter-rouge">directory: dist</code> указывают правильный путь к вашей папке прода</li>
-  <li>Убедитесь, что название вашей главной ветки указано правильно</li>
-  <li>Я запускаю сборку по  пушу изменений (очевидно), но также по таймеру один раз в день. Именно для этого существует <code class="language-plaintext highlighter-rouge">schedule</code>. Уазывается в формате <a href="https://crontab.guru/#0_24_ *_*_*">cron</a> и универсальному UTC времени.</li>
-  <li>В оригинальной версии в качестве юзера указан <code class="language-plaintext highlighter-rouge">user.email "action@github.com"</code> и <code class="language-plaintext highlighter-rouge">user.name "GitHub Action"</code>. Это бот, который может коммитить вместо вас, чтобы не зафлудить вашу собственную историю коммитов. Если сборка не работает попробуйте поменять на свои данные.</li>
-  <li><code class="language-plaintext highlighter-rouge">paths-ignore</code> позволяет вам не запускать сборку при пуше файлов, когда это не нужно.</li>
-</ol>
-
-<p>Обратите внимание, что мой action отличается от источника.</p>]]></content><author><name></name></author><category term="github" /><category term="nodejs" /><summary type="html"><![CDATA[Зачем это нужно Если вам нужно собирать по таймеру (раз в день например) одну статичную страницу со сложным шаблоном из данных с API, который вы не хотите нагружать, то это способ может вам помочь. Я использовал его для списка анимируемых CSS свойств. Во всех остальных случаях возможно лучше выбрать нормальный бэкэнд сервер)]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[Если вы используете метод map() и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после map() метод join().]]></summary></entry></feed>

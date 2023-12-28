@@ -1,6 +1,26 @@
 [
   
     {
+      "title"    : "Тройная переадресация",
+      "category" : "",
+      "tags"     : "http, html, javascript",
+      "url"      : "/webdevtips/ru/triple-redirect",
+      "date"     : "2023-12-28 03:00:00 +0300",
+      "content"  : "Если вы хотите переадресовать посетителя на новый сайт, но у вас нет доступа к серверу (например, если сайт на Github Pages) то можно использовать “тройную” переадресацию без HTTP. А именно:  В HTML через тег meta http-equiv=&quot;refresh&quot;. Число после content - задержка в секундах. Можно поставить 1, 5 и т.п. Дальше сам адрес.  С помощью JS внутри script в head через window.location.href  На случай, если это все не сработает, вставить ссылку в содержимое и попросить посетителей перейти самим.Результат выглядит примерно так:&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;ru&quot;&amp;gt;&amp;lt;head&amp;gt; &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt; &amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&amp;gt; &amp;lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=https://example.com/&quot;&amp;gt; &amp;lt;title&amp;gt;title&amp;lt;/title&amp;gt; &amp;lt;link rel=&quot;canonical&quot; href=&quot;https://example.com/&quot;&amp;gt; &amp;lt;script&amp;gt;  window.location.href = &quot;https://example.com/&quot; &amp;lt;/script&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;Сайт переехал на новый домен &amp;lt;a href=&quot;https://example.com/&quot;&amp;gt;https://example.com/&amp;lt;/a&amp;gt;. Вас должно автоматически переадресовать на новый адрес. Если этого не произошло, пожалуйста, нажмите на &amp;lt;a href=&quot;https://example.com/&quot;&amp;gt;ссылку&amp;lt;/a&amp;gt; сами)&amp;lt;/h1&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;Но, если есть возможность, то лучше начать с HTTP.",
+      "lang": "ru"
+    } ,
+  
+    {
+      "title"    : "Тriple redirect",
+      "category" : "",
+      "tags"     : "http, html, javascript",
+      "url"      : "/webdevtips/en/triple-redirect",
+      "date"     : "2023-12-28 03:00:00 +0300",
+      "content"  : "If you need to redirect users to a new address, but you don’t have a server, you can use “triple” redirection. It includes:  meta tag in HTML with meta http-equiv=&quot;refresh&quot;. The number after content is a delay in seconds. You can set to 1, 5 and so on.  JS code inside script in the head with window.location.href  In case of all that somehow didn’t work put text explanation for users with a link.Result could look like this:&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt; &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt; &amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&amp;gt; &amp;lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=https://example.com/&quot;&amp;gt; &amp;lt;title&amp;gt;title&amp;lt;/title&amp;gt; &amp;lt;link rel=&quot;canonical&quot; href=&quot;https://example.com/&quot;&amp;gt; &amp;lt;script&amp;gt;  window.location.href = &quot;https://example.com/&quot; &amp;lt;/script&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;The website moves to &amp;lt;a href=&quot;https://example.com/&quot;&amp;gt;https://example.com/&amp;lt;/a&amp;gt;. If you weren&#39;t redirected please click a &amp;lt;a href=&quot;https://example.com/&quot;&amp;gt;link&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;Although it’s better to start with HTTP if you can.",
+      "lang": "en"
+    } ,
+  
+    {
       "title"    : "Проблемы с темной/светлой темой в Firefox",
       "category" : "",
       "tags"     : "firefox, dark theme",
