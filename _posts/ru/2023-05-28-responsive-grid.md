@@ -6,7 +6,7 @@ notebook: frontend
 tags: [css, responsive, grid]
 sources: ['https://www.freecodecamp.org/news/how-to-make-your-html-responsive-by-adding-a-single-line-of-css-2a62de81e431/']
 ---
-Подходит для рядов элементов а-ля галлерея, когда не нужен точный дизайн на адаптиве. Пример: карточки на моем [портфолио](https://vallek.github.io/Portfolio/index.html)
+Подходит для рядов элементов а-ля галлерея, когда не нужен точный дизайн на адаптиве. Пример: карточки на моем [портфолио](https://vallek.github.io/index.html)
 
 Версия с min()
 ```

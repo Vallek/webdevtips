@@ -6,7 +6,7 @@ notebook: frontend
 tags: [css, responsive, grid]
 sources: ['https://www.freecodecamp.org/news/how-to-make-your-html-responsive-by-adding-a-single-line-of-css-2a62de81e431/']
 ---
-It is suitable for rows of elements a la gallery, when you do not need to follow the design very accurately. Example: cards on my [portfolio](https://vallek.github.io/Portfolio/en/index.html)
+It is suitable for rows of elements a la gallery, when you do not need to follow the design very accurately. Example: cards on my [portfolio](https://vallek.github.io/en/index.html)
 
 Version with min()
 ```
