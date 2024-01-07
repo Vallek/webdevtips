@@ -1,4 +1,114 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2023-12-30T17:29:30+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">Тriple redirect</title><link href="https://vallek.github.io/webdevtips/en/triple-redirect" rel="alternate" type="text/html" title="Тriple redirect" /><published>2023-12-28T03:00:00+03:00</published><updated>2023-12-28T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/triple-redirect</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/triple-redirect"><![CDATA[<p>If you need to redirect users to a new address, but you don’t have a server, you can use “triple” redirection. It includes:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2024-01-07T23:08:18+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">White flashing with dark theme on page load</title><link href="https://vallek.github.io/webdevtips/en/dark-theme-flashing" rel="alternate" type="text/html" title="White flashing with dark theme on page load" /><published>2024-01-07T03:00:00+03:00</published><updated>2024-01-07T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/dark-theme-flashing</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/dark-theme-flashing"><![CDATA[<p>Using <a href="/webdevtipsdocs/en/dark-theme-detect">this method</a> to make a dark theme your site users could see a white flashing of default page background before CSS and JS are loaded. It could also happened with other methods.</p>
+
+<p>You can fix it by moving part of JS that detect saved and preferred theme to the very start of the <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> element in html. Like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;body&gt;
+&lt;script&gt;
+	const thisPage = document.querySelector('.page');
+
+	// Check if user set dark theme before
+	if (localStorage.getItem('this-site-theme') == 'dark') {
+		thisPage.classList.add('dark');
+	}
+	// Check if user prefers dark theme
+	if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		thisPage.classList.add('dark');
+	}
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>Leave the rest in separate JS file:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'use strict';
+
+const page = document.querySelector('.page');
+const lightThemeLink = document.querySelector('.themes__link_light');
+const darkThemeLink = document.querySelector('.themes__link_dark');
+
+// Check theme preference switch real time
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =&gt; {
+	const newColorScheme = event.matches ? 'dark' : 'light';
+	if (newColorScheme == 'dark') {
+		page.classList.add('dark');
+	}
+	if (newColorScheme == 'light') {
+		page.classList.remove('dark');
+	} 
+});
+
+// Turn dark theme on
+darkThemeLink.addEventListener('click', setDark);
+function setDark(el) {
+	el.preventDefault();
+	page.classList.add('dark');
+	localStorage.setItem('this-site-theme', 'dark');
+}
+
+// Turn light theme on
+lightThemeLink.addEventListener('click', setLight);
+function setLight(el) {
+	el.preventDefault();
+	page.classList.remove('dark');
+		localStorage.setItem('this-site-theme', 'light');
+}
+</code></pre></div></div>
+
+<p>Notice that both scripts use <code class="language-plaintext highlighter-rouge">body</code> node but with different variables. Not the most elegant solution but it keeps scripts independent. Just don’t do this with 500 nodes)</p>]]></content><author><name></name></author><category term="css" /><category term="dark theme" /><category term="javascript" /><category term="accessibility" /><summary type="html"><![CDATA[Using this method to make a dark theme your site users could see a white flashing of default page background before CSS and JS are loaded. It could also happened with other methods.]]></summary></entry><entry xml:lang="ru"><title type="html">Темная тема мигает белым при загрузке страницы</title><link href="https://vallek.github.io/webdevtips/ru/dark-theme-flashing" rel="alternate" type="text/html" title="Темная тема мигает белым при загрузке страницы" /><published>2024-01-07T03:00:00+03:00</published><updated>2024-01-07T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/dark-theme-flashing</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/dark-theme-flashing"><![CDATA[<p>При использовании темной темы по <a href="/webdevtipsdocs/ru/dark-theme-detect">этому рецепту</a> пользователь может видеть “вспышку” белого цвета. Это нестилизованная страница с белым фоном по умолчанию, которую видно, до загрузки CSS и JS.</p>
+
+<p>Это возможно исправить, если перенести часть JS определяющую сохраненную и предпочитаемую тему в <strong>самое начало</strong> тело страницы, то есть внутрь <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> в html.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;body&gt;
+&lt;script&gt;
+	const thisPage = document.querySelector('.page');
+
+	// Check if user set dark theme before
+	if (localStorage.getItem('this-site-theme') == 'dark') {
+		thisPage.classList.add('dark');
+	}
+	// Check if user prefers dark theme
+	if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		thisPage.classList.add('dark');
+	}
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>В отдельном JS файле останется все остальное:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'use strict';
+
+const page = document.querySelector('.page');
+const lightThemeLink = document.querySelector('.themes__link_light');
+const darkThemeLink = document.querySelector('.themes__link_dark');
+
+// Check theme preference switch real time
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =&gt; {
+	const newColorScheme = event.matches ? 'dark' : 'light';
+	if (newColorScheme == 'dark') {
+		page.classList.add('dark');
+	}
+	if (newColorScheme == 'light') {
+		page.classList.remove('dark');
+	} 
+});
+
+// Turn dark theme on
+darkThemeLink.addEventListener('click', setDark);
+function setDark(el) {
+	el.preventDefault();
+	page.classList.add('dark');
+	localStorage.setItem('this-site-theme', 'dark');
+}
+
+// Turn light theme on
+lightThemeLink.addEventListener('click', setLight);
+function setLight(el) {
+	el.preventDefault();
+	page.classList.remove('dark');
+		localStorage.setItem('this-site-theme', 'light');
+}
+</code></pre></div></div>
+
+<p>Обратите внимание, что и там и там используется узел <code class="language-plaintext highlighter-rouge">body</code>, но с разными именами переменных. Не самый изящный способ, но позволяющий не думать о связанности кода. В данном случае влияние на скорость нулевое, но экстраполировать на 500 узлов, конечно, не стоит)</p>]]></content><author><name></name></author><category term="css" /><category term="dark theme" /><category term="javascript" /><category term="accessibility" /><summary type="html"><![CDATA[При использовании темной темы по этому рецепту пользователь может видеть “вспышку” белого цвета. Это нестилизованная страница с белым фоном по умолчанию, которую видно, до загрузки CSS и JS.]]></summary></entry><entry xml:lang="en"><title type="html">Тriple redirect</title><link href="https://vallek.github.io/webdevtips/en/triple-redirect" rel="alternate" type="text/html" title="Тriple redirect" /><published>2023-12-28T03:00:00+03:00</published><updated>2023-12-28T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/triple-redirect</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/triple-redirect"><![CDATA[<p>If you need to redirect users to a new address, but you don’t have a server, you can use “triple” redirection. It includes:</p>
 
 <ol>
   <li>meta tag in <strong>HTML</strong> with <code class="language-plaintext highlighter-rouge">meta http-equiv="refresh"</code>. The number after content is a delay in seconds. You can set to 1, 5 and so on.</li>
@@ -52,31 +162,19 @@
 &lt;/html&gt;
 </code></pre></div></div>
 
-<p>Но, если есть возможность, то лучше <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Redirections">начать с HTTP</a>.</p>]]></content><author><name></name></author><category term="http" /><category term="html" /><category term="javascript" /><summary type="html"><![CDATA[Если вы хотите переадресовать посетителя на новый сайт, но у вас нет доступа к серверу (например, если сайт на Github Pages) то можно использовать “тройную” переадресацию без HTTP. А именно:]]></summary></entry><entry xml:lang="en"><title type="html">Problems with dark/light themes in Firefox</title><link href="https://vallek.github.io/webdevtips/en/firefox-dark-theme" rel="alternate" type="text/html" title="Problems with dark/light themes in Firefox" /><published>2023-12-09T03:00:00+03:00</published><updated>2023-12-09T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/firefox-dark-theme</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/firefox-dark-theme"><![CDATA[<p>If you have problems with dark/light themes in Firefox. Browser not following system setting or you don’t want it to follow theme (Firefox does it since 95) or you have problems with custom dark theme and so on.</p>
-
-<ol>
-  <li>Go to about:config</li>
-  <li>Find <code class="language-plaintext highlighter-rouge">layout.css.prefers-color-scheme.content-override</code></li>
-  <li>Dark (0), light (1), system (2) or browser (3).</li>
-</ol>]]></content><author><name></name></author><category term="firefox" /><category term="dark theme" /><summary type="html"><![CDATA[If you have problems with dark/light themes in Firefox. Browser not following system setting or you don’t want it to follow theme (Firefox does it since 95) or you have problems with custom dark theme and so on.]]></summary></entry><entry xml:lang="ru"><title type="html">Проблемы с темной/светлой темой в Firefox</title><link href="https://vallek.github.io/webdevtips/ru/firefox-dark-theme" rel="alternate" type="text/html" title="Проблемы с темной/светлой темой в Firefox" /><published>2023-12-09T03:00:00+03:00</published><updated>2023-12-09T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/firefox-dark-theme</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/firefox-dark-theme"><![CDATA[<p>Для тех у кого проблемы в Firefox с настройками темной темы. А именно: не следует системной настройке или вы хотите, чтобы не следовал цветовой теме в браузере (после Firefox 95 пользовательские темы теперь могут зачем-то переключить темную/светлую) или проблемы с usercss, кастомной темной темой на сайте и т.п.</p>
+<p>Но, если есть возможность, то лучше <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Redirections">начать с HTTP</a>.</p>]]></content><author><name></name></author><category term="http" /><category term="html" /><category term="javascript" /><summary type="html"><![CDATA[Если вы хотите переадресовать посетителя на новый сайт, но у вас нет доступа к серверу (например, если сайт на Github Pages) то можно использовать “тройную” переадресацию без HTTP. А именно:]]></summary></entry><entry xml:lang="ru"><title type="html">Проблемы с темной/светлой темой в Firefox</title><link href="https://vallek.github.io/webdevtips/ru/firefox-dark-theme" rel="alternate" type="text/html" title="Проблемы с темной/светлой темой в Firefox" /><published>2023-12-09T03:00:00+03:00</published><updated>2023-12-09T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/firefox-dark-theme</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/firefox-dark-theme"><![CDATA[<p>Для тех у кого проблемы в Firefox с настройками темной темы. А именно: не следует системной настройке или вы хотите, чтобы не следовал цветовой теме в браузере (после Firefox 95 пользовательские темы теперь могут зачем-то переключить темную/светлую) или проблемы с usercss, кастомной темной темой на сайте и т.п.</p>
 
 <ol>
   <li>Идете в about:config</li>
   <li>Находите <code class="language-plaintext highlighter-rouge">layout.css.prefers-color-scheme.content-override</code></li>
   <li>Темная (0), светлая (1), как в системе (2) или как в браузере (3).</li>
-</ol>]]></content><author><name></name></author><category term="firefox" /><category term="dark theme" /><summary type="html"><![CDATA[Для тех у кого проблемы в Firefox с настройками темной темы. А именно: не следует системной настройке или вы хотите, чтобы не следовал цветовой теме в браузере (после Firefox 95 пользовательские темы теперь могут зачем-то переключить темную/светлую) или проблемы с usercss, кастомной темной темой на сайте и т.п.]]></summary></entry><entry xml:lang="ru"><title type="html">Как убрать localhost из jekyll-feed</title><link href="https://vallek.github.io/webdevtips/ru/localhost-in-feed" rel="alternate" type="text/html" title="Как убрать localhost из jekyll-feed" /><published>2023-07-10T10:33:00+03:00</published><updated>2023-07-10T10:33:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/localhost-in-feed</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/localhost-in-feed"><![CDATA[<p><code class="language-plaintext highlighter-rouge">jekyll serve</code> может заменять url вашего сайта в фиде на <code class="language-plaintext highlighter-rouge">localhost</code>. Это можно исправить командой <code class="language-plaintext highlighter-rouge">jekyll build</code>, каждный раз отдельно выполняя сборку для продакшена. Но это не реальное решение проблемы.</p>
+</ol>]]></content><author><name></name></author><category term="firefox" /><category term="dark theme" /><summary type="html"><![CDATA[Для тех у кого проблемы в Firefox с настройками темной темы. А именно: не следует системной настройке или вы хотите, чтобы не следовал цветовой теме в браузере (после Firefox 95 пользовательские темы теперь могут зачем-то переключить темную/светлую) или проблемы с usercss, кастомной темной темой на сайте и т.п.]]></summary></entry><entry xml:lang="en"><title type="html">Problems with dark/light themes in Firefox</title><link href="https://vallek.github.io/webdevtips/en/firefox-dark-theme" rel="alternate" type="text/html" title="Problems with dark/light themes in Firefox" /><published>2023-12-09T03:00:00+03:00</published><updated>2023-12-09T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/firefox-dark-theme</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/firefox-dark-theme"><![CDATA[<p>If you have problems with dark/light themes in Firefox. Browser not following system setting or you don’t want it to follow theme (Firefox does it since 95) or you have problems with custom dark theme and so on.</p>
 
-<p>Вместо этого можно вручную отредактировать расширение jekyll-feed и добавить туда ваш адрес.</p>
-
-<p>Найдите папку с Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
-
-<p>Путь к гемам: <code class="language-plaintext highlighter-rouge">Ruby\lib\ruby\gems\version\gems\</code></p>
-
-<p>Откройте файл <code class="language-plaintext highlighter-rouge">jekyll-feed-0.17.0\lib\jekyll-feed\feed.xml</code></p>
-
-<p>Это шаблон для rss фида. Вам нужно найти все места с <code class="language-plaintext highlighter-rouge">{{ page.url | absolute_url }}</code> и <code class="language-plaintext highlighter-rouge">{{ post.url | absolute_url }}</code> и заменить их на <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ page.url }}</code> и <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ post.url }}</code>.</p>
-
-<p>Не перепутайте посты со страницами.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[jekyll serve может заменять url вашего сайта в фиде на localhost. Это можно исправить командой jekyll build, каждный раз отдельно выполняя сборку для продакшена. Но это не реальное решение проблемы.]]></summary></entry><entry xml:lang="en"><title type="html">How to remove localhost from jekyll-feed</title><link href="https://vallek.github.io/webdevtips/en/localhost-in-feed" rel="alternate" type="text/html" title="How to remove localhost from jekyll-feed" /><published>2023-07-10T10:33:00+03:00</published><updated>2023-07-10T10:33:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/localhost-in-feed</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/localhost-in-feed"><![CDATA[<p><code class="language-plaintext highlighter-rouge">jekyll serve</code> might put <code class="language-plaintext highlighter-rouge">localhost</code> in feed urls. One way to fix it is just use <code class="language-plaintext highlighter-rouge">jekyll build</code> for production after local server test. But that’s not really a fix.</p>
+<ol>
+  <li>Go to about:config</li>
+  <li>Find <code class="language-plaintext highlighter-rouge">layout.css.prefers-color-scheme.content-override</code></li>
+  <li>Dark (0), light (1), system (2) or browser (3).</li>
+</ol>]]></content><author><name></name></author><category term="firefox" /><category term="dark theme" /><summary type="html"><![CDATA[If you have problems with dark/light themes in Firefox. Browser not following system setting or you don’t want it to follow theme (Firefox does it since 95) or you have problems with custom dark theme and so on.]]></summary></entry><entry xml:lang="en"><title type="html">How to remove localhost from jekyll-feed</title><link href="https://vallek.github.io/webdevtips/en/localhost-in-feed" rel="alternate" type="text/html" title="How to remove localhost from jekyll-feed" /><published>2023-07-10T10:33:00+03:00</published><updated>2023-07-10T10:33:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/localhost-in-feed</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/localhost-in-feed"><![CDATA[<p><code class="language-plaintext highlighter-rouge">jekyll serve</code> might put <code class="language-plaintext highlighter-rouge">localhost</code> in feed urls. One way to fix it is just use <code class="language-plaintext highlighter-rouge">jekyll build</code> for production after local server test. But that’s not really a fix.</p>
 
 <p>But you can manually edit jekyll-feed gem and put your url there.</p>
 
@@ -88,7 +186,19 @@
 
 <p>This is a template for your feed xml file. You have to find instances of <code class="language-plaintext highlighter-rouge">{{ page.url | absolute_url }}</code> and <code class="language-plaintext highlighter-rouge">{{ post.url | absolute_url }}</code> and replace them with <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ page.url }}</code> and <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ post.url }}</code>.</p>
 
-<p>Make sure that you didn’t mix up posts and pages.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[jekyll serve might put localhost in feed urls. One way to fix it is just use jekyll build for production after local server test. But that’s not really a fix.]]></summary></entry><entry xml:lang="en"><title type="html">How to set tags pages title for jekyll-tagging</title><link href="https://vallek.github.io/webdevtips/en/jekyll-tagging-title" rel="alternate" type="text/html" title="How to set tags pages title for jekyll-tagging" /><published>2023-07-10T09:54:00+03:00</published><updated>2023-07-10T09:54:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/jekyll-tagging-title</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/jekyll-tagging-title"><![CDATA[<p>Find Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
+<p>Make sure that you didn’t mix up posts and pages.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[jekyll serve might put localhost in feed urls. One way to fix it is just use jekyll build for production after local server test. But that’s not really a fix.]]></summary></entry><entry xml:lang="ru"><title type="html">Как убрать localhost из jekyll-feed</title><link href="https://vallek.github.io/webdevtips/ru/localhost-in-feed" rel="alternate" type="text/html" title="Как убрать localhost из jekyll-feed" /><published>2023-07-10T10:33:00+03:00</published><updated>2023-07-10T10:33:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/localhost-in-feed</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/localhost-in-feed"><![CDATA[<p><code class="language-plaintext highlighter-rouge">jekyll serve</code> может заменять url вашего сайта в фиде на <code class="language-plaintext highlighter-rouge">localhost</code>. Это можно исправить командой <code class="language-plaintext highlighter-rouge">jekyll build</code>, каждный раз отдельно выполняя сборку для продакшена. Но это не реальное решение проблемы.</p>
+
+<p>Вместо этого можно вручную отредактировать расширение jekyll-feed и добавить туда ваш адрес.</p>
+
+<p>Найдите папку с Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
+
+<p>Путь к гемам: <code class="language-plaintext highlighter-rouge">Ruby\lib\ruby\gems\version\gems\</code></p>
+
+<p>Откройте файл <code class="language-plaintext highlighter-rouge">jekyll-feed-0.17.0\lib\jekyll-feed\feed.xml</code></p>
+
+<p>Это шаблон для rss фида. Вам нужно найти все места с <code class="language-plaintext highlighter-rouge">{{ page.url | absolute_url }}</code> и <code class="language-plaintext highlighter-rouge">{{ post.url | absolute_url }}</code> и заменить их на <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ page.url }}</code> и <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ post.url }}</code>.</p>
+
+<p>Не перепутайте посты со страницами.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[jekyll serve может заменять url вашего сайта в фиде на localhost. Это можно исправить командой jekyll build, каждный раз отдельно выполняя сборку для продакшена. Но это не реальное решение проблемы.]]></summary></entry><entry xml:lang="en"><title type="html">How to set tags pages title for jekyll-tagging</title><link href="https://vallek.github.io/webdevtips/en/jekyll-tagging-title" rel="alternate" type="text/html" title="How to set tags pages title for jekyll-tagging" /><published>2023-07-10T09:54:00+03:00</published><updated>2023-07-10T09:54:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/jekyll-tagging-title</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/jekyll-tagging-title"><![CDATA[<p>Find Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
 
 <p>Gems are at: <code class="language-plaintext highlighter-rouge">Ruby\lib\ruby\gems\version\gems\</code></p>
 
@@ -122,18 +232,4 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data = { 'layout' =&gt; layout, 'posts' =&gt; posts.sort.reverse!, 'tag' =&gt; tag, 'title' =&gt; 'Posts about' + ' ' + tag }
 </code></pre></div></div>
 
-<p>Таким же образом вы можете добавить или изменить здесь другие параметры страницы. Например, для мультиязычной версии сайта мне нужно было убрать значение lang у страниц с тегами. И я добавил <code class="language-plaintext highlighter-rouge">'lang' =&gt; ''</code>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="ruby" /><summary type="html"><![CDATA[Если вы используете расширение jekyll-tagging дял Jekyll, то могли заметить, что на страницах с тегами нет заголовка. Это можно исправить, отредактировав само расширение, то есть ruby gem.]]></summary></entry><entry xml:lang="en"><title type="html">If map() with template literal generate extra characters</title><link href="https://vallek.github.io/webdevtips/en/map-symbols-join" rel="alternate" type="text/html" title="If map() with template literal generate extra characters" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/map-symbols-join</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/map-symbols-join"><![CDATA[<p>If you use the <code class="language-plaintext highlighter-rouge">map()</code> method and as a result of executing a function with a template literal you have extra characters from the array (commas, brackets), then apply <code class="language-plaintext highlighter-rouge">join()</code> method after <code class="language-plaintext highlighter-rouge">map()</code>.</p>
-
-<p>Like this:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let variable = array.map(el =&gt; {
-		// code with template literal
-		return result;
-	}).join('');
-</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[If you use the map() method and as a result of executing a function with a template literal you have extra characters from the array (commas, brackets), then apply join() method after map().]]></summary></entry><entry xml:lang="ru"><title type="html">Если map() с template literal выдает лишние символы</title><link href="https://vallek.github.io/webdevtips/ru/map-symbols-join" rel="alternate" type="text/html" title="Если map() с template literal выдает лишние символы" /><published>2023-06-26T18:31:00+03:00</published><updated>2023-06-26T18:31:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/map-symbols-join</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/map-symbols-join"><![CDATA[<p>Если вы используете метод <code class="language-plaintext highlighter-rouge">map()</code> и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после <code class="language-plaintext highlighter-rouge">map()</code> метод <code class="language-plaintext highlighter-rouge">join()</code>.</p>
-
-<p>Вот так:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let variable = array.map(el =&gt; {
-		// code with template literal
-		return result;
-	}).join('');
-</code></pre></div></div>]]></content><author><name></name></author><category term="javascript" /><summary type="html"><![CDATA[Если вы используете метод map() и в результате выполнения функции с template литералом внутри у вас остаются лишние символы из массива (запятые, скобки), то достаточно применить после map() метод join().]]></summary></entry></feed>
+<p>Таким же образом вы можете добавить или изменить здесь другие параметры страницы. Например, для мультиязычной версии сайта мне нужно было убрать значение lang у страниц с тегами. И я добавил <code class="language-plaintext highlighter-rouge">'lang' =&gt; ''</code>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="ruby" /><summary type="html"><![CDATA[Если вы используете расширение jekyll-tagging дял Jekyll, то могли заметить, что на страницах с тегами нет заголовка. Это можно исправить, отредактировав само расширение, то есть ruby gem.]]></summary></entry></feed>
