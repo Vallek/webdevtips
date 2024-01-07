@@ -5,7 +5,7 @@ date: 2024-01-07 00:00 +0000
 notebook: frontend
 tags: [css, dark theme, javascript, accessibility]
 ---
-Using [this method]({{site.baseurl}}docs/en/dark-theme-detect) to make a dark theme your site users could see a white flashing of default page background before CSS and JS are loaded. It could also happened with other methods.
+Using [this method]({{site.baseurl}}/en/dark-theme-detect) to make a dark theme your site users could see a white flashing of default page background before CSS and JS are loaded. It could also happened with other methods.
 
 You can fix it by moving part of JS that detect saved and preferred theme to the very start of the `<body>` element in html. Like this:
 
