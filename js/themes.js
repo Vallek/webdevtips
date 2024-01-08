@@ -4,14 +4,6 @@ const page = document.querySelector('.page');
 const lightThemeLink = document.querySelector('.site-nav__link_light');
 const darkThemeLink = document.querySelector('.site-nav__link_dark');
 
-// Check if user set dark theme before
-if (localStorage.getItem('webdevtips-theme') == 'dark') {
-	page.classList.add('dark');
-}
-// Check if user prefers dark theme
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-	page.classList.add('dark');
-}
 // Check theme preference switch real time
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
 	const newColorScheme = event.matches ? 'dark' : 'light';
