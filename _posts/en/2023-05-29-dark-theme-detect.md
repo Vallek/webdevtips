@@ -76,3 +76,5 @@ function setLight(el) {
 This about to cover all cases
 
 CSS has a `prefers-color-scheme` media query, but it has much less support and you can't do it without JS anyway (interactive switching).
+
+To fix white flashing during page loading use [this method]({{site.baseurl}}/en/dark-theme-flashing).
