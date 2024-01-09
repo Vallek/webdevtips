@@ -36,6 +36,7 @@ disqus:
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-sitemap
 
 # jekyll-paginate
 paginate_multiple:
