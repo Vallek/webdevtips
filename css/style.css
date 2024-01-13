@@ -741,6 +741,15 @@ pre > code {
   white-space: nowrap;
 }
 
+/* Last posts */
+.last-posts-list {
+  margin-top: 0;
+  margin-left: 30px;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 /* JS */
 .visually-hidden {
   border: 0;
