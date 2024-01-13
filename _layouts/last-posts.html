@@ -1,8 +1,35 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "ru" }}">
-
-  {%- include head.html -%}
-
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Begin SEO -->
+    <title>Web Dev Tips | {{ page.title }}</title>
+    <meta property="og:title" content="Web Dev Tips">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta name="author" content="Vallek">
+    {% if page.lang == "en" %}
+    <meta name="description" content="Frontend, web development and pc setup knowledge base">
+    <meta property="og:description" content="Frontend, web development and pc setup knowledge base">
+    {% else %}
+    <meta name="description" content="База знаний по фронтенду, веб-разработке и настройке пк">
+    <meta property="og:description" content="База знаний по фронтенду, веб-разработке и настройке пк">
+    {% endif %}
+    <link rel="canonical" href="https://vallek.github.io/webdevtips{{page.url}}">
+    <meta property="og:url" content="https://vallek.github.io/webdevtips{{page.url}}">
+    <meta property="og:site_name" content="Web Dev Tips">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta property="twitter:title" content="Web Dev Tips">
+    <meta name="twitter:image" content="https://vallek.github.io/webdevtips/favicon.png">
+    <!-- End SEO -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{site.baseurl}}/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{site.baseurl}}/favicon.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="{{site.baseurl}}/favicon.svg">
+    <link rel="stylesheet" href="{{site.baseurl}}/css/style.css"> 
+  </head>  
   <body>
 
         {{ content }}
