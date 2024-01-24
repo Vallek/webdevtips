@@ -6,6 +6,8 @@ notebook: frontend
 tags: [css, dark theme, javascript, accessibility]
 sources: [https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript/57795495#57795495]
 ---
+**upd:** я сделал [видео гайд по созданию темной темы](https://youtu.be/VWxIhcdQcjc) и исправлению проблем, которые могут возникнуть
+
 На входе
 ```
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
