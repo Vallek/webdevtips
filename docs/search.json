@@ -1,6 +1,46 @@
 [
   
     {
+      "title"    : "Embeded Youtube Lazy Loading по клику",
+      "category" : "",
+      "tags"     : "youtube, lazy load, iframe, html",
+      "url"      : "/webdevtips/ru/youtube-lazy-load",
+      "date"     : "2024-02-05 03:00:00 +0300",
+      "content"  : "Существует множество способов ленивой загрузки ютьюб видео по клику. В основном все они используют сторонние JS-библиотеки, либо, как минимум, какой-то JS код.Но существует способ создать загрузку айфрейма по клику только силами html)Выглядит это так:&amp;lt;iframe class=&quot;video__last-video&quot; width=&quot;350&quot; height=&quot;250&quot; src=&quot;https://www.youtube.com/embed/Ne_ls6OzRF0&quot; title=&quot;Последний видосик на канале&quot; allow=&quot;accelerometer; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen srcdoc=&quot;&amp;lt;title&amp;gt;Последний видосик на канале&amp;lt;/title&amp;gt;&amp;lt;style&amp;gt;*{padding:0;margin:0;overflow:hidden;}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}a:focus-visible span{outline: 3px dashed rgb(255, 19, 255);outline-offset: -5px;}&amp;lt;/style&amp;gt;&amp;lt;a href=&#39;https://www.youtube.com/embed/Ne_ls6OzRF0?autoplay=1&#39;&amp;gt;&amp;lt;img src=&#39;https://i.ytimg.com/vi/Ne_ls6OzRF0/sddefault.jpg&#39; alt=&#39;&#39;&amp;gt;&amp;lt;span&amp;gt;▶&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&quot;&amp;gt;&amp;lt;/iframe&amp;gt;Суть в использовании атрибута srcdoc, который позволяет прописать HTML содержимое, переписывая то, что в src. При этом если туда поместить ссылку с изначальным адресом, то по клику в iframe загрузиться нужное видео.Вы также можете стилизовать lazy load заглушку с помощью элемента style. Кнопка play задается простым символом стрелки в html коде.Такой вот сделай сам lazy load. Этот способ вряд ли подойдет там, где нужно регулярно менять отображаемое видео или если их нужно вставлять часто в разных местах. Но для постоянного видео на статичной странице вполне может подойти, если вы не хотите подключать лишний JS.Я использовал его на своем портфолио, но отказался от lazy load, когда начал чаще вести канал, как раз из-за необходимости постоянно менять видео на последнее.lite-youtube-embed - более продвинутый способ с использованием custom elements от одного из разработчиков Хрома. Также не позволяет использовать плейлист.Я нашел несколько вариантов для плейлиста в сети, но они либо не рабочие, либо не то, что мне нужно. Если найду способ сделать lazy load для последнего видео, обновлю эту заметку. Или можете написать в комментах, если знаете сами)",
+      "lang": "ru"
+    } ,
+  
+    {
+      "title"    : "Как вставить на страницу последнее видео с youtube канала без API",
+      "category" : "",
+      "tags"     : "html, iframe, youtube",
+      "url"      : "/webdevtips/ru/youtube-last-video",
+      "date"     : "2024-02-05 03:00:00 +0300",
+      "content"  : "Чтобы вставить на страницу iframe, который всегда будет показывать последнее видео с ютьюб канала без API:  Узнайте свой код канала. Для этого можно зайти на ютьюб (не студию, а просто) &amp;gt; нажать на аватарку в углу &amp;gt; Настройки &amp;gt; Расширенные настройки. И там будет Идентификатор канала. Кроме того это часть url адреса, которую можно увидеть, если вы не меняли адрес канала на уникальный или в студии в Настройках канала.  Первая буква будет U, а вторая какая-то другая. Нужно поменять вторую на U. То есть в начале будет UU. Например было UCzS4sE_0ltfSz6qx_FUCTdA, а станет UUzS4sE_0ltfSz6qx_FUCTdA.  В значении атрибута src укажите https://www.youtube.com/embed?listType=playlist&amp;amp;list=КОД_КАНАЛА  Получаем что-то вроде&amp;lt;iframe loading=&quot;lazy&quot; class=&quot;video__last-video&quot; width=&quot;350&quot; height=&quot;250&quot; title=&quot;Последний видосик на канале&quot; allow=&quot;accelerometer; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen src=&quot;https://www.youtube.com/embed?listType=playlist&amp;amp;list=UUzS4sE_0ltfSz6qx_FUCTdA&quot;&amp;gt;&amp;lt;/iframe&amp;gt;В итоге у вас получится плейлист всех видео с канала, но показан будет именно последний. Я использую этот подход на своем портфолио.Из минусов: невозможность использования lazy load методов по клику. Впрочем, если вам нужно только одно видео на странице, то это не самая большая проблема. Стоит указать нативный lazy, который не загрузит iframe, пока он не на экране.",
+      "lang": "ru"
+    } ,
+  
+    {
+      "title"    : "Embeded Youtube Lazy Loading on lick",
+      "category" : "",
+      "tags"     : "youtube, lazy load, iframe, html",
+      "url"      : "/webdevtips/en/youtube-lazy-load",
+      "date"     : "2024-02-05 03:00:00 +0300",
+      "content"  : "There are a lot of different youtube video lazy loading methods. Most of them are using js libraries or at least some js code.But you can make it with just html trick)It looks life this&amp;lt;iframe class=&quot;video__last-video&quot; width=&quot;350&quot; height=&quot;250&quot; src=&quot;https://www.youtube.com/embed/Ne_ls6OzRF0&quot; title=&quot;Latest video on channel&quot; allow=&quot;accelerometer; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen srcdoc=&quot;&amp;lt;title&amp;gt;Latest video on channel&amp;lt;/title&amp;gt;&amp;lt;style&amp;gt;*{padding:0;margin:0;overflow:hidden;}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}a:focus-visible span{outline: 3px dashed rgb(255, 19, 255);outline-offset: -5px;}&amp;lt;/style&amp;gt;&amp;lt;a href=&#39;https://www.youtube.com/embed/Ne_ls6OzRF0?autoplay=1&#39;&amp;gt;&amp;lt;img src=&#39;https://i.ytimg.com/vi/Ne_ls6OzRF0/sddefault.jpg&#39; alt=&#39;&#39;&amp;gt;&amp;lt;span&amp;gt;▶&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;&quot;&amp;gt;&amp;lt;/iframe&amp;gt;We are using srcdoc attribute, that lets you insert html content instead of src original contents. And if you put link there with original url it will load the video on click (or two).You can also style lazy ui with &amp;lt;style&amp;gt; tag. Play button is just a simple unicode symbol.And that’s the diy lazy load) This method will not do it for you if you need regularly change the video or put it in many pages. But it’s good enough for one video on a static page if you don’t want additional JS.I used it on my site but I had to abandon lazy load for now cause I started to work on videos more actively and needed to always show the latest one.lite-youtube-embed is more advanced method using custom elements from a Chrome dev. You can’t use playlist with it either.I googled couple options for playlists but they are not working like I want or at all. If I will find or come up with a way I will update this post. Or you can tell about it in comments)",
+      "lang": "en"
+    } ,
+  
+    {
+      "title"    : "Embed youtube channel latest video without API",
+      "category" : "",
+      "tags"     : "html, iframe, youtube",
+      "url"      : "/webdevtips/en/youtube-last-video",
+      "date"     : "2024-02-05 03:00:00 +0300",
+      "content"  : "To embed latest youtube channel video without api:  Learn your channel id. Open youtube (not studio, just website) &amp;gt; click your avatar in the corner &amp;gt; Settings &amp;gt; Advanced settings. Find your channel id. This is also last part of your channel url if you not using unique name.  First letter will be U, and the seconds something else. You have to change that second letter to U as well. So it would start with UU. For example if it was UCzS4sE_0ltfSz6qx_FUCTdA, cahnge it to UUzS4sE_0ltfSz6qx_FUCTdA.  Put https://www.youtube.com/embed?listType=playlist&amp;amp;list=RESULT_ID into iframe src  The whole thing:&amp;lt;iframe loading=&quot;lazy&quot; class=&quot;video__last-video&quot; width=&quot;350&quot; height=&quot;250&quot; title=&quot;Latest video&quot; allow=&quot;accelerometer; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen src=&quot;https://www.youtube.com/embed?listType=playlist&amp;amp;list=UUzS4sE_0ltfSz6qx_FUCTdA&quot;&amp;gt;&amp;lt;/iframe&amp;gt;It will embed a playlist with all published channel videos. But it will always show the last one. I use this on my site.Cons: you can’t use lazy load on click methods. Which is ok if you have one video. You should use native lazy load to at least only load iframe when it’s in viewport.",
+      "lang": "en"
+    } ,
+  
+    {
       "title"    : "Темная тема мигает белым при загрузке страницы",
       "category" : "",
       "tags"     : "css, dark theme, javascript, accessibility",

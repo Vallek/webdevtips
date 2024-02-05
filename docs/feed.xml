@@ -1,59 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2024-01-24T18:25:58+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">White flashing with dark theme on page load</title><link href="https://vallek.github.io/webdevtips/en/dark-theme-flashing" rel="alternate" type="text/html" title="White flashing with dark theme on page load" /><published>2024-01-07T03:00:00+03:00</published><updated>2024-01-07T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/dark-theme-flashing</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/dark-theme-flashing"><![CDATA[<p>Using <a href="/webdevtips/en/dark-theme-detect">this method</a> to make a dark theme your site users could see a white flashing of default page background before CSS and JS are loaded. It could also happened with other methods.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2024-02-05T20:19:58+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">Embed youtube channel latest video without API</title><link href="https://vallek.github.io/webdevtips/en/youtube-last-video" rel="alternate" type="text/html" title="Embed youtube channel latest video without API" /><published>2024-02-05T03:00:00+03:00</published><updated>2024-02-05T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/youtube-last-video</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/youtube-last-video"><![CDATA[<p>To embed latest youtube channel video without api:</p>
 
-<p>You can fix it by moving part of JS that detect saved and preferred theme to the very start of the <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> element in html. Like this:</p>
+<ol>
+  <li>Learn your channel id. Open youtube (not studio, just website) &gt; click your avatar in the corner &gt; Settings &gt; Advanced settings. Find your channel id. This is also last part of your channel url if you not using unique name.</li>
+  <li>First letter will be <code class="language-plaintext highlighter-rouge">U</code>, and the seconds something else. You have to change that second letter to <code class="language-plaintext highlighter-rouge">U</code> as well. So it would start with <code class="language-plaintext highlighter-rouge">UU</code>. For example if it was <code class="language-plaintext highlighter-rouge">UCzS4sE_0ltfSz6qx_FUCTdA</code>, cahnge it to <code class="language-plaintext highlighter-rouge">UUzS4sE_0ltfSz6qx_FUCTdA</code>.</li>
+  <li>Put <code class="language-plaintext highlighter-rouge">https://www.youtube.com/embed?listType=playlist&amp;list=RESULT_ID</code> into iframe src</li>
+  <li>The whole thing:</li>
+</ol>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;body&gt;
-&lt;script&gt;
-	const thisPage = document.querySelector('.page');
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">loading=</span><span class="s">"lazy"</span> <span class="na">class=</span><span class="s">"video__last-video"</span> <span class="na">width=</span><span class="s">"350"</span> <span class="na">height=</span><span class="s">"250"</span> <span class="na">title=</span><span class="s">"Latest video"</span> <span class="na">allow=</span><span class="s">"accelerometer; encrypted-media; gyroscope; picture-in-picture"</span> <span class="na">allowfullscreen</span> <span class="na">src=</span><span class="s">"https://www.youtube.com/embed?listType=playlist&amp;list=UUzS4sE_0ltfSz6qx_FUCTdA"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+</code></pre></div></div>
+<p>It will embed a playlist with all published channel videos. But it will always show the last one. I use this on my <a href="https://vallek.github.io/">site</a>.</p>
 
-	// Check if user set dark theme before
-	if (localStorage.getItem('this-site-theme') == 'dark') {
-		thisPage.classList.add('dark');
-	}
-	// Check if user prefers dark theme
-	if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {
-		thisPage.classList.add('dark');
-	}
-&lt;/script&gt;
+<p>Cons: you can’t use <a href="/webdevtips/en/youtube-lazy-load">lazy load on click methods</a>. Which is ok if you have one video. You should use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#loading">native lazy load</a> to at least only load iframe when it’s in viewport.</p>]]></content><author><name></name></author><category term="html" /><category term="iframe" /><category term="youtube" /><summary type="html"><![CDATA[To embed latest youtube channel video without api:]]></summary></entry><entry xml:lang="ru"><title type="html">Embeded Youtube Lazy Loading по клику</title><link href="https://vallek.github.io/webdevtips/ru/youtube-lazy-load" rel="alternate" type="text/html" title="Embeded Youtube Lazy Loading по клику" /><published>2024-02-05T03:00:00+03:00</published><updated>2024-02-05T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/youtube-lazy-load</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/youtube-lazy-load"><![CDATA[<p>Существует множество способов ленивой загрузки ютьюб видео по клику. В основном все они используют сторонние JS-библиотеки, либо, как минимум, какой-то JS код.</p>
+
+<p>Но существует способ создать загрузку айфрейма по клику только силами html)</p>
+
+<p>Выглядит это так:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">class=</span><span class="s">"video__last-video"</span> <span class="na">width=</span><span class="s">"350"</span> <span class="na">height=</span><span class="s">"250"</span> <span class="na">src=</span><span class="s">"https://www.youtube.com/embed/Ne_ls6OzRF0"</span> <span class="na">title=</span><span class="s">"Последний видосик на канале"</span> <span class="na">allow=</span><span class="s">"accelerometer; encrypted-media; gyroscope; picture-in-picture"</span> <span class="na">allowfullscreen</span> <span class="na">srcdoc=</span><span class="s">"&lt;title&gt;Последний видосик на канале&lt;/title&gt;&lt;style&gt;*{padding:0;margin:0;overflow:hidden;}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}a:focus-visible span{outline: 3px dashed rgb(255, 19, 255);outline-offset: -5px;}&lt;/style&gt;&lt;a href='https://www.youtube.com/embed/Ne_ls6OzRF0?autoplay=1'&gt;&lt;img src='https://i.ytimg.com/vi/Ne_ls6OzRF0/sddefault.jpg' alt=''&gt;&lt;span&gt;▶&lt;/span&gt;&lt;/a&gt;"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
 </code></pre></div></div>
 
-<p>Leave the rest in separate JS file:</p>
+<p>Суть в использовании атрибута <code class="language-plaintext highlighter-rouge">srcdoc</code>, который позволяет прописать HTML содержимое, переписывая то, что в <code class="language-plaintext highlighter-rouge">src</code>. При этом если туда поместить ссылку с изначальным адресом, то по клику в iframe загрузиться нужное видео.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'use strict';
+<p>Вы также можете стилизовать lazy load заглушку с помощью элемента style. Кнопка play задается простым символом стрелки в html коде.</p>
 
-const page = document.querySelector('.page');
-const lightThemeLink = document.querySelector('.themes__link_light');
-const darkThemeLink = document.querySelector('.themes__link_dark');
+<p>Такой вот сделай сам lazy load. Этот способ вряд ли подойдет там, где нужно регулярно менять отображаемое видео или если их нужно вставлять часто в разных местах. Но для постоянного видео на статичной странице вполне может подойти, если вы не хотите подключать лишний JS.</p>
 
-// Check theme preference switch real time
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =&gt; {
-	const newColorScheme = event.matches ? 'dark' : 'light';
-	if (newColorScheme == 'dark') {
-		page.classList.add('dark');
-	}
-	if (newColorScheme == 'light') {
-		page.classList.remove('dark');
-	} 
-});
+<p>Я использовал его на своем портфолио, но отказался от lazy load, когда начал чаще вести канал, как раз из-за необходимости постоянно <a href="/webdevtips/ru/youtube-last-video">менять видео на последнее</a>.</p>
 
-// Turn dark theme on
-darkThemeLink.addEventListener('click', setDark);
-function setDark(el) {
-	el.preventDefault();
-	page.classList.add('dark');
-	localStorage.setItem('this-site-theme', 'dark');
-}
+<p><a href="https://github.com/paulirish/lite-youtube-embed">lite-youtube-embed</a> - более продвинутый способ с использованием custom elements от одного из разработчиков Хрома. Также не позволяет использовать плейлист.</p>
 
-// Turn light theme on
-lightThemeLink.addEventListener('click', setLight);
-function setLight(el) {
-	el.preventDefault();
-	page.classList.remove('dark');
-		localStorage.setItem('this-site-theme', 'light');
-}
+<p>Я нашел несколько вариантов для плейлиста в сети, но они либо не рабочие, либо не то, что мне нужно. Если найду способ сделать lazy load для последнего видео, обновлю эту заметку. Или можете написать в комментах, если знаете сами)</p>]]></content><author><name></name></author><category term="youtube" /><category term="lazy load" /><category term="iframe" /><category term="html" /><summary type="html"><![CDATA[Существует множество способов ленивой загрузки ютьюб видео по клику. В основном все они используют сторонние JS-библиотеки, либо, как минимум, какой-то JS код.]]></summary></entry><entry xml:lang="ru"><title type="html">Как вставить на страницу последнее видео с youtube канала без API</title><link href="https://vallek.github.io/webdevtips/ru/youtube-last-video" rel="alternate" type="text/html" title="Как вставить на страницу последнее видео с youtube канала без API" /><published>2024-02-05T03:00:00+03:00</published><updated>2024-02-05T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/youtube-last-video</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/youtube-last-video"><![CDATA[<p>Чтобы вставить на страницу iframe, который всегда будет показывать последнее видео с ютьюб канала без API:</p>
+
+<ol>
+  <li>Узнайте свой код канала. Для этого можно зайти на ютьюб (не студию, а просто) &gt; нажать на аватарку в углу &gt; Настройки &gt; Расширенные настройки. И там будет Идентификатор канала. Кроме того это часть url адреса, которую можно увидеть, если вы не меняли адрес канала на уникальный или в студии в Настройках канала.</li>
+  <li>Первая буква будет U, а вторая какая-то другая. Нужно <strong>поменять</strong> вторую на U. То есть в начале будет UU. Например было <code class="language-plaintext highlighter-rouge">UCzS4sE_0ltfSz6qx_FUCTdA</code>, а станет <code class="language-plaintext highlighter-rouge">UUzS4sE_0ltfSz6qx_FUCTdA</code>.</li>
+  <li>В значении атрибута src укажите <code class="language-plaintext highlighter-rouge">https://www.youtube.com/embed?listType=playlist&amp;list=КОД_КАНАЛА</code></li>
+  <li>Получаем что-то вроде</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">loading=</span><span class="s">"lazy"</span> <span class="na">class=</span><span class="s">"video__last-video"</span> <span class="na">width=</span><span class="s">"350"</span> <span class="na">height=</span><span class="s">"250"</span> <span class="na">title=</span><span class="s">"Последний видосик на канале"</span> <span class="na">allow=</span><span class="s">"accelerometer; encrypted-media; gyroscope; picture-in-picture"</span> <span class="na">allowfullscreen</span> <span class="na">src=</span><span class="s">"https://www.youtube.com/embed?listType=playlist&amp;list=UUzS4sE_0ltfSz6qx_FUCTdA"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
 </code></pre></div></div>
 
-<p>Notice that both scripts use <code class="language-plaintext highlighter-rouge">body</code> node but with different variables. Not the most elegant solution but it keeps scripts independent. Just don’t do this with 500 nodes)</p>]]></content><author><name></name></author><category term="css" /><category term="dark theme" /><category term="javascript" /><category term="accessibility" /><summary type="html"><![CDATA[Using this method to make a dark theme your site users could see a white flashing of default page background before CSS and JS are loaded. It could also happened with other methods.]]></summary></entry><entry xml:lang="ru"><title type="html">Темная тема мигает белым при загрузке страницы</title><link href="https://vallek.github.io/webdevtips/ru/dark-theme-flashing" rel="alternate" type="text/html" title="Темная тема мигает белым при загрузке страницы" /><published>2024-01-07T03:00:00+03:00</published><updated>2024-01-07T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/dark-theme-flashing</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/dark-theme-flashing"><![CDATA[<p><strong>upd:</strong> я сделал <a href="https://youtu.be/VWxIhcdQcjc">видео гайд по созданию темной темы</a> и исправлению проблем, которые могут возникнуть</p>
+<p>В итоге у вас получится плейлист всех видео с канала, но показан будет именно последний. Я использую этот подход на своем <a href="https://vallek.github.io/">портфолио</a>.</p>
+
+<p>Из минусов: невозможность использования <a href="/webdevtips/ru/youtube-lazy-load">lazy load методов по клику</a>. Впрочем, если вам нужно только одно видео на странице, то это не самая большая проблема. Стоит указать <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#loading">нативный lazy</a>, который не загрузит iframe, пока он не на экране.</p>]]></content><author><name></name></author><category term="html" /><category term="iframe" /><category term="youtube" /><summary type="html"><![CDATA[Чтобы вставить на страницу iframe, который всегда будет показывать последнее видео с ютьюб канала без API:]]></summary></entry><entry xml:lang="en"><title type="html">Embeded Youtube Lazy Loading on lick</title><link href="https://vallek.github.io/webdevtips/en/youtube-lazy-load" rel="alternate" type="text/html" title="Embeded Youtube Lazy Loading on lick" /><published>2024-02-05T03:00:00+03:00</published><updated>2024-02-05T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/youtube-lazy-load</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/youtube-lazy-load"><![CDATA[<p>There are a lot of different youtube video lazy loading methods. Most of them are using js libraries or at least some js code.</p>
+
+<p>But you can make it with just html trick)</p>
+
+<p>It looks life this</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">class=</span><span class="s">"video__last-video"</span> <span class="na">width=</span><span class="s">"350"</span> <span class="na">height=</span><span class="s">"250"</span> <span class="na">src=</span><span class="s">"https://www.youtube.com/embed/Ne_ls6OzRF0"</span> <span class="na">title=</span><span class="s">"Latest video on channel"</span> <span class="na">allow=</span><span class="s">"accelerometer; encrypted-media; gyroscope; picture-in-picture"</span> <span class="na">allowfullscreen</span> <span class="na">srcdoc=</span><span class="s">"&lt;title&gt;Latest video on channel&lt;/title&gt;&lt;style&gt;*{padding:0;margin:0;overflow:hidden;}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}a:focus-visible span{outline: 3px dashed rgb(255, 19, 255);outline-offset: -5px;}&lt;/style&gt;&lt;a href='https://www.youtube.com/embed/Ne_ls6OzRF0?autoplay=1'&gt;&lt;img src='https://i.ytimg.com/vi/Ne_ls6OzRF0/sddefault.jpg' alt=''&gt;&lt;span&gt;▶&lt;/span&gt;&lt;/a&gt;"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+</code></pre></div></div>
+
+<p>We are using <code class="language-plaintext highlighter-rouge">srcdoc</code> attribute, that lets you insert html content instead of src original contents. And if you put link there with original url it will load the video on click (or two).</p>
+
+<p>You can also style lazy ui with <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> tag. Play button is just a simple unicode symbol.</p>
+
+<p>And that’s the diy lazy load) This method will not do it for you if you need regularly change the video or put it in many pages. But it’s good enough for one video on a static page if you don’t want additional JS.</p>
+
+<p>I used it on my site but I had to abandon lazy load for now cause I started to work on videos more actively and needed to <a href="/webdevtips/en/youtube-last-video">always show the latest one</a>.</p>
+
+<p><a href="https://github.com/paulirish/lite-youtube-embed">lite-youtube-embed</a> is more advanced method using custom elements from a Chrome dev. You can’t use playlist with it either.</p>
+
+<p>I googled couple options for playlists but they are not working like I want or at all. If I will find or come up with a way I will update this post. Or you can tell about it in comments)</p>]]></content><author><name></name></author><category term="youtube" /><category term="lazy load" /><category term="iframe" /><category term="html" /><summary type="html"><![CDATA[There are a lot of different youtube video lazy loading methods. Most of them are using js libraries or at least some js code.]]></summary></entry><entry xml:lang="ru"><title type="html">Темная тема мигает белым при загрузке страницы</title><link href="https://vallek.github.io/webdevtips/ru/dark-theme-flashing" rel="alternate" type="text/html" title="Темная тема мигает белым при загрузке страницы" /><published>2024-01-07T03:00:00+03:00</published><updated>2024-01-07T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/dark-theme-flashing</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/dark-theme-flashing"><![CDATA[<p><strong>upd:</strong> я сделал <a href="https://youtu.be/VWxIhcdQcjc">видео гайд по созданию темной темы</a> и исправлению проблем, которые могут возникнуть</p>
 
 <p>При использовании темной темы по <a href="/webdevtips/ru/dark-theme-detect">этому рецепту</a> пользователь может видеть “вспышку” белого цвета. Это нестилизованная страница с белым фоном по умолчанию, которую видно, до загрузки CSS и JS.</p>
 
@@ -110,7 +120,62 @@ function setLight(el) {
 }
 </code></pre></div></div>
 
-<p>Обратите внимание, что и там и там используется узел <code class="language-plaintext highlighter-rouge">body</code>, но с разными именами переменных. Не самый изящный способ, но позволяющий не думать о связанности кода. В данном случае влияние на скорость нулевое, но экстраполировать на 500 узлов, конечно, не стоит)</p>]]></content><author><name></name></author><category term="css" /><category term="dark theme" /><category term="javascript" /><category term="accessibility" /><summary type="html"><![CDATA[upd: я сделал видео гайд по созданию темной темы и исправлению проблем, которые могут возникнуть]]></summary></entry><entry xml:lang="en"><title type="html">Тriple redirect</title><link href="https://vallek.github.io/webdevtips/en/triple-redirect" rel="alternate" type="text/html" title="Тriple redirect" /><published>2023-12-28T03:00:00+03:00</published><updated>2023-12-28T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/triple-redirect</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/triple-redirect"><![CDATA[<p>If you need to redirect users to a new address, but you don’t have a server, you can use “triple” redirection. It includes:</p>
+<p>Обратите внимание, что и там и там используется узел <code class="language-plaintext highlighter-rouge">body</code>, но с разными именами переменных. Не самый изящный способ, но позволяющий не думать о связанности кода. В данном случае влияние на скорость нулевое, но экстраполировать на 500 узлов, конечно, не стоит)</p>]]></content><author><name></name></author><category term="css" /><category term="dark theme" /><category term="javascript" /><category term="accessibility" /><summary type="html"><![CDATA[upd: я сделал видео гайд по созданию темной темы и исправлению проблем, которые могут возникнуть]]></summary></entry><entry xml:lang="en"><title type="html">White flashing with dark theme on page load</title><link href="https://vallek.github.io/webdevtips/en/dark-theme-flashing" rel="alternate" type="text/html" title="White flashing with dark theme on page load" /><published>2024-01-07T03:00:00+03:00</published><updated>2024-01-07T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/dark-theme-flashing</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/dark-theme-flashing"><![CDATA[<p>Using <a href="/webdevtips/en/dark-theme-detect">this method</a> to make a dark theme your site users could see a white flashing of default page background before CSS and JS are loaded. It could also happened with other methods.</p>
+
+<p>You can fix it by moving part of JS that detect saved and preferred theme to the very start of the <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> element in html. Like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;body&gt;
+&lt;script&gt;
+	const thisPage = document.querySelector('.page');
+
+	// Check if user set dark theme before
+	if (localStorage.getItem('this-site-theme') == 'dark') {
+		thisPage.classList.add('dark');
+	}
+	// Check if user prefers dark theme
+	if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		thisPage.classList.add('dark');
+	}
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>Leave the rest in separate JS file:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'use strict';
+
+const page = document.querySelector('.page');
+const lightThemeLink = document.querySelector('.themes__link_light');
+const darkThemeLink = document.querySelector('.themes__link_dark');
+
+// Check theme preference switch real time
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =&gt; {
+	const newColorScheme = event.matches ? 'dark' : 'light';
+	if (newColorScheme == 'dark') {
+		page.classList.add('dark');
+	}
+	if (newColorScheme == 'light') {
+		page.classList.remove('dark');
+	} 
+});
+
+// Turn dark theme on
+darkThemeLink.addEventListener('click', setDark);
+function setDark(el) {
+	el.preventDefault();
+	page.classList.add('dark');
+	localStorage.setItem('this-site-theme', 'dark');
+}
+
+// Turn light theme on
+lightThemeLink.addEventListener('click', setLight);
+function setLight(el) {
+	el.preventDefault();
+	page.classList.remove('dark');
+		localStorage.setItem('this-site-theme', 'light');
+}
+</code></pre></div></div>
+
+<p>Notice that both scripts use <code class="language-plaintext highlighter-rouge">body</code> node but with different variables. Not the most elegant solution but it keeps scripts independent. Just don’t do this with 500 nodes)</p>]]></content><author><name></name></author><category term="css" /><category term="dark theme" /><category term="javascript" /><category term="accessibility" /><summary type="html"><![CDATA[Using this method to make a dark theme your site users could see a white flashing of default page background before CSS and JS are loaded. It could also happened with other methods.]]></summary></entry><entry xml:lang="en"><title type="html">Тriple redirect</title><link href="https://vallek.github.io/webdevtips/en/triple-redirect" rel="alternate" type="text/html" title="Тriple redirect" /><published>2023-12-28T03:00:00+03:00</published><updated>2023-12-28T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/triple-redirect</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/triple-redirect"><![CDATA[<p>If you need to redirect users to a new address, but you don’t have a server, you can use “triple” redirection. It includes:</p>
 
 <ol>
   <li>meta tag in <strong>HTML</strong> with <code class="language-plaintext highlighter-rouge">meta http-equiv="refresh"</code>. The number after content is a delay in seconds. You can set to 1, 5 and so on.</li>
@@ -164,74 +229,16 @@ function setLight(el) {
 &lt;/html&gt;
 </code></pre></div></div>
 
-<p>Но, если есть возможность, то лучше <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Redirections">начать с HTTP</a>.</p>]]></content><author><name></name></author><category term="http" /><category term="html" /><category term="javascript" /><summary type="html"><![CDATA[Если вы хотите переадресовать посетителя на новый сайт, но у вас нет доступа к серверу (например, если сайт на Github Pages) то можно использовать “тройную” переадресацию без HTTP. А именно:]]></summary></entry><entry xml:lang="ru"><title type="html">Проблемы с темной/светлой темой в Firefox</title><link href="https://vallek.github.io/webdevtips/ru/firefox-dark-theme" rel="alternate" type="text/html" title="Проблемы с темной/светлой темой в Firefox" /><published>2023-12-09T03:00:00+03:00</published><updated>2023-12-09T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/firefox-dark-theme</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/firefox-dark-theme"><![CDATA[<p>Для тех у кого проблемы в Firefox с настройками темной темы. А именно: не следует системной настройке или вы хотите, чтобы не следовал цветовой теме в браузере (после Firefox 95 пользовательские темы теперь могут зачем-то переключить темную/светлую) или проблемы с usercss, кастомной темной темой на сайте и т.п.</p>
-
-<ol>
-  <li>Идете в about:config</li>
-  <li>Находите <code class="language-plaintext highlighter-rouge">layout.css.prefers-color-scheme.content-override</code></li>
-  <li>Темная (0), светлая (1), как в системе (2) или как в браузере (3).</li>
-</ol>]]></content><author><name></name></author><category term="firefox" /><category term="dark theme" /><summary type="html"><![CDATA[Для тех у кого проблемы в Firefox с настройками темной темы. А именно: не следует системной настройке или вы хотите, чтобы не следовал цветовой теме в браузере (после Firefox 95 пользовательские темы теперь могут зачем-то переключить темную/светлую) или проблемы с usercss, кастомной темной темой на сайте и т.п.]]></summary></entry><entry xml:lang="en"><title type="html">Problems with dark/light themes in Firefox</title><link href="https://vallek.github.io/webdevtips/en/firefox-dark-theme" rel="alternate" type="text/html" title="Problems with dark/light themes in Firefox" /><published>2023-12-09T03:00:00+03:00</published><updated>2023-12-09T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/firefox-dark-theme</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/firefox-dark-theme"><![CDATA[<p>If you have problems with dark/light themes in Firefox. Browser not following system setting or you don’t want it to follow theme (Firefox does it since 95) or you have problems with custom dark theme and so on.</p>
+<p>Но, если есть возможность, то лучше <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Redirections">начать с HTTP</a>.</p>]]></content><author><name></name></author><category term="http" /><category term="html" /><category term="javascript" /><summary type="html"><![CDATA[Если вы хотите переадресовать посетителя на новый сайт, но у вас нет доступа к серверу (например, если сайт на Github Pages) то можно использовать “тройную” переадресацию без HTTP. А именно:]]></summary></entry><entry xml:lang="en"><title type="html">Problems with dark/light themes in Firefox</title><link href="https://vallek.github.io/webdevtips/en/firefox-dark-theme" rel="alternate" type="text/html" title="Problems with dark/light themes in Firefox" /><published>2023-12-09T03:00:00+03:00</published><updated>2023-12-09T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/firefox-dark-theme</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/firefox-dark-theme"><![CDATA[<p>If you have problems with dark/light themes in Firefox. Browser not following system setting or you don’t want it to follow theme (Firefox does it since 95) or you have problems with custom dark theme and so on.</p>
 
 <ol>
   <li>Go to about:config</li>
   <li>Find <code class="language-plaintext highlighter-rouge">layout.css.prefers-color-scheme.content-override</code></li>
   <li>Dark (0), light (1), system (2) or browser (3).</li>
-</ol>]]></content><author><name></name></author><category term="firefox" /><category term="dark theme" /><summary type="html"><![CDATA[If you have problems with dark/light themes in Firefox. Browser not following system setting or you don’t want it to follow theme (Firefox does it since 95) or you have problems with custom dark theme and so on.]]></summary></entry><entry xml:lang="en"><title type="html">How to remove localhost from jekyll-feed</title><link href="https://vallek.github.io/webdevtips/en/localhost-in-feed" rel="alternate" type="text/html" title="How to remove localhost from jekyll-feed" /><published>2023-07-10T10:33:00+03:00</published><updated>2023-07-10T10:33:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/localhost-in-feed</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/localhost-in-feed"><![CDATA[<p><code class="language-plaintext highlighter-rouge">jekyll serve</code> might put <code class="language-plaintext highlighter-rouge">localhost</code> in feed urls. One way to fix it is just use <code class="language-plaintext highlighter-rouge">jekyll build</code> for production after local server test. But that’s not really a fix.</p>
+</ol>]]></content><author><name></name></author><category term="firefox" /><category term="dark theme" /><summary type="html"><![CDATA[If you have problems with dark/light themes in Firefox. Browser not following system setting or you don’t want it to follow theme (Firefox does it since 95) or you have problems with custom dark theme and so on.]]></summary></entry><entry xml:lang="ru"><title type="html">Проблемы с темной/светлой темой в Firefox</title><link href="https://vallek.github.io/webdevtips/ru/firefox-dark-theme" rel="alternate" type="text/html" title="Проблемы с темной/светлой темой в Firefox" /><published>2023-12-09T03:00:00+03:00</published><updated>2023-12-09T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/firefox-dark-theme</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/firefox-dark-theme"><![CDATA[<p>Для тех у кого проблемы в Firefox с настройками темной темы. А именно: не следует системной настройке или вы хотите, чтобы не следовал цветовой теме в браузере (после Firefox 95 пользовательские темы теперь могут зачем-то переключить темную/светлую) или проблемы с usercss, кастомной темной темой на сайте и т.п.</p>
 
-<p>But you can manually edit jekyll-feed gem and put your url there.</p>
-
-<p>Find Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
-
-<p>Gems are at: <code class="language-plaintext highlighter-rouge">Ruby\lib\ruby\gems\version\gems\</code></p>
-
-<p>Open <code class="language-plaintext highlighter-rouge">jekyll-feed-0.17.0\lib\jekyll-feed\feed.xml</code></p>
-
-<p>This is a template for your feed xml file. You have to find instances of <code class="language-plaintext highlighter-rouge">{{ page.url | absolute_url }}</code> and <code class="language-plaintext highlighter-rouge">{{ post.url | absolute_url }}</code> and replace them with <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ page.url }}</code> and <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ post.url }}</code>.</p>
-
-<p>Make sure that you didn’t mix up posts and pages.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[jekyll serve might put localhost in feed urls. One way to fix it is just use jekyll build for production after local server test. But that’s not really a fix.]]></summary></entry><entry xml:lang="ru"><title type="html">Как убрать localhost из jekyll-feed</title><link href="https://vallek.github.io/webdevtips/ru/localhost-in-feed" rel="alternate" type="text/html" title="Как убрать localhost из jekyll-feed" /><published>2023-07-10T10:33:00+03:00</published><updated>2023-07-10T10:33:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/localhost-in-feed</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/localhost-in-feed"><![CDATA[<p><code class="language-plaintext highlighter-rouge">jekyll serve</code> может заменять url вашего сайта в фиде на <code class="language-plaintext highlighter-rouge">localhost</code>. Это можно исправить командой <code class="language-plaintext highlighter-rouge">jekyll build</code>, каждный раз отдельно выполняя сборку для продакшена. Но это не реальное решение проблемы.</p>
-
-<p>Вместо этого можно вручную отредактировать расширение jekyll-feed и добавить туда ваш адрес.</p>
-
-<p>Найдите папку с Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
-
-<p>Путь к гемам: <code class="language-plaintext highlighter-rouge">Ruby\lib\ruby\gems\version\gems\</code></p>
-
-<p>Откройте файл <code class="language-plaintext highlighter-rouge">jekyll-feed-0.17.0\lib\jekyll-feed\feed.xml</code></p>
-
-<p>Это шаблон для rss фида. Вам нужно найти все места с <code class="language-plaintext highlighter-rouge">{{ page.url | absolute_url }}</code> и <code class="language-plaintext highlighter-rouge">{{ post.url | absolute_url }}</code> и заменить их на <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ page.url }}</code> и <code class="language-plaintext highlighter-rouge">https://username.github.io/example{{ post.url }}</code>.</p>
-
-<p>Не перепутайте посты со страницами.</p>]]></content><author><name></name></author><category term="jekyll" /><summary type="html"><![CDATA[jekyll serve может заменять url вашего сайта в фиде на localhost. Это можно исправить командой jekyll build, каждный раз отдельно выполняя сборку для продакшена. Но это не реальное решение проблемы.]]></summary></entry><entry xml:lang="en"><title type="html">How to set tags pages title for jekyll-tagging</title><link href="https://vallek.github.io/webdevtips/en/jekyll-tagging-title" rel="alternate" type="text/html" title="How to set tags pages title for jekyll-tagging" /><published>2023-07-10T09:54:00+03:00</published><updated>2023-07-10T09:54:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/jekyll-tagging-title</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/jekyll-tagging-title"><![CDATA[<p>Find Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
-
-<p>Gems are at: <code class="language-plaintext highlighter-rouge">Ruby\lib\ruby\gems\version\gems\</code></p>
-
-<p>Open <code class="language-plaintext highlighter-rouge">jekyll-tagging-1.1.0\lib\jekyll\tagging.rb</code></p>
-
-<p>Find</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data = { 'layout' =&gt; layout, 'posts' =&gt; posts.sort.reverse!, 'tag' =&gt; tag }
-</code></pre></div></div>
-
-<p>and change it to something like:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data = { 'layout' =&gt; layout, 'posts' =&gt; posts.sort.reverse!, 'tag' =&gt; tag, 'title' =&gt; 'Posts about' + ' ' + tag }
-</code></pre></div></div>
-
-<p>You can add or change other page setting like this. For example I needed to remove lang value for multilang site and did it like this: <code class="language-plaintext highlighter-rouge">'lang' =&gt; ''</code>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="ruby" /><summary type="html"><![CDATA[Find Ruby: where ruby]]></summary></entry><entry xml:lang="ru"><title type="html">Как задать title страницы тегов при использовании jekyll-tagging</title><link href="https://vallek.github.io/webdevtips/ru/jekyll-tagging-title" rel="alternate" type="text/html" title="Как задать title страницы тегов при использовании jekyll-tagging" /><published>2023-07-10T09:54:00+03:00</published><updated>2023-07-10T09:54:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/jekyll-tagging-title</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/jekyll-tagging-title"><![CDATA[<p>Если вы используете расширение jekyll-tagging дял Jekyll, то могли заметить, что на страницах с тегами нет заголовка. Это можно исправить, отредактировав само расширение, то есть ruby gem.</p>
-
-<p>Найдите папку с Ruby: <code class="language-plaintext highlighter-rouge">where ruby</code></p>
-
-<p>Путь к гемам: <code class="language-plaintext highlighter-rouge">Ruby\lib\ruby\gems\version\gems\</code></p>
-
-<p>Откройте файл <code class="language-plaintext highlighter-rouge">jekyll-tagging-1.1.0\lib\jekyll\tagging.rb</code></p>
-
-<p>Найдите</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data = { 'layout' =&gt; layout, 'posts' =&gt; posts.sort.reverse!, 'tag' =&gt; tag }
-</code></pre></div></div>
-
-<p>И поменяйте на что-то вроде:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data = { 'layout' =&gt; layout, 'posts' =&gt; posts.sort.reverse!, 'tag' =&gt; tag, 'title' =&gt; 'Posts about' + ' ' + tag }
-</code></pre></div></div>
-
-<p>Таким же образом вы можете добавить или изменить здесь другие параметры страницы. Например, для мультиязычной версии сайта мне нужно было убрать значение lang у страниц с тегами. И я добавил <code class="language-plaintext highlighter-rouge">'lang' =&gt; ''</code>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="ruby" /><summary type="html"><![CDATA[Если вы используете расширение jekyll-tagging дял Jekyll, то могли заметить, что на страницах с тегами нет заголовка. Это можно исправить, отредактировав само расширение, то есть ruby gem.]]></summary></entry></feed>
+<ol>
+  <li>Идете в about:config</li>
+  <li>Находите <code class="language-plaintext highlighter-rouge">layout.css.prefers-color-scheme.content-override</code></li>
+  <li>Темная (0), светлая (1), как в системе (2) или как в браузере (3).</li>
+</ol>]]></content><author><name></name></author><category term="firefox" /><category term="dark theme" /><summary type="html"><![CDATA[Для тех у кого проблемы в Firefox с настройками темной темы. А именно: не следует системной настройке или вы хотите, чтобы не следовал цветовой теме в браузере (после Firefox 95 пользовательские темы теперь могут зачем-то переключить темную/светлую) или проблемы с usercss, кастомной темной темой на сайте и т.п.]]></summary></entry></feed>
