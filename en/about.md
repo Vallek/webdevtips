@@ -24,7 +24,9 @@ On the right is a panel with tags. Each note can have many tags (topics).
 ## How to participate
 These notes are from my personal practice and only a small fraction of what may be needed in development. You can help make this collection much more versatile and useful!
 
-The Web Dev Tips website is made on [Jekyll](https://jekyllrb.com/docs/), but you don't have to install and build anything to participate. You can just edit a note on github or create a new one. To edit, click on the link "Edit on GitHub!" on any page of the site. All notes are files in [markdown format](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+The Web Dev Tips website is made on [Jekyll](https://jekyllrb.com/docs/). Notice that it was build on Ruby 2.7.6. If you have different version please use ruby version manager like rbenv or rvm. 
+
+However you don't have to install and build anything to participate. You can just edit a note on github or create a new one. To edit, click on the link "Edit on GitHub!" on any page of the site. All notes are files in [markdown format](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 The file name **must** contain the date in the format `YEAR-MONTH-DAY-name.md `, for example `2023-04-22-how-to.md `.Front matter (hidden properties of the page) should be filled at the top of each new file. Syntax:
 ```
@@ -47,7 +49,7 @@ After that, click on the "Send pull request" button, I will receive a notificati
 At the moment, the site has frontend, webdev, backend and pc categories.
 * frontend - html, css, js, layout and everything around it.
 * webdev - here I put things that do not necessarily relate to the frontend, but can be used for it. For example, npm packages, static sites generators, etc. This is done simply to not lump everything into one pile.
-* backend - for any web backend languages. I don't do backend much myself, so I don't have a lot of notes here.
+* backend - for any web backend languages. I do a little bit of node.js and ruby (with jekyll).
 * pc - tips that are not related to development. Similar questions can be found on superuser, not stackoverflow.
 
 You can also suggest creating a new section if you have something to add to it.
