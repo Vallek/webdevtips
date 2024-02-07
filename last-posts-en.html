@@ -1,0 +1,12 @@
+---
+layout: last-posts
+---
+<ul class="last-posts-list">
+	{% for post in site.posts limit:6 %}
+	{% if post.url contains "/en/" %}
+	<li><a href="{{site.baseurl}}{{post.url}}" target="_top">{{post.title}}</a></li>
+	{% endif %}
+	{% endfor %}
+</ul>
+
+
