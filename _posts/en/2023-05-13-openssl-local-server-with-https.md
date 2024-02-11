@@ -17,7 +17,7 @@ This will create two certificate files required for https to work.
 
 It will ask you to enter several parameters such as name, country. It seems that you can enter any except Common Name. Here you need `127.0.0.1` for the local server.
 
-Then install the server. I did work right away for me. For live server, you need to write a config with file paths.
+Then install the server. [http-server](https://www.npmjs.com/package/http-server) did work right away for me. For live server, you need to write a config with file paths.
 
 `npm install --global http-server`
 
