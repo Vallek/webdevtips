@@ -4,7 +4,7 @@ SimpleJekyllSearch({
 		json: '/webdevtips/search.json',
 		searchResultTemplate: '<li class="search__item"><a class="search__link" href="{url}">{title}<span class="search__lang">{lang}</span></a></li>',
 		noResultsText: 'No results found',
-		limit: 10,
+		limit: 20,
 		fuzzy: false,
 		debounceTime: 500,
 });
