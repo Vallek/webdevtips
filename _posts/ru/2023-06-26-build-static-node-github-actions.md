@@ -11,7 +11,7 @@ sources: [https://medium.com/@danieljimgarcia/publishing-static-sites-to-github-
 
 Я использовал его для [списка анимируемых CSS свойств](https://vallek.github.io/animatable-css/). Подробный обзор проекта и как он был сделан в [видео](https://youtu.be/KbcTOhbj-S4) на моем канале:
 
-<iframe style="width:100%; max-width:560px;" width="560" height="315" src="https://www.youtube.com/embed/KbcTOhbj-S4?si=M50GVk_P7SbKIma_" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe style="width:100%; max-width:560px;" width="560" height="315" src="https://www.youtube.com/embed/KbcTOhbj-S4?si=3kNfAozskM93ai7E" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Инструкция для Github Action
 Прежде всего создайте github token. Откройте настройки аккаунта (не репозитория) > developer settings > Personal access tokens. Я выбрал классический. Установите имя и дату окончания. Сохраните токен где-то у себя (как пароль).
