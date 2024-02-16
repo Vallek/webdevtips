@@ -1,17 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2024-02-13T17:49:49+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">Embed youtube channel latest video without API</title><link href="https://vallek.github.io/webdevtips/en/youtube-last-video" rel="alternate" type="text/html" title="Embed youtube channel latest video without API" /><published>2024-02-05T03:00:00+03:00</published><updated>2024-02-05T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/youtube-last-video</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/youtube-last-video"><![CDATA[<p>To embed latest youtube channel video without api:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2024-02-16T21:58:54+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">Windows Terminal in quake mode on start up</title><link href="https://vallek.github.io/webdevtips/en/windows-terminal-quake-copy" rel="alternate" type="text/html" title="Windows Terminal in quake mode on start up" /><published>2024-02-16T03:00:00+03:00</published><updated>2024-02-16T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/windows-terminal-quake copy</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/windows-terminal-quake-copy"><![CDATA[<p>Windows Terminal can work in quake mode. The mode comes from Quake video game</p>
+
+<p>In this mode console slides down from top of the screen. It’s pretty handy if you use terminal globally.</p>
+
+<p>To start wt in quake mode add <code class="language-plaintext highlighter-rouge">wt.exe -w _quake</code> to desktop shortcut properties. With no quotation marks:</p>
+
+<p><img src="../img/wt-quake-2.png" alt="" /></p>
+
+<p>However if you want wt to autostart at system start up it will just open standard window. To start it in wake mode and minimized create special shortcut like this:</p>
 
 <ol>
-  <li>Learn your channel id. Open youtube (not studio, just website) &gt; click your avatar in the corner &gt; Settings &gt; Advanced settings. Find your channel id. This is also last part of your channel url if you not using unique name.</li>
-  <li>First letter will be <code class="language-plaintext highlighter-rouge">U</code>, and the seconds something else. You have to change that second letter to <code class="language-plaintext highlighter-rouge">U</code> as well. So it would start with <code class="language-plaintext highlighter-rouge">UU</code>. For example if it was <code class="language-plaintext highlighter-rouge">UCzS4sE_0ltfSz6qx_FUCTdA</code>, cahnge it to <code class="language-plaintext highlighter-rouge">UUzS4sE_0ltfSz6qx_FUCTdA</code>.</li>
-  <li>Put <code class="language-plaintext highlighter-rouge">https://www.youtube.com/embed?listType=playlist&amp;list=RESULT_ID</code> into iframe src</li>
-  <li>The whole thing:</li>
+  <li>win + R</li>
+  <li>Type <code class="language-plaintext highlighter-rouge">shell:startup</code>. It will open Startup folder</li>
+  <li>right click &gt; create shortcut</li>
+  <li>wt.exe -w _quake (or %LOCALAPPDATA%\Microsoft\WindowsApps\wt.exe -w _quake if it’s not working)</li>
+  <li>Call it what you want</li>
+  <li>Choose minimized in windows input</li>
 </ol>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">loading=</span><span class="s">"lazy"</span> <span class="na">class=</span><span class="s">"video__last-video"</span> <span class="na">width=</span><span class="s">"350"</span> <span class="na">height=</span><span class="s">"250"</span> <span class="na">title=</span><span class="s">"Latest video"</span> <span class="na">allow=</span><span class="s">"accelerometer; encrypted-media; gyroscope; picture-in-picture"</span> <span class="na">allowfullscreen</span> <span class="na">src=</span><span class="s">"https://www.youtube.com/embed?listType=playlist&amp;list=UUzS4sE_0ltfSz6qx_FUCTdA"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
-</code></pre></div></div>
-<p>It will embed a playlist with all published channel videos. But it will always show the last one. I use this on my <a href="https://vallek.github.io/">site</a>.</p>
+<p>To hide wt tab bar:</p>
 
-<p>Cons: you can’t use <a href="/webdevtips/en/youtube-lazy-load">lazy load on click methods</a>. Which is ok if you have one video. You should use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#loading">native lazy load</a> to at least only load iframe when it’s in viewport.</p>]]></content><author><name></name></author><category term="html" /><category term="iframe" /><category term="youtube" /><summary type="html"><![CDATA[To embed latest youtube channel video without api:]]></summary></entry><entry xml:lang="ru"><title type="html">Embeded Youtube Lazy Loading по клику</title><link href="https://vallek.github.io/webdevtips/ru/youtube-lazy-load" rel="alternate" type="text/html" title="Embeded Youtube Lazy Loading по клику" /><published>2024-02-05T03:00:00+03:00</published><updated>2024-02-05T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/youtube-lazy-load</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/youtube-lazy-load"><![CDATA[<p>Существует множество способов ленивой загрузки ютьюб видео по клику. В основном все они используют сторонние JS-библиотеки, либо, как минимум, какой-то JS код.</p>
+<p><img src="../img/wt-quake-3.png" alt="" /></p>
+
+<p>Tested on Windows 10</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="quake" /><category term="windows" /><summary type="html"><![CDATA[Windows Terminal can work in quake mode. The mode comes from Quake video game]]></summary></entry><entry xml:lang="ru"><title type="html">Windows Terminal в режиме quake с автозапуском</title><link href="https://vallek.github.io/webdevtips/ru/windows-terminal-quake" rel="alternate" type="text/html" title="Windows Terminal в режиме quake с автозапуском" /><published>2024-02-16T03:00:00+03:00</published><updated>2024-02-16T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/windows-terminal-quake</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/windows-terminal-quake"><![CDATA[<p>Windows Terminal можно запустить в режиме quake. Режим и его название пошли от, не поверите, игры Quake (а вовсе не то, что думает автопереводчик MS лол).</p>
+
+<p><img src="../img/wt-quake.png" alt="" /></p>
+
+<p>В этом режиме консоль выезжает сверху. Довольно удобно, если например пользуетесь терминалом вне vs code для разных глобальных задач.</p>
+
+<p>Чтобы запускать wt в кваковском режиме, зайдите в свойства ярлыка и добавьте в после Объект после <code class="language-plaintext highlighter-rouge">wt.exe -w _quake</code>. Без кавычек, вот так:</p>
+
+<p><img src="../img/wt-quake-2.png" alt="" /></p>
+
+<p>Но если при этом включить автозапуск wt при старте системы, то он откроет обычно окно. Чтобы он загружался сразу в кваку и при этом был свернут, нужно создать особый ярлык следующим образом:</p>
+
+<ol>
+  <li>win + R</li>
+  <li>Введите <code class="language-plaintext highlighter-rouge">shell:startup</code>, откроется папка автозагрузки</li>
+  <li>ПКМ &gt; создать ярлык</li>
+  <li>wt.exe -w _quake (или %LOCALAPPDATA%\Microsoft\WindowsApps\wt.exe -w _quake если не работает)</li>
+  <li>Назовите, как хотите</li>
+  <li>Выберете в поле Окно “Свернутое в значок”</li>
+</ol>
+
+<p>А чтобы скрыть верхнюю панель с вкладками нужно включить в настройках wt режим фокуса:</p>
+
+<p><img src="../img/wt-quake-3.png" alt="" /></p>
+
+<p>Проверено на Windows 10</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="quake" /><category term="windows" /><summary type="html"><![CDATA[Windows Terminal можно запустить в режиме quake. Режим и его название пошли от, не поверите, игры Quake (а вовсе не то, что думает автопереводчик MS лол).]]></summary></entry><entry xml:lang="ru"><title type="html">Embeded Youtube Lazy Loading по клику</title><link href="https://vallek.github.io/webdevtips/ru/youtube-lazy-load" rel="alternate" type="text/html" title="Embeded Youtube Lazy Loading по клику" /><published>2024-02-05T03:00:00+03:00</published><updated>2024-02-05T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/youtube-lazy-load</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/youtube-lazy-load"><![CDATA[<p>Существует множество способов ленивой загрузки ютьюб видео по клику. В основном все они используют сторонние JS-библиотеки, либо, как минимум, какой-то JS код.</p>
 
 <p>Но существует способ создать загрузку айфрейма по клику только силами html)</p>
 
@@ -63,7 +98,75 @@
 
 <p><a href="https://github.com/paulirish/lite-youtube-embed">lite-youtube-embed</a> is more advanced method using custom elements from a Chrome dev. You can’t use playlist with it either.</p>
 
-<p>I googled couple options for playlists but they are not working like I want or at all. If I will find or come up with a way I will update this post. Or you can tell about it in comments)</p>]]></content><author><name></name></author><category term="youtube" /><category term="lazy load" /><category term="iframe" /><category term="html" /><summary type="html"><![CDATA[There are a lot of different youtube video lazy loading methods. Most of them are using js libraries or at least some js code.]]></summary></entry><entry xml:lang="ru"><title type="html">Темная тема мигает белым при загрузке страницы</title><link href="https://vallek.github.io/webdevtips/ru/dark-theme-flashing" rel="alternate" type="text/html" title="Темная тема мигает белым при загрузке страницы" /><published>2024-01-07T03:00:00+03:00</published><updated>2024-01-07T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/dark-theme-flashing</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/dark-theme-flashing"><![CDATA[<p><strong>upd:</strong> я сделал <a href="https://youtu.be/VWxIhcdQcjc">видео гайд по созданию темной темы</a> и исправлению проблем, которые могут возникнуть</p>
+<p>I googled couple options for playlists but they are not working like I want or at all. If I will find or come up with a way I will update this post. Or you can tell about it in comments)</p>]]></content><author><name></name></author><category term="youtube" /><category term="lazy load" /><category term="iframe" /><category term="html" /><summary type="html"><![CDATA[There are a lot of different youtube video lazy loading methods. Most of them are using js libraries or at least some js code.]]></summary></entry><entry xml:lang="en"><title type="html">Embed youtube channel latest video without API</title><link href="https://vallek.github.io/webdevtips/en/youtube-last-video" rel="alternate" type="text/html" title="Embed youtube channel latest video without API" /><published>2024-02-05T03:00:00+03:00</published><updated>2024-02-05T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/youtube-last-video</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/youtube-last-video"><![CDATA[<p>To embed latest youtube channel video without api:</p>
+
+<ol>
+  <li>Learn your channel id. Open youtube (not studio, just website) &gt; click your avatar in the corner &gt; Settings &gt; Advanced settings. Find your channel id. This is also last part of your channel url if you not using unique name.</li>
+  <li>First letter will be <code class="language-plaintext highlighter-rouge">U</code>, and the seconds something else. You have to change that second letter to <code class="language-plaintext highlighter-rouge">U</code> as well. So it would start with <code class="language-plaintext highlighter-rouge">UU</code>. For example if it was <code class="language-plaintext highlighter-rouge">UCzS4sE_0ltfSz6qx_FUCTdA</code>, cahnge it to <code class="language-plaintext highlighter-rouge">UUzS4sE_0ltfSz6qx_FUCTdA</code>.</li>
+  <li>Put <code class="language-plaintext highlighter-rouge">https://www.youtube.com/embed?listType=playlist&amp;list=RESULT_ID</code> into iframe src</li>
+  <li>The whole thing:</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">loading=</span><span class="s">"lazy"</span> <span class="na">class=</span><span class="s">"video__last-video"</span> <span class="na">width=</span><span class="s">"350"</span> <span class="na">height=</span><span class="s">"250"</span> <span class="na">title=</span><span class="s">"Latest video"</span> <span class="na">allow=</span><span class="s">"accelerometer; encrypted-media; gyroscope; picture-in-picture"</span> <span class="na">allowfullscreen</span> <span class="na">src=</span><span class="s">"https://www.youtube.com/embed?listType=playlist&amp;list=UUzS4sE_0ltfSz6qx_FUCTdA"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+</code></pre></div></div>
+<p>It will embed a playlist with all published channel videos. But it will always show the last one. I use this on my <a href="https://vallek.github.io/">site</a>.</p>
+
+<p>Cons: you can’t use <a href="/webdevtips/en/youtube-lazy-load">lazy load on click methods</a>. Which is ok if you have one video. You should use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#loading">native lazy load</a> to at least only load iframe when it’s in viewport.</p>]]></content><author><name></name></author><category term="html" /><category term="iframe" /><category term="youtube" /><summary type="html"><![CDATA[To embed latest youtube channel video without api:]]></summary></entry><entry xml:lang="en"><title type="html">White flashing with dark theme on page load</title><link href="https://vallek.github.io/webdevtips/en/dark-theme-flashing" rel="alternate" type="text/html" title="White flashing with dark theme on page load" /><published>2024-01-07T03:00:00+03:00</published><updated>2024-01-07T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/dark-theme-flashing</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/dark-theme-flashing"><![CDATA[<p>Using <a href="/webdevtips/en/dark-theme-detect">this method</a> to make a dark theme your site users could see a white flashing of default page background before CSS and JS are loaded. It could also happened with other methods.</p>
+
+<p>You can fix it by moving part of JS that detect saved and preferred theme to the very start of the <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> element in html. Like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;body&gt;
+&lt;script&gt;
+	const thisPage = document.querySelector('.page');
+
+	// Check if user set dark theme before
+	if (localStorage.getItem('this-site-theme') == 'dark') {
+		thisPage.classList.add('dark');
+	}
+	// Check if user prefers dark theme
+	if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		thisPage.classList.add('dark');
+	}
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>Leave the rest in separate JS file:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'use strict';
+
+const page = document.querySelector('.page');
+const lightThemeLink = document.querySelector('.themes__link_light');
+const darkThemeLink = document.querySelector('.themes__link_dark');
+
+// Check theme preference switch real time
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =&gt; {
+	const newColorScheme = event.matches ? 'dark' : 'light';
+	if (newColorScheme == 'dark') {
+		page.classList.add('dark');
+	}
+	if (newColorScheme == 'light') {
+		page.classList.remove('dark');
+	} 
+});
+
+// Turn dark theme on
+darkThemeLink.addEventListener('click', setDark);
+function setDark(el) {
+	el.preventDefault();
+	page.classList.add('dark');
+	localStorage.setItem('this-site-theme', 'dark');
+}
+
+// Turn light theme on
+lightThemeLink.addEventListener('click', setLight);
+function setLight(el) {
+	el.preventDefault();
+	page.classList.remove('dark');
+		localStorage.setItem('this-site-theme', 'light');
+}
+</code></pre></div></div>
+
+<p>Notice that both scripts use <code class="language-plaintext highlighter-rouge">body</code> node but with different variables. Not the most elegant solution but it keeps scripts independent. Just don’t do this with 500 nodes)</p>]]></content><author><name></name></author><category term="css" /><category term="dark theme" /><category term="javascript" /><category term="accessibility" /><summary type="html"><![CDATA[Using this method to make a dark theme your site users could see a white flashing of default page background before CSS and JS are loaded. It could also happened with other methods.]]></summary></entry><entry xml:lang="ru"><title type="html">Темная тема мигает белым при загрузке страницы</title><link href="https://vallek.github.io/webdevtips/ru/dark-theme-flashing" rel="alternate" type="text/html" title="Темная тема мигает белым при загрузке страницы" /><published>2024-01-07T03:00:00+03:00</published><updated>2024-01-07T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/dark-theme-flashing</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/dark-theme-flashing"><![CDATA[<p><strong>upd:</strong> я сделал <a href="https://youtu.be/VWxIhcdQcjc">видео гайд по созданию темной темы</a> и исправлению проблем, которые могут возникнуть</p>
 
 <p>При использовании темной темы по <a href="/webdevtips/ru/dark-theme-detect">этому рецепту</a> пользователь может видеть “вспышку” белого цвета. Это нестилизованная страница с белым фоном по умолчанию, которую видно, до загрузки CSS и JS.</p>
 
@@ -120,62 +223,7 @@ function setLight(el) {
 }
 </code></pre></div></div>
 
-<p>Обратите внимание, что и там и там используется узел <code class="language-plaintext highlighter-rouge">body</code>, но с разными именами переменных. Не самый изящный способ, но позволяющий не думать о связанности кода. В данном случае влияние на скорость нулевое, но экстраполировать на 500 узлов, конечно, не стоит)</p>]]></content><author><name></name></author><category term="css" /><category term="dark theme" /><category term="javascript" /><category term="accessibility" /><summary type="html"><![CDATA[upd: я сделал видео гайд по созданию темной темы и исправлению проблем, которые могут возникнуть]]></summary></entry><entry xml:lang="en"><title type="html">White flashing with dark theme on page load</title><link href="https://vallek.github.io/webdevtips/en/dark-theme-flashing" rel="alternate" type="text/html" title="White flashing with dark theme on page load" /><published>2024-01-07T03:00:00+03:00</published><updated>2024-01-07T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/dark-theme-flashing</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/dark-theme-flashing"><![CDATA[<p>Using <a href="/webdevtips/en/dark-theme-detect">this method</a> to make a dark theme your site users could see a white flashing of default page background before CSS and JS are loaded. It could also happened with other methods.</p>
-
-<p>You can fix it by moving part of JS that detect saved and preferred theme to the very start of the <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> element in html. Like this:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;body&gt;
-&lt;script&gt;
-	const thisPage = document.querySelector('.page');
-
-	// Check if user set dark theme before
-	if (localStorage.getItem('this-site-theme') == 'dark') {
-		thisPage.classList.add('dark');
-	}
-	// Check if user prefers dark theme
-	if (window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches) {
-		thisPage.classList.add('dark');
-	}
-&lt;/script&gt;
-</code></pre></div></div>
-
-<p>Leave the rest in separate JS file:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'use strict';
-
-const page = document.querySelector('.page');
-const lightThemeLink = document.querySelector('.themes__link_light');
-const darkThemeLink = document.querySelector('.themes__link_dark');
-
-// Check theme preference switch real time
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =&gt; {
-	const newColorScheme = event.matches ? 'dark' : 'light';
-	if (newColorScheme == 'dark') {
-		page.classList.add('dark');
-	}
-	if (newColorScheme == 'light') {
-		page.classList.remove('dark');
-	} 
-});
-
-// Turn dark theme on
-darkThemeLink.addEventListener('click', setDark);
-function setDark(el) {
-	el.preventDefault();
-	page.classList.add('dark');
-	localStorage.setItem('this-site-theme', 'dark');
-}
-
-// Turn light theme on
-lightThemeLink.addEventListener('click', setLight);
-function setLight(el) {
-	el.preventDefault();
-	page.classList.remove('dark');
-		localStorage.setItem('this-site-theme', 'light');
-}
-</code></pre></div></div>
-
-<p>Notice that both scripts use <code class="language-plaintext highlighter-rouge">body</code> node but with different variables. Not the most elegant solution but it keeps scripts independent. Just don’t do this with 500 nodes)</p>]]></content><author><name></name></author><category term="css" /><category term="dark theme" /><category term="javascript" /><category term="accessibility" /><summary type="html"><![CDATA[Using this method to make a dark theme your site users could see a white flashing of default page background before CSS and JS are loaded. It could also happened with other methods.]]></summary></entry><entry xml:lang="en"><title type="html">Тriple redirect</title><link href="https://vallek.github.io/webdevtips/en/triple-redirect" rel="alternate" type="text/html" title="Тriple redirect" /><published>2023-12-28T03:00:00+03:00</published><updated>2023-12-28T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/triple-redirect</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/triple-redirect"><![CDATA[<p>If you need to redirect users to a new address, but you don’t have a server, you can use “triple” redirection. It includes:</p>
+<p>Обратите внимание, что и там и там используется узел <code class="language-plaintext highlighter-rouge">body</code>, но с разными именами переменных. Не самый изящный способ, но позволяющий не думать о связанности кода. В данном случае влияние на скорость нулевое, но экстраполировать на 500 узлов, конечно, не стоит)</p>]]></content><author><name></name></author><category term="css" /><category term="dark theme" /><category term="javascript" /><category term="accessibility" /><summary type="html"><![CDATA[upd: я сделал видео гайд по созданию темной темы и исправлению проблем, которые могут возникнуть]]></summary></entry><entry xml:lang="en"><title type="html">Тriple redirect</title><link href="https://vallek.github.io/webdevtips/en/triple-redirect" rel="alternate" type="text/html" title="Тriple redirect" /><published>2023-12-28T03:00:00+03:00</published><updated>2023-12-28T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/triple-redirect</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/triple-redirect"><![CDATA[<p>If you need to redirect users to a new address, but you don’t have a server, you can use “triple” redirection. It includes:</p>
 
 <ol>
   <li>meta tag in <strong>HTML</strong> with <code class="language-plaintext highlighter-rouge">meta http-equiv="refresh"</code>. The number after content is a delay in seconds. You can set to 1, 5 and so on.</li>
@@ -229,16 +277,4 @@ function setLight(el) {
 &lt;/html&gt;
 </code></pre></div></div>
 
-<p>Но, если есть возможность, то лучше <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Redirections">начать с HTTP</a>.</p>]]></content><author><name></name></author><category term="http" /><category term="html" /><category term="javascript" /><summary type="html"><![CDATA[Если вы хотите переадресовать посетителя на новый сайт, но у вас нет доступа к серверу (например, если сайт на Github Pages) то можно использовать “тройную” переадресацию без HTTP. А именно:]]></summary></entry><entry xml:lang="en"><title type="html">Problems with dark/light themes in Firefox</title><link href="https://vallek.github.io/webdevtips/en/firefox-dark-theme" rel="alternate" type="text/html" title="Problems with dark/light themes in Firefox" /><published>2023-12-09T03:00:00+03:00</published><updated>2023-12-09T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/firefox-dark-theme</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/firefox-dark-theme"><![CDATA[<p>If you have problems with dark/light themes in Firefox. Browser not following system setting or you don’t want it to follow theme (Firefox does it since 95) or you have problems with custom dark theme and so on.</p>
-
-<ol>
-  <li>Go to about:config</li>
-  <li>Find <code class="language-plaintext highlighter-rouge">layout.css.prefers-color-scheme.content-override</code></li>
-  <li>Dark (0), light (1), system (2) or browser (3).</li>
-</ol>]]></content><author><name></name></author><category term="firefox" /><category term="dark theme" /><summary type="html"><![CDATA[If you have problems with dark/light themes in Firefox. Browser not following system setting or you don’t want it to follow theme (Firefox does it since 95) or you have problems with custom dark theme and so on.]]></summary></entry><entry xml:lang="ru"><title type="html">Проблемы с темной/светлой темой в Firefox</title><link href="https://vallek.github.io/webdevtips/ru/firefox-dark-theme" rel="alternate" type="text/html" title="Проблемы с темной/светлой темой в Firefox" /><published>2023-12-09T03:00:00+03:00</published><updated>2023-12-09T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/firefox-dark-theme</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/firefox-dark-theme"><![CDATA[<p>Для тех у кого проблемы в Firefox с настройками темной темы. А именно: не следует системной настройке или вы хотите, чтобы не следовал цветовой теме в браузере (после Firefox 95 пользовательские темы теперь могут зачем-то переключить темную/светлую) или проблемы с usercss, кастомной темной темой на сайте и т.п.</p>
-
-<ol>
-  <li>Идете в about:config</li>
-  <li>Находите <code class="language-plaintext highlighter-rouge">layout.css.prefers-color-scheme.content-override</code></li>
-  <li>Темная (0), светлая (1), как в системе (2) или как в браузере (3).</li>
-</ol>]]></content><author><name></name></author><category term="firefox" /><category term="dark theme" /><summary type="html"><![CDATA[Для тех у кого проблемы в Firefox с настройками темной темы. А именно: не следует системной настройке или вы хотите, чтобы не следовал цветовой теме в браузере (после Firefox 95 пользовательские темы теперь могут зачем-то переключить темную/светлую) или проблемы с usercss, кастомной темной темой на сайте и т.п.]]></summary></entry></feed>
+<p>Но, если есть возможность, то лучше <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Redirections">начать с HTTP</a>.</p>]]></content><author><name></name></author><category term="http" /><category term="html" /><category term="javascript" /><summary type="html"><![CDATA[Если вы хотите переадресовать посетителя на новый сайт, но у вас нет доступа к серверу (например, если сайт на Github Pages) то можно использовать “тройную” переадресацию без HTTP. А именно:]]></summary></entry></feed>

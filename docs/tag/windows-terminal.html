@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang=""><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin SEO -->
+  <title>Web Dev Tips | Заметки на тему windows terminal</title>
+  <meta property="og:title" content="Web Dev Tips">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="author" content="Vallek">
+  
+  <meta name="description" content="База знаний по фронтенду, веб-разработке и настройке пк">
+  <meta property="og:description" content="База знаний по фронтенду, веб-разработке и настройке пк">
+  
+  <link rel="canonical" href="https://vallek.github.io/webdevtips/tag/windows-terminal.html">
+  <meta property="og:url" content="https://vallek.github.io/webdevtips/tag/windows-terminal.html">
+  <meta property="og:site_name" content="Web Dev Tips">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta property="twitter:title" content="Web Dev Tips">
+  <meta name="twitter:image" content="https://vallek.github.io/webdevtips/favicon.png">
+  <!-- End SEO -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/webdevtips/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/webdevtips/favicon.png">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/webdevtips/favicon.svg">
+  <link rel="stylesheet" href="/webdevtips/css/style.css"> 
+  <script defer src="/webdevtips/js/simple-jekyll-search.js"></script>
+  <script defer src="/webdevtips/js/tags-lang.js"></script>
+  <script defer src="/webdevtips/js/search.js"></script>
+  <script defer src="/webdevtips/js/header-dropdowns.js"></script>
+  <script defer src="/webdevtips/js/themes.js"></script>
+  <script defer src="/webdevtips/js/accordion.js"></script>
+  <script defer src="/webdevtips/js/tags-colors.js"></script>
+  <link type="application/atom+xml" rel="alternate" href="https://vallek.github.io/webdevtips/feed.xml" title="Web Dev Tips"><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MH46X0DQW4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MH46X0DQW4');
+</script>
+
+</head>
+<body class="page"><script>
+	const thisPage = document.querySelector('.page');
+	
+	// Check if user set dark theme before
+	if (localStorage.getItem('webdevtips-theme') == 'dark') {
+		thisPage.classList.add('dark');
+	}
+	// Check if user prefers dark theme
+	if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		thisPage.classList.add('dark');
+	}
+</script><header class="header site-header">
+
+  <div class="header__content">
+    
+    <a class="header__title" rel="author" href="/webdevtips/">Web Dev Tips</a>
+    
+    <!-- HTML elements for search -->
+    <div class="header__search search">
+      
+      <input class="search__input" type="text" id="search-input" placeholder="Поиск по содержимому...">
+      
+      <ul class="search__list visually-hidden" id="results-container"></ul>
+    </div>
+      <nav class="site-nav">
+        <div class="site-nav__content">
+          <div class="site-nav__dropdown">
+            
+          </div>  
+          <div class="site-nav__dropdown">
+            
+            <button class="site-nav__button">Theme</button>
+            
+            <ul class="site-nav__list visually-hidden">
+              
+              <li class="site-nav__item">
+                <a class="site-nav__link site-nav__link_light" href="#">Light</a>
+              </li>
+              <li class="site-nav__item">
+                <a class="site-nav__link site-nav__link_dark" href="#">Dark</a>
+              </li>
+              
+            </ul>
+          </div>
+          <div class="site-nav__dropdown">
+            
+            <button class="site-nav__button">Pages</button>
+            
+            <ul class="site-nav__list visually-hidden">
+              <li class="site-nav__item">
+                <a class="site-nav__link" href="https://github.com/Vallek/webdevtips">GitHub</a>
+              </li>
+              
+              <li class="site-nav__item">
+                <a class="site-nav__link" href="/webdevtips/en/about/">About</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+  </div>
+</header>
+<div class="page__content">
+<aside class="sidebar">
+	
+	<h2 class="sidebar__heading">Рубрики и заметки</h2><ul class="sidebar__notebooks">
+		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">frontend</button>
+			
+			
+			
+
+			<ul class="siderbar__tags">
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/youtube">youtube</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/lazy-load">lazy load</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/iframe">iframe</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/html">html</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/css">css</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/dark-theme">dark theme</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/javascript">javascript</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/accessibility">accessibility</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/http">http</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/flexbox">flexbox</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/validation">validation</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/svg">svg</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/favicon">favicon</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/responsive">responsive</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/grid">grid</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/fonts">fonts</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/animation">animation</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/devtools">devtools</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/events">events</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/chrome">chrome</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/firefox">firefox</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/selectors">selectors</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/nth-child">nth-child</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/postcss">postcss</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/qa">qa</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/design">design</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/emmet">emmet</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/vs-code">vs code</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/focus">focus</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/regex">regex</a>
+					
+				</li>
+				
+			</ul>
+		</li>
+		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">webdev</button>
+			
+			
+			
+
+			<ul class="siderbar__tags">
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/jekyll">jekyll</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/git">git</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/accessibility">accessibility</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/powershell">powershell</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/vs-code">vs code</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/contrast">contrast</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/shortcuts">shortcuts</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/emmet">emmet</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/terminal">terminal</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/cmd">cmd</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/windows">windows</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/local-server">local server</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/https">https</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/openssl">openssl</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/nodejs">nodejs</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/npm">npm</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/nvm">nvm</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/mobile">mobile</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/qa">qa</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/http">http</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/clink">clink</a>
+					
+				</li>
+				
+			</ul>
+		</li>
+		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">backend</button>
+			
+			
+			
+
+			<ul class="siderbar__tags">
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/jekyll">jekyll</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/ruby">ruby</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/github">github</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/nodejs">nodejs</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/php">php</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/local-server">local server</a>
+					
+				</li>
+				
+			</ul>
+		</li>
+		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">pc</button>
+			
+			
+			
+
+			<ul class="siderbar__tags">
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/windows-terminal">windows terminal</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/quake">quake</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/windows">windows</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/firefox">firefox</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/dark-theme">dark theme</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/regedit">regedit</a>
+					
+				</li>
+				
+				<li class="siderbar__tag">
+					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/adblock">adblock</a>
+					
+				</li>
+				
+			</ul>
+		</li>
+		
+	</ul>
+</aside><main class="page__main main" aria-label="Content">
+        <div class="main__content wrapper">
+          <div class="tags_ru">
+  <h1>Заметки на тему windows terminal</h1>
+  <ul>
+  
+  
+  <li><a href="/webdevtips/ru/windows-terminal-quake">Windows Terminal в режиме quake с автозапуском</a> (темы: <a href="/webdevtips/tag/windows-terminal.html" rel="tag">windows terminal</a>, <a href="/webdevtips/tag/quake.html" rel="tag">quake</a>, <a href="/webdevtips/tag/windows.html" rel="tag">windows</a>)</li>
+  
+  
+  
+  
+  </ul>
+</div>
+
+<div class="tags_en">
+  <h1>Notes about windows terminal</h1>
+  <ul>
+  
+  
+  
+  
+  <li><a href="/webdevtips/en/windows-terminal-quake-copy">Windows Terminal in quake mode on start up</a> (tags: <a href="/webdevtips/tag/windows-terminal.html" rel="tag">windows terminal</a>, <a href="/webdevtips/tag/quake.html" rel="tag">quake</a>, <a href="/webdevtips/tag/windows.html" rel="tag">windows</a>)</li>
+  
+  
+  </ul>
+</div>
+
+<div class="tags-cloud">
+  <h2>Все темы / All tags</h2>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/css">css</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/flexbox">flexbox</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/terminal">terminal</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/cmd">cmd</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/clink">clink</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/javascript">javascript</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/qa">qa</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/html">html</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/selectors">selectors</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/regex">regex</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/devtools">devtools</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/focus">focus</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/chrome">chrome</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/firefox">firefox</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/emmet">emmet</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/vs-code">vs code</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/http">http</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/design">design</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/adblock">adblock</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/local-server">local server</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/mobile">mobile</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/powershell">powershell</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/git">git</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/jekyll">jekyll</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/windows">windows</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/accessibility">accessibility</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/postcss">postcss</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/nth-child">nth-child</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/php">php</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/nodejs">nodejs</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/npm">npm</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/nvm">nvm</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/https">https</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/openssl">openssl</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/events">events</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/animation">animation</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/fonts">fonts</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/responsive">responsive</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/regedit">regedit</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/grid">grid</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/shortcuts">shortcuts</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/svg">svg</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/favicon">favicon</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/dark-theme">dark theme</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/validation">validation</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/contrast">contrast</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/github">github</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/ruby">ruby</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/iframe">iframe</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/youtube">youtube</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/lazy-load">lazy load</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/windows-terminal">windows terminal</a>
+  
+  <a class="tags-cloud__tag tags-cloud__tag_tag-page" href="/webdevtips/tag/quake">quake</a>
+  
+</div>
+        </div>
+      </main><aside class="tags-cloud tags-cloud_aside">
+	
+	<h2 class="tags-cloud__heading">Все темы:</h2>
+	
+	<div class="tags-cloud__tags tags-cloud__tags_all">
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/css">css (16)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/flexbox">flexbox (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/terminal">terminal (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/cmd">cmd (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/clink">clink (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/javascript">javascript (8)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/qa">qa (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/html">html (8)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/selectors">selectors (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/regex">regex (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/devtools">devtools (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/focus">focus (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/chrome">chrome (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/firefox">firefox (4)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/emmet">emmet (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/vs-code">vs code (5)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/http">http (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/design">design (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/adblock">adblock (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/local-server">local server (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/mobile">mobile (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/powershell">powershell (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/git">git (7)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/jekyll">jekyll (5)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/windows">windows (4)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/accessibility">accessibility (4)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/postcss">postcss (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/nth-child">nth-child (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/php">php (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/nodejs">nodejs (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/npm">npm (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/nvm">nvm (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/https">https (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/openssl">openssl (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/events">events (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/animation">animation (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/fonts">fonts (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/responsive">responsive (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/regedit">regedit (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/grid">grid (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/shortcuts">shortcuts (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/svg">svg (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/favicon">favicon (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/dark-theme">dark theme (3)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/validation">validation (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/contrast">contrast (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/github">github (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/ruby">ruby (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/iframe">iframe (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/youtube">youtube (2)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/lazy-load">lazy load (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/windows-terminal">windows terminal (1)
+		</a>
+		
+		<a class="tags-cloud__tag tags-cloud__tag_aside" href="/webdevtips/tag/quake">quake (1)
+		</a>
+		
+	</div>
+</aside></div><footer class="footer h-card">
+
+  <div class="wrapper">
+
+    <h2 class="footer__heading">Web Dev Tips</h2>
+
+    <div class="footer__info">
+      <div class="footer__section footer__author">
+        <ul class="contact-list">
+          <li class="p-name">Web Dev Tips</li><li><a class="u-email" href="mailto:vwebdis@gmail.com">vwebdis@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer__section footer__social"><ul class="social-media-list"><li><a href="https://github.com/Vallek"><svg class="svg-icon"><use xlink:href="/webdevtips/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Vallek</span></a></li><li><a href="https://www.twitter.com/_vallek"><svg class="svg-icon"><use xlink:href="/webdevtips/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">_vallek</span></a></li></ul>
+</div>
+
+      <div class="footer__section footer__about">
+        
+        <p class="footer__description">База знаний по фронтенду, веб-разработке и настройке пк</p>
+        
+        <p class="footer__copy">Favicon from <a href="https://www.svgrepo.com/svg/397378/man-technologist">svgrepo</a> under Apache License</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,6 +1,26 @@
 [
   
     {
+      "title"    : "Windows Terminal в режиме quake с автозапуском",
+      "category" : "",
+      "tags"     : "windows terminal, quake, windows",
+      "url"      : "/webdevtips/ru/windows-terminal-quake",
+      "date"     : "2024-02-16 03:00:00 +0300",
+      "content"  : "Windows Terminal можно запустить в режиме quake. Режим и его название пошли от, не поверите, игры Quake (а вовсе не то, что думает автопереводчик MS лол).В этом режиме консоль выезжает сверху. Довольно удобно, если например пользуетесь терминалом вне vs code для разных глобальных задач.Чтобы запускать wt в кваковском режиме, зайдите в свойства ярлыка и добавьте в после Объект после wt.exe -w _quake. Без кавычек, вот так:Но если при этом включить автозапуск wt при старте системы, то он откроет обычно окно. Чтобы он загружался сразу в кваку и при этом был свернут, нужно создать особый ярлык следующим образом:  win + R  Введите shell:startup, откроется папка автозагрузки  ПКМ &amp;gt; создать ярлык  wt.exe -w _quake (или %LOCALAPPDATA%MicrosoftWindowsAppswt.exe -w _quake если не работает)  Назовите, как хотите  Выберете в поле Окно “Свернутое в значок”А чтобы скрыть верхнюю панель с вкладками нужно включить в настройках wt режим фокуса:Проверено на Windows 10",
+      "lang": "ru"
+    } ,
+  
+    {
+      "title"    : "Windows Terminal in quake mode on start up",
+      "category" : "",
+      "tags"     : "windows terminal, quake, windows",
+      "url"      : "/webdevtips/en/windows-terminal-quake-copy",
+      "date"     : "2024-02-16 03:00:00 +0300",
+      "content"  : "Windows Terminal can work in quake mode. The mode comes from Quake video gameIn this mode console slides down from top of the screen. It’s pretty handy if you use terminal globally.To start wt in quake mode add wt.exe -w _quake to desktop shortcut properties. With no quotation marks:However if you want wt to autostart at system start up it will just open standard window. To start it in wake mode and minimized create special shortcut like this:  win + R  Type shell:startup. It will open Startup folder  right click &amp;gt; create shortcut  wt.exe -w _quake (or %LOCALAPPDATA%MicrosoftWindowsAppswt.exe -w _quake if it’s not working)  Call it what you want  Choose minimized in windows inputTo hide wt tab bar:Tested on Windows 10",
+      "lang": "en"
+    } ,
+  
+    {
       "title"    : "Embeded Youtube Lazy Loading по клику",
       "category" : "",
       "tags"     : "youtube, lazy load, iframe, html",
