@@ -5,6 +5,8 @@ date: 2024-02-05 00:00 +0000
 notebook: frontend
 tags: [html, iframe, youtube]
 ---
+**21.02.2024 UPD**: this method is not working for me any more in Chrome 121-122. Maybe cause cookie policy changes. As an option you can create playlist with all videos manually. Of course you'll have to add new video to it every time. 
+
 To embed latest youtube channel video without api:
 
 1. Learn your channel id. Open youtube (not studio, just website) > click your avatar in the corner > Settings > Advanced settings. Find your channel id. This is also last part of your channel url if you not using unique name.
