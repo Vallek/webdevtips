@@ -286,7 +286,7 @@
       "tags"     : "git",
       "url"      : "/webdevtips/ru/git-move-changes-to-branch",
       "date"     : "2023-06-01 12:08:00 +0300",
-      "content"  : "Бывает, что вы сделали изменения и поняли, что они слишком большие для главной/активной ветки, требуют большей работы, чем вы думали и т.д. Вы можете перенести все изменения из working tree, которые вы еще не закоммитили в новую ветку.git switch -c new-branch-nameДо появления команды switch в 2.23 использовали git checkout -b new-branch-name.Далее просто коммитите изменения уже в новую ветку. После чего можно вернуться в изначальную.Этот метод подходит, когда вы поняли, что начали делать целую новую фичу, которую планируете реализовать потом (дойдут ли до этого руки уже другой вопрос:). Если же вы просто хотите временно отложить изменения, то используйте git stash.",
+      "content"  : "Бывает, что вы сделали изменения и поняли, что они слишком большие для главной/активной ветки, требуют большей работы, чем вы думали и т.д. Вы можете перенести все изменения из working tree, которые вы еще не закоммитили в новую ветку. Исходящие коммиты при этом также будут перенесены на новую ветку.git switch -c new-branch-nameДо появления команды switch в 2.23 использовали git checkout -b new-branch-name.Далее просто коммитите изменения уже в новую ветку. После чего можно вернуться в изначальную.Этот метод подходит, когда вы поняли, что начали делать целую новую фичу, которую планируете реализовать потом (дойдут ли до этого руки уже другой вопрос:). Если же вы просто хотите временно отложить изменения, то используйте git stash.",
       "lang": "ru"
     } ,
   
@@ -296,7 +296,7 @@
       "tags"     : "git",
       "url"      : "/webdevtips/en/git-move-changes-to-branch",
       "date"     : "2023-06-01 12:08:00 +0300",
-      "content"  : "Sometimes you make changes and realize that they are too big for the main/active branch, require more work than you thought, etc. You can move all the changes from the working tree that you haven’t committed yet to a new branch.git switch -c new-branch-nameBefore the switch command appeared in 2.23, it was git checkout -b new-branch-name.Then just commit the changes to the new branch. After that, you can return to the original one.This method is suitable when you realize that you have started making a whole new feature that you plan to implement later (and then will forget about it as per usual:). If you just want to temporarily postpone the changes, then use git stash.",
+      "content"  : "Sometimes you make changes and realize that they are too big for the main/active branch, require more work than you thought, etc. You can move all the changes from the working tree that you haven’t committed yet to a new branch. Outgoing commits will be moved to a new branch as well.git switch -c new-branch-nameBefore the switch command appeared in 2.23, it was git checkout -b new-branch-name.Then just commit the changes to the new branch. After that, you can return to the original one.This method is suitable when you realize that you have started making a whole new feature that you plan to implement later (and then will forget about it as per usual:). If you just want to temporarily postpone the changes, then use git stash.",
       "lang": "en"
     } ,
   
