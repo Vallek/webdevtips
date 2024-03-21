@@ -6,7 +6,7 @@ notebook: webdev
 tags: [git]
 sources: [https://stackoverflow.com/a/1394804/9749171]
 ---
-Sometimes you make changes and realize that they are too big for the main/active branch, require more work than you thought, etc. You can move all the changes from the working tree that you haven't committed yet to a new branch.
+Sometimes you make changes and realize that they are too big for the main/active branch, require more work than you thought, etc. You can move all the changes from the working tree that you haven't committed yet to a new branch. Outgoing commits will be moved to a new branch as well.
 
 ```
 git switch -c new-branch-name
