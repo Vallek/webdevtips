@@ -1066,7 +1066,7 @@
       "tags"     : "regex, html",
       "url"      : "/webdevtips/ru/regex-tricks",
       "date"     : "2021-08-04 03:00:00 +0300",
-      "content"  : "Замена html элементов&amp;lt;/a&amp;gt;n*.*&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;ntttt&amp;lt;/a&amp;gt;Удалить пустые строчки, проще всего расширением Remove Empty Lines в vs codeПоиск слов/[wА-Яа-я]+/ig - все слова",
+      "content"  : "Замена html элементов&amp;lt;/a&amp;gt;n*.*&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;ntttt&amp;lt;/a&amp;gt;Удалить пустые строчки, проще всего расширением Remove Empty Lines в vs codeПоиск слов/[wА-Яа-я]+/ig - все словаВыделить определенную частьпервая_часть.*?вторая_часть? - Выбрать все между без повторений (только одно совпадение)Пример: нужно выбрать часть url в атрибутах html элементов, которые при этом написаны в одну строку. В данном коде &quot;img/favs/.*?jpg выберет внутри каждого url отдельно.&amp;lt;li&amp;gt;&amp;lt;img class=&quot;topic__favicon&quot; loading=&quot;lazy&quot; src=&quot;img/favs/roadmap.sh.jpg&quot;&amp;gt;&amp;lt;a href=&quot;https://roadmap.sh/frontend?r=frontend-beginner&quot;&amp;gt;Roadmap для новчиков от roadmap.sh&amp;lt;/a&amp;gt; &amp;lt;span&amp;gt;и&amp;lt;/span&amp;gt; &amp;lt;img class=&quot;topic__favicon&quot; loading=&quot;lazy&quot; src=&quot;img/favs/roadmap.sh.jpg&quot;&amp;gt;&amp;lt;a href=&quot;https://roadmap.sh/frontend&quot;&amp;gt;продвинутая версия&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;([^символ]*$) - выделить все с конца до опр. символаПример: ([^:]*$) выделяет часть url адреса до двоеточия&amp;lt;a href=&quot;https://roadmap.sh/frontend&quot;&amp;gt;продвинутая версия&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;",
       "lang": "ru"
     } ,
   
@@ -1076,7 +1076,7 @@
       "tags"     : "regex, html",
       "url"      : "/webdevtips/en/regex-tricks",
       "date"     : "2021-08-04 03:00:00 +0300",
-      "content"  : "REplace html elements&amp;lt;/a&amp;gt;n*.*&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;ntttt&amp;lt;/a&amp;gt;It’s easier to delete empty lines with extension Remove Empty Lines for vs codeFind all words/[wА-Яа-я]+/ig - all words including cyrillic",
+      "content"  : "REplace html elements&amp;lt;/a&amp;gt;n*.*&amp;lt;/div&amp;gt;&amp;lt;/a&amp;gt;ntttt&amp;lt;/a&amp;gt;It’s easier to delete empty lines with extension Remove Empty Lines for vs codeFind all words/[wА-Яа-я]+/ig - all words including cyrillicSelect specific fragmentstart_with.*?end_with? - Select without repeats (only one occurrence)Example: select part of url in html elements, that are written in one line. &quot;img/favs/.*?jpg selects inside each url:&amp;lt;li&amp;gt;&amp;lt;img class=&quot;topic__favicon&quot; loading=&quot;lazy&quot; src=&quot;img/favs/roadmap.sh.jpg&quot;&amp;gt;&amp;lt;a href=&quot;https://roadmap.sh/frontend?r=frontend-beginner&quot;&amp;gt;Roadmap для новчиков от roadmap.sh&amp;lt;/a&amp;gt; &amp;lt;span&amp;gt;и&amp;lt;/span&amp;gt; &amp;lt;img class=&quot;topic__favicon&quot; loading=&quot;lazy&quot; src=&quot;img/favs/roadmap.sh.jpg&quot;&amp;gt;&amp;lt;a href=&quot;https://roadmap.sh/frontend&quot;&amp;gt;продвинутая версия&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;([^symbol]*$) - select all from the end uo to symbolExample: ([^:]*$) selects part of url up to colon:&amp;lt;a href=&quot;https://roadmap.sh/frontend&quot;&amp;gt;продвинутая версия&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;",
       "lang": "en"
     } ,
   

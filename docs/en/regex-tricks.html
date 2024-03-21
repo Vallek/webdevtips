@@ -895,6 +895,22 @@
 
 <p><code class="language-plaintext highlighter-rouge">/[\wА-Яа-я]+/ig</code> - all words including cyrillic</p>
 
+<h2 id="select-specific-fragment">Select specific fragment</h2>
+
+<p><code class="language-plaintext highlighter-rouge">start_with.*?end_with?</code> - Select without repeats (only one occurrence)</p>
+
+<p>Example: select part of url in html elements, that are written in one line. <code class="language-plaintext highlighter-rouge">"img\/favs\/.*?jpg</code> selects inside each url:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;li&gt;&lt;img class="topic__favicon" loading="lazy" src="img/favs/roadmap.sh.jpg"&gt;&lt;a href="https://roadmap.sh/frontend?r=frontend-beginner"&gt;Roadmap для новчиков от roadmap.sh&lt;/a&gt; &lt;span&gt;и&lt;/span&gt; &lt;img class="topic__favicon" loading="lazy" src="img/favs/roadmap.sh.jpg"&gt;&lt;a href="https://roadmap.sh/frontend"&gt;продвинутая версия&lt;/a&gt;&lt;/li&gt;
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">([^symbol]*$)</code> - select all from the end uo to symbol</p>
+
+<p>Example: <code class="language-plaintext highlighter-rouge">([^\:]*$)</code> selects part of url up to colon:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;a href="https://roadmap.sh/frontend"&gt;продвинутая версия&lt;/a&gt;&lt;/li&gt;
+</code></pre></div></div>
+
   </div><h2 class="post-tags__heading">Теги</h2>
   
   

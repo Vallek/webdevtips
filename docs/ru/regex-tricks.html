@@ -892,6 +892,22 @@
 
 <p><code class="language-plaintext highlighter-rouge">/[\wА-Яа-я]+/ig</code> - все слова</p>
 
+<h2 id="выделить-определенную-часть">Выделить определенную часть</h2>
+
+<p><code class="language-plaintext highlighter-rouge">первая_часть.*?вторая_часть?</code> - Выбрать все между без повторений (только одно совпадение)</p>
+
+<p>Пример: нужно выбрать часть url в атрибутах html элементов, которые при этом написаны в одну строку. В данном коде <code class="language-plaintext highlighter-rouge">"img\/favs\/.*?jpg</code> выберет внутри каждого url отдельно.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;li&gt;&lt;img class="topic__favicon" loading="lazy" src="img/favs/roadmap.sh.jpg"&gt;&lt;a href="https://roadmap.sh/frontend?r=frontend-beginner"&gt;Roadmap для новчиков от roadmap.sh&lt;/a&gt; &lt;span&gt;и&lt;/span&gt; &lt;img class="topic__favicon" loading="lazy" src="img/favs/roadmap.sh.jpg"&gt;&lt;a href="https://roadmap.sh/frontend"&gt;продвинутая версия&lt;/a&gt;&lt;/li&gt;
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">([^символ]*$)</code> - выделить все с конца до опр. символа</p>
+
+<p>Пример: <code class="language-plaintext highlighter-rouge">([^\:]*$)</code> выделяет часть url адреса до двоеточия</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;a href="https://roadmap.sh/frontend"&gt;продвинутая версия&lt;/a&gt;&lt;/li&gt;
+</code></pre></div></div>
+
   </div><h2 class="post-tags__heading">Теги</h2>
   
   
