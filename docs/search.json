@@ -1,6 +1,26 @@
 [
   
     {
+      "title"    : "Чем отличаются inherit, initial, unset и revert?",
+      "category" : "",
+      "tags"     : "css",
+      "url"      : "/webdevtips/ru/initial-inherit",
+      "date"     : "2024-08-08 03:00:00 +0300",
+      "content"  : "inherit - значение свойства наследуется от родителяinitial - откатывает к значению по спецификациям (w3c)unset - если может наследоваться, то будет. А если нет, то откатится к значению по спецификациям.revert - откатывает к значению в браузерных стилях по умолчанию (user agent stylesheet)Подробности в моем видео на тему.",
+      "lang": "ru"
+    } ,
+  
+    {
+      "title"    : "What&#39;s the difference between inherit, initial, unset and revert?",
+      "category" : "",
+      "tags"     : "css",
+      "url"      : "/webdevtips/en/initial-inherit",
+      "date"     : "2024-08-08 03:00:00 +0300",
+      "content"  : "inherit - property value is inherited from parent node (html element)initial - property value comes from css specifications (w3c)unset - property value is inherited from parent node if possible. If not will come from css specifications.revert - property value comes from default browser styles (user agent stylesheet)",
+      "lang": "en"
+    } ,
+  
+    {
       "title"    : "Windows Terminal в режиме quake с автозапуском",
       "category" : "",
       "tags"     : "windows terminal, quake, windows",

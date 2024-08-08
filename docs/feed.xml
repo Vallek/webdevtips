@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2024-05-07T12:03:29+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">Windows Terminal in quake mode on start up</title><link href="https://vallek.github.io/webdevtips/en/windows-terminal-quake-copy" rel="alternate" type="text/html" title="Windows Terminal in quake mode on start up" /><published>2024-02-16T03:00:00+03:00</published><updated>2024-02-16T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/windows-terminal-quake copy</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/windows-terminal-quake-copy"><![CDATA[<p>Windows Terminal can work in quake mode. The mode comes from Quake video game</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2024-08-08T22:07:06+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">What’s the difference between inherit, initial, unset and revert?</title><link href="https://vallek.github.io/webdevtips/en/initial-inherit" rel="alternate" type="text/html" title="What’s the difference between inherit, initial, unset and revert?" /><published>2024-08-08T03:00:00+03:00</published><updated>2024-08-08T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/initial-inherit</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/initial-inherit"><![CDATA[<p>inherit - property value is inherited from parent node (html element)</p>
+
+<p>initial - property value comes from css specifications (w3c)</p>
+
+<p>unset - property value is inherited from parent node if possible. If not will come from css specifications.</p>
+
+<p>revert - property value comes from default browser styles (user agent stylesheet)</p>
+
+<p><img src="../img/inherit.jpg" alt="" /></p>]]></content><author><name></name></author><category term="css" /><summary type="html"><![CDATA[inherit - property value is inherited from parent node (html element)]]></summary></entry><entry xml:lang="ru"><title type="html">Чем отличаются inherit, initial, unset и revert?</title><link href="https://vallek.github.io/webdevtips/ru/initial-inherit" rel="alternate" type="text/html" title="Чем отличаются inherit, initial, unset и revert?" /><published>2024-08-08T03:00:00+03:00</published><updated>2024-08-08T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/initial-inherit</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/initial-inherit"><![CDATA[<p>inherit - значение свойства наследуется от родителя</p>
+
+<p>initial - откатывает к значению <strong>по спецификациям</strong> (w3c)</p>
+
+<p>unset - если может наследоваться, то будет. А если нет, то откатится к значению по спецификациям.</p>
+
+<p>revert - откатывает к значению <strong>в браузерных стилях</strong> по умолчанию (user agent stylesheet)</p>
+
+<p><img src="../img/inherit.jpg" alt="" /></p>
+
+<p>Подробности <a href="https://youtu.be/Ne_ls6OzRF0?feature=shared">в моем видео</a> на тему.</p>]]></content><author><name></name></author><category term="css" /><summary type="html"><![CDATA[inherit - значение свойства наследуется от родителя]]></summary></entry><entry xml:lang="en"><title type="html">Windows Terminal in quake mode on start up</title><link href="https://vallek.github.io/webdevtips/en/windows-terminal-quake-copy" rel="alternate" type="text/html" title="Windows Terminal in quake mode on start up" /><published>2024-02-16T03:00:00+03:00</published><updated>2024-02-16T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/windows-terminal-quake copy</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/windows-terminal-quake-copy"><![CDATA[<p>Windows Terminal can work in quake mode. The mode comes from Quake video game</p>
 
 <p>In this mode console slides down from top of the screen. It’s pretty handy if you use terminal globally.</p>
 
@@ -227,58 +245,4 @@ function setLight(el) {
 }
 </code></pre></div></div>
 
-<p>Обратите внимание, что и там и там используется узел <code class="language-plaintext highlighter-rouge">body</code>, но с разными именами переменных. Не самый изящный способ, но позволяющий не думать о связанности кода. В данном случае влияние на скорость нулевое, но экстраполировать на 500 узлов, конечно, не стоит)</p>]]></content><author><name></name></author><category term="css" /><category term="dark theme" /><category term="javascript" /><category term="accessibility" /><summary type="html"><![CDATA[upd: я сделал видео гайд по созданию темной темы и исправлению проблем, которые могут возникнуть]]></summary></entry><entry xml:lang="en"><title type="html">Тriple redirect</title><link href="https://vallek.github.io/webdevtips/en/triple-redirect" rel="alternate" type="text/html" title="Тriple redirect" /><published>2023-12-28T03:00:00+03:00</published><updated>2023-12-28T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/triple-redirect</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/triple-redirect"><![CDATA[<p>If you need to redirect users to a new address, but you don’t have a server, you can use “triple” redirection. It includes:</p>
-
-<ol>
-  <li>meta tag in <strong>HTML</strong> with <code class="language-plaintext highlighter-rouge">meta http-equiv="refresh"</code>. The number after content is a delay in seconds. You can set to 1, 5 and so on.</li>
-  <li><strong>JS</strong> code inside script in the head with <code class="language-plaintext highlighter-rouge">window.location.href</code></li>
-  <li>In case of all that somehow didn’t work put text explanation for users with a link.</li>
-</ol>
-
-<p>Result could look like this:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-	&lt;meta charset="UTF-8"&gt;
-	&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-	&lt;meta http-equiv="refresh" content="0; url=https://example.com/"&gt;
-	&lt;title&gt;title&lt;/title&gt;
-	&lt;link rel="canonical" href="https://example.com/"&gt;
-	&lt;script&gt;
-		window.location.href = "https://example.com/"
-	&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-	&lt;h1&gt;The website moves to &lt;a href="https://example.com/"&gt;https://example.com/&lt;/a&gt;. If you weren't redirected please click a &lt;a href="https://example.com/"&gt;link&lt;/a&gt;&lt;/h1&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre></div></div>
-
-<p>Although it’s better to <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections">start with HTTP</a> if you can.</p>]]></content><author><name></name></author><category term="http" /><category term="html" /><category term="javascript" /><summary type="html"><![CDATA[If you need to redirect users to a new address, but you don’t have a server, you can use “triple” redirection. It includes:]]></summary></entry><entry xml:lang="ru"><title type="html">Тройная переадресация</title><link href="https://vallek.github.io/webdevtips/ru/triple-redirect" rel="alternate" type="text/html" title="Тройная переадресация" /><published>2023-12-28T03:00:00+03:00</published><updated>2023-12-28T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/triple-redirect</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/triple-redirect"><![CDATA[<p>Если вы хотите переадресовать посетителя на новый сайт, но у вас нет доступа к серверу (например, если сайт на Github Pages) то можно использовать “тройную” переадресацию без HTTP. А именно:</p>
-
-<ol>
-  <li>В <strong>HTML</strong> через тег <code class="language-plaintext highlighter-rouge">meta http-equiv="refresh"</code>. Число после content - задержка в секундах. Можно поставить 1, 5 и т.п. Дальше сам адрес.</li>
-  <li>С помощью <strong>JS</strong> внутри script в head через <code class="language-plaintext highlighter-rouge">window.location.href</code></li>
-  <li>На случай, если это все не сработает, вставить ссылку в содержимое и попросить посетителей перейти самим.</li>
-</ol>
-
-<p>Результат выглядит примерно так:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="ru"&gt;
-&lt;head&gt;
-	&lt;meta charset="UTF-8"&gt;
-	&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-	&lt;meta http-equiv="refresh" content="0; url=https://example.com/"&gt;
-	&lt;title&gt;title&lt;/title&gt;
-	&lt;link rel="canonical" href="https://example.com/"&gt;
-	&lt;script&gt;
-		window.location.href = "https://example.com/"
-	&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-	&lt;h1&gt;Сайт переехал на новый домен &lt;a href="https://example.com/"&gt;https://example.com/&lt;/a&gt;. Вас должно автоматически переадресовать на новый адрес. Если этого не произошло, пожалуйста, нажмите на &lt;a href="https://example.com/"&gt;ссылку&lt;/a&gt; сами)&lt;/h1&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre></div></div>
-
-<p>Но, если есть возможность, то лучше <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Redirections">начать с HTTP</a>.</p>]]></content><author><name></name></author><category term="http" /><category term="html" /><category term="javascript" /><summary type="html"><![CDATA[Если вы хотите переадресовать посетителя на новый сайт, но у вас нет доступа к серверу (например, если сайт на Github Pages) то можно использовать “тройную” переадресацию без HTTP. А именно:]]></summary></entry></feed>
+<p>Обратите внимание, что и там и там используется узел <code class="language-plaintext highlighter-rouge">body</code>, но с разными именами переменных. Не самый изящный способ, но позволяющий не думать о связанности кода. В данном случае влияние на скорость нулевое, но экстраполировать на 500 узлов, конечно, не стоит)</p>]]></content><author><name></name></author><category term="css" /><category term="dark theme" /><category term="javascript" /><category term="accessibility" /><summary type="html"><![CDATA[upd: я сделал видео гайд по созданию темной темы и исправлению проблем, которые могут возникнуть]]></summary></entry></feed>
