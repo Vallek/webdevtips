@@ -16,3 +16,7 @@ revert - откатывает к значению **в браузерных ст
 ![](../img/inherit.jpg)
 
 Подробности [в моем видео](https://youtu.be/Ne_ls6OzRF0?feature=shared) на тему.
+
+О значениях [на Доке](https://doka.guide/css/global-keywords/)
+
+О revert [на MDN](https://web-standards.ru/articles/inherit-initial-unset-revert/)
