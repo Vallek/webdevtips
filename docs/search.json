@@ -1,6 +1,26 @@
 [
   
     {
+      "title"    : "Как слить последний коммит в предпоследний",
+      "category" : "",
+      "tags"     : "git",
+      "url"      : "/webdevtips/ru/git-merge-last-commits",
+      "date"     : "2024-11-25 03:00:00 +0300",
+      "content"  : "Полезно, например, если вы забыли обновить версию вместе с основным коммитом.git reset --soft &quot;HEAD^&quot;git commit --amendВ итоге у вас будет коммит с названием от предпоследнего.Это работает только для слияние последнего коммита. Можно слить сколько угодно, при условии, что они идут подряд последними (не сработает, если не по порядку из середины).Для этого используйте git reset --soft HEAD~N, где N - количество коммитов.",
+      "lang": "ru"
+    } ,
+  
+    {
+      "title"    : "How to merge last commit with one before",
+      "category" : "",
+      "tags"     : "git",
+      "url"      : "/webdevtips/en/git-merge-last-commits",
+      "date"     : "2024-11-25 03:00:00 +0300",
+      "content"  : "It could be useful if you for example forget to update version number along with main changes.git reset --soft &quot;HEAD^&quot;git commit --amendYou will have a commit with a name of one before the last one.You can merge as many commits as you want, as long as they are the last X commits, and not somewhere in the middle. Just run git reset --soft HEAD~N, where N is the number of commits you want to merge.",
+      "lang": "en"
+    } ,
+  
+    {
       "title"    : "Чем отличаются inherit, initial, unset и revert?",
       "category" : "",
       "tags"     : "css",
