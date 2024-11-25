@@ -2,7 +2,7 @@
 layout: post
 title: 'How to merge last commit with one before'
 date: 2024-11-25 00:00 +0000
-notebook: frontend
+notebook: webdev
 tags: [git]
 sources: ['https://stackoverflow.com/a/24690646/9749171']
 ---
