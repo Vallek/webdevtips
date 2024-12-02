@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin SEO -->
-  <title>Web Dev Tips | How to get negative value in css variable</title>
+  <title>Web Dev Tips | Windows user environment variables</title>
   <meta property="og:title" content="Web Dev Tips">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:locale:alternate" content="en_US">
@@ -13,8 +13,8 @@
   <meta name="description" content="Frontend, web development and pc setup knowledge base">
   <meta property="og:description" content="Frontend, web development and pc setup knowledge base">
   
-  <link rel="canonical" href="https://vallek.github.io/webdevtips/en/negative-css-variable">
-  <meta property="og:url" content="https://vallek.github.io/webdevtips/en/negative-css-variable">
+  <link rel="canonical" href="https://vallek.github.io/webdevtips/en/windows-vars">
+  <meta property="og:url" content="https://vallek.github.io/webdevtips/en/windows-vars">
   <meta property="og:site_name" content="Web Dev Tips">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
@@ -79,9 +79,9 @@
             <ul class="site-nav__list visually-hidden">
               
               
-              <li class="site-nav__item"><a class="site-nav__link locales__lang_ru" href="/webdevtips/ru/negative-css-variable">RU</a></li>
+              <li class="site-nav__item"><a class="site-nav__link locales__lang_ru" href="/webdevtips/ru/windows-vars">RU</a></li>
               
-              <li class="site-nav__item"><a class="site-nav__link locales__lang_en" href="/webdevtips/en/negative-css-variable">EN</a></li>
+              <li class="site-nav__item"><a class="site-nav__link locales__lang_en" href="/webdevtips/en/windows-vars">EN</a></li>
               
   
               
@@ -139,7 +139,7 @@
 					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/windows">windows</a>
 					
 					<ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/windows-vars">Windows user environment variables</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/windows-vars">Windows user environment variables</a></li>
 					</ul>
 				</li>
 				
@@ -147,7 +147,7 @@
 					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/terminal">terminal</a>
 					
 					<ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/windows-vars">Windows user environment variables</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/windows-vars">Windows user environment variables</a></li>
 					</ul>
 				</li>
 				
@@ -155,7 +155,7 @@
 					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/cmd">cmd</a>
 					
 					<ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/windows-vars">Windows user environment variables</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/windows-vars">Windows user environment variables</a></li>
 					</ul>
 				</li>
 				
@@ -199,7 +199,7 @@
 						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/visually-hidden">Accessible ways to visually hide element</a></li>
 					</ul>
 					<ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/negative-css-variable">How to get negative value in css variable</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/negative-css-variable">How to get negative value in css variable</a></li>
 					</ul>
 					<ul class="sidebar__notes">
 						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/css-debug">Show borders of all elements for testing</a></li>
@@ -905,27 +905,39 @@
           <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">How to get negative value in css variable</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Windows user environment variables</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2023-02-17T03:00:00+03:00" itemprop="datePublished">Feb 17, 2023
+      <time class="dt-published" datetime="2024-12-02T03:00:00+03:00" itemprop="datePublished">Dec 2, 2024
       </time>
-      <span class="post-notebook">&ensp;-&ensp;frontend</span><a class="edit-button edit-button_post-page" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/en/2023-02-17-negative-css-variable.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
+      <span class="post-notebook">&ensp;-&ensp;frontend</span><a class="edit-button edit-button_post-page" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/en/2024-12-02-windows-vars.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
     </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calc(var(--name) * -1)
+    <p>Windows environment variables, that you can use in terminal. These are user folders related vars:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%HOMEDRIVE% - system drive
+%HOMEPATH% - path to user folder without a drive letter
+%USERPROFILE% - path to user folder with a drive letter
+
+echo %VARIABLE% - see variable value
+set - list all variable with values
 </code></pre></div></div>
 
   </div><h2 class="post-tags__heading">Теги</h2>
   
   
-  <a class="tag-link tag-link_home" href="/webdevtips/tag/css"><span class="nobrake">css</span></a>
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/windows"><span class="nobrake">windows</span></a>
+  
+  
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/terminal"><span class="nobrake">terminal</span></a>
+  
+  
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/cmd"><span class="nobrake">cmd</span></a>
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = 'https://vallek.github.io/webdevtips/en/negative-css-variable';
-      this.page.identifier = 'https://vallek.github.io/webdevtips/en/negative-css-variable';
+      this.page.url = 'https://vallek.github.io/webdevtips/en/windows-vars';
+      this.page.identifier = 'https://vallek.github.io/webdevtips/en/windows-vars';
     };
 
     (function() {
@@ -937,7 +949,7 @@
       (d.head || d.body).appendChild(s);
     })();
   </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/webdevtips/en/negative-css-variable" hidden></a>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/webdevtips/en/windows-vars" hidden></a>
 </article>
 
         </div>

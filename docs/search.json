@@ -1,6 +1,26 @@
 [
   
     {
+      "title"    : "Windows переменные среды пользователя",
+      "category" : "",
+      "tags"     : "windows, terminal, cmd",
+      "url"      : "/webdevtips/ru/windows-vars",
+      "date"     : "2024-12-02 03:00:00 +0300",
+      "content"  : "Переменные среды Windows, которые можно использовать в треминале. Конкретно здесь собраны переменные, связанные с пользователем:%HOMEDRIVE% - системный диск%HOMEPATH% - путь до папки юзера без диска%USERPROFILE% - путь до папки юзера с дискомecho %VARIABLE% - узнать значение переменнойset - все переменные со значениями",
+      "lang": "ru"
+    } ,
+  
+    {
+      "title"    : "Windows user environment variables",
+      "category" : "",
+      "tags"     : "windows, terminal, cmd",
+      "url"      : "/webdevtips/en/windows-vars",
+      "date"     : "2024-12-02 03:00:00 +0300",
+      "content"  : "Windows environment variables, that you can use in terminal. These are user folders related vars:%HOMEDRIVE% - system drive%HOMEPATH% - path to user folder without a drive letter%USERPROFILE% - path to user folder with a drive letterecho %VARIABLE% - see variable valueset - list all variable with values",
+      "lang": "en"
+    } ,
+  
+    {
       "title"    : "Как слить последний коммит в предпоследний",
       "category" : "",
       "tags"     : "git",
