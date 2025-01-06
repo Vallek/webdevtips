@@ -2,7 +2,7 @@
 layout: post
 title: 'Windows user environment variables'
 date: 2024-12-02 00:00 +0000
-notebook: frontend
+notebook: pc
 tags: [windows, terminal, cmd]
 ---
 Windows environment variables, that you can use in terminal. These are user folders related vars:

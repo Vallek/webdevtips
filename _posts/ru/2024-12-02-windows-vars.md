@@ -2,7 +2,7 @@
 layout: post
 title: 'Windows переменные среды пользователя'
 date: 2024-12-02 00:00 +0000
-notebook: frontend
+notebook: pc
 tags: [windows, terminal, cmd]
 ---
 Переменные среды Windows, которые можно использовать в треминале. Конкретно здесь собраны переменные, связанные с пользователем:
