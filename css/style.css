@@ -641,6 +641,7 @@ pre > code {
   background-color: hwb(var(--hue) 0% 20%);
   padding: 0 0.4em;
   border-radius: 15px;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
 }
 
 @media screen and (max-width: 1000px) {
