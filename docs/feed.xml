@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2025-01-07T13:18:05+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">Windows user environment variables</title><link href="https://vallek.github.io/webdevtips/en/windows-vars" rel="alternate" type="text/html" title="Windows user environment variables" /><published>2024-12-02T03:00:00+03:00</published><updated>2024-12-02T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/windows-vars</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/windows-vars"><![CDATA[<p>Windows environment variables, that you can use in terminal. These are user folders related vars:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2025-01-26T19:47:50+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">How to delete local git branches that do not exist on remote</title><link href="https://vallek.github.io/webdevtips/en/delete-git-branches" rel="alternate" type="text/html" title="How to delete local git branches that do not exist on remote" /><published>2025-01-26T03:00:00+03:00</published><updated>2025-01-26T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/delete-git-branches</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/delete-git-branches"><![CDATA[<p>If you have a bunch of extra branches that you were too lazy to remove and now you’ve decided to tidy up, then this note may help you)</p>
+
+<p>As it turned out, there is no simple solution to this problem. There is a <a href="https://www.atlassian.com/git/tutorials/git-prune">prune</a> command, but it only removes links to deleted branches.</p>
+
+<p>There are many options to be found in the discussion on stackoverflow, but they all look like a Cthulhu summoning spell.</p>
+
+<p>Fortunately, there is a ready-made solution in the form of the npm package <a href="https://www.npmjs.com/package/git-removed-branches">git-removed-branches</a> (rare case when it actually a good idea to use a ready-made package).</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[If you have a bunch of extra branches that you were too lazy to remove and now you’ve decided to tidy up, then this note may help you)]]></summary></entry><entry xml:lang="ru"><title type="html">Как удалить локальные гит ветки, которых нет в удаленном репозитории</title><link href="https://vallek.github.io/webdevtips/ru/delete-git-branches" rel="alternate" type="text/html" title="Как удалить локальные гит ветки, которых нет в удаленном репозитории" /><published>2025-01-26T03:00:00+03:00</published><updated>2025-01-26T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/delete-git-branches</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/delete-git-branches"><![CDATA[<p>Если у вас остается куча лишних веток, которые вам было лень удалять и вот теперь вы решили их почистить, то вам может помочь эта заметка)</p>
+
+<p>Как оказалось простого решения у этой проблеммы нет. Существует команда <a href="https://www.atlassian.com/git/tutorials/git-prune">prune</a>, но она удаляет только ссылки на удаленные ветки.</p>
+
+<p>В обсуждении на стаковерфлоу можно найти множество вариантов, но все они выглядят, как вызов Ктхулху.</p>
+
+<p>К счастью есть готовое решение в виде npm пакета <a href="https://www.npmjs.com/package/git-removed-branches">git-removed-branches</a> (тот случай, когда действительно есть смысл использовать готовый пакет).</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Если у вас остается куча лишних веток, которые вам было лень удалять и вот теперь вы решили их почистить, то вам может помочь эта заметка)]]></summary></entry><entry xml:lang="en"><title type="html">Windows user environment variables</title><link href="https://vallek.github.io/webdevtips/en/windows-vars" rel="alternate" type="text/html" title="Windows user environment variables" /><published>2024-12-02T03:00:00+03:00</published><updated>2024-12-02T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/windows-vars</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/windows-vars"><![CDATA[<p>Windows environment variables, that you can use in terminal. These are user folders related vars:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%HOMEDRIVE% - system drive
 %HOMEPATH% - path to user folder without a drive letter
 %USERPROFILE% - path to user folder with a drive letter
@@ -30,17 +42,7 @@ git commit --amend
 
 <p>Это работает только для слияние последнего коммита. Можно слить сколько угодно, при условии, что они идут подряд последними (не сработает, если не по порядку из середины).</p>
 
-<p>Для этого используйте <code class="language-plaintext highlighter-rouge">git reset --soft HEAD~N</code>, где <code class="language-plaintext highlighter-rouge">N</code> - количество коммитов.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Полезно, например, если вы забыли обновить версию вместе с основным коммитом.]]></summary></entry><entry xml:lang="en"><title type="html">What’s the difference between inherit, initial, unset and revert?</title><link href="https://vallek.github.io/webdevtips/en/initial-inherit" rel="alternate" type="text/html" title="What’s the difference between inherit, initial, unset and revert?" /><published>2024-08-08T03:00:00+03:00</published><updated>2024-08-08T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/initial-inherit</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/initial-inherit"><![CDATA[<p>inherit - property value is <strong>inherited from parent</strong> node (html element)</p>
-
-<p>initial - property value comes from <strong>css specifications</strong> (w3c)</p>
-
-<p>unset - property value is inherited from parent node if possible. If not will come from css specifications.</p>
-
-<p>revert - property value comes from <strong>default browser styles</strong> (user agent stylesheet)</p>
-
-<p><img src="../img/inherit.jpg" alt="" /></p>
-
-<p>About revert <a href="https://web-standards.ru/articles/inherit-initial-unset-revert/">на MDN</a></p>]]></content><author><name></name></author><category term="css" /><summary type="html"><![CDATA[inherit - property value is inherited from parent node (html element)]]></summary></entry><entry xml:lang="ru"><title type="html">Чем отличаются inherit, initial, unset и revert?</title><link href="https://vallek.github.io/webdevtips/ru/initial-inherit" rel="alternate" type="text/html" title="Чем отличаются inherit, initial, unset и revert?" /><published>2024-08-08T03:00:00+03:00</published><updated>2024-08-08T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/initial-inherit</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/initial-inherit"><![CDATA[<p>inherit - значение свойства наследуется от родителя</p>
+<p>Для этого используйте <code class="language-plaintext highlighter-rouge">git reset --soft HEAD~N</code>, где <code class="language-plaintext highlighter-rouge">N</code> - количество коммитов.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Полезно, например, если вы забыли обновить версию вместе с основным коммитом.]]></summary></entry><entry xml:lang="ru"><title type="html">Чем отличаются inherit, initial, unset и revert?</title><link href="https://vallek.github.io/webdevtips/ru/initial-inherit" rel="alternate" type="text/html" title="Чем отличаются inherit, initial, unset и revert?" /><published>2024-08-08T03:00:00+03:00</published><updated>2024-08-08T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/initial-inherit</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/initial-inherit"><![CDATA[<p>inherit - значение свойства наследуется от родителя</p>
 
 <p>initial - откатывает к значению <strong>по спецификациям</strong> (w3c)</p>
 
@@ -54,7 +56,40 @@ git commit --amend
 
 <p>О значениях <a href="https://doka.guide/css/global-keywords/">на Доке</a></p>
 
-<p>О revert <a href="https://web-standards.ru/articles/inherit-initial-unset-revert/">на MDN</a></p>]]></content><author><name></name></author><category term="css" /><summary type="html"><![CDATA[inherit - значение свойства наследуется от родителя]]></summary></entry><entry xml:lang="ru"><title type="html">Windows Terminal в режиме quake с автозапуском</title><link href="https://vallek.github.io/webdevtips/ru/windows-terminal-quake" rel="alternate" type="text/html" title="Windows Terminal в режиме quake с автозапуском" /><published>2024-02-16T03:00:00+03:00</published><updated>2024-02-16T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/windows-terminal-quake</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/windows-terminal-quake"><![CDATA[<p>Windows Terminal можно запустить в режиме quake. Режим и его название пошли от, не поверите, игры Quake (а вовсе не то, что думает автопереводчик MS лол).</p>
+<p>О revert <a href="https://web-standards.ru/articles/inherit-initial-unset-revert/">на MDN</a></p>]]></content><author><name></name></author><category term="css" /><summary type="html"><![CDATA[inherit - значение свойства наследуется от родителя]]></summary></entry><entry xml:lang="en"><title type="html">What’s the difference between inherit, initial, unset and revert?</title><link href="https://vallek.github.io/webdevtips/en/initial-inherit" rel="alternate" type="text/html" title="What’s the difference between inherit, initial, unset and revert?" /><published>2024-08-08T03:00:00+03:00</published><updated>2024-08-08T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/initial-inherit</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/initial-inherit"><![CDATA[<p>inherit - property value is <strong>inherited from parent</strong> node (html element)</p>
+
+<p>initial - property value comes from <strong>css specifications</strong> (w3c)</p>
+
+<p>unset - property value is inherited from parent node if possible. If not will come from css specifications.</p>
+
+<p>revert - property value comes from <strong>default browser styles</strong> (user agent stylesheet)</p>
+
+<p><img src="../img/inherit.jpg" alt="" /></p>
+
+<p>About revert <a href="https://web-standards.ru/articles/inherit-initial-unset-revert/">на MDN</a></p>]]></content><author><name></name></author><category term="css" /><summary type="html"><![CDATA[inherit - property value is inherited from parent node (html element)]]></summary></entry><entry xml:lang="en"><title type="html">Windows Terminal in quake mode on start up</title><link href="https://vallek.github.io/webdevtips/en/windows-terminal-quake-copy" rel="alternate" type="text/html" title="Windows Terminal in quake mode on start up" /><published>2024-02-16T03:00:00+03:00</published><updated>2024-02-16T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/windows-terminal-quake copy</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/windows-terminal-quake-copy"><![CDATA[<p>Windows Terminal can work in quake mode. The mode comes from Quake video game</p>
+
+<p>In this mode console slides down from top of the screen. It’s pretty handy if you use terminal globally.</p>
+
+<p>To start wt in quake mode add <code class="language-plaintext highlighter-rouge">wt.exe -w _quake</code> to desktop shortcut properties. With no quotation marks:</p>
+
+<p><img src="../img/wt-quake-2.png" alt="" /></p>
+
+<p>However if you want wt to autostart at system start up it will just open standard window. To start it in wake mode and minimized create special shortcut like this:</p>
+
+<ol>
+  <li>win + R</li>
+  <li>Type <code class="language-plaintext highlighter-rouge">shell:startup</code>. It will open Startup folder</li>
+  <li>right click &gt; create shortcut</li>
+  <li>wt.exe -w _quake (or %LOCALAPPDATA%\Microsoft\WindowsApps\wt.exe -w _quake if it’s not working)</li>
+  <li>Call it what you want</li>
+  <li>Choose minimized in windows input</li>
+</ol>
+
+<p>To hide wt tab bar:</p>
+
+<p><img src="../img/wt-quake-3.png" alt="" /></p>
+
+<p>Tested on Windows 10</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="quake" /><category term="windows" /><summary type="html"><![CDATA[Windows Terminal can work in quake mode. The mode comes from Quake video game]]></summary></entry><entry xml:lang="ru"><title type="html">Windows Terminal в режиме quake с автозапуском</title><link href="https://vallek.github.io/webdevtips/ru/windows-terminal-quake" rel="alternate" type="text/html" title="Windows Terminal в режиме quake с автозапуском" /><published>2024-02-16T03:00:00+03:00</published><updated>2024-02-16T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/windows-terminal-quake</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/windows-terminal-quake"><![CDATA[<p>Windows Terminal можно запустить в режиме quake. Режим и его название пошли от, не поверите, игры Quake (а вовсе не то, что думает автопереводчик MS лол).</p>
 
 <p><img src="../img/wt-quake.png" alt="" /></p>
 
@@ -79,61 +114,4 @@ git commit --amend
 
 <p><img src="../img/wt-quake-3.png" alt="" /></p>
 
-<p>Проверено на Windows 10</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="quake" /><category term="windows" /><summary type="html"><![CDATA[Windows Terminal можно запустить в режиме quake. Режим и его название пошли от, не поверите, игры Quake (а вовсе не то, что думает автопереводчик MS лол).]]></summary></entry><entry xml:lang="en"><title type="html">Windows Terminal in quake mode on start up</title><link href="https://vallek.github.io/webdevtips/en/windows-terminal-quake-copy" rel="alternate" type="text/html" title="Windows Terminal in quake mode on start up" /><published>2024-02-16T03:00:00+03:00</published><updated>2024-02-16T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/windows-terminal-quake copy</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/windows-terminal-quake-copy"><![CDATA[<p>Windows Terminal can work in quake mode. The mode comes from Quake video game</p>
-
-<p>In this mode console slides down from top of the screen. It’s pretty handy if you use terminal globally.</p>
-
-<p>To start wt in quake mode add <code class="language-plaintext highlighter-rouge">wt.exe -w _quake</code> to desktop shortcut properties. With no quotation marks:</p>
-
-<p><img src="../img/wt-quake-2.png" alt="" /></p>
-
-<p>However if you want wt to autostart at system start up it will just open standard window. To start it in wake mode and minimized create special shortcut like this:</p>
-
-<ol>
-  <li>win + R</li>
-  <li>Type <code class="language-plaintext highlighter-rouge">shell:startup</code>. It will open Startup folder</li>
-  <li>right click &gt; create shortcut</li>
-  <li>wt.exe -w _quake (or %LOCALAPPDATA%\Microsoft\WindowsApps\wt.exe -w _quake if it’s not working)</li>
-  <li>Call it what you want</li>
-  <li>Choose minimized in windows input</li>
-</ol>
-
-<p>To hide wt tab bar:</p>
-
-<p><img src="../img/wt-quake-3.png" alt="" /></p>
-
-<p>Tested on Windows 10</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="quake" /><category term="windows" /><summary type="html"><![CDATA[Windows Terminal can work in quake mode. The mode comes from Quake video game]]></summary></entry><entry xml:lang="en"><title type="html">Embed youtube channel latest video without API</title><link href="https://vallek.github.io/webdevtips/en/youtube-last-video" rel="alternate" type="text/html" title="Embed youtube channel latest video without API" /><published>2024-02-05T03:00:00+03:00</published><updated>2024-02-05T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/youtube-last-video</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/youtube-last-video"><![CDATA[<p><strong>21.02.2024 UPD</strong>: this method is not working for me any more in Chrome 121-122. Maybe cause cookie policy changes. As an option you can create playlist with all videos manually. Of course you’ll have to add new video to it every time.</p>
-
-<p>To embed latest youtube channel video without api:</p>
-
-<ol>
-  <li>Learn your channel id. Open youtube (not studio, just website) &gt; click your avatar in the corner &gt; Settings &gt; Advanced settings. Find your channel id. This is also last part of your channel url if you not using unique name.</li>
-  <li>First letter will be <code class="language-plaintext highlighter-rouge">U</code>, and the seconds something else. You have to change that second letter to <code class="language-plaintext highlighter-rouge">U</code> as well. So it would start with <code class="language-plaintext highlighter-rouge">UU</code>. For example if it was <code class="language-plaintext highlighter-rouge">UCzS4sE_0ltfSz6qx_FUCTdA</code>, cahnge it to <code class="language-plaintext highlighter-rouge">UUzS4sE_0ltfSz6qx_FUCTdA</code>.</li>
-  <li>Put <code class="language-plaintext highlighter-rouge">https://www.youtube.com/embed?listType=playlist&amp;list=RESULT_ID</code> into iframe src</li>
-  <li>The whole thing:</li>
-</ol>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">loading=</span><span class="s">"lazy"</span> <span class="na">class=</span><span class="s">"video__last-video"</span> <span class="na">width=</span><span class="s">"350"</span> <span class="na">height=</span><span class="s">"250"</span> <span class="na">title=</span><span class="s">"Latest video"</span> <span class="na">allow=</span><span class="s">"accelerometer; encrypted-media; gyroscope; picture-in-picture"</span> <span class="na">allowfullscreen</span> <span class="na">src=</span><span class="s">"https://www.youtube.com/embed?listType=playlist&amp;list=UUzS4sE_0ltfSz6qx_FUCTdA"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
-</code></pre></div></div>
-<p>It will embed a playlist with all published channel videos. But it will always show the last one. I use this on my <a href="https://vallek.github.io/">site</a>.</p>
-
-<p>Cons: you can’t use <a href="/webdevtips/en/youtube-lazy-load">lazy load on click methods</a>. Which is ok if you have one video. You should use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#loading">native lazy load</a> to at least only load iframe when it’s in viewport.</p>]]></content><author><name></name></author><category term="html" /><category term="iframe" /><category term="youtube" /><summary type="html"><![CDATA[21.02.2024 UPD: this method is not working for me any more in Chrome 121-122. Maybe cause cookie policy changes. As an option you can create playlist with all videos manually. Of course you’ll have to add new video to it every time.]]></summary></entry><entry xml:lang="ru"><title type="html">Embeded Youtube Lazy Loading по клику</title><link href="https://vallek.github.io/webdevtips/ru/youtube-lazy-load" rel="alternate" type="text/html" title="Embeded Youtube Lazy Loading по клику" /><published>2024-02-05T03:00:00+03:00</published><updated>2024-02-05T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/youtube-lazy-load</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/youtube-lazy-load"><![CDATA[<p>Существует множество способов ленивой загрузки ютьюб видео по клику. В основном все они используют сторонние JS-библиотеки, либо, как минимум, какой-то JS код.</p>
-
-<p>Но существует способ создать загрузку айфрейма по клику только силами html)</p>
-
-<p>Выглядит это так:</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">class=</span><span class="s">"video__last-video"</span> <span class="na">width=</span><span class="s">"350"</span> <span class="na">height=</span><span class="s">"250"</span> <span class="na">src=</span><span class="s">"https://www.youtube.com/embed/Ne_ls6OzRF0"</span> <span class="na">title=</span><span class="s">"Последний видосик на канале"</span> <span class="na">allow=</span><span class="s">"accelerometer; encrypted-media; gyroscope; picture-in-picture"</span> <span class="na">allowfullscreen</span> <span class="na">srcdoc=</span><span class="s">"&lt;title&gt;Последний видосик на канале&lt;/title&gt;&lt;style&gt;*{padding:0;margin:0;overflow:hidden;}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}a:focus-visible span{outline: 3px dashed rgb(255, 19, 255);outline-offset: -5px;}&lt;/style&gt;&lt;a href='https://www.youtube.com/embed/Ne_ls6OzRF0?autoplay=1'&gt;&lt;img src='https://i.ytimg.com/vi/Ne_ls6OzRF0/sddefault.jpg' alt=''&gt;&lt;span&gt;▶&lt;/span&gt;&lt;/a&gt;"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
-</code></pre></div></div>
-
-<p>Суть в использовании атрибута <code class="language-plaintext highlighter-rouge">srcdoc</code>, который позволяет прописать HTML содержимое, переписывая то, что в <code class="language-plaintext highlighter-rouge">src</code>. При этом если туда поместить ссылку с изначальным адресом, то по клику в iframe загрузиться нужное видео.</p>
-
-<p>Вы также можете стилизовать lazy load заглушку с помощью элемента style. Кнопка play задается простым символом стрелки в html коде.</p>
-
-<p>Такой вот сделай сам lazy load. Этот способ вряд ли подойдет там, где нужно регулярно менять отображаемое видео или если их нужно вставлять часто в разных местах. Но для постоянного видео на статичной странице вполне может подойти, если вы не хотите подключать лишний JS.</p>
-
-<p>Я использовал его на своем портфолио, но отказался от lazy load, когда начал чаще вести канал, как раз из-за необходимости постоянно <a href="/webdevtips/ru/youtube-last-video">менять видео на последнее</a>.</p>
-
-<p><a href="https://github.com/paulirish/lite-youtube-embed">lite-youtube-embed</a> - более продвинутый способ с использованием custom elements от одного из разработчиков Хрома. Также не позволяет использовать плейлист.</p>
-
-<p>Я нашел несколько вариантов для плейлиста в сети, но они либо не рабочие, либо не то, что мне нужно. Если найду способ сделать lazy load для последнего видео, обновлю эту заметку. Или можете написать в комментах, если знаете сами)</p>]]></content><author><name></name></author><category term="youtube" /><category term="lazy load" /><category term="iframe" /><category term="html" /><summary type="html"><![CDATA[Существует множество способов ленивой загрузки ютьюб видео по клику. В основном все они используют сторонние JS-библиотеки, либо, как минимум, какой-то JS код.]]></summary></entry></feed>
+<p>Проверено на Windows 10</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="quake" /><category term="windows" /><summary type="html"><![CDATA[Windows Terminal можно запустить в режиме quake. Режим и его название пошли от, не поверите, игры Quake (а вовсе не то, что думает автопереводчик MS лол).]]></summary></entry></feed>

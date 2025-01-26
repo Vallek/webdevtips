@@ -1,6 +1,26 @@
 [
   
     {
+      "title"    : "Как удалить локальные гит ветки, которых нет в удаленном репозитории",
+      "category" : "",
+      "tags"     : "git",
+      "url"      : "/webdevtips/ru/delete-git-branches",
+      "date"     : "2025-01-26 03:00:00 +0300",
+      "content"  : "Если у вас остается куча лишних веток, которые вам было лень удалять и вот теперь вы решили их почистить, то вам может помочь эта заметка)Как оказалось простого решения у этой проблеммы нет. Существует команда prune, но она удаляет только ссылки на удаленные ветки.В обсуждении на стаковерфлоу можно найти множество вариантов, но все они выглядят, как вызов Ктхулху.К счастью есть готовое решение в виде npm пакета git-removed-branches (тот случай, когда действительно есть смысл использовать готовый пакет).",
+      "lang": "ru"
+    } ,
+  
+    {
+      "title"    : "How to delete local git branches that do not exist on remote",
+      "category" : "",
+      "tags"     : "git",
+      "url"      : "/webdevtips/en/delete-git-branches",
+      "date"     : "2025-01-26 03:00:00 +0300",
+      "content"  : "If you have a bunch of extra branches that you were too lazy to remove and now you’ve decided to tidy up, then this note may help you)As it turned out, there is no simple solution to this problem. There is a prune command, but it only removes links to deleted branches.There are many options to be found in the discussion on stackoverflow, but they all look like a Cthulhu summoning spell.Fortunately, there is a ready-made solution in the form of the npm package git-removed-branches (rare case when it actually a good idea to use a ready-made package).",
+      "lang": "en"
+    } ,
+  
+    {
       "title"    : "Windows переменные среды пользователя",
       "category" : "",
       "tags"     : "windows, terminal, cmd",
