@@ -14,8 +14,8 @@ The dimensions (width and height) are also given as an example. Just as long as 
 
 ```
 <picture>
-  <source width="1280" height="720" type="image/png" media="(min-width: 1280px)" srcset="images/image-desktop@1x.png 1x, images/image-desktop@2x.png 2x" >
-  <source width="768" height="1024" type="image/png" media="(min-width: 768px)" srcset="images/image-tablet@1x.png 1x, images/image-tablet@2x.png 2x" >
+  <source width="1280" height="720" type="image/png" media="(min-width: 1280px)" srcset="images/image-desktop@1x.png 1x, images/image-desktop@2x.png 2x">
+  <source width="768" height="1024" type="image/png" media="(min-width: 768px)" srcset="images/image-tablet@1x.png 1x, images/image-tablet@2x.png 2x">
   <img src="images/image-mobile@1x.png" srcset="images/image-mobile@2x.png 2x" width="360" height="800" alt="">
 </picture>
 ```
