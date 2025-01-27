@@ -1,4 +1,86 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2025-01-26T19:47:50+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">How to delete local git branches that do not exist on remote</title><link href="https://vallek.github.io/webdevtips/en/delete-git-branches" rel="alternate" type="text/html" title="How to delete local git branches that do not exist on remote" /><published>2025-01-26T03:00:00+03:00</published><updated>2025-01-26T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/delete-git-branches</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/delete-git-branches"><![CDATA[<p>If you have a bunch of extra branches that you were too lazy to remove and now you’ve decided to tidy up, then this note may help you)</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2025-01-27T10:24:54+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">picture template for responsive images</title><link href="https://vallek.github.io/webdevtips/en/html-picture-template" rel="alternate" type="text/html" title="picture template for responsive images" /><published>2025-01-27T03:00:00+03:00</published><updated>2025-01-27T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/html-picture-template</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/html-picture-template"><![CDATA[<p>This is a <code class="language-plaintext highlighter-rouge">picture</code> html element template for responsive images. There are two <code class="language-plaintext highlighter-rouge">sources</code> inside for desktop and tablet, and an <code class="language-plaintext highlighter-rouge">img</code> for mobile by default (if yoour project is mobile first). There are two images attached for regular and double density (retina) screens.</p>
+
+<p>Breakpoints in <code class="language-plaintext highlighter-rouge">media</code> are given as an example. You can choose any, but in general they should correspond to the actual screen sizes of different devices types. You can get them from statistics collected by services like <a href="http://gs.statcounter.com/screen-resolution-stats#yearly-2024-2025-bar">statcounter</a>. You can also Google more different ones. It’s even better to look at your own user statistics. Or even better, both)</p>
+
+<p>The dimensions (width and height) are also given as an example. Just as long as you specify them at all. This is important to optimize page loading (to avoid content shift) and in case the css is not loaded.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;picture&gt;
+  &lt;source width="1280" height="720" type="image/png" media="(min-width: 1280px)" srcset="images/image-desktop@1x.png 1x, images/image-desktop@2x.png 2x" &gt;
+  &lt;source width="768" height="1024" type="image/png" media="(min-width: 768px)" srcset="images/image-tablet@1x.png 1x, images/image-tablet@2x.png 2x" &gt;
+  &lt;img src="images/image-mobile@1x.png" srcset="images/image-mobile@2x.png 2x" width="360" height="800" alt=""&gt;
+&lt;/picture&gt;
+</code></pre></div></div>
+
+<p>As a bonus, here is css media query for the background image (now the device-pixel-ratio works everywhere, but I’ll leave the legacy version just in case)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.logo_background {
+    background-image: url('../img/logo@1x.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 80px 40px; /* size of the logo image @ 1x */
+}
+
+@media /* only for retina displays */
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+    .logo_background {
+        background-image: url('../img/logo@2x.png');
+    }
+}
+</code></pre></div></div>]]></content><author><name></name></author><category term="html" /><category term="css" /><category term="responsive" /><summary type="html"><![CDATA[This is a picture html element template for responsive images. There are two sources inside for desktop and tablet, and an img for mobile by default (if yoour project is mobile first). There are two images attached for regular and double density (retina) screens.]]></summary></entry><entry xml:lang="ru"><title type="html">sudo для Windows 10</title><link href="https://vallek.github.io/webdevtips/ru/sudo-for-windows-10" rel="alternate" type="text/html" title="sudo для Windows 10" /><published>2025-01-27T03:00:00+03:00</published><updated>2025-01-27T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/sudo-for-windows-10</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/sudo-for-windows-10"><![CDATA[<p>На линукс системах можно запускать отдельные команды с повышенными правами добавляя перед ними <code class="language-plaintext highlighter-rouge">sudo</code>. Windows работает по другому и требует запустить все окно приложения от имени админа. Либо так, либо никак. Что лучше для безопасности, но менее удобно)</p>
+
+<p>В Windows 11 наконец-то <a href="https://devblogs.microsoft.com/commandline/introducing-sudo-for-windows/">завезли</a> sudo, но не на десятку (по крайней мере официально, кто-то уже сдела форк, но я бы не стал рисковать).</p>
+
+<p>К счастью есть готовый аналог в виде программы <a href="https://gerardog.github.io/gsudo/">gsudo</a>. После ее установки, вы можете так же как и на линуксах добавлять к командам <code class="language-plaintext highlighter-rouge">gsudo</code> или <code class="language-plaintext highlighter-rouge">sudo</code> и выполнять их с паравами администратора. Еще <a href="https://github.com/gerardog/gsudo/discussions/331#discussioncomment-11367503">пишут</a>, что у gsudo есть фичи, которых нет у ms-sudo.</p>
+
+<p>Стоит добавить, что это может ослабить <a href="https://github.com/gerardog/gsudo/security">безопасность</a> системы и вы, как всегда, делаете это на свой страх и риск.</p>
+
+<p>gsudo можно в том числе использовать с Windows Terminal, не открывая новое окно (которое из режима quake еще и криво открывается).</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="cmd" /><category term="powershell" /><category term="windows" /><summary type="html"><![CDATA[На линукс системах можно запускать отдельные команды с повышенными правами добавляя перед ними sudo. Windows работает по другому и требует запустить все окно приложения от имени админа. Либо так, либо никак. Что лучше для безопасности, но менее удобно)]]></summary></entry><entry xml:lang="ru"><title type="html">Заготовка picture для адаптивных изображений</title><link href="https://vallek.github.io/webdevtips/ru/html-picture-template" rel="alternate" type="text/html" title="Заготовка picture для адаптивных изображений" /><published>2025-01-27T03:00:00+03:00</published><updated>2025-01-27T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/html-picture-template</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/html-picture-template"><![CDATA[<p>Это заготовка html элемента <code class="language-plaintext highlighter-rouge">picture</code> для адаптивных изображений. Внутри элемента <code class="language-plaintext highlighter-rouge">picture</code> вложенны два source для десктопа и планшета и <code class="language-plaintext highlighter-rouge">img</code> для мобильного по умолчанию (если у вас mobile first). В каждом размере подключено по два изображения для экранов обычной и двойной плотности (ретина).</p>
+
+<p>Брейкпоинты в <code class="language-plaintext highlighter-rouge">media</code> указаны для примера. У вас они могут быть какие угодно, но в целом должны соответствовать реальным размерам экранов устройств разного типа. Их можно узнать из статистики, которую собирают сервисы вроде <a href="https://gs.statcounter.com/screen-resolution-stats#yearly-2024-2025-bar">statcounter</a>. Можете погуглить побольше разных. А еще лучше посомтреть на статистику своих пользователей. А еще лучше и на то и на другое)</p>
+
+<p>Размеры (ширина и высота) тоже указаны для примера. Главное в принципе их указывать. Это важно для оптимизации загрузки страницы (чтобы избежать сдвиг контента) и на случай если css не подгрузился.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;picture&gt;
+  &lt;source width="1280" height="720" type="image/png" media="(min-width: 1280px)" srcset="images/image-desktop@1x.png 1x, images/image-desktop@2x.png 2x" &gt;
+  &lt;source width="768" height="1024" type="image/png" media="(min-width: 768px)" srcset="images/image-tablet@1x.png 1x, images/image-tablet@2x.png 2x" &gt;
+  &lt;img src="images/image-mobile@1x.png" srcset="images/image-mobile@2x.png 2x" width="360" height="800" alt=""&gt;
+&lt;/picture&gt;
+</code></pre></div></div>
+
+<p>В качестве бонуса css медиа-запрос для фона на ритину (сейчас device-pixel-ratio везде работает, но на всякий случай оставлю legacy вариант)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.logo_background {
+    background-image: url('../img/logo@1x.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 80px 40px; /* size of the logo image @ 1x */
+}
+
+@media /* only for retina displays */
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+    .logo_background {
+        background-image: url('../img/logo@2x.png');
+    }
+}
+</code></pre></div></div>]]></content><author><name></name></author><category term="html" /><category term="css" /><category term="responsive" /><summary type="html"><![CDATA[Это заготовка html элемента picture для адаптивных изображений. Внутри элемента picture вложенны два source для десктопа и планшета и img для мобильного по умолчанию (если у вас mobile first). В каждом размере подключено по два изображения для экранов обычной и двойной плотности (ретина).]]></summary></entry><entry xml:lang="en"><title type="html">sudo for Windows 10</title><link href="https://vallek.github.io/webdevtips/en/sudo-for-windows-10" rel="alternate" type="text/html" title="sudo for Windows 10" /><published>2025-01-27T03:00:00+03:00</published><updated>2025-01-27T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/sudo-for-windows-10</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/sudo-for-windows-10"><![CDATA[<p>On linux systems, you can run individual commands with elevated permissions by adding <code class="language-plaintext highlighter-rouge">sudo</code> in front of them. Windows works differently and requires you to run the entire application window as an admin. Which is better for security, but less convenient)</p>
+
+<p>Microsoft is finally <a href="https://devblogs.microsoft.com/commandline/introducing-sudo-for-windows">delivered</a> sudo for Windows 11, but not on Win 10 (at least officially, someone has already made a fork, but I wouldn’t risk it).</p>
+
+<p>Fortunately, there is an analogue in the form of the [gsudo] program (https://gerardog.github.io/gsudo). After installing it, you can add <code class="language-plaintext highlighter-rouge">gsudo</code> or <code class="language-plaintext highlighter-rouge">sudo</code> to the commands as well as on Linux and execute them with administrator privileges. People also <a href="https://github.com/gerardog/gsudo/discussions/331#discussioncomment-11367503">say</a> that gsudo has features that ms-sudo doesn’t.</p>
+
+<p>It is worth noting that this may present <a href="https://github.com/gerardog/gsudo/security">security risks</a> to your system. Use it at your own risk.</p>
+
+<p>gsudo can also be used with a Windows Terminal without opening a new window (which breaks layout when opened from quake mode).</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="cmd" /><category term="powershell" /><category term="windows" /><summary type="html"><![CDATA[On linux systems, you can run individual commands with elevated permissions by adding sudo in front of them. Windows works differently and requires you to run the entire application window as an admin. Which is better for security, but less convenient)]]></summary></entry><entry xml:lang="en"><title type="html">How to delete local git branches that do not exist on remote</title><link href="https://vallek.github.io/webdevtips/en/delete-git-branches" rel="alternate" type="text/html" title="How to delete local git branches that do not exist on remote" /><published>2025-01-26T03:00:00+03:00</published><updated>2025-01-26T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/delete-git-branches</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/delete-git-branches"><![CDATA[<p>If you have a bunch of extra branches that you were too lazy to remove and now you’ve decided to tidy up, then this note may help you)</p>
 
 <p>As it turned out, there is no simple solution to this problem. There is a <a href="https://www.atlassian.com/git/tutorials/git-prune">prune</a> command, but it only removes links to deleted branches.</p>
 
@@ -10,21 +92,21 @@
 
 <p>В обсуждении на стаковерфлоу можно найти множество вариантов, но все они выглядят, как вызов Ктхулху.</p>
 
-<p>К счастью есть готовое решение в виде npm пакета <a href="https://www.npmjs.com/package/git-removed-branches">git-removed-branches</a> (тот случай, когда действительно есть смысл использовать готовый пакет).</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Если у вас остается куча лишних веток, которые вам было лень удалять и вот теперь вы решили их почистить, то вам может помочь эта заметка)]]></summary></entry><entry xml:lang="en"><title type="html">Windows user environment variables</title><link href="https://vallek.github.io/webdevtips/en/windows-vars" rel="alternate" type="text/html" title="Windows user environment variables" /><published>2024-12-02T03:00:00+03:00</published><updated>2024-12-02T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/windows-vars</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/windows-vars"><![CDATA[<p>Windows environment variables, that you can use in terminal. These are user folders related vars:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%HOMEDRIVE% - system drive
-%HOMEPATH% - path to user folder without a drive letter
-%USERPROFILE% - path to user folder with a drive letter
-
-echo %VARIABLE% - see variable value
-set - list all variable with values
-</code></pre></div></div>]]></content><author><name></name></author><category term="windows" /><category term="terminal" /><category term="cmd" /><summary type="html"><![CDATA[Windows environment variables, that you can use in terminal. These are user folders related vars: ``` %HOMEDRIVE% - system drive %HOMEPATH% - path to user folder without a drive letter %USERPROFILE% - path to user folder with a drive letter]]></summary></entry><entry xml:lang="ru"><title type="html">Windows переменные среды пользователя</title><link href="https://vallek.github.io/webdevtips/ru/windows-vars" rel="alternate" type="text/html" title="Windows переменные среды пользователя" /><published>2024-12-02T03:00:00+03:00</published><updated>2024-12-02T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/windows-vars</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/windows-vars"><![CDATA[<p>Переменные среды Windows, которые можно использовать в треминале. Конкретно здесь собраны переменные, связанные с пользователем:</p>
+<p>К счастью есть готовое решение в виде npm пакета <a href="https://www.npmjs.com/package/git-removed-branches">git-removed-branches</a> (тот случай, когда действительно есть смысл использовать готовый пакет).</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Если у вас остается куча лишних веток, которые вам было лень удалять и вот теперь вы решили их почистить, то вам может помочь эта заметка)]]></summary></entry><entry xml:lang="ru"><title type="html">Windows переменные среды пользователя</title><link href="https://vallek.github.io/webdevtips/ru/windows-vars" rel="alternate" type="text/html" title="Windows переменные среды пользователя" /><published>2024-12-02T03:00:00+03:00</published><updated>2024-12-02T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/windows-vars</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/windows-vars"><![CDATA[<p>Переменные среды Windows, которые можно использовать в треминале. Конкретно здесь собраны переменные, связанные с пользователем:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%HOMEDRIVE% - системный диск
 %HOMEPATH% - путь до папки юзера без диска
 %USERPROFILE% - путь до папки юзера с диском
 
 echo %VARIABLE% - узнать значение переменной
 set - все переменные со значениями
-</code></pre></div></div>]]></content><author><name></name></author><category term="windows" /><category term="terminal" /><category term="cmd" /><summary type="html"><![CDATA[Переменные среды Windows, которые можно использовать в треминале. Конкретно здесь собраны переменные, связанные с пользователем: ``` %HOMEDRIVE% - системный диск %HOMEPATH% - путь до папки юзера без диска %USERPROFILE% - путь до папки юзера с диском]]></summary></entry><entry xml:lang="en"><title type="html">How to merge last commit with one before</title><link href="https://vallek.github.io/webdevtips/en/git-merge-last-commits" rel="alternate" type="text/html" title="How to merge last commit with one before" /><published>2024-11-25T03:00:00+03:00</published><updated>2024-11-25T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/git-merge-last-commits</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/git-merge-last-commits"><![CDATA[<p>It could be useful if you for example forget to update version number along with main changes.</p>
+</code></pre></div></div>]]></content><author><name></name></author><category term="windows" /><category term="terminal" /><category term="cmd" /><summary type="html"><![CDATA[Переменные среды Windows, которые можно использовать в треминале. Конкретно здесь собраны переменные, связанные с пользователем: ``` %HOMEDRIVE% - системный диск %HOMEPATH% - путь до папки юзера без диска %USERPROFILE% - путь до папки юзера с диском]]></summary></entry><entry xml:lang="en"><title type="html">Windows user environment variables</title><link href="https://vallek.github.io/webdevtips/en/windows-vars" rel="alternate" type="text/html" title="Windows user environment variables" /><published>2024-12-02T03:00:00+03:00</published><updated>2024-12-02T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/windows-vars</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/windows-vars"><![CDATA[<p>Windows environment variables, that you can use in terminal. These are user folders related vars:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%HOMEDRIVE% - system drive
+%HOMEPATH% - path to user folder without a drive letter
+%USERPROFILE% - path to user folder with a drive letter
+
+echo %VARIABLE% - see variable value
+set - list all variable with values
+</code></pre></div></div>]]></content><author><name></name></author><category term="windows" /><category term="terminal" /><category term="cmd" /><summary type="html"><![CDATA[Windows environment variables, that you can use in terminal. These are user folders related vars: ``` %HOMEDRIVE% - system drive %HOMEPATH% - path to user folder without a drive letter %USERPROFILE% - path to user folder with a drive letter]]></summary></entry><entry xml:lang="en"><title type="html">How to merge last commit with one before</title><link href="https://vallek.github.io/webdevtips/en/git-merge-last-commits" rel="alternate" type="text/html" title="How to merge last commit with one before" /><published>2024-11-25T03:00:00+03:00</published><updated>2024-11-25T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/git-merge-last-commits</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/git-merge-last-commits"><![CDATA[<p>It could be useful if you for example forget to update version number along with main changes.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset --soft "HEAD^"
 git commit --amend
@@ -42,76 +124,4 @@ git commit --amend
 
 <p>Это работает только для слияние последнего коммита. Можно слить сколько угодно, при условии, что они идут подряд последними (не сработает, если не по порядку из середины).</p>
 
-<p>Для этого используйте <code class="language-plaintext highlighter-rouge">git reset --soft HEAD~N</code>, где <code class="language-plaintext highlighter-rouge">N</code> - количество коммитов.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Полезно, например, если вы забыли обновить версию вместе с основным коммитом.]]></summary></entry><entry xml:lang="ru"><title type="html">Чем отличаются inherit, initial, unset и revert?</title><link href="https://vallek.github.io/webdevtips/ru/initial-inherit" rel="alternate" type="text/html" title="Чем отличаются inherit, initial, unset и revert?" /><published>2024-08-08T03:00:00+03:00</published><updated>2024-08-08T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/initial-inherit</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/initial-inherit"><![CDATA[<p>inherit - значение свойства наследуется от родителя</p>
-
-<p>initial - откатывает к значению <strong>по спецификациям</strong> (w3c)</p>
-
-<p>unset - если может наследоваться, то будет. А если нет, то откатится к значению по спецификациям.</p>
-
-<p>revert - откатывает к значению <strong>в браузерных стилях</strong> по умолчанию (user agent stylesheet)</p>
-
-<p><img src="../img/inherit.jpg" alt="" /></p>
-
-<p>Подробности <a href="https://youtu.be/Ne_ls6OzRF0?feature=shared">в моем видео</a> на тему.</p>
-
-<p>О значениях <a href="https://doka.guide/css/global-keywords/">на Доке</a></p>
-
-<p>О revert <a href="https://web-standards.ru/articles/inherit-initial-unset-revert/">на MDN</a></p>]]></content><author><name></name></author><category term="css" /><summary type="html"><![CDATA[inherit - значение свойства наследуется от родителя]]></summary></entry><entry xml:lang="en"><title type="html">What’s the difference between inherit, initial, unset and revert?</title><link href="https://vallek.github.io/webdevtips/en/initial-inherit" rel="alternate" type="text/html" title="What’s the difference between inherit, initial, unset and revert?" /><published>2024-08-08T03:00:00+03:00</published><updated>2024-08-08T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/initial-inherit</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/initial-inherit"><![CDATA[<p>inherit - property value is <strong>inherited from parent</strong> node (html element)</p>
-
-<p>initial - property value comes from <strong>css specifications</strong> (w3c)</p>
-
-<p>unset - property value is inherited from parent node if possible. If not will come from css specifications.</p>
-
-<p>revert - property value comes from <strong>default browser styles</strong> (user agent stylesheet)</p>
-
-<p><img src="../img/inherit.jpg" alt="" /></p>
-
-<p>About revert <a href="https://web-standards.ru/articles/inherit-initial-unset-revert/">на MDN</a></p>]]></content><author><name></name></author><category term="css" /><summary type="html"><![CDATA[inherit - property value is inherited from parent node (html element)]]></summary></entry><entry xml:lang="en"><title type="html">Windows Terminal in quake mode on start up</title><link href="https://vallek.github.io/webdevtips/en/windows-terminal-quake-copy" rel="alternate" type="text/html" title="Windows Terminal in quake mode on start up" /><published>2024-02-16T03:00:00+03:00</published><updated>2024-02-16T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/windows-terminal-quake copy</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/windows-terminal-quake-copy"><![CDATA[<p>Windows Terminal can work in quake mode. The mode comes from Quake video game</p>
-
-<p>In this mode console slides down from top of the screen. It’s pretty handy if you use terminal globally.</p>
-
-<p>To start wt in quake mode add <code class="language-plaintext highlighter-rouge">wt.exe -w _quake</code> to desktop shortcut properties. With no quotation marks:</p>
-
-<p><img src="../img/wt-quake-2.png" alt="" /></p>
-
-<p>However if you want wt to autostart at system start up it will just open standard window. To start it in wake mode and minimized create special shortcut like this:</p>
-
-<ol>
-  <li>win + R</li>
-  <li>Type <code class="language-plaintext highlighter-rouge">shell:startup</code>. It will open Startup folder</li>
-  <li>right click &gt; create shortcut</li>
-  <li>wt.exe -w _quake (or %LOCALAPPDATA%\Microsoft\WindowsApps\wt.exe -w _quake if it’s not working)</li>
-  <li>Call it what you want</li>
-  <li>Choose minimized in windows input</li>
-</ol>
-
-<p>To hide wt tab bar:</p>
-
-<p><img src="../img/wt-quake-3.png" alt="" /></p>
-
-<p>Tested on Windows 10</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="quake" /><category term="windows" /><summary type="html"><![CDATA[Windows Terminal can work in quake mode. The mode comes from Quake video game]]></summary></entry><entry xml:lang="ru"><title type="html">Windows Terminal в режиме quake с автозапуском</title><link href="https://vallek.github.io/webdevtips/ru/windows-terminal-quake" rel="alternate" type="text/html" title="Windows Terminal в режиме quake с автозапуском" /><published>2024-02-16T03:00:00+03:00</published><updated>2024-02-16T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/windows-terminal-quake</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/windows-terminal-quake"><![CDATA[<p>Windows Terminal можно запустить в режиме quake. Режим и его название пошли от, не поверите, игры Quake (а вовсе не то, что думает автопереводчик MS лол).</p>
-
-<p><img src="../img/wt-quake.png" alt="" /></p>
-
-<p>В этом режиме консоль выезжает сверху. Довольно удобно, если например пользуетесь терминалом вне vs code для разных глобальных задач.</p>
-
-<p>Чтобы запускать wt в кваковском режиме, зайдите в свойства ярлыка и добавьте в после Объект после <code class="language-plaintext highlighter-rouge">wt.exe -w _quake</code>. Без кавычек, вот так:</p>
-
-<p><img src="../img/wt-quake-2.png" alt="" /></p>
-
-<p>Но если при этом включить автозапуск wt при старте системы, то он откроет обычно окно. Чтобы он загружался сразу в кваку и при этом был свернут, нужно создать особый ярлык следующим образом:</p>
-
-<ol>
-  <li>win + R</li>
-  <li>Введите <code class="language-plaintext highlighter-rouge">shell:startup</code>, откроется папка автозагрузки</li>
-  <li>ПКМ &gt; создать ярлык</li>
-  <li>wt.exe -w _quake (или %LOCALAPPDATA%\Microsoft\WindowsApps\wt.exe -w _quake если не работает)</li>
-  <li>Назовите, как хотите</li>
-  <li>Выберете в поле Окно “Свернутое в значок”</li>
-</ol>
-
-<p>А чтобы скрыть верхнюю панель с вкладками нужно включить в настройках wt режим фокуса:</p>
-
-<p><img src="../img/wt-quake-3.png" alt="" /></p>
-
-<p>Проверено на Windows 10</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="quake" /><category term="windows" /><summary type="html"><![CDATA[Windows Terminal можно запустить в режиме quake. Режим и его название пошли от, не поверите, игры Quake (а вовсе не то, что думает автопереводчик MS лол).]]></summary></entry></feed>
+<p>Для этого используйте <code class="language-plaintext highlighter-rouge">git reset --soft HEAD~N</code>, где <code class="language-plaintext highlighter-rouge">N</code> - количество коммитов.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Полезно, например, если вы забыли обновить версию вместе с основным коммитом.]]></summary></entry></feed>
