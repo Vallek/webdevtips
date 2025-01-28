@@ -3,7 +3,7 @@ layout: post
 title: 'sudo для Windows 10'
 date: 2025-01-27 00:00 +0000
 notebook: webdev
-tags: [windows terminal, cmd, powershell, windows]
+tags: [windows terminal, cmd, powershell, windows, terminal]
 ---
 На линукс системах можно запускать отдельные команды с повышенными правами добавляя перед ними `sudo`. Windows работает по другому и требует запустить все окно приложения от имени админа. Либо так, либо никак. Что лучше для безопасности, но менее удобно)
 

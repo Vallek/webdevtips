@@ -3,7 +3,7 @@ layout: post
 title: 'Windows Terminal in quake mode on start up'
 date: 2024-02-16 00:00 +0000
 notebook: pc
-tags: [windows terminal, quake, windows]
+tags: [windows terminal, quake, windows, terminal]
 sources: [https://www.makeuseof.com/windows-terminal-quake-mode/]
 ---
 Windows Terminal can work in quake mode. The mode comes from Quake video game 

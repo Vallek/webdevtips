@@ -3,7 +3,7 @@
     {
       "title"    : "sudo для Windows 10",
       "category" : "",
-      "tags"     : "windows terminal, cmd, powershell, windows",
+      "tags"     : "windows terminal, cmd, powershell, windows, terminal",
       "url"      : "/webdevtips/ru/sudo-for-windows-10",
       "date"     : "2025-01-27 03:00:00 +0300",
       "content"  : "На линукс системах можно запускать отдельные команды с повышенными правами добавляя перед ними sudo. Windows работает по другому и требует запустить все окно приложения от имени админа. Либо так, либо никак. Что лучше для безопасности, но менее удобно)В Windows 11 наконец-то завезли sudo, но не на десятку (по крайней мере официально, кто-то уже сдела форк, но я бы не стал рисковать).К счастью есть готовый аналог в виде программы gsudo. После ее установки, вы можете так же как и на линуксах добавлять к командам gsudo или sudo и выполнять их с паравами администратора. Еще пишут, что у gsudo есть фичи, которых нет у ms-sudo.Стоит добавить, что это может ослабить безопасность системы и вы, как всегда, делаете это на свой страх и риск.gsudo можно в том числе использовать с Windows Terminal, не открывая новое окно (которое из режима quake еще и криво открывается).",
@@ -23,7 +23,7 @@
     {
       "title"    : "sudo for Windows 10",
       "category" : "",
-      "tags"     : "windows terminal, cmd, powershell, windows",
+      "tags"     : "windows terminal, cmd, powershell, windows, terminal",
       "url"      : "/webdevtips/en/sudo-for-windows-10",
       "date"     : "2025-01-27 03:00:00 +0300",
       "content"  : "On linux systems, you can run individual commands with elevated permissions by adding sudo in front of them. Windows works differently and requires you to run the entire application window as an admin. Which is better for security, but less convenient)Microsoft is finally delivered sudo for Windows 11, but not on Win 10 (at least officially, someone has already made a fork, but I wouldn’t risk it).Fortunately, there is an analogue in the form of the [gsudo] program (https://gerardog.github.io/gsudo). After installing it, you can add gsudo or sudo to the commands as well as on Linux and execute them with administrator privileges. People also say that gsudo has features that ms-sudo doesn’t.It is worth noting that this may present security risks to your system. Use it at your own risk.gsudo can also be used with a Windows Terminal without opening a new window (which breaks layout when opened from quake mode).",
@@ -123,7 +123,7 @@
     {
       "title"    : "Windows Terminal в режиме quake с автозапуском",
       "category" : "",
-      "tags"     : "windows terminal, quake, windows",
+      "tags"     : "windows terminal, quake, windows, terminal",
       "url"      : "/webdevtips/ru/windows-terminal-quake",
       "date"     : "2024-02-16 03:00:00 +0300",
       "content"  : "Windows Terminal можно запустить в режиме quake. Режим и его название пошли от, не поверите, игры Quake (а вовсе не то, что думает автопереводчик MS лол).В этом режиме консоль выезжает сверху. Довольно удобно, если например пользуетесь терминалом вне vs code для разных глобальных задач.Чтобы запускать wt в кваковском режиме, зайдите в свойства ярлыка и добавьте в после Объект после wt.exe -w _quake. Без кавычек, вот так:Но если при этом включить автозапуск wt при старте системы, то он откроет обычно окно. Чтобы он загружался сразу в кваку и при этом был свернут, нужно создать особый ярлык следующим образом:  win + R  Введите shell:startup, откроется папка автозагрузки  ПКМ &amp;gt; создать ярлык  wt.exe -w _quake (или %LOCALAPPDATA%MicrosoftWindowsAppswt.exe -w _quake если не работает)  Назовите, как хотите  Выберете в поле Окно “Свернутое в значок”А чтобы скрыть верхнюю панель с вкладками нужно включить в настройках wt режим фокуса:Проверено на Windows 10",
@@ -133,7 +133,7 @@
     {
       "title"    : "Windows Terminal in quake mode on start up",
       "category" : "",
-      "tags"     : "windows terminal, quake, windows",
+      "tags"     : "windows terminal, quake, windows, terminal",
       "url"      : "/webdevtips/en/windows-terminal-quake-copy",
       "date"     : "2024-02-16 03:00:00 +0300",
       "content"  : "Windows Terminal can work in quake mode. The mode comes from Quake video gameIn this mode console slides down from top of the screen. It’s pretty handy if you use terminal globally.To start wt in quake mode add wt.exe -w _quake to desktop shortcut properties. With no quotation marks:However if you want wt to autostart at system start up it will just open standard window. To start it in wake mode and minimized create special shortcut like this:  win + R  Type shell:startup. It will open Startup folder  right click &amp;gt; create shortcut  wt.exe -w _quake (or %LOCALAPPDATA%MicrosoftWindowsAppswt.exe -w _quake if it’s not working)  Call it what you want  Choose minimized in windows inputTo hide wt tab bar:Tested on Windows 10",

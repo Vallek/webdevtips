@@ -3,7 +3,7 @@ layout: post
 title: 'sudo for Windows 10'
 date: 2025-01-27 00:00 +0000
 notebook: webdev
-tags: [windows terminal, cmd, powershell, windows]
+tags: [windows terminal, cmd, powershell, windows, terminal]
 ---
 On linux systems, you can run individual commands with elevated permissions by adding `sudo` in front of them. Windows works differently and requires you to run the entire application window as an admin. Which is better for security, but less convenient)
 

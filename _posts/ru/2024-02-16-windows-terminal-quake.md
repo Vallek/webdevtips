@@ -3,7 +3,7 @@ layout: post
 title: 'Windows Terminal в режиме quake с автозапуском'
 date: 2024-02-16 00:00 +0000
 notebook: pc
-tags: [windows terminal, quake, windows]
+tags: [windows terminal, quake, windows, terminal]
 sources: [https://www.makeuseof.com/windows-terminal-quake-mode/]
 ---
 Windows Terminal можно запустить в режиме quake. Режим и его название пошли от, не поверите, игры Quake (а вовсе не то, что думает автопереводчик MS лол). 
