@@ -3,7 +3,7 @@ layout: post
 title: 'Text contrast in VS Code Powershell'
 date: 2023-05-31 12:23 +0300
 notebook: webdev
-tags: [powershell, vs code, contrast]
+tags: [powershell, vs code, contrast, terminal]
 ---
 If you use powershell in VS Code and your text contrast is too low.
 

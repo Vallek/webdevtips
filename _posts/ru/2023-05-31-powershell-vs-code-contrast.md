@@ -3,7 +3,7 @@ layout: post
 title: 'Контраст текста в VS Code Powershell'
 date: 2023-05-31 12:23 +0300
 notebook: webdev
-tags: [powershell, vs code, contrast]
+tags: [powershell, vs code, contrast, terminal]
 ---
 Если в VS Code используете powershell и у вас слишком низкий контраст текста.
 
