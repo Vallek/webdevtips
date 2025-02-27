@@ -26,4 +26,8 @@ And launch
 `http-server -S -C cert.pem`
 
 -S is https
--C is the path to the files. It worked for me only when they are in the project folder.
+-C is key before the path to the cert.pem file. For the key.pem file use -K key. It worked for me only when files are in the project folder.
+
+If server tries to download a html file instead of opening a page. 
+
+Run server without file name. Meaning run `http-server` not `http-server page.html`. After that just input url with file like this: `http://127.0.0.1:8080/page.html`

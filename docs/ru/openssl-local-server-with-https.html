@@ -964,8 +964,13 @@
 
 <p><code class="language-plaintext highlighter-rouge">http-server -S -C cert.pem</code></p>
 
-<p>-S - это https
--C - это путь к файлам. У меня работало только когда в папке проекта.</p>
+<p>-S - это https</p>
+
+<p>-C - это ключ, чтобы указать путь к файлу cert.pem. Для key.pem, можно использовать ключ -K. У меня работало только когда файлы были в папке проекта.</p>
+
+<p>Если сервер вместо октрытия html страницы, пытается скачать файл</p>
+
+<p>Запускайте сервер без указания файла html, то есть <code class="language-plaintext highlighter-rouge">http-server</code>, а не <code class="language-plaintext highlighter-rouge">http-server page.html</code>. И после запуска укажите путь до файла в браузере, например <code class="language-plaintext highlighter-rouge">http://127.0.0.1:8080/page.html</code></p>
 
   </div><h2 class="post-tags__heading">Теги</h2>
   

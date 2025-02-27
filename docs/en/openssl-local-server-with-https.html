@@ -968,7 +968,11 @@
 <p><code class="language-plaintext highlighter-rouge">http-server -S -C cert.pem</code></p>
 
 <p>-S is https
--C is the path to the files. It worked for me only when they are in the project folder.</p>
+-C is key before the path to the cert.pem file. For the key.pem file use -K key. It worked for me only when files are in the project folder.</p>
+
+<p>If server tries to download a html file instead of opening a page.</p>
+
+<p>Run server without file name. Meaning run <code class="language-plaintext highlighter-rouge">http-server</code> not <code class="language-plaintext highlighter-rouge">http-server page.html</code>. After that just input url with file like this: <code class="language-plaintext highlighter-rouge">http://127.0.0.1:8080/page.html</code></p>
 
   </div><h2 class="post-tags__heading">Теги</h2>
   
