@@ -521,6 +521,14 @@
 <lastmod>2025-01-27T03:00:00+03:00</lastmod>
 </url>
 <url>
+<loc>http://0.0.0.0:4000/webdevtips/en/local-servers</loc>
+<lastmod>2025-02-28T03:00:00+03:00</lastmod>
+</url>
+<url>
+<loc>http://0.0.0.0:4000/webdevtips/ru/local-servers</loc>
+<lastmod>2025-02-28T03:00:00+03:00</lastmod>
+</url>
+<url>
 <loc>http://0.0.0.0:4000/webdevtips/ru/about/</loc>
 </url>
 <url>
@@ -696,6 +704,12 @@
 </url>
 <url>
 <loc>http://0.0.0.0:4000/webdevtips/tag/quake.html</loc>
+</url>
+<url>
+<loc>http://0.0.0.0:4000/webdevtips/tag/python.html</loc>
+</url>
+<url>
+<loc>http://0.0.0.0:4000/webdevtips/tag/java.html</loc>
 </url>
 <url>
 <loc>http://0.0.0.0:4000/webdevtips/ru/page2/</loc>

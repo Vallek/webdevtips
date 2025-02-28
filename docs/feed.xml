@@ -1,4 +1,88 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2025-02-27T11:33:49+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">picture template for responsive images</title><link href="https://vallek.github.io/webdevtips/en/html-picture-template" rel="alternate" type="text/html" title="picture template for responsive images" /><published>2025-01-27T03:00:00+03:00</published><updated>2025-01-27T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/html-picture-template</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/html-picture-template"><![CDATA[<p>This is a <code class="language-plaintext highlighter-rouge">picture</code> html element template for responsive images. There are two <code class="language-plaintext highlighter-rouge">sources</code> inside for desktop and tablet, and an <code class="language-plaintext highlighter-rouge">img</code> for mobile by default (if yoour project is mobile first). There are two images attached for regular and double density (retina) screens.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2025-02-28T19:04:08+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">Local servers for testing compilation</title><link href="https://vallek.github.io/webdevtips/en/local-servers" rel="alternate" type="text/html" title="Local servers for testing compilation" /><published>2025-02-28T03:00:00+03:00</published><updated>2025-02-28T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/local-servers</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/local-servers"><![CDATA[<h2 id="why-do-we-need-local-servers">Why do we need local servers?</h2>
+<p>You cannot fully test the frontend by simply opening an html file in a browser. A number of features will be unavailable, like asynchronous API requests. And of course, you need server to test the backend. However, using a real live server for active testing is inconvenient, slow, and unsafe.</p>
+
+<h2 id="native">Native</h2>
+<p>These are servers built into the language platforms or are separate modules. They are usually enough to test a frontend with not the most complex backend code (for example, for sending form data) or a just the frontend. In addition, you could learn more about the backend, configs, and running commands through the terminal)</p>
+
+<h3 id="nodejs">Node.js</h3>
+<p>Install the [Node] itself(https://nodejs.org/) (the npm package manager is included). There is no built-in server in the Node, but as always there are modules for that. For testing, I use <a href="https://www.npmjs.com/package/http-server">http server</a>.</p>
+
+<p>Install it globally. It is started simply by the command <code class="language-plaintext highlighter-rouge">http-server</code> inside the project folder. After that, you can specify the exact address to the html file in the browser (if it is not an index at the root).</p>
+
+<p>Read about how to enable https encryption support in my <a href="https://vallek.github.io/webdevtips/en/openssl-local-server-with-https">separate note</a>.</p>
+
+<h3 id="python">Python</h3>
+<p>For a Python server, you will need to install [Python] (https://www.python.org/downloads/) and probably the <a href="https://docs.djangoproject.com/en/5.1/topics/install/">Django framework</a>.</p>
+
+<p>On windows, it is started by the command <code class="language-plaintext highlighter-rouge">py -3 -m http.server</code>.</p>
+
+<h3 id="php">PHP</h3>
+<p>PHP has a <a href="https://www.php.net/manual/en/features.commandline.webserver.php">built-in local server</a>. It is enough to just install <a href="https://www.php.net/downloads.php">php</a> itself, after which you can start the server with the command <code class="language-plaintext highlighter-rouge">php -S localhost:8000</code>.</p>
+
+<p>cons: slow (at least for me/out of the box), long page reload</p>
+
+<h3 id="java">Java</h3>
+<p>Although a significant part of modern tools for frontend developers are written in Node in the form of npm packages, you can find tools in other languages too. For example on <a href="https://www.java.com/ru/download/">Java</a>. The w3c validator <a href="https://validator.github.io/validator/#web-based-checking">local version</a> has been written on it.</p>
+
+<h2 id="backend-systems">Backend systems</h2>
+<p>It’s useful if you need to test a website with a more complex backend, CMS (for example, on Wordpress), but you don’t want to do everything manually.</p>
+
+<h3 id="xampp">XAMPP</h3>
+<p><a href="https://www.apachefriends.org/">XAMPP</a> consists of of Apache server with PHP support, MariaDB database (MySQL fork) and Perl. There is a simple graphical interface, but you can also access the config files. After <a href="https://blog.terresquall.com/2021/10/running-python-in-xampp/">a little manipulation</a> it is also possible to run Python code.</p>
+
+<p>There are also many other options: WAMP, Laravel, Local, Laragon.</p>
+
+<h2 id="extensions-for-vs-code">Extensions for VS Code</h2>
+<p>The simplest, but limited, option for testing only the frontend are extensions for code editors. They also run a local server on the selected port and are usually started simply by clicking on a button.</p>
+
+<p>I <strong>do not</strong> recommend using extensions that open the page preview directly in VS Code. Even if it’s technically a Chrome engine, it’s still better to test your site as closely as possible to what the user is using. That is, in the official stable versions of browsers.</p>
+
+<h3 id="live-server">Live Server</h3>
+<p>The most popular option for VS Code is <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a>.</p>
+
+<p>cons: it runs files only from the sidebar (at least for me), so it will not be possible to run for a single file, only for a project in workspace.</p>]]></content><author><name></name></author><category term="local server" /><category term="nodejs" /><category term="php" /><category term="python" /><category term="java" /><category term="vs code" /><summary type="html"><![CDATA[Why do we need local servers? You cannot fully test the frontend by simply opening an html file in a browser. A number of features will be unavailable, like asynchronous API requests. And of course, you need server to test the backend. However, using a real live server for active testing is inconvenient, slow, and unsafe.]]></summary></entry><entry xml:lang="ru"><title type="html">Подборка локальных серверов для тестирования</title><link href="https://vallek.github.io/webdevtips/ru/local-servers" rel="alternate" type="text/html" title="Подборка локальных серверов для тестирования" /><published>2025-02-28T03:00:00+03:00</published><updated>2025-02-28T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/local-servers</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/local-servers"><![CDATA[<h2 id="зачем-нужны-локальные-серверы">Зачем нужны локальные серверы</h2>
+<p>Нельзя полноценно протестировать фронтенд, просто открыв html файл в браузере. Многое может работать по-другому или не работать вообще, например, асинхронные запросы к API. И разумеется для тестирования бэкэнда нужен сервер. При этом использовать живой сервер для активного тестирования неудобно, медленно и небезопасно.</p>
+
+<h2 id="нативные">Нативные</h2>
+<p>Это серверы, встроенные в языковую платформу или в виде отдельных модулей. Как правило их достаточно, чтобы протестировать фронтенд c не самым сложным бэкэнд кодом (например, для отправки данных форм) или чистый фронтенд. Кроме того вы сможете ближе познакомиться с бэкэндом, настройкой конфигов и запуском команд через терминал)</p>
+
+<h3 id="nodejs">Node.js</h3>
+<p>Сначала установите саму <a href="https://nodejs.org/">Ноду</a> (менеджер пакетов npm идет в комплекте). В Ноде нет встроенного сервера, но как всегда есть готовые модули. Для тестирования я использую <a href="https://www.npmjs.com/package/http-server">http-server</a>.</p>
+
+<p>Установите его глобально. Запускается просто командой <code class="language-plaintext highlighter-rouge">http-server</code> внутри папки проекта. После чего можно указать точный адрес до html файла в браузере (если это не index в корне).</p>
+
+<p>Про то, как включить поддержку <code class="language-plaintext highlighter-rouge">https</code> шифрования читайте в <a href="https://vallek.github.io/webdevtips/ru/openssl-local-server-with-https">отдельной заметке</a>.</p>
+
+<h3 id="python">Python</h3>
+<p>Для сервера на Питоне вам понадобиться установить сам <a href="https://www.python.org/downloads/">Питон</a> и, скорее всего, фреймворк <a href="https://docs.djangoproject.com/en/5.1/topics/install/">Джанго</a>.</p>
+
+<p>На windows запускается командой <code class="language-plaintext highlighter-rouge">py -3 -m http.server</code>.</p>
+
+<h3 id="php">PHP</h3>
+<p>В PHP есть <a href="https://www.php.net/manual/en/features.commandline.webserver.php">встроенный локальный сервер</a>. Достаточно установить сам <a href="https://www.php.net/downloads.php">php</a>, после чего можно запустить сервер командой <code class="language-plaintext highlighter-rouge">php -S localhost:8000</code>.</p>
+
+<p>минусы: медленный (по крайней мере у меня/из коробки), долгая перезагрузка страницы</p>
+
+<h3 id="java">Java</h3>
+<p>Хотя значительная часть современных инструментов для фронтенд-разработчиков написана на ноде в виде npm пакетов, вы можете встретить тулзы и на других языках. Например на <a href="https://www.java.com/ru/download/">Джаве</a> написана <a href="https://validator.github.io/validator/#web-based-checking">локальная версия</a> w3c валидатора.</p>
+
+<h2 id="сборки-с-бэкэндом">Сборки с бэкэндом</h2>
+<p>Пригодится, если вам нужно тестировать сайт с более сложным бэкэндом, CMS (например, на Wordpress), но вы не хотите устанавливать и настраивать все вручную.</p>
+
+<h3 id="xampp">XAMPP</h3>
+<p><a href="https://www.apachefriends.org/">XAMPP</a> - это набор из сервера Apache с поддержкой PHP, базы данных MariaDB (форк MySQL) и Perl. Есть простой графический интерфейс, но можно залезть и в конфиг файлы. После <a href="https://blog.terresquall.com/2021/10/running-python-in-xampp/">небольших манипуляций</a> также возможно запускать Питон код.</p>
+
+<p>Есть много других вариантов: WAMP, Laravel, Local, Laragon.</p>
+
+<h2 id="расширения-для-vs-code">Расширения для VS Code</h2>
+<p>Самый простой, но ограниченный, вариант для тестирования только фронтенда - расширения для редакторов кода. Они тоже запускают локальный сервер на выбранном порте и как правило запускаются просто по нажатию на кнопку.</p>
+
+<p>Не советую использовать расширения, которые показывают страницу прямо в VS Code. Даже если технически это движок от Хрома, все равно лучше тестировать ваш сайт максимально близко к тому, что использует юзер. То есть в официальных стабильных версиях браузеров.</p>
+
+<h3 id="live-server">Live Server</h3>
+<p>Самый популярный вариант для VS Code - <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a>.</p>
+
+<p>минусы: запускает файлы только из боковой панели (по крайней мере у меня), то есть не получится запустить для одиночного файла, только для проекта в workspace.</p>]]></content><author><name></name></author><category term="local server" /><category term="nodejs" /><category term="php" /><category term="python" /><category term="java" /><category term="vs code" /><summary type="html"><![CDATA[Зачем нужны локальные серверы Нельзя полноценно протестировать фронтенд, просто открыв html файл в браузере. Многое может работать по-другому или не работать вообще, например, асинхронные запросы к API. И разумеется для тестирования бэкэнда нужен сервер. При этом использовать живой сервер для активного тестирования неудобно, медленно и небезопасно.]]></summary></entry><entry xml:lang="en"><title type="html">picture template for responsive images</title><link href="https://vallek.github.io/webdevtips/en/html-picture-template" rel="alternate" type="text/html" title="picture template for responsive images" /><published>2025-01-27T03:00:00+03:00</published><updated>2025-01-27T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/html-picture-template</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/html-picture-template"><![CDATA[<p>This is a <code class="language-plaintext highlighter-rouge">picture</code> html element template for responsive images. There are two <code class="language-plaintext highlighter-rouge">sources</code> inside for desktop and tablet, and an <code class="language-plaintext highlighter-rouge">img</code> for mobile by default (if yoour project is mobile first). There are two images attached for regular and double density (retina) screens.</p>
 
 <p>Breakpoints in <code class="language-plaintext highlighter-rouge">media</code> are given as an example. You can choose any, but in general they should correspond to the actual screen sizes of different devices types. You can get them from statistics collected by services like <a href="http://gs.statcounter.com/screen-resolution-stats#yearly-2024-2025-bar">statcounter</a>. You can also Google more different ones. It’s even better to look at your own user statistics. Or even better, both)</p>
 
@@ -80,48 +164,30 @@ only screen and (min-resolution: 2dppx) {
 
 <p>It is worth noting that this may present <a href="https://github.com/gerardog/gsudo/security">security risks</a> to your system. Use it at your own risk.</p>
 
-<p>gsudo can also be used with a Windows Terminal without opening a new window (which breaks layout when opened from quake mode).</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="cmd" /><category term="powershell" /><category term="windows" /><category term="terminal" /><summary type="html"><![CDATA[On linux systems, you can run individual commands with elevated permissions by adding sudo in front of them. Windows works differently and requires you to run the entire application window as an admin. Which is better for security, but less convenient)]]></summary></entry><entry xml:lang="en"><title type="html">How to delete local git branches that do not exist on remote</title><link href="https://vallek.github.io/webdevtips/en/delete-git-branches" rel="alternate" type="text/html" title="How to delete local git branches that do not exist on remote" /><published>2025-01-26T03:00:00+03:00</published><updated>2025-01-26T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/delete-git-branches</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/delete-git-branches"><![CDATA[<p>If you have a bunch of extra branches that you were too lazy to remove and now you’ve decided to tidy up, then this note may help you)</p>
-
-<p>As it turned out, there is no simple solution to this problem. There is a <a href="https://www.atlassian.com/git/tutorials/git-prune">prune</a> command, but it only removes links to deleted branches.</p>
-
-<p>There are many options to be found in the discussion on stackoverflow, but they all look like a Cthulhu summoning spell.</p>
-
-<p>Fortunately, there is a ready-made solution in the form of the npm package <a href="https://www.npmjs.com/package/git-removed-branches">git-removed-branches</a> (rare case when it actually a good idea to use a ready-made package).</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[If you have a bunch of extra branches that you were too lazy to remove and now you’ve decided to tidy up, then this note may help you)]]></summary></entry><entry xml:lang="ru"><title type="html">Как удалить локальные гит ветки, которых нет в удаленном репозитории</title><link href="https://vallek.github.io/webdevtips/ru/delete-git-branches" rel="alternate" type="text/html" title="Как удалить локальные гит ветки, которых нет в удаленном репозитории" /><published>2025-01-26T03:00:00+03:00</published><updated>2025-01-26T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/delete-git-branches</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/delete-git-branches"><![CDATA[<p>Если у вас остается куча лишних веток, которые вам было лень удалять и вот теперь вы решили их почистить, то вам может помочь эта заметка)</p>
+<p>gsudo can also be used with a Windows Terminal without opening a new window (which breaks layout when opened from quake mode).</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="cmd" /><category term="powershell" /><category term="windows" /><category term="terminal" /><summary type="html"><![CDATA[On linux systems, you can run individual commands with elevated permissions by adding sudo in front of them. Windows works differently and requires you to run the entire application window as an admin. Which is better for security, but less convenient)]]></summary></entry><entry xml:lang="ru"><title type="html">Как удалить локальные гит ветки, которых нет в удаленном репозитории</title><link href="https://vallek.github.io/webdevtips/ru/delete-git-branches" rel="alternate" type="text/html" title="Как удалить локальные гит ветки, которых нет в удаленном репозитории" /><published>2025-01-26T03:00:00+03:00</published><updated>2025-01-26T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/delete-git-branches</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/delete-git-branches"><![CDATA[<p>Если у вас остается куча лишних веток, которые вам было лень удалять и вот теперь вы решили их почистить, то вам может помочь эта заметка)</p>
 
 <p>Как оказалось простого решения у этой проблеммы нет. Существует команда <a href="https://www.atlassian.com/git/tutorials/git-prune">prune</a>, но она удаляет только ссылки на удаленные ветки.</p>
 
 <p>В обсуждении на стаковерфлоу можно найти множество вариантов, но все они выглядят, как вызов Ктхулху.</p>
 
-<p>К счастью есть готовое решение в виде npm пакета <a href="https://www.npmjs.com/package/git-removed-branches">git-removed-branches</a> (тот случай, когда действительно есть смысл использовать готовый пакет).</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Если у вас остается куча лишних веток, которые вам было лень удалять и вот теперь вы решили их почистить, то вам может помочь эта заметка)]]></summary></entry><entry xml:lang="ru"><title type="html">Windows переменные среды пользователя</title><link href="https://vallek.github.io/webdevtips/ru/windows-vars" rel="alternate" type="text/html" title="Windows переменные среды пользователя" /><published>2024-12-02T03:00:00+03:00</published><updated>2024-12-02T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/windows-vars</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/windows-vars"><![CDATA[<p>Переменные среды Windows, которые можно использовать в треминале. Конкретно здесь собраны переменные, связанные с пользователем:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%HOMEDRIVE% - системный диск
-%HOMEPATH% - путь до папки юзера без диска
-%USERPROFILE% - путь до папки юзера с диском
+<p>К счастью есть готовое решение в виде npm пакета <a href="https://www.npmjs.com/package/git-removed-branches">git-removed-branches</a> (тот случай, когда действительно есть смысл использовать готовый пакет).</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Если у вас остается куча лишних веток, которые вам было лень удалять и вот теперь вы решили их почистить, то вам может помочь эта заметка)]]></summary></entry><entry xml:lang="en"><title type="html">How to delete local git branches that do not exist on remote</title><link href="https://vallek.github.io/webdevtips/en/delete-git-branches" rel="alternate" type="text/html" title="How to delete local git branches that do not exist on remote" /><published>2025-01-26T03:00:00+03:00</published><updated>2025-01-26T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/delete-git-branches</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/delete-git-branches"><![CDATA[<p>If you have a bunch of extra branches that you were too lazy to remove and now you’ve decided to tidy up, then this note may help you)</p>
 
-echo %VARIABLE% - узнать значение переменной
-set - все переменные со значениями
-</code></pre></div></div>]]></content><author><name></name></author><category term="windows" /><category term="terminal" /><category term="cmd" /><summary type="html"><![CDATA[Переменные среды Windows, которые можно использовать в треминале. Конкретно здесь собраны переменные, связанные с пользователем: ``` %HOMEDRIVE% - системный диск %HOMEPATH% - путь до папки юзера без диска %USERPROFILE% - путь до папки юзера с диском]]></summary></entry><entry xml:lang="en"><title type="html">Windows user environment variables</title><link href="https://vallek.github.io/webdevtips/en/windows-vars" rel="alternate" type="text/html" title="Windows user environment variables" /><published>2024-12-02T03:00:00+03:00</published><updated>2024-12-02T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/windows-vars</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/windows-vars"><![CDATA[<p>Windows environment variables, that you can use in terminal. These are user folders related vars:</p>
+<p>As it turned out, there is no simple solution to this problem. There is a <a href="https://www.atlassian.com/git/tutorials/git-prune">prune</a> command, but it only removes links to deleted branches.</p>
+
+<p>There are many options to be found in the discussion on stackoverflow, but they all look like a Cthulhu summoning spell.</p>
+
+<p>Fortunately, there is a ready-made solution in the form of the npm package <a href="https://www.npmjs.com/package/git-removed-branches">git-removed-branches</a> (rare case when it actually a good idea to use a ready-made package).</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[If you have a bunch of extra branches that you were too lazy to remove and now you’ve decided to tidy up, then this note may help you)]]></summary></entry><entry xml:lang="en"><title type="html">Windows user environment variables</title><link href="https://vallek.github.io/webdevtips/en/windows-vars" rel="alternate" type="text/html" title="Windows user environment variables" /><published>2024-12-02T03:00:00+03:00</published><updated>2024-12-02T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/windows-vars</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/windows-vars"><![CDATA[<p>Windows environment variables, that you can use in terminal. These are user folders related vars:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%HOMEDRIVE% - system drive
 %HOMEPATH% - path to user folder without a drive letter
 %USERPROFILE% - path to user folder with a drive letter
 
 echo %VARIABLE% - see variable value
 set - list all variable with values
-</code></pre></div></div>]]></content><author><name></name></author><category term="windows" /><category term="terminal" /><category term="cmd" /><summary type="html"><![CDATA[Windows environment variables, that you can use in terminal. These are user folders related vars: ``` %HOMEDRIVE% - system drive %HOMEPATH% - path to user folder without a drive letter %USERPROFILE% - path to user folder with a drive letter]]></summary></entry><entry xml:lang="en"><title type="html">How to merge last commit with one before</title><link href="https://vallek.github.io/webdevtips/en/git-merge-last-commits" rel="alternate" type="text/html" title="How to merge last commit with one before" /><published>2024-11-25T03:00:00+03:00</published><updated>2024-11-25T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/git-merge-last-commits</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/git-merge-last-commits"><![CDATA[<p>It could be useful if you for example forget to update version number along with main changes.</p>
+</code></pre></div></div>]]></content><author><name></name></author><category term="windows" /><category term="terminal" /><category term="cmd" /><summary type="html"><![CDATA[Windows environment variables, that you can use in terminal. These are user folders related vars: ``` %HOMEDRIVE% - system drive %HOMEPATH% - path to user folder without a drive letter %USERPROFILE% - path to user folder with a drive letter]]></summary></entry><entry xml:lang="ru"><title type="html">Windows переменные среды пользователя</title><link href="https://vallek.github.io/webdevtips/ru/windows-vars" rel="alternate" type="text/html" title="Windows переменные среды пользователя" /><published>2024-12-02T03:00:00+03:00</published><updated>2024-12-02T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/windows-vars</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/windows-vars"><![CDATA[<p>Переменные среды Windows, которые можно использовать в треминале. Конкретно здесь собраны переменные, связанные с пользователем:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%HOMEDRIVE% - системный диск
+%HOMEPATH% - путь до папки юзера без диска
+%USERPROFILE% - путь до папки юзера с диском
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset --soft "HEAD^"
-git commit --amend
-</code></pre></div></div>
-
-<p>You will have a commit with a name of one before the last one.</p>
-
-<p>You can merge as many commits as you want, as long as they are the last X commits, and not somewhere in the middle. Just run <code class="language-plaintext highlighter-rouge">git reset --soft HEAD~N</code>, where <code class="language-plaintext highlighter-rouge">N</code> is the number of commits you want to merge.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[It could be useful if you for example forget to update version number along with main changes.]]></summary></entry><entry xml:lang="ru"><title type="html">Как слить последний коммит в предпоследний</title><link href="https://vallek.github.io/webdevtips/ru/git-merge-last-commits" rel="alternate" type="text/html" title="Как слить последний коммит в предпоследний" /><published>2024-11-25T03:00:00+03:00</published><updated>2024-11-25T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/git-merge-last-commits</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/git-merge-last-commits"><![CDATA[<p>Полезно, например, если вы забыли обновить версию вместе с основным коммитом.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset --soft "HEAD^"
-git commit --amend
-</code></pre></div></div>
-
-<p>В итоге у вас будет коммит с названием от предпоследнего.</p>
-
-<p>Это работает только для слияние последнего коммита. Можно слить сколько угодно, при условии, что они идут подряд последними (не сработает, если не по порядку из середины).</p>
-
-<p>Для этого используйте <code class="language-plaintext highlighter-rouge">git reset --soft HEAD~N</code>, где <code class="language-plaintext highlighter-rouge">N</code> - количество коммитов.</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Полезно, например, если вы забыли обновить версию вместе с основным коммитом.]]></summary></entry></feed>
+echo %VARIABLE% - узнать значение переменной
+set - все переменные со значениями
+</code></pre></div></div>]]></content><author><name></name></author><category term="windows" /><category term="terminal" /><category term="cmd" /><summary type="html"><![CDATA[Переменные среды Windows, которые можно использовать в треминале. Конкретно здесь собраны переменные, связанные с пользователем: ``` %HOMEDRIVE% - системный диск %HOMEPATH% - путь до папки юзера без диска %USERPROFILE% - путь до папки юзера с диском]]></summary></entry></feed>
