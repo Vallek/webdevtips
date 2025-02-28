@@ -2,7 +2,7 @@
 layout: post
 title: 'Локальный сервер OpenSSL с HTTPS'
 date: 2023-05-13 00:00 +0000
-notebook: 'webdev'
+notebook: 'backend'
 tags: [local server, https, openssl]
 ---
 Как запустить локальный сервер на https. Нужно, например, для тестирования js модулей.

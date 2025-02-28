@@ -2,7 +2,7 @@
 layout: post
 title: 'OpenSSL local server with HTTPS'
 date: 2023-05-13 00:00 +0000
-notebook: 'webdev'
+notebook: 'backend'
 tags: [local server, https, openssl]
 ---
 How to run a local server on https. It is necessary, for example, to test js modules.
