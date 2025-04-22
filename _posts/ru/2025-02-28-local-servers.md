@@ -20,7 +20,7 @@ sources: [https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/T
 Про то, как включить поддержку `https` шифрования читайте в [отдельной заметке](https://vallek.github.io/webdevtips/ru/openssl-local-server-with-https).
 
 ### Python
-Для сервера на Питоне вам понадобиться установить сам [Питон](https://www.python.org/downloads/) и, скорее всего, фреймворк [Джанго](https://docs.djangoproject.com/en/5.1/topics/install/).
+Для [сервера на Питоне](https://realpython.com/python-http-server/#how-to-start-pythons-httpserver-in-the-command-line) вам понадобиться установить сам [Питон](https://www.python.org/downloads/) и, скорее всего, фреймворк [Джанго](https://docs.djangoproject.com/en/5.1/topics/install/).
 
 На windows запускается командой `py -3 -m http.server`.
 

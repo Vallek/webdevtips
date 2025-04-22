@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2025-02-28T19:33:54+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">Local servers for testing compilation</title><link href="https://vallek.github.io/webdevtips/en/local-servers" rel="alternate" type="text/html" title="Local servers for testing compilation" /><published>2025-02-28T03:00:00+03:00</published><updated>2025-02-28T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/local-servers</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/local-servers"><![CDATA[<h2 id="why-do-we-need-local-servers">Why do we need local servers?</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2025-04-22T17:35:22+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">Local servers for testing compilation</title><link href="https://vallek.github.io/webdevtips/en/local-servers" rel="alternate" type="text/html" title="Local servers for testing compilation" /><published>2025-02-28T03:00:00+03:00</published><updated>2025-02-28T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/local-servers</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/local-servers"><![CDATA[<h2 id="why-do-we-need-local-servers">Why do we need local servers?</h2>
 <p>You cannot fully test the frontend by simply opening an html file in a browser. A number of features will be unavailable, like asynchronous API requests. And of course, you need server to test the backend. However, using a real live server for active testing is inconvenient, slow, and unsafe.</p>
 
 <h2 id="native">Native</h2>
@@ -12,7 +12,7 @@
 <p>Read about how to enable https encryption support in my <a href="https://vallek.github.io/webdevtips/en/openssl-local-server-with-https">separate note</a>.</p>
 
 <h3 id="python">Python</h3>
-<p>For a Python server, you will need to install [Python] (https://www.python.org/downloads/) and probably the <a href="https://docs.djangoproject.com/en/5.1/topics/install/">Django framework</a>.</p>
+<p>For a <a href="https://realpython.com/python-http-server/#how-to-start-pythons-httpserver-in-the-command-line">Python server</a>, you will need to install [Python] (https://www.python.org/downloads/) and probably the <a href="https://docs.djangoproject.com/en/5.1/topics/install/">Django framework</a>.</p>
 
 <p>On windows, it is started by the command <code class="language-plaintext highlighter-rouge">py -3 -m http.server</code>.</p>
 
@@ -54,7 +54,7 @@
 <p>Про то, как включить поддержку <code class="language-plaintext highlighter-rouge">https</code> шифрования читайте в <a href="https://vallek.github.io/webdevtips/ru/openssl-local-server-with-https">отдельной заметке</a>.</p>
 
 <h3 id="python">Python</h3>
-<p>Для сервера на Питоне вам понадобиться установить сам <a href="https://www.python.org/downloads/">Питон</a> и, скорее всего, фреймворк <a href="https://docs.djangoproject.com/en/5.1/topics/install/">Джанго</a>.</p>
+<p>Для <a href="https://realpython.com/python-http-server/#how-to-start-pythons-httpserver-in-the-command-line">сервера на Питоне</a> вам понадобиться установить сам <a href="https://www.python.org/downloads/">Питон</a> и, скорее всего, фреймворк <a href="https://docs.djangoproject.com/en/5.1/topics/install/">Джанго</a>.</p>
 
 <p>На windows запускается командой <code class="language-plaintext highlighter-rouge">py -3 -m http.server</code>.</p>
 

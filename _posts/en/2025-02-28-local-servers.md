@@ -20,7 +20,7 @@ Install it globally. It is started simply by the command `http-server` inside th
 Read about how to enable https encryption support in my [separate note](https://vallek.github.io/webdevtips/en/openssl-local-server-with-https).
 
 ### Python
-For a Python server, you will need to install [Python] (https://www.python.org/downloads/) and probably the [Django framework](https://docs.djangoproject.com/en/5.1/topics/install/).
+For a [Python server](https://realpython.com/python-http-server/#how-to-start-pythons-httpserver-in-the-command-line), you will need to install [Python] (https://www.python.org/downloads/) and probably the [Django framework](https://docs.djangoproject.com/en/5.1/topics/install/).
 
 On windows, it is started by the command `py -3 -m http.server`.
 
