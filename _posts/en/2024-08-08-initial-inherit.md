@@ -15,4 +15,4 @@ revert - property value comes from **default browser styles** (user agent styles
 
 ![](../img/inherit.jpg)
 
-About revert [на MDN](https://web-standards.ru/articles/inherit-initial-unset-revert/)
+About revert [на MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/revert)

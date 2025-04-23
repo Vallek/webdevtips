@@ -19,4 +19,6 @@ revert - откатывает к значению **в браузерных ст
 
 О значениях [на Доке](https://doka.guide/css/global-keywords/)
 
-О revert [на MDN](https://web-standards.ru/articles/inherit-initial-unset-revert/)
+О значениях [на web-standards](https://web-standards.ru/articles/inherit-initial-unset-revert/)
+
+О revert [на MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/revert)
