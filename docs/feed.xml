@@ -1,4 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2025-04-23T14:08:03+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">Local servers for testing compilation</title><link href="https://vallek.github.io/webdevtips/en/local-servers" rel="alternate" type="text/html" title="Local servers for testing compilation" /><published>2025-02-28T03:00:00+03:00</published><updated>2025-02-28T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/local-servers</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/local-servers"><![CDATA[<h2 id="why-do-we-need-local-servers">Why do we need local servers?</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2025-04-29T23:24:12+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">Open XAMPP Wordpress localhost on mobile</title><link href="https://vallek.github.io/webdevtips/en/xampp-wp-mobile" rel="alternate" type="text/html" title="Open XAMPP Wordpress localhost on mobile" /><published>2025-04-29T03:00:00+03:00</published><updated>2025-04-29T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/xampp-wp-mobile</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/xampp-wp-mobile"><![CDATA[<p>I had a post about how to <a href="https://vallek .github.io/webdevtips/ru/localhost-on-mobile">open localhost on mobile</a>. That recipe is suitable when it comes to a simple local server with a frontend. But if you have Wordpress running on XAMPP, that won’t be enough) You’ll have to open access to XAMPP in your OS firewall and change the ports. This instructions are fo Windows 10.</p>
+
+<p>ATTENTION: setting safety rules weaker always theoretically reduces safety! You do this at your own risk.</p>
+
+<p>Steps:</p>
+
+<ol>
+  <li>Stop Apache server in XAMPP</li>
+  <li>
+    <p>Change port <code class="language-plaintext highlighter-rouge">80</code> to port <code class="language-plaintext highlighter-rouge">8080</code> everywhere:</p>
+
+    <p>2.1. In the settings (Config &gt; Service and Port settings)</p>
+
+    <p>2.2. In the file <code class="language-plaintext highlighter-rouge">httpd.conf</code> (Apache Config) - replace <code class="language-plaintext highlighter-rouge">Listen 80</code> and add <code class="language-plaintext highlighter-rouge">Listen IPv4 address:8080</code> (see your address in cmd &gt; ipconfig)</p>
+
+    <p>2.3 In the <code class="language-plaintext highlighter-rouge">httpd-xampp.cong</code> (Apache Config) file, find the line <code class="language-plaintext highlighter-rouge">&lt;Directory "C:/xampp/phpMyAdmin "&gt;</code> and replace <code class="language-plaintext highlighter-rouge">Require local</code> with <code class="language-plaintext highlighter-rouge">Require all granted</code></p>
+  </li>
+  <li>Windows Control Panel &gt; Windows Defender Firewall &gt; Advanced Settings &gt; Rules for incoming connections &gt; find a rule for Apache HTTP Server (The protocol should be TCP, there also will be UPD one). It will be set to “block” in the properties, change it to “allow”. You can increase security by additional means there (for example, allow only the ip of your mobile, for some reason it is considered remote for me).</li>
+  <li>In <code class="language-plaintext highlighter-rouge">wp-config.php </code> add
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> define('WP_HOME','http://IPv4-адрес:8080/website ');
+ define('WP_SITEURL','http://IPv4-адрес:8080/website ');
+</code></pre></div>    </div>
+  </li>
+  <li>Start the server in XAMPP</li>
+  <li>Open <code class="language-plaintext highlighter-rouge">http://IPv4-адрес:8080/website</code> on your mobile (don’t forget to use wifi!)</li>
+</ol>
+
+<p>Please note that all site paths with <code class="language-plaintext highlighter-rouge">localhost</code> in the url will not work. Including loading resources. You can replace all localhost with url:port via the <a href="https://wordpress.org/plugins/better-search-replace">Better Search and Replace extension</a>. Or you can test the site without replacing it by simply entering links manually, but again, images may not load, etc.</p>]]></content><author><name></name></author><category term="local server" /><category term="xampp" /><category term="mobile" /><category term="qa" /><category term="windows" /><summary type="html"><![CDATA[I had a post about how to open localhost on mobile. That recipe is suitable when it comes to a simple local server with a frontend. But if you have Wordpress running on XAMPP, that won’t be enough) You’ll have to open access to XAMPP in your OS firewall and change the ports. This instructions are fo Windows 10.]]></summary></entry><entry xml:lang="ru"><title type="html">Как открыть XAMPP Wordpress localhost на мобильном</title><link href="https://vallek.github.io/webdevtips/ru/xampp-wp-mobile" rel="alternate" type="text/html" title="Как открыть XAMPP Wordpress localhost на мобильном" /><published>2025-04-29T03:00:00+03:00</published><updated>2025-04-29T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/xampp-wp-mobile</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/xampp-wp-mobile"><![CDATA[<p>Я уже писал о том, как <a href="https://vallek.github.io/webdevtips/ru/localhost-on-mobile">открыть localhost на мобильном</a>. Тот рецепт подходит, когда речь о простом локальном сервере с фронтендом. Но если у вас wordpress, запущенный на XAMPP, то просто так вы его на мобильном не откроете) Придется разрешить к нему доступ в фаерволе и поменять порты.</p>
+
+<p>ВНИМАНИЕ: любое ослабление правил безопасности всегда теоретически понижает безопасность! Вы делаете это на свой страх и риск.</p>
+
+<p>Порядок действий:</p>
+
+<ol>
+  <li>Остановить сервер в XAMPP (Stop Apache)</li>
+  <li>
+    <p>Поменять везде порт <code class="language-plaintext highlighter-rouge">80</code> на порт <code class="language-plaintext highlighter-rouge">8080</code>. А именно:</p>
+
+    <p>2.1. В настройках (Config &gt; Service and Port settings)</p>
+
+    <p>2.2. В файле <code class="language-plaintext highlighter-rouge">httpd.conf</code> (Apache Config) - заменить <code class="language-plaintext highlighter-rouge">Listen 80</code> и добавить <code class="language-plaintext highlighter-rouge">Listen IPv4-адрес:8080</code> (свой адрес смотрите в cmd &gt; ipconfig)</p>
+
+    <p>2.3 В файле httpd-xampp.cong (Apache Config) - найдите строку <code class="language-plaintext highlighter-rouge">&lt;Directory "C:/xampp/phpMyAdmin"&gt;</code> и замените <code class="language-plaintext highlighter-rouge">Require local</code> на <code class="language-plaintext highlighter-rouge">Require all granted</code></p>
+  </li>
+  <li>Панель управления Windows &gt; Брэндмауэр защитника Windows &gt; Дополнительные параметры &gt; Правила для входящих подключений &gt; найти правило для Apache HTTP Server (В протоколе должно быть TCP, там еще будет UPD). В свойствах будет <code class="language-plaintext highlighter-rouge">блокировать</code>, выберете <code class="language-plaintext highlighter-rouge">разрешить</code>. Там же можно повысить безопасность доп. средствами (например разрешить только ip вашего мобильного, у меня он почему-то считается удаленным).</li>
+  <li>В <code class="language-plaintext highlighter-rouge">wp-config.php</code> добавить
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> define('WP_HOME','http://IPv4-адрес:8080/website');
+ define('WP_SITEURL','http://IPv4-адрес:8080/website');
+</code></pre></div>    </div>
+  </li>
+  <li>Включить сервер в XAMPP</li>
+  <li>На мобильном открыть <code class="language-plaintext highlighter-rouge">http://IPv4-адрес:8080/website</code> (не забудьте, что нужно подключение по вайфаю!)</li>
+</ol>
+
+<p>Учтите, что все пути на сайте с <code class="language-plaintext highlighter-rouge">localhost</code> в url не будут работать. Включая подгрузку ресурсов. Можно заменить все localhost на url:port через расширение <a href="https://wordpress.org/plugins/better-search-replace/">Better Search and Replace</a>. Или можете протестировать сайт без замены просто вводя ссылки вручную, но опять же могут не подгружаться картинки и т.п.</p>]]></content><author><name></name></author><category term="local server" /><category term="xampp" /><category term="mobile" /><category term="qa" /><category term="windows" /><summary type="html"><![CDATA[Я уже писал о том, как открыть localhost на мобильном. Тот рецепт подходит, когда речь о простом локальном сервере с фронтендом. Но если у вас wordpress, запущенный на XAMPP, то просто так вы его на мобильном не откроете) Придется разрешить к нему доступ в фаерволе и поменять порты.]]></summary></entry><entry xml:lang="en"><title type="html">Local servers for testing compilation</title><link href="https://vallek.github.io/webdevtips/en/local-servers" rel="alternate" type="text/html" title="Local servers for testing compilation" /><published>2025-02-28T03:00:00+03:00</published><updated>2025-02-28T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/local-servers</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/local-servers"><![CDATA[<h2 id="why-do-we-need-local-servers">Why do we need local servers?</h2>
 <p>You cannot fully test the frontend by simply opening an html file in a browser. A number of features will be unavailable, like asynchronous API requests. And of course, you need server to test the backend. However, using a real live server for active testing is inconvenient, slow, and unsafe.</p>
 
 <h2 id="native">Native</h2>
@@ -82,40 +136,7 @@
 <h3 id="live-server">Live Server</h3>
 <p>Самый популярный вариант для VS Code - <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a>.</p>
 
-<p>минусы: запускает файлы только из боковой панели (по крайней мере у меня), то есть не получится запустить для одиночного файла, только для проекта в workspace.</p>]]></content><author><name></name></author><category term="local server" /><category term="nodejs" /><category term="php" /><category term="python" /><category term="java" /><category term="vs code" /><summary type="html"><![CDATA[Зачем нужны локальные серверы Нельзя полноценно протестировать фронтенд, просто открыв html файл в браузере. Многое может работать по-другому или не работать вообще, например, асинхронные запросы к API. И разумеется для тестирования бэкэнда нужен сервер. При этом использовать живой сервер для активного тестирования неудобно, медленно и небезопасно.]]></summary></entry><entry xml:lang="en"><title type="html">picture template for responsive images</title><link href="https://vallek.github.io/webdevtips/en/html-picture-template" rel="alternate" type="text/html" title="picture template for responsive images" /><published>2025-01-27T03:00:00+03:00</published><updated>2025-01-27T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/html-picture-template</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/html-picture-template"><![CDATA[<p>This is a <code class="language-plaintext highlighter-rouge">picture</code> html element template for responsive images. There are two <code class="language-plaintext highlighter-rouge">sources</code> inside for desktop and tablet, and an <code class="language-plaintext highlighter-rouge">img</code> for mobile by default (if yoour project is mobile first). There are two images attached for regular and double density (retina) screens.</p>
-
-<p>Breakpoints in <code class="language-plaintext highlighter-rouge">media</code> are given as an example. You can choose any, but in general they should correspond to the actual screen sizes of different devices types. You can get them from statistics collected by services like <a href="http://gs.statcounter.com/screen-resolution-stats#yearly-2024-2025-bar">statcounter</a>. You can also Google more different ones. It’s even better to look at your own user statistics. Or even better, both)</p>
-
-<p>The dimensions (width and height) are also given as an example. Just as long as you specify them at all. This is important to optimize page loading (to avoid content shift) and in case the css is not loaded.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;picture&gt;
-  &lt;source width="1280" height="720" type="image/png" media="(min-width: 1280px)" srcset="images/image-desktop@1x.png 1x, images/image-desktop@2x.png 2x"&gt;
-  &lt;source width="768" height="1024" type="image/png" media="(min-width: 768px)" srcset="images/image-tablet@1x.png 1x, images/image-tablet@2x.png 2x"&gt;
-  &lt;img src="images/image-mobile@1x.png" srcset="images/image-mobile@2x.png 2x" width="360" height="800" alt=""&gt;
-&lt;/picture&gt;
-</code></pre></div></div>
-
-<p>As a bonus, here is css media query for the background image (now the device-pixel-ratio works everywhere, but I’ll leave the legacy version just in case)</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.logo_background {
-    background-image: url('../img/logo@1x.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 80px 40px; /* size of the logo image @ 1x */
-}
-
-@media /* only for retina displays */
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi),
-only screen and (min-resolution: 2dppx) {
-    .logo_background {
-        background-image: url('../img/logo@2x.png');
-    }
-}
-</code></pre></div></div>]]></content><author><name></name></author><category term="html" /><category term="css" /><category term="responsive" /><summary type="html"><![CDATA[This is a picture html element template for responsive images. There are two sources inside for desktop and tablet, and an img for mobile by default (if yoour project is mobile first). There are two images attached for regular and double density (retina) screens.]]></summary></entry><entry xml:lang="ru"><title type="html">sudo для Windows 10</title><link href="https://vallek.github.io/webdevtips/ru/sudo-for-windows-10" rel="alternate" type="text/html" title="sudo для Windows 10" /><published>2025-01-27T03:00:00+03:00</published><updated>2025-01-27T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/sudo-for-windows-10</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/sudo-for-windows-10"><![CDATA[<p>На линукс системах можно запускать отдельные команды с повышенными правами добавляя перед ними <code class="language-plaintext highlighter-rouge">sudo</code>. Windows работает по другому и требует запустить все окно приложения от имени админа. Либо так, либо никак. Что лучше для безопасности, но менее удобно)</p>
+<p>минусы: запускает файлы только из боковой панели (по крайней мере у меня), то есть не получится запустить для одиночного файла, только для проекта в workspace.</p>]]></content><author><name></name></author><category term="local server" /><category term="nodejs" /><category term="php" /><category term="python" /><category term="java" /><category term="vs code" /><summary type="html"><![CDATA[Зачем нужны локальные серверы Нельзя полноценно протестировать фронтенд, просто открыв html файл в браузере. Многое может работать по-другому или не работать вообще, например, асинхронные запросы к API. И разумеется для тестирования бэкэнда нужен сервер. При этом использовать живой сервер для активного тестирования неудобно, медленно и небезопасно.]]></summary></entry><entry xml:lang="ru"><title type="html">sudo для Windows 10</title><link href="https://vallek.github.io/webdevtips/ru/sudo-for-windows-10" rel="alternate" type="text/html" title="sudo для Windows 10" /><published>2025-01-27T03:00:00+03:00</published><updated>2025-01-27T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/sudo-for-windows-10</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/sudo-for-windows-10"><![CDATA[<p>На линукс системах можно запускать отдельные команды с повышенными правами добавляя перед ними <code class="language-plaintext highlighter-rouge">sudo</code>. Windows работает по другому и требует запустить все окно приложения от имени админа. Либо так, либо никак. Что лучше для безопасности, но менее удобно)</p>
 
 <p>В Windows 11 наконец-то <a href="https://devblogs.microsoft.com/commandline/introducing-sudo-for-windows/">завезли</a> sudo, но не на десятку (по крайней мере официально, кто-то уже сдела форк, но я бы не стал рисковать).</p>
 
@@ -164,30 +185,49 @@ only screen and (min-resolution: 2dppx) {
 
 <p>It is worth noting that this may present <a href="https://github.com/gerardog/gsudo/security">security risks</a> to your system. Use it at your own risk.</p>
 
-<p>gsudo can also be used with a Windows Terminal without opening a new window (which breaks layout when opened from quake mode).</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="cmd" /><category term="powershell" /><category term="windows" /><category term="terminal" /><summary type="html"><![CDATA[On linux systems, you can run individual commands with elevated permissions by adding sudo in front of them. Windows works differently and requires you to run the entire application window as an admin. Which is better for security, but less convenient)]]></summary></entry><entry xml:lang="ru"><title type="html">Как удалить локальные гит ветки, которых нет в удаленном репозитории</title><link href="https://vallek.github.io/webdevtips/ru/delete-git-branches" rel="alternate" type="text/html" title="Как удалить локальные гит ветки, которых нет в удаленном репозитории" /><published>2025-01-26T03:00:00+03:00</published><updated>2025-01-26T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/delete-git-branches</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/delete-git-branches"><![CDATA[<p>Если у вас остается куча лишних веток, которые вам было лень удалять и вот теперь вы решили их почистить, то вам может помочь эта заметка)</p>
+<p>gsudo can also be used with a Windows Terminal without opening a new window (which breaks layout when opened from quake mode).</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="cmd" /><category term="powershell" /><category term="windows" /><category term="terminal" /><summary type="html"><![CDATA[On linux systems, you can run individual commands with elevated permissions by adding sudo in front of them. Windows works differently and requires you to run the entire application window as an admin. Which is better for security, but less convenient)]]></summary></entry><entry xml:lang="en"><title type="html">picture template for responsive images</title><link href="https://vallek.github.io/webdevtips/en/html-picture-template" rel="alternate" type="text/html" title="picture template for responsive images" /><published>2025-01-27T03:00:00+03:00</published><updated>2025-01-27T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/html-picture-template</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/html-picture-template"><![CDATA[<p>This is a <code class="language-plaintext highlighter-rouge">picture</code> html element template for responsive images. There are two <code class="language-plaintext highlighter-rouge">sources</code> inside for desktop and tablet, and an <code class="language-plaintext highlighter-rouge">img</code> for mobile by default (if yoour project is mobile first). There are two images attached for regular and double density (retina) screens.</p>
 
-<p>Как оказалось простого решения у этой проблеммы нет. Существует команда <a href="https://www.atlassian.com/git/tutorials/git-prune">prune</a>, но она удаляет только ссылки на удаленные ветки.</p>
+<p>Breakpoints in <code class="language-plaintext highlighter-rouge">media</code> are given as an example. You can choose any, but in general they should correspond to the actual screen sizes of different devices types. You can get them from statistics collected by services like <a href="http://gs.statcounter.com/screen-resolution-stats#yearly-2024-2025-bar">statcounter</a>. You can also Google more different ones. It’s even better to look at your own user statistics. Or even better, both)</p>
 
-<p>В обсуждении на стаковерфлоу можно найти множество вариантов, но все они выглядят, как вызов Ктхулху.</p>
+<p>The dimensions (width and height) are also given as an example. Just as long as you specify them at all. This is important to optimize page loading (to avoid content shift) and in case the css is not loaded.</p>
 
-<p>К счастью есть готовое решение в виде npm пакета <a href="https://www.npmjs.com/package/git-removed-branches">git-removed-branches</a> (тот случай, когда действительно есть смысл использовать готовый пакет).</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Если у вас остается куча лишних веток, которые вам было лень удалять и вот теперь вы решили их почистить, то вам может помочь эта заметка)]]></summary></entry><entry xml:lang="en"><title type="html">How to delete local git branches that do not exist on remote</title><link href="https://vallek.github.io/webdevtips/en/delete-git-branches" rel="alternate" type="text/html" title="How to delete local git branches that do not exist on remote" /><published>2025-01-26T03:00:00+03:00</published><updated>2025-01-26T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/delete-git-branches</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/delete-git-branches"><![CDATA[<p>If you have a bunch of extra branches that you were too lazy to remove and now you’ve decided to tidy up, then this note may help you)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;picture&gt;
+  &lt;source width="1280" height="720" type="image/png" media="(min-width: 1280px)" srcset="images/image-desktop@1x.png 1x, images/image-desktop@2x.png 2x"&gt;
+  &lt;source width="768" height="1024" type="image/png" media="(min-width: 768px)" srcset="images/image-tablet@1x.png 1x, images/image-tablet@2x.png 2x"&gt;
+  &lt;img src="images/image-mobile@1x.png" srcset="images/image-mobile@2x.png 2x" width="360" height="800" alt=""&gt;
+&lt;/picture&gt;
+</code></pre></div></div>
+
+<p>As a bonus, here is css media query for the background image (now the device-pixel-ratio works everywhere, but I’ll leave the legacy version just in case)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.logo_background {
+    background-image: url('../img/logo@1x.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 80px 40px; /* size of the logo image @ 1x */
+}
+
+@media /* only for retina displays */
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+    .logo_background {
+        background-image: url('../img/logo@2x.png');
+    }
+}
+</code></pre></div></div>]]></content><author><name></name></author><category term="html" /><category term="css" /><category term="responsive" /><summary type="html"><![CDATA[This is a picture html element template for responsive images. There are two sources inside for desktop and tablet, and an img for mobile by default (if yoour project is mobile first). There are two images attached for regular and double density (retina) screens.]]></summary></entry><entry xml:lang="en"><title type="html">How to delete local git branches that do not exist on remote</title><link href="https://vallek.github.io/webdevtips/en/delete-git-branches" rel="alternate" type="text/html" title="How to delete local git branches that do not exist on remote" /><published>2025-01-26T03:00:00+03:00</published><updated>2025-01-26T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/delete-git-branches</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/delete-git-branches"><![CDATA[<p>If you have a bunch of extra branches that you were too lazy to remove and now you’ve decided to tidy up, then this note may help you)</p>
 
 <p>As it turned out, there is no simple solution to this problem. There is a <a href="https://www.atlassian.com/git/tutorials/git-prune">prune</a> command, but it only removes links to deleted branches.</p>
 
 <p>There are many options to be found in the discussion on stackoverflow, but they all look like a Cthulhu summoning spell.</p>
 
-<p>Fortunately, there is a ready-made solution in the form of the npm package <a href="https://www.npmjs.com/package/git-removed-branches">git-removed-branches</a> (rare case when it actually a good idea to use a ready-made package).</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[If you have a bunch of extra branches that you were too lazy to remove and now you’ve decided to tidy up, then this note may help you)]]></summary></entry><entry xml:lang="en"><title type="html">Windows user environment variables</title><link href="https://vallek.github.io/webdevtips/en/windows-vars" rel="alternate" type="text/html" title="Windows user environment variables" /><published>2024-12-02T03:00:00+03:00</published><updated>2024-12-02T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/windows-vars</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/windows-vars"><![CDATA[<p>Windows environment variables, that you can use in terminal. These are user folders related vars:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%HOMEDRIVE% - system drive
-%HOMEPATH% - path to user folder without a drive letter
-%USERPROFILE% - path to user folder with a drive letter
+<p>Fortunately, there is a ready-made solution in the form of the npm package <a href="https://www.npmjs.com/package/git-removed-branches">git-removed-branches</a> (rare case when it actually a good idea to use a ready-made package).</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[If you have a bunch of extra branches that you were too lazy to remove and now you’ve decided to tidy up, then this note may help you)]]></summary></entry><entry xml:lang="ru"><title type="html">Как удалить локальные гит ветки, которых нет в удаленном репозитории</title><link href="https://vallek.github.io/webdevtips/ru/delete-git-branches" rel="alternate" type="text/html" title="Как удалить локальные гит ветки, которых нет в удаленном репозитории" /><published>2025-01-26T03:00:00+03:00</published><updated>2025-01-26T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/delete-git-branches</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/delete-git-branches"><![CDATA[<p>Если у вас остается куча лишних веток, которые вам было лень удалять и вот теперь вы решили их почистить, то вам может помочь эта заметка)</p>
 
-echo %VARIABLE% - see variable value
-set - list all variable with values
-</code></pre></div></div>]]></content><author><name></name></author><category term="windows" /><category term="terminal" /><category term="cmd" /><summary type="html"><![CDATA[Windows environment variables, that you can use in terminal. These are user folders related vars: ``` %HOMEDRIVE% - system drive %HOMEPATH% - path to user folder without a drive letter %USERPROFILE% - path to user folder with a drive letter]]></summary></entry><entry xml:lang="ru"><title type="html">Windows переменные среды пользователя</title><link href="https://vallek.github.io/webdevtips/ru/windows-vars" rel="alternate" type="text/html" title="Windows переменные среды пользователя" /><published>2024-12-02T03:00:00+03:00</published><updated>2024-12-02T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/ru/windows-vars</id><content type="html" xml:base="https://vallek.github.io/webdevtips/ru/windows-vars"><![CDATA[<p>Переменные среды Windows, которые можно использовать в треминале. Конкретно здесь собраны переменные, связанные с пользователем:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%HOMEDRIVE% - системный диск
-%HOMEPATH% - путь до папки юзера без диска
-%USERPROFILE% - путь до папки юзера с диском
+<p>Как оказалось простого решения у этой проблеммы нет. Существует команда <a href="https://www.atlassian.com/git/tutorials/git-prune">prune</a>, но она удаляет только ссылки на удаленные ветки.</p>
 
-echo %VARIABLE% - узнать значение переменной
-set - все переменные со значениями
-</code></pre></div></div>]]></content><author><name></name></author><category term="windows" /><category term="terminal" /><category term="cmd" /><summary type="html"><![CDATA[Переменные среды Windows, которые можно использовать в треминале. Конкретно здесь собраны переменные, связанные с пользователем: ``` %HOMEDRIVE% - системный диск %HOMEPATH% - путь до папки юзера без диска %USERPROFILE% - путь до папки юзера с диском]]></summary></entry></feed>
+<p>В обсуждении на стаковерфлоу можно найти множество вариантов, но все они выглядят, как вызов Ктхулху.</p>
+
+<p>К счастью есть готовое решение в виде npm пакета <a href="https://www.npmjs.com/package/git-removed-branches">git-removed-branches</a> (тот случай, когда действительно есть смысл использовать готовый пакет).</p>]]></content><author><name></name></author><category term="git" /><summary type="html"><![CDATA[Если у вас остается куча лишних веток, которые вам было лень удалять и вот теперь вы решили их почистить, то вам может помочь эта заметка)]]></summary></entry></feed>

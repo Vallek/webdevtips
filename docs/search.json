@@ -1,6 +1,26 @@
 [
   
     {
+      "title"    : "Как открыть XAMPP Wordpress localhost на мобильном",
+      "category" : "",
+      "tags"     : "local server, xampp, mobile, qa, windows",
+      "url"      : "/webdevtips/ru/xampp-wp-mobile",
+      "date"     : "2025-04-29 03:00:00 +0300",
+      "content"  : "Я уже писал о том, как открыть localhost на мобильном. Тот рецепт подходит, когда речь о простом локальном сервере с фронтендом. Но если у вас wordpress, запущенный на XAMPP, то просто так вы его на мобильном не откроете) Придется разрешить к нему доступ в фаерволе и поменять порты.ВНИМАНИЕ: любое ослабление правил безопасности всегда теоретически понижает безопасность! Вы делаете это на свой страх и риск.Порядок действий:  Остановить сервер в XAMPP (Stop Apache)      Поменять везде порт 80 на порт 8080. А именно:    2.1. В настройках (Config &amp;gt; Service and Port settings)    2.2. В файле httpd.conf (Apache Config) - заменить Listen 80 и добавить Listen IPv4-адрес:8080 (свой адрес смотрите в cmd &amp;gt; ipconfig)    2.3 В файле httpd-xampp.cong (Apache Config) - найдите строку &amp;lt;Directory &quot;C:/xampp/phpMyAdmin&quot;&amp;gt; и замените Require local на Require all granted    Панель управления Windows &amp;gt; Брэндмауэр защитника Windows &amp;gt; Дополнительные параметры &amp;gt; Правила для входящих подключений &amp;gt; найти правило для Apache HTTP Server (В протоколе должно быть TCP, там еще будет UPD). В свойствах будет блокировать, выберете разрешить. Там же можно повысить безопасность доп. средствами (например разрешить только ip вашего мобильного, у меня он почему-то считается удаленным).  В wp-config.php добавить     define(&#39;WP_HOME&#39;,&#39;http://IPv4-адрес:8080/website&#39;); define(&#39;WP_SITEURL&#39;,&#39;http://IPv4-адрес:8080/website&#39;);        Включить сервер в XAMPP  На мобильном открыть http://IPv4-адрес:8080/website (не забудьте, что нужно подключение по вайфаю!)Учтите, что все пути на сайте с localhost в url не будут работать. Включая подгрузку ресурсов. Можно заменить все localhost на url:port через расширение Better Search and Replace. Или можете протестировать сайт без замены просто вводя ссылки вручную, но опять же могут не подгружаться картинки и т.п.",
+      "lang": "ru"
+    } ,
+  
+    {
+      "title"    : "Open XAMPP Wordpress localhost on mobile",
+      "category" : "",
+      "tags"     : "local server, xampp, mobile, qa, windows",
+      "url"      : "/webdevtips/en/xampp-wp-mobile",
+      "date"     : "2025-04-29 03:00:00 +0300",
+      "content"  : "I had a post about how to open localhost on mobile. That recipe is suitable when it comes to a simple local server with a frontend. But if you have Wordpress running on XAMPP, that won’t be enough) You’ll have to open access to XAMPP in your OS firewall and change the ports. This instructions are fo Windows 10.ATTENTION: setting safety rules weaker always theoretically reduces safety! You do this at your own risk.Steps:  Stop Apache server in XAMPP      Change port 80 to port 8080 everywhere:    2.1. In the settings (Config &amp;gt; Service and Port settings)    2.2. In the file httpd.conf (Apache Config) - replace Listen 80 and add Listen IPv4 address:8080 (see your address in cmd &amp;gt; ipconfig)    2.3 In the httpd-xampp.cong (Apache Config) file, find the line &amp;lt;Directory &quot;C:/xampp/phpMyAdmin &quot;&amp;gt; and replace Require local with Require all granted    Windows Control Panel &amp;gt; Windows Defender Firewall &amp;gt; Advanced Settings &amp;gt; Rules for incoming connections &amp;gt; find a rule for Apache HTTP Server (The protocol should be TCP, there also will be UPD one). It will be set to “block” in the properties, change it to “allow”. You can increase security by additional means there (for example, allow only the ip of your mobile, for some reason it is considered remote for me).  In wp-config.php  add     define(&#39;WP_HOME&#39;,&#39;http://IPv4-адрес:8080/website &#39;); define(&#39;WP_SITEURL&#39;,&#39;http://IPv4-адрес:8080/website &#39;);        Start the server in XAMPP  Open http://IPv4-адрес:8080/website on your mobile (don’t forget to use wifi!)Please note that all site paths with localhost in the url will not work. Including loading resources. You can replace all localhost with url:port via the Better Search and Replace extension. Or you can test the site without replacing it by simply entering links manually, but again, images may not load, etc.",
+      "lang": "en"
+    } ,
+  
+    {
       "title"    : "Подборка локальных серверов для тестирования",
       "category" : "",
       "tags"     : "local server, nodejs, php, python, java, vs code",
