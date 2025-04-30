@@ -6,7 +6,7 @@ notebook: webdev
 tags: [local server, xampp, mobile, qa, windows]
 sources: ['https://stackoverflow.com/a/48990347/9749171', 'https://stackoverflow.com/a/7650646/9749171', 'https://stackoverflow.com/a/78978044/9749171']
 ---
-Я уже писал о том, как [открыть localhost на мобильном](https://vallek.github.io/webdevtips/ru/localhost-on-mobile). Тот рецепт подходит, когда речь о простом локальном сервере с фронтендом. Но если у вас wordpress, запущенный на XAMPP, то просто так вы его на мобильном не откроете) Придется разрешить к нему доступ в фаерволе и поменять порты.
+Я уже писал о том, как [открыть localhost на мобильном](https://vallek.github.io/webdevtips/ru/localhost-on-mobile). Тот рецепт подходит, когда речь о простом [локальном сервере](https://vallek.github.io/webdevtips/ru/local-servers) с фронтендом. Но если у вас wordpress, запущенный на XAMPP, то просто так вы его на мобильном не откроете) Придется разрешить к нему доступ в фаерволе и поменять порты.
 
 ВНИМАНИЕ: любое ослабление правил безопасности всегда теоретически понижает безопасность! Вы делаете это на свой страх и риск.
 

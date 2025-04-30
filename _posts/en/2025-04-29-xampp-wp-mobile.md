@@ -6,7 +6,7 @@ notebook: webdev
 tags: [local server, xampp, mobile, qa, windows]
 sources: ['https://stackoverflow.com/a/48990347/9749171', 'https://stackoverflow.com/a/7650646/9749171', 'https://stackoverflow.com/a/78978044/9749171']
 ---
-I had a post about how to [open localhost on mobile](https://vallek .github.io/webdevtips/ru/localhost-on-mobile). That recipe is suitable when it comes to a simple local server with a frontend. But if you have Wordpress running on XAMPP, that won't be enough) You'll have to open access to XAMPP in your OS firewall and change the ports. This instructions are fo Windows 10.
+I had a post about how to [open localhost on mobile](https://vallek .github.io/webdevtips/ru/localhost-on-mobile). That recipe is suitable when it comes to a simple [local server](https://vallek.github.io/webdevtips/en/local-servers) with a frontend. But if you have Wordpress running on XAMPP, that won't be enough) You'll have to open access to XAMPP in your OS firewall and change the ports. This instructions are fo Windows 10.
 
 ATTENTION: setting safety rules weaker always theoretically reduces safety! You do this at your own risk.
 

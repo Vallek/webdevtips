@@ -3,7 +3,7 @@ layout: post
 title: 'Local servers for testing compilation'
 date: 2025-02-28 00:00 +0000
 notebook: backend
-tags: [local server, nodejs, php, python, java, vs code]
+tags: [local server, nodejs, php, python, java, vs code, xampp]
 sources: [https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/set_up_a_local_testing_server]
 ---
 ## Why do we need local servers?
