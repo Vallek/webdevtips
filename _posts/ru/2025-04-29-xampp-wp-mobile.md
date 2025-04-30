@@ -3,7 +3,7 @@ layout: post
 title: 'Как открыть XAMPP Wordpress localhost на мобильном'
 date: 2025-04-29 00:00 +0000
 notebook: webdev
-tags: [local server, xampp, mobile, qa, windows]
+tags: [local server, xampp, mobile, qa, windows, wordpress]
 sources: ['https://stackoverflow.com/a/48990347/9749171', 'https://stackoverflow.com/a/7650646/9749171', 'https://stackoverflow.com/a/78978044/9749171']
 ---
 Я уже писал о том, как [открыть localhost на мобильном](https://vallek.github.io/webdevtips/ru/localhost-on-mobile). Тот рецепт подходит, когда речь о простом [локальном сервере](https://vallek.github.io/webdevtips/ru/local-servers) с фронтендом. Но если у вас wordpress, запущенный на XAMPP, то просто так вы его на мобильном не откроете) Придется разрешить к нему доступ в фаерволе и поменять порты.
