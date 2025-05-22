@@ -4,7 +4,6 @@ title: 'How to open Vite localhost on mobile (and deploy to github)'
 date: 2025-05-22 00:00 +0000
 notebook: webdev
 tags: [vite, local server, mobile, qa, github]
-sources: []
 ---
 This is follow up to the series of notes on how to open local server on mobile (for [simple frontend](https://vallek.github.io/webdevtips/ru/localhost-on-mobile), for [XAMPP](https://vallek.github.io/webdevtips/ru/xampp-wp-mobile)). This time it's about [Vite build tool](https://vite.dev/).
 

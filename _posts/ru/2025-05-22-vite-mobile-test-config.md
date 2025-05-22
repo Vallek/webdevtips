@@ -4,7 +4,6 @@ title: 'Как тестировать сборку Vite локально на м
 date: 2025-05-22 00:00 +0000
 notebook: webdev
 tags: [vite, local server, mobile, qa, github]
-sources: []
 ---
 Продолжение серии заметок о том, как открывать локальный сервер на мобильных для тестирования (для [простого фронтенда](https://vallek.github.io/webdevtips/ru/localhost-on-mobile), для [XAMPP](https://vallek.github.io/webdevtips/ru/xampp-wp-mobile)). На этот раз речь о встроенном сервере в сборщике [Vite](https://vite.dev/).
 
