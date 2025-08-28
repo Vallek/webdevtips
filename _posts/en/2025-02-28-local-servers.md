@@ -32,13 +32,13 @@ cons: slow (at least for me/out of the box), long page reload
 ### Java
 Although a significant part of modern tools for frontend developers are written in Node in the form of npm packages, you can find tools in other languages too. For example on [Java](https://www.java.com/ru/download/). The w3c validator [local version](https://validator.github.io/validator/#web-based-checking) has been written on it.
 
-## Backend systems
-It's useful if you need to test a website with a more complex backend, CMS (for example, on Wordpress), but you don't want to do everything manually.
+## LAMP/WAMP bundles
+AMP/WAMP bundles are useful if you need to test a website with a more complex backend, CMS (for example, on Wordpress), but you don't want to do everything manually. They consists of server, backend language and data base.
 
 ### XAMPP
 [XAMPP](https://www.apachefriends.org/) consists of of Apache server with PHP support, MariaDB database (MySQL fork) and Perl. There is a simple graphical interface, but you can also access the config files. After [a little manipulation](https://blog.terresquall.com/2021/10/running-python-in-xampp/) it is also possible to run Python code.
 
-There are also many other options: WAMP, Laravel, Local, Laragon.
+There are also many other options: [WAMP](https://sourceforge.net/projects/wampserver/), [Laragon](https://laragon.org/download), [ddev в docker](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/).
 
 ## Extensions for VS Code
 The simplest, but limited, option for testing only the frontend are extensions for code editors. They also run a local server on the selected port and are usually started simply by clicking on a button.

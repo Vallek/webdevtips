@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2025-05-29T23:02:48+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">How to open Vite localhost on mobile (and deploy to github)</title><link href="https://vallek.github.io/webdevtips/en/vite-mobile-test-config" rel="alternate" type="text/html" title="How to open Vite localhost on mobile (and deploy to github)" /><published>2025-05-22T03:00:00+03:00</published><updated>2025-05-22T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/vite-mobile-test-config</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/vite-mobile-test-config"><![CDATA[<p>This is follow up to the series of notes on how to open local server on mobile (for <a href="https://vallek.github.io/webdevtips/ru/localhost-on-mobile">simple frontend</a>, for <a href="https://vallek.github.io/webdevtips/ru/xampp-wp-mobile">XAMPP</a>). This time it’s about <a href="https://vite.dev/">Vite build tool</a>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://vallek.github.io/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="https://vallek.github.io/webdevtips/" rel="alternate" type="text/html" /><updated>2025-08-28T12:23:17+03:00</updated><id>https://vallek.github.io/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">How to open Vite localhost on mobile (and deploy to github)</title><link href="https://vallek.github.io/webdevtips/en/vite-mobile-test-config" rel="alternate" type="text/html" title="How to open Vite localhost on mobile (and deploy to github)" /><published>2025-05-22T03:00:00+03:00</published><updated>2025-05-22T03:00:00+03:00</updated><id>https://vallek.github.io/webdevtips/en/vite-mobile-test-config</id><content type="html" xml:base="https://vallek.github.io/webdevtips/en/vite-mobile-test-config"><![CDATA[<p>This is follow up to the series of notes on how to open local server on mobile (for <a href="https://vallek.github.io/webdevtips/ru/localhost-on-mobile">simple frontend</a>, for <a href="https://vallek.github.io/webdevtips/ru/xampp-wp-mobile">XAMPP</a>). This time it’s about <a href="https://vite.dev/">Vite build tool</a>.</p>
 
 <p>Create <code class="language-plaintext highlighter-rouge">vite.config.js</code> config file in your vite project folder with following contents:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export default {
@@ -108,13 +108,13 @@
 <h3 id="java">Java</h3>
 <p>Although a significant part of modern tools for frontend developers are written in Node in the form of npm packages, you can find tools in other languages too. For example on <a href="https://www.java.com/ru/download/">Java</a>. The w3c validator <a href="https://validator.github.io/validator/#web-based-checking">local version</a> has been written on it.</p>
 
-<h2 id="backend-systems">Backend systems</h2>
-<p>It’s useful if you need to test a website with a more complex backend, CMS (for example, on Wordpress), but you don’t want to do everything manually.</p>
+<h2 id="lampwamp-bundles">LAMP/WAMP bundles</h2>
+<p>AMP/WAMP bundles are useful if you need to test a website with a more complex backend, CMS (for example, on Wordpress), but you don’t want to do everything manually. They consists of server, backend language and data base.</p>
 
 <h3 id="xampp">XAMPP</h3>
 <p><a href="https://www.apachefriends.org/">XAMPP</a> consists of of Apache server with PHP support, MariaDB database (MySQL fork) and Perl. There is a simple graphical interface, but you can also access the config files. After <a href="https://blog.terresquall.com/2021/10/running-python-in-xampp/">a little manipulation</a> it is also possible to run Python code.</p>
 
-<p>There are also many other options: WAMP, Laravel, Local, Laragon.</p>
+<p>There are also many other options: <a href="https://sourceforge.net/projects/wampserver/">WAMP</a>, <a href="https://laragon.org/download">Laragon</a>, <a href="https://ddev.readthedocs.io/en/stable/users/install/docker-installation/">ddev в docker</a>.</p>
 
 <h2 id="extensions-for-vs-code">Extensions for VS Code</h2>
 <p>The simplest, but limited, option for testing only the frontend are extensions for code editors. They also run a local server on the selected port and are usually started simply by clicking on a button.</p>
@@ -151,12 +151,12 @@
 <p>Хотя значительная часть современных инструментов для фронтенд-разработчиков написана на ноде в виде npm пакетов, вы можете встретить тулзы и на других языках. Например на <a href="https://www.java.com/ru/download/">Джаве</a> написана <a href="https://validator.github.io/validator/#web-based-checking">локальная версия</a> w3c валидатора.</p>
 
 <h2 id="сборки-с-бэкэндом">Сборки с бэкэндом</h2>
-<p>Пригодится, если вам нужно тестировать сайт с более сложным бэкэндом, CMS (например, на Wordpress), но вы не хотите устанавливать и настраивать все вручную.</p>
+<p>Пригодится, если вам нужно тестировать сайт с более сложным бэкэндом, CMS (например, на Wordpress), но вы не хотите устанавливать и настраивать все вручную. Такие сборки обычно содержат сервер, язык бэкэнда, базу данных. Такие сборки называют LAMP на линкусе и WAMP на винде.</p>
 
 <h3 id="xampp">XAMPP</h3>
 <p><a href="https://www.apachefriends.org/">XAMPP</a> - это набор из сервера Apache с поддержкой PHP, базы данных MariaDB (форк MySQL) и Perl. Есть простой графический интерфейс, но можно залезть и в конфиг файлы. После <a href="https://blog.terresquall.com/2021/10/running-python-in-xampp/">небольших манипуляций</a> также возможно запускать Питон код.</p>
 
-<p>Есть много других вариантов: WAMP, Laravel, Local, Laragon.</p>
+<p>Есть много других вариантов: <a href="https://sourceforge.net/projects/wampserver/">WAMP</a>, <a href="https://laragon.org/download">Laragon</a>, <a href="https://ddev.readthedocs.io/en/stable/users/install/docker-installation/">ddev в docker</a>.</p>
 
 <h2 id="расширения-для-vs-code">Расширения для VS Code</h2>
 <p>Самый простой, но ограниченный, вариант для тестирования только фронтенда - расширения для редакторов кода. Они тоже запускают локальный сервер на выбранном порте и как правило запускаются просто по нажатию на кнопку.</p>
