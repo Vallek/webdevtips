@@ -1070,6 +1070,12 @@
   <li>Выберете в поле Окно “Свернутое в значок”</li>
 </ol>
 
+<p><strong>ОБНОВЛЕНИЕ</strong>: выбор “Свернуть в значок” больше не работает.</p>
+
+<p>Чтобы wt запускалось свернутым на старте нужно изменить свойства ярлыка с <code class="language-plaintext highlighter-rouge">wt.exe -w _quake</code> на <code class="language-plaintext highlighter-rouge">wt.exe --window "_quake" powershell -window hidden</code>. Это запустит wt со вкладкой powershell.</p>
+
+<p>Если же вам нужно запустить cmd, вы можете сделать это как бы из под powershell так: <code class="language-plaintext highlighter-rouge">wt.exe --window "_quake" powershell -window hidden cmd</code>.</p>
+
 <p>А чтобы скрыть верхнюю панель с вкладками нужно включить в настройках wt режим фокуса:</p>
 
 <p><img src="../img/wt-quake-3.png" alt="" /></p>

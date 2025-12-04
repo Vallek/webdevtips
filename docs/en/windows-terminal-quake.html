@@ -13,8 +13,8 @@
   <meta name="description" content="Frontend, web development and pc setup knowledge base">
   <meta property="og:description" content="Frontend, web development and pc setup knowledge base">
   
-  <link rel="canonical" href="https://vallek.github.io/webdevtips/en/windows-terminal-quake-copy">
-  <meta property="og:url" content="https://vallek.github.io/webdevtips/en/windows-terminal-quake-copy">
+  <link rel="canonical" href="https://vallek.github.io/webdevtips/en/windows-terminal-quake">
+  <meta property="og:url" content="https://vallek.github.io/webdevtips/en/windows-terminal-quake">
   <meta property="og:site_name" content="Web Dev Tips">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
@@ -82,9 +82,9 @@
             <ul class="site-nav__list visually-hidden">
               
               
-              <li class="site-nav__item"><a class="site-nav__link locales__lang_ru" href="/webdevtips/ru/windows-terminal-quake-copy">RU</a></li>
+              <li class="site-nav__item"><a class="site-nav__link locales__lang_ru" href="/webdevtips/ru/windows-terminal-quake">RU</a></li>
               
-              <li class="site-nav__item"><a class="site-nav__link locales__lang_en" href="/webdevtips/en/windows-terminal-quake-copy">EN</a></li>
+              <li class="site-nav__item"><a class="site-nav__link locales__lang_en" href="/webdevtips/en/windows-terminal-quake">EN</a></li>
               
   
               
@@ -954,7 +954,7 @@
 						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/windows-vars">Windows user environment variables</a></li>
 					</ul>
 					<ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/windows-terminal-quake-copy">Windows Terminal in quake mode on start up</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/windows-terminal-quake">Windows Terminal in quake mode on start up</a></li>
 					</ul>
 					<ul class="sidebar__notes">
 						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/disable-alt-tab-thumb-win10">Disable thumbnails for alt+tab in Windows 10</a></li>
@@ -971,7 +971,7 @@
 						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/windows-vars">Windows user environment variables</a></li>
 					</ul>
 					<ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/windows-terminal-quake-copy">Windows Terminal in quake mode on start up</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/windows-terminal-quake">Windows Terminal in quake mode on start up</a></li>
 					</ul>
 				</li>
 				
@@ -987,7 +987,7 @@
 					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/windows-terminal">windows terminal</a>
 					
 					<ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/windows-terminal-quake-copy">Windows Terminal in quake mode on start up</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/windows-terminal-quake">Windows Terminal in quake mode on start up</a></li>
 					</ul>
 				</li>
 				
@@ -995,7 +995,7 @@
 					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/quake">quake</a>
 					
 					<ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/windows-terminal-quake-copy">Windows Terminal in quake mode on start up</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/windows-terminal-quake">Windows Terminal in quake mode on start up</a></li>
 					</ul>
 				</li>
 				
@@ -1047,7 +1047,7 @@
     <p class="post-meta">
       <time class="dt-published" datetime="2024-02-16T03:00:00+03:00" itemprop="datePublished">Feb 16, 2024
       </time>
-      <span class="post-notebook">&ensp;-&ensp;pc</span><a class="edit-button edit-button_post-page" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/en/2024-02-16-windows-terminal-quake copy.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
+      <span class="post-notebook">&ensp;-&ensp;pc</span><a class="edit-button edit-button_post-page" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/en/2024-02-16-windows-terminal-quake.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
     </p>
   </header>
 
@@ -1070,6 +1070,12 @@
   <li>Call it what you want</li>
   <li>Choose minimized in windows input</li>
 </ol>
+
+<p><strong>UPDATE</strong>: choosing minimized is not working anymore.</p>
+
+<p>To start wt minimized change shortcut props from <code class="language-plaintext highlighter-rouge">wt.exe -w _quake</code> to <code class="language-plaintext highlighter-rouge">wt.exe --window "_quake" powershell -window hidden</code>. WT will start with powershell tab.</p>
+
+<p>If you want cmd tab you can start it kinda inside powershell like this: <code class="language-plaintext highlighter-rouge">wt.exe --window "_quake" powershell -window hidden cmd</code>.</p>
 
 <p>To hide wt tab bar:</p>
 
@@ -1096,8 +1102,8 @@
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = 'https://vallek.github.io/webdevtips/en/windows-terminal-quake-copy';
-      this.page.identifier = 'https://vallek.github.io/webdevtips/en/windows-terminal-quake-copy';
+      this.page.url = 'https://vallek.github.io/webdevtips/en/windows-terminal-quake';
+      this.page.identifier = 'https://vallek.github.io/webdevtips/en/windows-terminal-quake';
     };
 
     (function() {
@@ -1109,7 +1115,7 @@
       (d.head || d.body).appendChild(s);
     })();
   </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/webdevtips/en/windows-terminal-quake-copy" hidden></a>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/webdevtips/en/windows-terminal-quake" hidden></a>
 </article>
 
         </div>

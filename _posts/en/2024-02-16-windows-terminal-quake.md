@@ -23,6 +23,12 @@ However if you want wt to autostart at system start up it will just open standar
 5. Call it what you want
 6. Choose minimized in windows input
 
+**UPDATE**: choosing minimized is not working anymore. 
+
+To start wt minimized change shortcut props from `wt.exe -w _quake` to `wt.exe --window "_quake" powershell -window hidden`. WT will start with powershell tab. 
+
+If you want cmd tab you can start it kinda inside powershell like this: `wt.exe --window "_quake" powershell -window hidden cmd`.
+
 To hide wt tab bar:
 
 ![](../img/wt-quake-3.png)
