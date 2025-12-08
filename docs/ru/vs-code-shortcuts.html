@@ -1058,26 +1058,93 @@
 	"command": "git.commit"
 },
 </code></pre></div></div>
+
 <p>И сделать pull/push.</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
 	"key": "ctrl+alt+g",
 	"command": "git.sync"
 },
 </code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Выделить диапазон с помощью emmet. Например текст внутри html тегов.
+
+<p>Выделить диапазон с помощью emmet. Например текст внутри html тегов.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"key": "ctrl+shift+a",
+	"command": "editor.emmet.action.balanceOut"
+},
 </code></pre></div></div>
-<p>{
-	“key”: “ctrl+shift+a”,
-	“command”: “editor.emmet.action.balanceOut”
-},</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Выделить все совпадения (если отключено автоматом при выделении)
-</code></pre></div></div>
-<p>{
-  “key”: “ctrl+shift+l”,
-  “command”: “editor.action.selectHighlights”,
-  “when”: “editorFocus”
+
+<p>Выделить все совпадения (если отключено автоматом при выделении)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "key": "ctrl+shift+l",
+  "command": "editor.action.selectHighlights",
+  "when": "editorFocus"
 }
-```</p>
+</code></pre></div></div>
+
+<p>Переместить курсор в начало/конец строки</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"key": "alt+]",
+	"command": "cursorLineEnd"
+},
+{
+	"key": "alt+[",
+	"command": "cursorLineStart"
+}
+</code></pre></div></div>
+
+<p>Предыдущий/следующий блок в коде</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"key": "alt+home",
+	"command": "editor.gotoPreviousFold"
+},
+{
+	"key": "alt+end",
+	"command": "editor.gotoNextFold"
+}
+</code></pre></div></div>
+
+<p>Увеличить/уменьшить число (как в devtools браузера)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"key": "ctrl+alt+up",
+	"command": "editor.emmet.action.incrementNumberByOne"
+},
+{
+	"key": "ctrl+alt+down",
+	"command": "editor.emmet.action.decrementNumberByOne"
+},
+{
+	"key": "ctrl+shift+alt+down",
+	"command": "editor.emmet.action.decrementNumberByTen"
+},
+{
+	"key": "ctrl+shift+alt+up",
+	"command": "editor.emmet.action.incrementNumberByTen"
+}
+</code></pre></div></div>
+
+<p>Развернуть/свернуть панель с терминалом</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"key": "ctrl+alt+\\",
+	"command": "workbench.action.toggleMaximizedPanel"
+}
+</code></pre></div></div>
+
+<p>Напечатать квадратные скобки (можно использовать в ру раскладке)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"key": "shift+alt+[",
+	"command": "type",
+	"args": {
+		"text": "["
+	}
+},
+{
+	"key": "shift+alt+]",
+	"command": "type",
+	"args": {
+		"text": "]"
+	}
+}
+</code></pre></div></div>
 
   </div><h2 class="post-tags__heading">Теги</h2>
   

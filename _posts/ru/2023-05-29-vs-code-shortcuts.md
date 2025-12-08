@@ -15,6 +15,7 @@ tags: [vs code, shortcuts, git, emmet]
 	"command": "git.commit"
 },
 ```
+
 И сделать pull/push.
 ```
 {
@@ -22,7 +23,7 @@ tags: [vs code, shortcuts, git, emmet]
 	"command": "git.sync"
 },
 ```
-```
+
 Выделить диапазон с помощью emmet. Например текст внутри html тегов.
 ```
 {
@@ -30,11 +31,82 @@ tags: [vs code, shortcuts, git, emmet]
 	"command": "editor.emmet.action.balanceOut"
 },
 ```
+
 Выделить все совпадения (если отключено автоматом при выделении)
 ```
 {
   "key": "ctrl+shift+l",
   "command": "editor.action.selectHighlights",
   "when": "editorFocus"
+}
+```
+
+Переместить курсор в начало/конец строки
+```
+{
+	"key": "alt+]",
+	"command": "cursorLineEnd"
+},
+{
+	"key": "alt+[",
+	"command": "cursorLineStart"
+}
+```
+
+Предыдущий/следующий блок в коде
+```
+{
+	"key": "alt+home",
+	"command": "editor.gotoPreviousFold"
+},
+{
+	"key": "alt+end",
+	"command": "editor.gotoNextFold"
+}
+```
+
+Увеличить/уменьшить число (как в devtools браузера)
+```
+{
+	"key": "ctrl+alt+up",
+	"command": "editor.emmet.action.incrementNumberByOne"
+},
+{
+	"key": "ctrl+alt+down",
+	"command": "editor.emmet.action.decrementNumberByOne"
+},
+{
+	"key": "ctrl+shift+alt+down",
+	"command": "editor.emmet.action.decrementNumberByTen"
+},
+{
+	"key": "ctrl+shift+alt+up",
+	"command": "editor.emmet.action.incrementNumberByTen"
+}
+```
+
+Развернуть/свернуть панель с терминалом
+```
+{
+	"key": "ctrl+alt+\\",
+	"command": "workbench.action.toggleMaximizedPanel"
+}
+```
+
+Напечатать квадратные скобки (можно использовать в ру раскладке)
+```
+{
+	"key": "shift+alt+[",
+	"command": "type",
+	"args": {
+		"text": "["
+	}
+},
+{
+	"key": "shift+alt+]",
+	"command": "type",
+	"args": {
+		"text": "]"
+	}
 }
 ```

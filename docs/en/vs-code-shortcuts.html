@@ -1055,29 +1055,79 @@
     <p>You can add these to <code class="language-plaintext highlighter-rouge">keybindings.json</code> or just in keyboard shortcuts ui.</p>
 
 <p>Commit all files or the ones from stage.</p>
-
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
 	"key": "ctrl+alt+c",
 	"command": "git.commit"
 },
 </code></pre></div></div>
+
 <p>Do pull/push</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
 	"key": "ctrl+alt+g",
 	"command": "git.sync"
 },
 </code></pre></div></div>
+
 <p>Select range with emmet. For example text inside html element.</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
 	"key": "ctrl+shift+a",
 	"command": "editor.emmet.action.balanceOut"
 },
 </code></pre></div></div>
+
 <p>Select all occurrences (if auto is turned off)</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
   "key": "ctrl+shift+l",
   "command": "editor.action.selectHighlights",
   "when": "editorFocus"
+}
+</code></pre></div></div>
+
+<p>Put cursor in the end/beginning of the line</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"key": "alt+]",
+	"command": "cursorLineEnd"
+},
+{
+	"key": "alt+[",
+	"command": "cursorLineStart"
+}
+</code></pre></div></div>
+
+<p>Next/prev code block</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"key": "alt+home",
+	"command": "editor.gotoPreviousFold"
+},
+{
+	"key": "alt+end",
+	"command": "editor.gotoNextFold"
+}
+</code></pre></div></div>
+
+<p>Make number bigger/smaller (like in browser devtools)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"key": "ctrl+alt+up",
+	"command": "editor.emmet.action.incrementNumberByOne"
+},
+{
+	"key": "ctrl+alt+down",
+	"command": "editor.emmet.action.decrementNumberByOne"
+},
+{
+	"key": "ctrl+shift+alt+down",
+	"command": "editor.emmet.action.decrementNumberByTen"
+},
+{
+	"key": "ctrl+shift+alt+up",
+	"command": "editor.emmet.action.incrementNumberByTen"
+}
+</code></pre></div></div>
+
+<p>Fold/unfold terminal panel</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"key": "ctrl+alt+\\",
+	"command": "workbench.action.toggleMaximizedPanel"
 }
 </code></pre></div></div>
 
