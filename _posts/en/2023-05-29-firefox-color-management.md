@@ -5,9 +5,9 @@ date: 2023-05-29 14:10 +0300
 notebook: pc
 tags: [firefox]
 ---
-Color management does not work in Firefox, that is, it ignores the color profile of the srgb monitor and the colors are distorted.
+Color management does not work in Firefox by deafault, that is, it ignores the color profile of the srgb monitor and the colors are distorted.
 
-Make sure that the about:config is set to:
+To enable color management make sure that the about:config is set to:
 ```
 gfx.color_management.enablev4 - true	
 gfx.color_management.force_srgb - true	

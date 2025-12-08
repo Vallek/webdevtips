@@ -546,7 +546,7 @@
       "tags"     : "firefox",
       "url"      : "/webdevtips/ru/firefox-color-management",
       "date"     : "2023-05-29 14:10:00 +0300",
-      "content"  : "В Firefox не работает color management, то есть он игнорирует цветовой профиль монитора srgb и цвета искажены.Убедитесь, что в about:config выставлено:gfx.color_management.enablev4 - true gfx.color_management.force_srgb - true gfx.color_management.mode - 1 gfx.color_management.native_srgb - trueКартинка для проверки. Градиент должен быть плавным (сравните с Хромом, может быть дело и в вашем мониторе, софте и т.д).",
+      "content"  : "В Firefox по умолчанию не работает color management, то есть он игнорирует цветовой профиль монитора srgb и цвета искажены.Чтобы включить color management, убедитесь, что в about:config выставлено:gfx.color_management.enablev4 - true gfx.color_management.force_srgb - true gfx.color_management.mode - 1 gfx.color_management.native_srgb - trueКартинка для проверки. Градиент должен быть плавным (сравните с Хромом, может быть дело и в вашем мониторе, софте и т.д).",
       "lang": "ru"
     } ,
   
@@ -556,7 +556,7 @@
       "tags"     : "firefox",
       "url"      : "/webdevtips/en/firefox-color-management",
       "date"     : "2023-05-29 14:10:00 +0300",
-      "content"  : "Color management does not work in Firefox, that is, it ignores the color profile of the srgb monitor and the colors are distorted.Make sure that the about:config is set to:gfx.color_management.enablev4 - true gfx.color_management.force_srgb - true gfx.color_management.mode - 1 gfx.color_management.native_srgb - trueImage for testing. The gradient should be smooth (compare with Chrome, maybe it’s in your monitor, software, etc.).",
+      "content"  : "Color management does not work in Firefox by deafault, that is, it ignores the color profile of the srgb monitor and the colors are distorted.To enable color management make sure that the about:config is set to:gfx.color_management.enablev4 - true gfx.color_management.force_srgb - true gfx.color_management.mode - 1 gfx.color_management.native_srgb - trueImage for testing. The gradient should be smooth (compare with Chrome, maybe it’s in your monitor, software, etc.).",
       "lang": "en"
     } ,
   

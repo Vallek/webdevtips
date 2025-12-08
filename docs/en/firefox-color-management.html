@@ -1052,9 +1052,9 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Color management does not work in Firefox, that is, it ignores the color profile of the srgb monitor and the colors are distorted.</p>
+    <p>Color management does not work in Firefox by deafault, that is, it ignores the color profile of the srgb monitor and the colors are distorted.</p>
 
-<p>Make sure that the about:config is set to:</p>
+<p>To enable color management make sure that the about:config is set to:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gfx.color_management.enablev4 - true	
 gfx.color_management.force_srgb - true	
 gfx.color_management.mode - 1	

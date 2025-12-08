@@ -5,9 +5,9 @@ date: 2023-05-29 14:10 +0300
 notebook: pc
 tags: [firefox]
 ---
-В Firefox не работает color management, то есть он игнорирует цветовой профиль монитора srgb и цвета искажены.
+В Firefox по умолчанию не работает color management, то есть он игнорирует цветовой профиль монитора srgb и цвета искажены.
 
-Убедитесь, что в about:config выставлено:
+Чтобы включить color management, убедитесь, что в about:config выставлено:
 ```
 gfx.color_management.enablev4 - true	
 gfx.color_management.force_srgb - true	
