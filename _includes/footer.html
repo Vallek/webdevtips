@@ -17,6 +17,11 @@
             {%- if site.email -%}
             <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
             {%- endif -%}
+            {% if page.lang == "en" %}
+            <li><a href="https://boosty.to/vallek">Support on boosty</a></li>
+            {% else %}
+            <li><a href="https://boosty.to/vallek">Поддержать на boosty</a></li>
+            {% endif %}
         </ul>
       </div>
 

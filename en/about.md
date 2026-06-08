@@ -80,3 +80,5 @@ You can also suggest creating a new section if you have something to add to it.
 - [ ] Your suggestions)
 
 If something doesn't work, please start an issue. With any questions about the project, write in the discussion. Other suggestions and questions can be written to [mail](mailto:vwebdis@gmail.com) or [telegram](https://t.me/webval).
+
+Support me [on boosty](https://boosty.to/vallek)
