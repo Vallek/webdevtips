@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin SEO -->
-  <title>Web Dev Tips | Firefox ignores monitor color profile</title>
+  <title>Web Dev Tips | How to watch back all your repositories on Github</title>
   <meta property="og:title" content="Web Dev Tips">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:locale:alternate" content="en_US">
@@ -13,8 +13,8 @@
   <meta name="description" content="Frontend, web development and pc setup knowledge base">
   <meta property="og:description" content="Frontend, web development and pc setup knowledge base">
   
-  <link rel="canonical" href="https://vallek.github.io/webdevtips/en/firefox-color-management">
-  <meta property="og:url" content="https://vallek.github.io/webdevtips/en/firefox-color-management">
+  <link rel="canonical" href="https://vallek.github.io/webdevtips/en/watch-github-repos">
+  <meta property="og:url" content="https://vallek.github.io/webdevtips/en/watch-github-repos">
   <meta property="og:site_name" content="Web Dev Tips">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
@@ -82,9 +82,9 @@
             <ul class="site-nav__list visually-hidden">
               
               
-              <li class="site-nav__item"><a class="site-nav__link locales__lang_ru" href="/webdevtips/ru/firefox-color-management">RU</a></li>
+              <li class="site-nav__item"><a class="site-nav__link locales__lang_ru" href="/webdevtips/ru/watch-github-repos">RU</a></li>
               
-              <li class="site-nav__item"><a class="site-nav__link locales__lang_en" href="/webdevtips/en/firefox-color-management">EN</a></li>
+              <li class="site-nav__item"><a class="site-nav__link locales__lang_en" href="/webdevtips/en/watch-github-repos">EN</a></li>
               
   
               
@@ -131,7 +131,7 @@
 	
 	<h2 class="sidebar__heading">Topics and notes</h2>
 	<ul class="sidebar__notebooks">
-		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">frontend</button>
+		<li class="sidebar__notebook sidebar__notebook_open"><button class="sidebar__title">frontend</button>
 			
 			
 			
@@ -142,7 +142,7 @@
 					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/git">git</a>
 					
 					<ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/watch-github-repos">How to watch back all your repositories on Github</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/watch-github-repos">How to watch back all your repositories on Github</a></li>
 					</ul>
 				</li>
 				
@@ -150,7 +150,7 @@
 					<a class="sidebar__link sidebar__link_tag" href="/webdevtips/tag/github">github</a>
 					
 					<ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/watch-github-repos">How to watch back all your repositories on Github</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/watch-github-repos">How to watch back all your repositories on Github</a></li>
 					</ul>
 				</li>
 				
@@ -956,7 +956,7 @@
 				
 			</ul>
 		</li>
-		<li class="sidebar__notebook sidebar__notebook_open"><button class="sidebar__title">pc</button>
+		<li class="sidebar__notebook sidebar__notebook_close"><button class="sidebar__title">pc</button>
 			
 			
 			
@@ -1022,7 +1022,7 @@
 						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/firefox-dark-theme">Problems with dark/light themes in Firefox</a></li>
 					</ul>
 					<ul class="sidebar__notes">
-						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note sidebar__link_active" href="/webdevtips/en/firefox-color-management">Firefox ignores monitor color profile</a></li>
+						<li class="sidebar__note"><a class="sidebar__link sidebar__link_note" href="/webdevtips/en/firefox-color-management">Firefox ignores monitor color profile</a></li>
 					</ul>
 				</li>
 				
@@ -1059,35 +1059,53 @@
           <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Firefox ignores monitor color profile</h1>
+    <h1 class="post-title p-name" itemprop="name headline">How to watch back all your repositories on Github</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2023-05-29T14:10:00+03:00" itemprop="datePublished">May 29, 2023
+      <time class="dt-published" datetime="2026-06-11T03:00:00+03:00" itemprop="datePublished">Jun 11, 2026
       </time>
-      <span class="post-notebook">&ensp;-&ensp;pc</span><a class="edit-button edit-button_post-page" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/en/2023-05-29-firefox-color-management.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
+      <span class="post-notebook">&ensp;-&ensp;frontend</span><a class="edit-button edit-button_post-page" href="https://www.github.com/Vallek/webdevtips/blob/master/_posts/en/2026-06-11-watch-github-repos.md"><img class="github-logo" width="16" height="16" src="/webdevtips/assets/github-mark.svg" alt="лого гитхаба"> Edit on GitHub!</a>
     </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Color management does not work in Firefox by deafault, that is, it ignores the color profile of the srgb monitor and the colors are distorted.</p>
+    <p>The owners of Github, in their infinite wisdom, decided not only to disable automatic watching repositories by default, but also to remove this feature entirely.</p>
 
-<p>To enable color management make sure that the about:config is set to:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gfx.color_management.enablev4 - true	
-gfx.color_management.force_srgb - true	
-gfx.color_management.mode - 1	
-gfx.color_management.native_srgb - true
+<p>As a result you will not be notified about all the changes eve in YOUR OWN repos. Genius.</p>
+
+<h2 id="how-to-get-watching-all-your-repos-back">How to get watching all your repos back</h2>
+
+<p>There is a way to automate this process, at least for your own repositories. To do this, you will need:</p>
+
+<ol>
+  <li>Unix utils that can be <a href="https://git-scm.com/install /">installed with Git</a> (there will be a checkbox in the installer). This is for Windows. Linux may already have them I’m not sure. Specifically you will need the `xargs’ utility.</li>
+  <li>Git Bash. Again, it comes with git.</li>
+  <li><a href="https://cli.github.com/">Github CLI</a></li>
+</ol>
+
+<p>In the terminal, run:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh repo list YOUR_USERNAME --limit 1000 --json nameWithOwner -q '.[].nameWithOwner' | xargs -I {} gh api -X PUT repos/{}/subscription -f subscribed=true
 </code></pre></div></div>
+<p>Change YOUR_USERNAME to your nickname or organization.</p>
 
-<p><a href="http://www.lagom.nl/lcd-test/gradient.php#gradient-h.png">Image for testing</a>. The gradient should be smooth (compare with Chrome, maybe it’s in your monitor, software, etc.).</p>
+<p>Please note that the original answer has two lines. I merged it into one for less likely issues.</p>
 
-  </div><h2 class="post-tags__heading">Теги</h2>
+<p>If you did everything right, after executing the command, terminal should output json with each repository one at a time. Wait for it to finish.</p>
+
+  </div>
+  <span>Source: </span>
+  <a class="source-link" href="https://github.com/orgs/community/discussions/157470">https://github.com/orgs/community/discussions/157470</a>
+  <h2 class="post-tags__heading">Теги</h2>
   
   
-  <a class="tag-link tag-link_home" href="/webdevtips/tag/firefox"><span class="nobrake">firefox</span></a>
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/git"><span class="nobrake">git</span></a>
+  
+  
+  <a class="tag-link tag-link_home" href="/webdevtips/tag/github"><span class="nobrake">github</span></a>
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = 'https://vallek.github.io/webdevtips/en/firefox-color-management';
-      this.page.identifier = 'https://vallek.github.io/webdevtips/en/firefox-color-management';
+      this.page.url = 'https://vallek.github.io/webdevtips/en/watch-github-repos';
+      this.page.identifier = 'https://vallek.github.io/webdevtips/en/watch-github-repos';
     };
 
     (function() {
@@ -1099,7 +1117,7 @@ gfx.color_management.native_srgb - true
       (d.head || d.body).appendChild(s);
     })();
   </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/webdevtips/en/firefox-color-management" hidden></a>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript><a class="u-url" href="/webdevtips/en/watch-github-repos" hidden></a>
 </article>
 
         </div>

@@ -1,4 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2026-06-08T09:56:31+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">How to open Vite localhost on mobile (and deploy to github)</title><link href="http://0.0.0.0:4000/webdevtips/en/vite-mobile-test-config" rel="alternate" type="text/html" title="How to open Vite localhost on mobile (and deploy to github)" /><published>2025-05-22T03:00:00+03:00</published><updated>2025-05-22T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/vite-mobile-test-config</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/vite-mobile-test-config"><![CDATA[<p>This is follow up to the series of notes on how to open local server on mobile (for <a href="https://vallek.github.io/webdevtips/ru/localhost-on-mobile">simple frontend</a>, for <a href="https://vallek.github.io/webdevtips/ru/xampp-wp-mobile">XAMPP</a>). This time it’s about <a href="https://vite.dev/">Vite build tool</a>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://0.0.0.0:4000/webdevtips/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/webdevtips/" rel="alternate" type="text/html" /><updated>2026-06-11T18:44:23+03:00</updated><id>http://0.0.0.0:4000/webdevtips/feed.xml</id><title type="html">Web Dev Tips</title><subtitle>База знаний по фронтенду, веб-разработке и настройке пк</subtitle><entry xml:lang="en"><title type="html">How to watch back all your repositories on Github</title><link href="http://0.0.0.0:4000/webdevtips/en/watch-github-repos" rel="alternate" type="text/html" title="How to watch back all your repositories on Github" /><published>2026-06-11T03:00:00+03:00</published><updated>2026-06-11T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/watch-github-repos</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/watch-github-repos"><![CDATA[<p>The owners of Github, in their infinite wisdom, decided not only to disable automatic watching repositories by default, but also to remove this feature entirely.</p>
+
+<p>As a result you will not be notified about all the changes eve in YOUR OWN repos. Genius.</p>
+
+<h2 id="how-to-get-watching-all-your-repos-back">How to get watching all your repos back</h2>
+
+<p>There is a way to automate this process, at least for your own repositories. To do this, you will need:</p>
+
+<ol>
+  <li>Unix utils that can be <a href="https://git-scm.com/install /">installed with Git</a> (there will be a checkbox in the installer). This is for Windows. Linux may already have them I’m not sure. Specifically you will need the `xargs’ utility.</li>
+  <li>Git Bash. Again, it comes with git.</li>
+  <li><a href="https://cli.github.com/">Github CLI</a></li>
+</ol>
+
+<p>In the terminal, run:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh repo list YOUR_USERNAME --limit 1000 --json nameWithOwner -q '.[].nameWithOwner' | xargs -I {} gh api -X PUT repos/{}/subscription -f subscribed=true
+</code></pre></div></div>
+<p>Change YOUR_USERNAME to your nickname or organization.</p>
+
+<p>Please note that the original answer has two lines. I merged it into one for less likely issues.</p>
+
+<p>If you did everything right, after executing the command, terminal should output json with each repository one at a time. Wait for it to finish.</p>]]></content><author><name></name></author><category term="git" /><category term="github" /><summary type="html"><![CDATA[The owners of Github, in their infinite wisdom, decided not only to disable automatic watching repositories by default, but also to remove this feature entirely.]]></summary></entry><entry xml:lang="ru"><title type="html">Как подписаться на все свои репозитории на Гитхабе</title><link href="http://0.0.0.0:4000/webdevtips/ru/watch-github-repos" rel="alternate" type="text/html" title="Как подписаться на все свои репозитории на Гитхабе" /><published>2026-06-11T03:00:00+03:00</published><updated>2026-06-11T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/watch-github-repos</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/watch-github-repos"><![CDATA[<p>Владельцы Гитхаба в своей безграничной мудрости решили не только отключить автоматическую подписку по умолчанию на репозитории (добавление в Watch, не путать с Subscribe для топиков), но и вообще убрать эту функцию.</p>
+
+<p>В итоге даже при создании репозитория вы САМИ не будете следить за всеми изменениями в нем. ГЕНИИ!</p>
+
+<h2 id="как-вернуть-подписку-обратно">Как вернуть подписку обратно</h2>
+
+<p>Есть способ автоматизировать этот процесс по крайней мере для ваших собственных репозиториев. Для этого вам понадобяться:</p>
+
+<ol>
+  <li>Unix tools, которые можно <a href="https://git-scm.com/install/">установить вместе с Git</a> (в установщике будет галочка). Это для Винды. На линуксах возможно они уже есть. Конкретно нам нужна будет утилита <code class="language-plaintext highlighter-rouge">xargs</code>.</li>
+  <li>Git Bash. Опять же идет с гитом.</li>
+  <li><a href="https://cli.github.com/">Github CLI</a></li>
+</ol>
+
+<p>В терминале выполните:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh repo list YOUR_USERNAME --limit 1000 --json nameWithOwner -q '.[].nameWithOwner' | xargs -I {} gh api -X PUT repos/{}/subscription -f subscribed=true
+</code></pre></div></div>
+<p>Вместо YOUR_USERNAME впишите свой ник или организацию.</p>
+
+<p>Обратите внимание, что по ссылке в оригинале дают две строки. Я слил в одну, чтобы было меньше проблем.</p>
+
+<p>Если вы все сделали правильно, после выполнения команды должен начать выводиться json с каждым репозиторием по одному. Дождитесь окончания.</p>]]></content><author><name></name></author><category term="git" /><category term="github" /><summary type="html"><![CDATA[Владельцы Гитхаба в своей безграничной мудрости решили не только отключить автоматическую подписку по умолчанию на репозитории (добавление в Watch, не путать с Subscribe для топиков), но и вообще убрать эту функцию.]]></summary></entry><entry xml:lang="en"><title type="html">How to open Vite localhost on mobile (and deploy to github)</title><link href="http://0.0.0.0:4000/webdevtips/en/vite-mobile-test-config" rel="alternate" type="text/html" title="How to open Vite localhost on mobile (and deploy to github)" /><published>2025-05-22T03:00:00+03:00</published><updated>2025-05-22T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/vite-mobile-test-config</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/vite-mobile-test-config"><![CDATA[<p>This is follow up to the series of notes on how to open local server on mobile (for <a href="https://vallek.github.io/webdevtips/ru/localhost-on-mobile">simple frontend</a>, for <a href="https://vallek.github.io/webdevtips/ru/xampp-wp-mobile">XAMPP</a>). This time it’s about <a href="https://vite.dev/">Vite build tool</a>.</p>
 
 <p>Create <code class="language-plaintext highlighter-rouge">vite.config.js</code> config file in your vite project folder with following contents:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export default {
@@ -82,49 +124,7 @@
   <li>На мобильном открыть <code class="language-plaintext highlighter-rouge">http://IPv4-адрес:8080/website</code> (не забудьте, что нужно подключение по вайфаю!)</li>
 </ol>
 
-<p>Учтите, что все пути на сайте с <code class="language-plaintext highlighter-rouge">localhost</code> в url не будут работать. Включая подгрузку ресурсов. Можно заменить все localhost на url:port через расширение <a href="https://wordpress.org/plugins/better-search-replace/">Better Search and Replace</a>. Или можете протестировать сайт без замены просто вводя ссылки вручную, но опять же могут не подгружаться картинки и т.п.</p>]]></content><author><name></name></author><category term="local server" /><category term="xampp" /><category term="mobile" /><category term="qa" /><category term="windows" /><category term="wordpress" /><summary type="html"><![CDATA[Я уже писал о том, как открыть localhost на мобильном. Тот рецепт подходит, когда речь о простом локальном сервере с фронтендом. Но если у вас wordpress, запущенный на XAMPP, то просто так вы его на мобильном не откроете) Придется разрешить к нему доступ в фаерволе и поменять порты.]]></summary></entry><entry xml:lang="en"><title type="html">Local servers for testing compilation</title><link href="http://0.0.0.0:4000/webdevtips/en/local-servers" rel="alternate" type="text/html" title="Local servers for testing compilation" /><published>2025-02-28T03:00:00+03:00</published><updated>2025-02-28T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/local-servers</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/local-servers"><![CDATA[<h2 id="why-do-we-need-local-servers">Why do we need local servers?</h2>
-<p>You cannot fully test the frontend by simply opening an html file in a browser. A number of features will be unavailable, like asynchronous API requests. And of course, you need server to test the backend. However, using a real live server for active testing is inconvenient, slow, and unsafe.</p>
-
-<h2 id="native">Native</h2>
-<p>These are servers built into the language platforms or are separate modules. They are usually enough to test a frontend with not the most complex backend code (for example, for sending form data) or a just the frontend. In addition, you could learn more about the backend, configs, and running commands through the terminal)</p>
-
-<h3 id="nodejs">Node.js</h3>
-<p>Install the [Node] itself(https://nodejs.org/) (the npm package manager is included). There is no built-in server in the Node, but as always there are modules for that. For testing, I use <a href="https://www.npmjs.com/package/http-server">http server</a>.</p>
-
-<p>Install it globally. It is started simply by the command <code class="language-plaintext highlighter-rouge">http-server</code> inside the project folder. After that, you can specify the exact address to the html file in the browser (if it is not an index at the root).</p>
-
-<p>Read about how to enable https encryption support in my <a href="https://vallek.github.io/webdevtips/en/openssl-local-server-with-https">separate note</a>.</p>
-
-<h3 id="python">Python</h3>
-<p>For a <a href="https://realpython.com/python-http-server/#how-to-start-pythons-httpserver-in-the-command-line">Python server</a>, you will need to install [Python] (https://www.python.org/downloads/) and probably the <a href="https://docs.djangoproject.com/en/5.1/topics/install/">Django framework</a>.</p>
-
-<p>On windows, it is started by the command <code class="language-plaintext highlighter-rouge">py -3 -m http.server</code>.</p>
-
-<h3 id="php">PHP</h3>
-<p>PHP has a <a href="https://www.php.net/manual/en/features.commandline.webserver.php">built-in local server</a>. It is enough to just install <a href="https://www.php.net/downloads.php">php</a> itself, after which you can start the server with the command <code class="language-plaintext highlighter-rouge">php -S localhost:8000</code>.</p>
-
-<p>cons: slow (at least for me/out of the box), long page reload</p>
-
-<h3 id="java">Java</h3>
-<p>Although a significant part of modern tools for frontend developers are written in Node in the form of npm packages, you can find tools in other languages too. For example on <a href="https://www.java.com/ru/download/">Java</a>. The w3c validator <a href="https://validator.github.io/validator/#web-based-checking">local version</a> has been written on it.</p>
-
-<h2 id="lampwamp-bundles">LAMP/WAMP bundles</h2>
-<p>AMP/WAMP bundles are useful if you need to test a website with a more complex backend, CMS (for example, on Wordpress), but you don’t want to do everything manually. They consists of server, backend language and data base.</p>
-
-<h3 id="xampp">XAMPP</h3>
-<p><a href="https://www.apachefriends.org/">XAMPP</a> consists of of Apache server with PHP support, MariaDB database (MySQL fork) and Perl. There is a simple graphical interface, but you can also access the config files. After <a href="https://blog.terresquall.com/2021/10/running-python-in-xampp/">a little manipulation</a> it is also possible to run Python code.</p>
-
-<p>There are also many other options: <a href="https://sourceforge.net/projects/wampserver/">WAMP</a>, <a href="https://laragon.org/download">Laragon</a>, <a href="https://ddev.readthedocs.io/en/stable/users/install/docker-installation/">ddev в docker</a>.</p>
-
-<h2 id="extensions-for-vs-code">Extensions for VS Code</h2>
-<p>The simplest, but limited, option for testing only the frontend are extensions for code editors. They also run a local server on the selected port and are usually started simply by clicking on a button.</p>
-
-<p>I <strong>do not</strong> recommend using extensions that open the page preview directly in VS Code. Even if it’s technically a Chrome engine, it’s still better to test your site as closely as possible to what the user is using. That is, in the official stable versions of browsers.</p>
-
-<h3 id="live-server">Live Server</h3>
-<p>The most popular option for VS Code is <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a>.</p>
-
-<p>cons: it runs files only from the sidebar (at least for me), so it will not be possible to run for a single file, only for a project in workspace.</p>]]></content><author><name></name></author><category term="local server" /><category term="nodejs" /><category term="php" /><category term="python" /><category term="java" /><category term="vs code" /><category term="xampp" /><category term="qa" /><summary type="html"><![CDATA[Why do we need local servers? You cannot fully test the frontend by simply opening an html file in a browser. A number of features will be unavailable, like asynchronous API requests. And of course, you need server to test the backend. However, using a real live server for active testing is inconvenient, slow, and unsafe.]]></summary></entry><entry xml:lang="ru"><title type="html">Подборка локальных серверов для тестирования</title><link href="http://0.0.0.0:4000/webdevtips/ru/local-servers" rel="alternate" type="text/html" title="Подборка локальных серверов для тестирования" /><published>2025-02-28T03:00:00+03:00</published><updated>2025-02-28T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/local-servers</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/local-servers"><![CDATA[<h2 id="зачем-нужны-локальные-серверы">Зачем нужны локальные серверы</h2>
+<p>Учтите, что все пути на сайте с <code class="language-plaintext highlighter-rouge">localhost</code> в url не будут работать. Включая подгрузку ресурсов. Можно заменить все localhost на url:port через расширение <a href="https://wordpress.org/plugins/better-search-replace/">Better Search and Replace</a>. Или можете протестировать сайт без замены просто вводя ссылки вручную, но опять же могут не подгружаться картинки и т.п.</p>]]></content><author><name></name></author><category term="local server" /><category term="xampp" /><category term="mobile" /><category term="qa" /><category term="windows" /><category term="wordpress" /><summary type="html"><![CDATA[Я уже писал о том, как открыть localhost на мобильном. Тот рецепт подходит, когда речь о простом локальном сервере с фронтендом. Но если у вас wordpress, запущенный на XAMPP, то просто так вы его на мобильном не откроете) Придется разрешить к нему доступ в фаерволе и поменять порты.]]></summary></entry><entry xml:lang="ru"><title type="html">Подборка локальных серверов для тестирования</title><link href="http://0.0.0.0:4000/webdevtips/ru/local-servers" rel="alternate" type="text/html" title="Подборка локальных серверов для тестирования" /><published>2025-02-28T03:00:00+03:00</published><updated>2025-02-28T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/local-servers</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/local-servers"><![CDATA[<h2 id="зачем-нужны-локальные-серверы">Зачем нужны локальные серверы</h2>
 <p>Нельзя полноценно протестировать фронтенд, просто открыв html файл в браузере. Многое может работать по-другому или не работать вообще, например, асинхронные запросы к API. И разумеется для тестирования бэкэнда нужен сервер. При этом использовать живой сервер для активного тестирования неудобно, медленно и небезопасно.</p>
 
 <h2 id="нативные">Нативные</h2>
@@ -166,56 +166,49 @@
 <h3 id="live-server">Live Server</h3>
 <p>Самый популярный вариант для VS Code - <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a>.</p>
 
-<p>минусы: запускает файлы только из боковой панели (по крайней мере у меня), то есть не получится запустить для одиночного файла, только для проекта в workspace.</p>]]></content><author><name></name></author><category term="local server" /><category term="nodejs" /><category term="php" /><category term="python" /><category term="java" /><category term="vs code" /><category term="xampp" /><category term="qa" /><summary type="html"><![CDATA[Зачем нужны локальные серверы Нельзя полноценно протестировать фронтенд, просто открыв html файл в браузере. Многое может работать по-другому или не работать вообще, например, асинхронные запросы к API. И разумеется для тестирования бэкэнда нужен сервер. При этом использовать живой сервер для активного тестирования неудобно, медленно и небезопасно.]]></summary></entry><entry xml:lang="ru"><title type="html">sudo для Windows 10</title><link href="http://0.0.0.0:4000/webdevtips/ru/sudo-for-windows-10" rel="alternate" type="text/html" title="sudo для Windows 10" /><published>2025-01-27T03:00:00+03:00</published><updated>2025-01-27T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/sudo-for-windows-10</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/sudo-for-windows-10"><![CDATA[<p>На линукс системах можно запускать отдельные команды с повышенными правами добавляя перед ними <code class="language-plaintext highlighter-rouge">sudo</code>. Windows работает по другому и требует запустить все окно приложения от имени админа. Либо так, либо никак. Что лучше для безопасности, но менее удобно)</p>
+<p>минусы: запускает файлы только из боковой панели (по крайней мере у меня), то есть не получится запустить для одиночного файла, только для проекта в workspace.</p>]]></content><author><name></name></author><category term="local server" /><category term="nodejs" /><category term="php" /><category term="python" /><category term="java" /><category term="vs code" /><category term="xampp" /><category term="qa" /><summary type="html"><![CDATA[Зачем нужны локальные серверы Нельзя полноценно протестировать фронтенд, просто открыв html файл в браузере. Многое может работать по-другому или не работать вообще, например, асинхронные запросы к API. И разумеется для тестирования бэкэнда нужен сервер. При этом использовать живой сервер для активного тестирования неудобно, медленно и небезопасно.]]></summary></entry><entry xml:lang="en"><title type="html">Local servers for testing compilation</title><link href="http://0.0.0.0:4000/webdevtips/en/local-servers" rel="alternate" type="text/html" title="Local servers for testing compilation" /><published>2025-02-28T03:00:00+03:00</published><updated>2025-02-28T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/local-servers</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/local-servers"><![CDATA[<h2 id="why-do-we-need-local-servers">Why do we need local servers?</h2>
+<p>You cannot fully test the frontend by simply opening an html file in a browser. A number of features will be unavailable, like asynchronous API requests. And of course, you need server to test the backend. However, using a real live server for active testing is inconvenient, slow, and unsafe.</p>
 
-<p>В Windows 11 наконец-то <a href="https://devblogs.microsoft.com/commandline/introducing-sudo-for-windows/">завезли</a> sudo, но не на десятку (по крайней мере официально, кто-то уже сдела форк, но я бы не стал рисковать).</p>
+<h2 id="native">Native</h2>
+<p>These are servers built into the language platforms or are separate modules. They are usually enough to test a frontend with not the most complex backend code (for example, for sending form data) or a just the frontend. In addition, you could learn more about the backend, configs, and running commands through the terminal)</p>
 
-<p>К счастью есть готовый аналог в виде программы <a href="https://gerardog.github.io/gsudo/">gsudo</a>. После ее установки, вы можете так же как и на линуксах добавлять к командам <code class="language-plaintext highlighter-rouge">gsudo</code> или <code class="language-plaintext highlighter-rouge">sudo</code> и выполнять их с паравами администратора. Еще <a href="https://github.com/gerardog/gsudo/discussions/331#discussioncomment-11367503">пишут</a>, что у gsudo есть фичи, которых нет у ms-sudo.</p>
+<h3 id="nodejs">Node.js</h3>
+<p>Install the [Node] itself(https://nodejs.org/) (the npm package manager is included). There is no built-in server in the Node, but as always there are modules for that. For testing, I use <a href="https://www.npmjs.com/package/http-server">http server</a>.</p>
 
-<p>Стоит добавить, что это может ослабить <a href="https://github.com/gerardog/gsudo/security">безопасность</a> системы и вы, как всегда, делаете это на свой страх и риск.</p>
+<p>Install it globally. It is started simply by the command <code class="language-plaintext highlighter-rouge">http-server</code> inside the project folder. After that, you can specify the exact address to the html file in the browser (if it is not an index at the root).</p>
 
-<p>gsudo можно в том числе использовать с Windows Terminal, не открывая новое окно (которое из режима quake еще и криво открывается).</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="cmd" /><category term="powershell" /><category term="windows" /><category term="terminal" /><summary type="html"><![CDATA[На линукс системах можно запускать отдельные команды с повышенными правами добавляя перед ними sudo. Windows работает по другому и требует запустить все окно приложения от имени админа. Либо так, либо никак. Что лучше для безопасности, но менее удобно)]]></summary></entry><entry xml:lang="ru"><title type="html">Заготовка picture для адаптивных изображений</title><link href="http://0.0.0.0:4000/webdevtips/ru/html-picture-template" rel="alternate" type="text/html" title="Заготовка picture для адаптивных изображений" /><published>2025-01-27T03:00:00+03:00</published><updated>2025-01-27T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/html-picture-template</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/html-picture-template"><![CDATA[<p>Это заготовка html элемента <code class="language-plaintext highlighter-rouge">picture</code> для адаптивных изображений. Внутри элемента <code class="language-plaintext highlighter-rouge">picture</code> вложенны два source для десктопа и планшета и <code class="language-plaintext highlighter-rouge">img</code> для мобильного по умолчанию (если у вас mobile first). В каждом размере подключено по два изображения для экранов обычной и двойной плотности (ретина).</p>
+<p>Read about how to enable https encryption support in my <a href="https://vallek.github.io/webdevtips/en/openssl-local-server-with-https">separate note</a>.</p>
 
-<p>Брейкпоинты в <code class="language-plaintext highlighter-rouge">media</code> указаны для примера. У вас они могут быть какие угодно, но в целом должны соответствовать реальным размерам экранов устройств разного типа. Их можно узнать из статистики, которую собирают сервисы вроде <a href="https://gs.statcounter.com/screen-resolution-stats#yearly-2024-2025-bar">statcounter</a>. Можете погуглить побольше разных. А еще лучше посомтреть на статистику своих пользователей. А еще лучше и на то и на другое)</p>
+<h3 id="python">Python</h3>
+<p>For a <a href="https://realpython.com/python-http-server/#how-to-start-pythons-httpserver-in-the-command-line">Python server</a>, you will need to install [Python] (https://www.python.org/downloads/) and probably the <a href="https://docs.djangoproject.com/en/5.1/topics/install/">Django framework</a>.</p>
 
-<p>Размеры (ширина и высота) тоже указаны для примера. Главное в принципе их указывать. Это важно для оптимизации загрузки страницы (чтобы избежать сдвиг контента) и на случай если css не подгрузился.</p>
+<p>On windows, it is started by the command <code class="language-plaintext highlighter-rouge">py -3 -m http.server</code>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;picture&gt;
-  &lt;source width="1280" height="720" type="image/png" media="(min-width: 1280px)" srcset="images/image-desktop@1x.png 1x, images/image-desktop@2x.png 2x"&gt;
-  &lt;source width="768" height="1024" type="image/png" media="(min-width: 768px)" srcset="images/image-tablet@1x.png 1x, images/image-tablet@2x.png 2x"&gt;
-  &lt;img src="images/image-mobile@1x.png" srcset="images/image-mobile@2x.png 2x" width="360" height="800" alt=""&gt;
-&lt;/picture&gt;
-</code></pre></div></div>
+<h3 id="php">PHP</h3>
+<p>PHP has a <a href="https://www.php.net/manual/en/features.commandline.webserver.php">built-in local server</a>. It is enough to just install <a href="https://www.php.net/downloads.php">php</a> itself, after which you can start the server with the command <code class="language-plaintext highlighter-rouge">php -S localhost:8000</code>.</p>
 
-<p>В качестве бонуса css медиа-запрос для фона на ритину (сейчас device-pixel-ratio везде работает, но на всякий случай оставлю legacy вариант)</p>
+<p>cons: slow (at least for me/out of the box), long page reload</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.logo_background {
-    background-image: url('../img/logo@1x.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 80px 40px; /* size of the logo image @ 1x */
-}
+<h3 id="java">Java</h3>
+<p>Although a significant part of modern tools for frontend developers are written in Node in the form of npm packages, you can find tools in other languages too. For example on <a href="https://www.java.com/ru/download/">Java</a>. The w3c validator <a href="https://validator.github.io/validator/#web-based-checking">local version</a> has been written on it.</p>
 
-@media /* only for retina displays */
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi),
-only screen and (min-resolution: 2dppx) {
-    .logo_background {
-        background-image: url('../img/logo@2x.png');
-    }
-}
-</code></pre></div></div>]]></content><author><name></name></author><category term="html" /><category term="css" /><category term="responsive" /><summary type="html"><![CDATA[Это заготовка html элемента picture для адаптивных изображений. Внутри элемента picture вложенны два source для десктопа и планшета и img для мобильного по умолчанию (если у вас mobile first). В каждом размере подключено по два изображения для экранов обычной и двойной плотности (ретина).]]></summary></entry><entry xml:lang="en"><title type="html">sudo for Windows 10</title><link href="http://0.0.0.0:4000/webdevtips/en/sudo-for-windows-10" rel="alternate" type="text/html" title="sudo for Windows 10" /><published>2025-01-27T03:00:00+03:00</published><updated>2025-01-27T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/sudo-for-windows-10</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/sudo-for-windows-10"><![CDATA[<p>On linux systems, you can run individual commands with elevated permissions by adding <code class="language-plaintext highlighter-rouge">sudo</code> in front of them. Windows works differently and requires you to run the entire application window as an admin. Which is better for security, but less convenient)</p>
+<h2 id="lampwamp-bundles">LAMP/WAMP bundles</h2>
+<p>AMP/WAMP bundles are useful if you need to test a website with a more complex backend, CMS (for example, on Wordpress), but you don’t want to do everything manually. They consists of server, backend language and data base.</p>
 
-<p>Microsoft is finally <a href="https://devblogs.microsoft.com/commandline/introducing-sudo-for-windows">delivered</a> sudo for Windows 11, but not on Win 10 (at least officially, someone has already made a fork, but I wouldn’t risk it).</p>
+<h3 id="xampp">XAMPP</h3>
+<p><a href="https://www.apachefriends.org/">XAMPP</a> consists of of Apache server with PHP support, MariaDB database (MySQL fork) and Perl. There is a simple graphical interface, but you can also access the config files. After <a href="https://blog.terresquall.com/2021/10/running-python-in-xampp/">a little manipulation</a> it is also possible to run Python code.</p>
 
-<p>Fortunately, there is an analogue in the form of the [gsudo] program (https://gerardog.github.io/gsudo). After installing it, you can add <code class="language-plaintext highlighter-rouge">gsudo</code> or <code class="language-plaintext highlighter-rouge">sudo</code> to the commands as well as on Linux and execute them with administrator privileges. People also <a href="https://github.com/gerardog/gsudo/discussions/331#discussioncomment-11367503">say</a> that gsudo has features that ms-sudo doesn’t.</p>
+<p>There are also many other options: <a href="https://sourceforge.net/projects/wampserver/">WAMP</a>, <a href="https://laragon.org/download">Laragon</a>, <a href="https://ddev.readthedocs.io/en/stable/users/install/docker-installation/">ddev в docker</a>.</p>
 
-<p>It is worth noting that this may present <a href="https://github.com/gerardog/gsudo/security">security risks</a> to your system. Use it at your own risk.</p>
+<h2 id="extensions-for-vs-code">Extensions for VS Code</h2>
+<p>The simplest, but limited, option for testing only the frontend are extensions for code editors. They also run a local server on the selected port and are usually started simply by clicking on a button.</p>
 
-<p>gsudo can also be used with a Windows Terminal without opening a new window (which breaks layout when opened from quake mode).</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="cmd" /><category term="powershell" /><category term="windows" /><category term="terminal" /><summary type="html"><![CDATA[On linux systems, you can run individual commands with elevated permissions by adding sudo in front of them. Windows works differently and requires you to run the entire application window as an admin. Which is better for security, but less convenient)]]></summary></entry><entry xml:lang="en"><title type="html">picture template for responsive images</title><link href="http://0.0.0.0:4000/webdevtips/en/html-picture-template" rel="alternate" type="text/html" title="picture template for responsive images" /><published>2025-01-27T03:00:00+03:00</published><updated>2025-01-27T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/html-picture-template</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/html-picture-template"><![CDATA[<p>This is a <code class="language-plaintext highlighter-rouge">picture</code> html element template for responsive images. There are two <code class="language-plaintext highlighter-rouge">sources</code> inside for desktop and tablet, and an <code class="language-plaintext highlighter-rouge">img</code> for mobile by default (if yoour project is mobile first). There are two images attached for regular and double density (retina) screens.</p>
+<p>I <strong>do not</strong> recommend using extensions that open the page preview directly in VS Code. Even if it’s technically a Chrome engine, it’s still better to test your site as closely as possible to what the user is using. That is, in the official stable versions of browsers.</p>
+
+<h3 id="live-server">Live Server</h3>
+<p>The most popular option for VS Code is <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a>.</p>
+
+<p>cons: it runs files only from the sidebar (at least for me), so it will not be possible to run for a single file, only for a project in workspace.</p>]]></content><author><name></name></author><category term="local server" /><category term="nodejs" /><category term="php" /><category term="python" /><category term="java" /><category term="vs code" /><category term="xampp" /><category term="qa" /><summary type="html"><![CDATA[Why do we need local servers? You cannot fully test the frontend by simply opening an html file in a browser. A number of features will be unavailable, like asynchronous API requests. And of course, you need server to test the backend. However, using a real live server for active testing is inconvenient, slow, and unsafe.]]></summary></entry><entry xml:lang="en"><title type="html">picture template for responsive images</title><link href="http://0.0.0.0:4000/webdevtips/en/html-picture-template" rel="alternate" type="text/html" title="picture template for responsive images" /><published>2025-01-27T03:00:00+03:00</published><updated>2025-01-27T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/en/html-picture-template</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/en/html-picture-template"><![CDATA[<p>This is a <code class="language-plaintext highlighter-rouge">picture</code> html element template for responsive images. There are two <code class="language-plaintext highlighter-rouge">sources</code> inside for desktop and tablet, and an <code class="language-plaintext highlighter-rouge">img</code> for mobile by default (if yoour project is mobile first). There are two images attached for regular and double density (retina) screens.</p>
 
 <p>Breakpoints in <code class="language-plaintext highlighter-rouge">media</code> are given as an example. You can choose any, but in general they should correspond to the actual screen sizes of different devices types. You can get them from statistics collected by services like <a href="http://gs.statcounter.com/screen-resolution-stats#yearly-2024-2025-bar">statcounter</a>. You can also Google more different ones. It’s even better to look at your own user statistics. Or even better, both)</p>
 
@@ -248,4 +241,12 @@ only screen and (min-resolution: 2dppx) {
         background-image: url('../img/logo@2x.png');
     }
 }
-</code></pre></div></div>]]></content><author><name></name></author><category term="html" /><category term="css" /><category term="responsive" /><summary type="html"><![CDATA[This is a picture html element template for responsive images. There are two sources inside for desktop and tablet, and an img for mobile by default (if yoour project is mobile first). There are two images attached for regular and double density (retina) screens.]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name></name></author><category term="html" /><category term="css" /><category term="responsive" /><summary type="html"><![CDATA[This is a picture html element template for responsive images. There are two sources inside for desktop and tablet, and an img for mobile by default (if yoour project is mobile first). There are two images attached for regular and double density (retina) screens.]]></summary></entry><entry xml:lang="ru"><title type="html">sudo для Windows 10</title><link href="http://0.0.0.0:4000/webdevtips/ru/sudo-for-windows-10" rel="alternate" type="text/html" title="sudo для Windows 10" /><published>2025-01-27T03:00:00+03:00</published><updated>2025-01-27T03:00:00+03:00</updated><id>http://0.0.0.0:4000/webdevtips/ru/sudo-for-windows-10</id><content type="html" xml:base="http://0.0.0.0:4000/webdevtips/ru/sudo-for-windows-10"><![CDATA[<p>На линукс системах можно запускать отдельные команды с повышенными правами добавляя перед ними <code class="language-plaintext highlighter-rouge">sudo</code>. Windows работает по другому и требует запустить все окно приложения от имени админа. Либо так, либо никак. Что лучше для безопасности, но менее удобно)</p>
+
+<p>В Windows 11 наконец-то <a href="https://devblogs.microsoft.com/commandline/introducing-sudo-for-windows/">завезли</a> sudo, но не на десятку (по крайней мере официально, кто-то уже сдела форк, но я бы не стал рисковать).</p>
+
+<p>К счастью есть готовый аналог в виде программы <a href="https://gerardog.github.io/gsudo/">gsudo</a>. После ее установки, вы можете так же как и на линуксах добавлять к командам <code class="language-plaintext highlighter-rouge">gsudo</code> или <code class="language-plaintext highlighter-rouge">sudo</code> и выполнять их с паравами администратора. Еще <a href="https://github.com/gerardog/gsudo/discussions/331#discussioncomment-11367503">пишут</a>, что у gsudo есть фичи, которых нет у ms-sudo.</p>
+
+<p>Стоит добавить, что это может ослабить <a href="https://github.com/gerardog/gsudo/security">безопасность</a> системы и вы, как всегда, делаете это на свой страх и риск.</p>
+
+<p>gsudo можно в том числе использовать с Windows Terminal, не открывая новое окно (которое из режима quake еще и криво открывается).</p>]]></content><author><name></name></author><category term="windows terminal" /><category term="cmd" /><category term="powershell" /><category term="windows" /><category term="terminal" /><summary type="html"><![CDATA[На линукс системах можно запускать отдельные команды с повышенными правами добавляя перед ними sudo. Windows работает по другому и требует запустить все окно приложения от имени админа. Либо так, либо никак. Что лучше для безопасности, но менее удобно)]]></summary></entry></feed>
