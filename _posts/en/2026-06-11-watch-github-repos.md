@@ -2,7 +2,7 @@
 layout: post
 title: 'How to watch back all your repositories on Github'
 date: 2026-06-11 00:00 +0000
-notebook: frontend
+notebook: webdev
 tags: [git, github]
 sources: ['https://github.com/orgs/community/discussions/157470']
 ---
