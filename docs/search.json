@@ -1,6 +1,26 @@
 [
   
     {
+      "title"    : "Как подписаться на все свои репозитории на Гитхабе",
+      "category" : "",
+      "tags"     : "git, github",
+      "url"      : "/webdevtips/ru/watch-github-repos",
+      "date"     : "2026-06-11 03:00:00 +0300",
+      "content"  : "Владельцы Гитхаба в своей безграничной мудрости решили не только отключить автоматическую подписку по умолчанию на репозитории (добавление в Watch, не путать с Subscribe для топиков), но и вообще убрать эту функцию.В итоге даже при создании репозитория вы САМИ не будете следить за всеми изменениями в нем. ГЕНИИ!Как вернуть подписку обратноЕсть способ автоматизировать этот процесс по крайней мере для ваших собственных репозиториев. Для этого вам понадобяться:  Unix tools, которые можно установить вместе с Git (в установщике будет галочка). Это для Винды. На линуксах возможно они уже есть. Конкретно нам нужна будет утилита xargs.  Git Bash. Опять же идет с гитом.  Github CLIВ терминале выполните:gh repo list YOUR_USERNAME --limit 1000 --json nameWithOwner -q &#39;.[].nameWithOwner&#39; | xargs -I {} gh api -X PUT repos/{}/subscription -f subscribed=trueВместо YOUR_USERNAME впишите свой ник или организацию.Обратите внимание, что по ссылке в оригинале дают две строки. Я слил в одну, чтобы было меньше проблем.Если вы все сделали правильно, после выполнения команды терминал должен начать выводиться json с каждым репозиторием по одному. Дождитесь окончания.",
+      "lang": "ru"
+    } ,
+  
+    {
+      "title"    : "How to watch back all your repositories on Github",
+      "category" : "",
+      "tags"     : "git, github",
+      "url"      : "/webdevtips/en/watch-github-repos",
+      "date"     : "2026-06-11 03:00:00 +0300",
+      "content"  : "The owners of Github, in their infinite wisdom, decided not only to disable automatic watching repositories by default, but also to remove this feature entirely.As a result you will not be notified about all the changes eve in YOUR OWN repos. Genius.How to get watching all your repos backThere is a way to automate this process, at least for your own repositories. To do this, you will need:  Unix utils that can be installed with Git (there will be a checkbox in the installer). This is for Windows. Linux may already have them I’m not sure. Specifically you will need the `xargs’ utility.  Git Bash. Again, it comes with git.  Github CLIIn the terminal, run:gh repo list YOUR_USERNAME --limit 1000 --json nameWithOwner -q &#39;.[].nameWithOwner&#39; | xargs -I {} gh api -X PUT repos/{}/subscription -f subscribed=trueChange YOUR_USERNAME to your nickname or organization.Please note that the original answer has two lines. I merged it into one for less likely issues.If you did everything right, after executing the command, terminal should output json with each repository one at a time. Wait for it to finish.",
+      "lang": "en"
+    } ,
+  
+    {
       "title"    : "Как тестировать сборку Vite локально на мобильном (и задеплоить на гитхаб)",
       "category" : "",
       "tags"     : "vite, local server, mobile, qa, github",
